@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:css":  "node scripts/build-css.mjs",
+    "build:css": "node scripts/build-css.mjs",
     "build:libs": "node scripts/concat-libs.mjs",
-    "build":      "npm run build:libs && npm run build:css",
-    "watch:css":  "node scripts/watch-css.mjs"
+    "build": "npm run build:libs && npm run build:css",
+    "watch:css": "node scripts/watch-css.mjs"
   },
   "devDependencies": {
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "typescript": "^5.9.3"
   }
 }

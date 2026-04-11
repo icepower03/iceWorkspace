@@ -1,13 +1,4 @@
-﻿declare class MediaRecorder {
-    constructor(stream: MediaStream, options?: any);
-    start(): void;
-    stop(): void;
-    pause(): void;
-    resume(): void;
-    addEventListener(type: string, listener: (event: any) => void): void;
-}
-
-interface OptionsRecorder
+﻿interface OptionsRecorder
 {
     id?: string;
     class?: string;

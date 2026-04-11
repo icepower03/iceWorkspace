@@ -59,7 +59,7 @@ class xxInputSpeech implements iXElement
 
     {
         this.elementPrincipal = new xDiv({
-            class: "xxInputSpeech " + options.class??'',
+            class: "xxInputSpeech " + (options.class ?? ''),
             id: options.id
         });
 

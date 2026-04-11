@@ -863,13 +863,13 @@ class xOutils {
 
     private static setTextPourRecherche(s: string): string {
         var accent = [
-            /[\300-\306]/g, /[\340-\346]/g, // A, a
-            /[\310-\313]/g, /[\350-\353]/g, // E, e
-            /[\314-\317]/g, /[\354-\357]/g, // I, i
-            /[\322-\330]/g, /[\362-\370]/g, // O, o
-            /[\331-\334]/g, /[\371-\374]/g, // U, u
-            /[\321]/g, /[\361]/g, // N, n
-            /[\307]/g, /[\347]/g, // C, c
+            /[\xc0-\xc6]/g, /[\xe0-\xe6]/g, // A, a
+            /[\xc8-\xcb]/g, /[\xe8-\xeb]/g, // E, e
+            /[\xcc-\xcf]/g, /[\xec-\xef]/g, // I, i
+            /[\xd2-\xd8]/g, /[\xf2-\xf8]/g, // O, o
+            /[\xd9-\xdc]/g, /[\xf9-\xfc]/g, // U, u
+            /[\xd1]/g, /[\xf1]/g, // N, n
+            /[\xc7]/g, /[\xe7]/g, // C, c
         ];
         var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
 

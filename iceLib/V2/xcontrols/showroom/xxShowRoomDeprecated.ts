@@ -1925,10 +1925,10 @@ class xxShowRoom implements iXElement {
                         }
                     }));
                 },
-                getEnfants: v => {
+                getEnfants: (v): any => {
                     return mesDesserts;
                 },
-                getPere: v => {
+                getPere: (v): any => {
                     return null;
                 }
             })), 2, xxArbre)
@@ -4486,7 +4486,7 @@ lignes `
                                         case enumTypeBouton.Standard:
                                             cacherxElements(ZoneOptionLabel, true);
 
-                                            delete (optionboutonTempo as optionBoutonLabelled).optionsLabel;
+                                            delete (optionboutonTempo as unknown as optionBoutonLabelled).optionsLabel;
                                             optionboutonTempo.textVariable = TextBouton;
 
                                             delete dicoAttributOption.optionLabelled;
@@ -4496,7 +4496,7 @@ lignes `
                                             afficherxElements(ZoneOptionLabel);
 
                                             delete optionboutonTempo.textVariable;
-                                            (optionboutonTempo as optionBoutonLabelled).optionsLabel = optionLabelledTempo;
+                                            (optionboutonTempo as unknown as optionBoutonLabelled).optionsLabel = optionLabelledTempo;
 
                                             dicoAttributOption.optionLabelled = dicoAttributLabelledOption;
 

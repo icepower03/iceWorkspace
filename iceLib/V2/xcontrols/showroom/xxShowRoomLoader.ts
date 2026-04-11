@@ -1616,10 +1616,10 @@
                             }
                         })
                     },
-                    getEnfants: v => {
+                    getEnfants: (v): any => {
                         return mesDesserts;
                     },
-                    getPere: v => {
+                    getPere: (v): any => {
                         return null;
                     }
                 });
