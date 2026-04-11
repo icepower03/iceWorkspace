@@ -1,0 +1,135 @@
+﻿// -----------------------------------------------------
+// ----------------- ANIMATIONS EMED -------------------
+// -----------------------------------------------------
+
+@import 'medias.scss';
+
+/*----------------------FADE IN---------------------*/
+
+@media #{$Desktop} {
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+@media #{$MobileTablette} {
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+/*----------------------SLIDE IN Left-------------------*/
+@media #{$Mobile} {
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+@media #{$TabletteDesktop} {
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(5%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+/*-----------------------OPEN----------------------*/
+@keyframes Open400 {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 400px;
+    }
+}
+
+.Open400 {
+    animation-name: Open400;
+}
+
+/*-----------------------LES BOULES---------------------*/
+
+
+@keyframes boule1 {
+    0%, 100% {
+        transform: translateX(-50%);
+        animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        z-index: 2;
+    }
+
+    25% {
+        transform: scale(1.3);
+        animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+        z-index: 2;
+    }
+
+    50% {
+        transform: translateX(50%);
+        animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        z-index: 1;
+    }
+
+    75% {
+        transform: scale(0.9);
+        animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+        z-index: 1;
+    }
+}
+
+@keyframes boule2 {
+    50% {
+        transform: translateX(-50%);
+        animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        z-index: 2;
+    }
+
+    75% {
+        transform: scale(1.3);
+        animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+        z-index: 2;
+    }
+
+    0%, 100% {
+        transform: translateX(50%);
+        animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        z-index: 1;
+    }
+
+    25% {
+        transform: scale(0.9);
+        animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+        z-index: 1;
+    }
+}

@@ -1,0 +1,279 @@
+﻿/***********************************/
+/***** xxLabelContainer Emed - SCSS *****/
+/***********************************/
+
+@import "couleurs.scss";
+
+.xxLabel {
+    //color: #000;
+    &.typeLabel_titre {
+        display: inline-block;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: $EmedTexteBleu;
+
+        &.t20 {
+            color: $coul-t20-texte;
+            padding: 5px 5px 10px;
+            font-size: 28px;
+        }
+
+        &.tleg {
+        }
+    }
+
+    &.typeLabel_soustitre {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 5px;
+
+        &.t20 {
+            padding: 0;
+            font-size: 18px;
+        }
+    }
+
+    &.typeLabel_description {
+        font-style: italic;
+        color: #797979;
+        font-weight: normal;
+
+        &.tleg {
+        }
+
+        &.t20 {
+            color: $coul-t20-textelight;
+        }
+    }
+
+    &.typeLabel_important {
+        font-weight: bold;
+        display: inline-flex;
+
+        &.t20 {
+            margin: 0;
+        }
+    }
+
+    &.typeLabel_information {
+        margin: 10px 5px;
+        padding-left: 27px;
+        display: inline-flex;
+        position: relative;
+
+        &.tleg {
+            color: $EmedTexteBleu;
+        }
+
+        &:after {
+            position: absolute;
+            left: 0;
+            top: -5px;
+            content: "i";
+            width: 20px;
+            height: 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid $coul-t20-texte;
+            font-family: Verdana;
+
+            &.tleg {
+                border-color: $EmedTexteBleu;
+            }
+        }
+    }
+
+    &.typeLabel_bloc {
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+
+    &.decorationLabel_barre {
+        text-decoration: line-through;
+    }
+
+    &.decorationLabel_souligne {
+        text-decoration: underline;
+    }
+
+    &.espaceMinimaliste {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    &.xxLabelNoBreak {
+        white-space: nowrap;
+    }
+
+    &.centrerLabel {
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    &.xlab-prewrap {
+        white-space: pre-wrap;
+    }
+
+    &.xlab-nowrap {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    b.surligner {
+        color: black;
+        padding: 0 1px;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+        // animation: surlignerclignote 2s ease-in-out infinite;
+        background: yellow !important;
+    }
+
+    b.clair {
+        opacity: 0.20;
+    }
+
+    &.warning {
+        color: red;
+    }
+
+    &.habillageLabel_disabled {
+        opacity: 0.5;
+        filter: saturate(0);
+    }
+
+    &.habillageLabel_warning, &.habillageLabel_erreur, &.habillageLabel_valide, &.habillageLabel_info, &.habillageLabel_infoImportante {
+        padding: 5px 10px;
+        border-radius: 3px;
+        display: inline-block;
+
+        &.typeLabel_description {
+            color: rgba(0,0,0,.6)
+        }
+
+        &.typeLabel_information.tleg {
+            padding: 10px 5px 10px 32px;
+            color: rgba(0,0,0,.6);
+
+            &:after {
+                left: 5px;
+                top: 5px;
+            }
+        }
+    }
+
+    &.habillageLabel_warning {
+        background: #ffabab;
+    }
+
+    &.habillageLabel_erreur {
+        background: #ffe5ab;
+    }
+
+    &.habillageLabel_valide {
+        background: #bcddb7;
+    }
+
+    &.habillageLabel_info {
+        background: $EmedFondGris;
+    }
+
+    &.habillageLabel_infoImportante {
+        background: $EmedFondGris;
+        border: 1px solid $EmedBorder;
+        border-left: 3px solid $EmedBorder;
+        border-radius: 0 3px 3px 0;
+    }
+
+    &.habillageLabel_loading {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:before {
+            content: "";
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid $EmedBleu;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            animation: spin 1s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+            margin-bottom: 10px;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    &.largeurMax {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    @each $couleur, $codecouleur in $couleurEmed {
+
+        &.couleurTexte_emed_#{$couleur} {
+            color: $codecouleur;
+        }
+    }
+
+    @each $couleur, $codecouleur in $couleurT20 {
+
+        &.couleurTexte_t20_#{$couleur} {
+            color: $codecouleur;
+        }
+    }
+}
+
+span[class*="icone"].typeLabel_titre {
+    padding: 10px 0 10px 35px;
+    background-size: 24px auto;
+    background-repeat: no-repeat;
+    background-position: 0 9px;
+}
+
+
+@keyframes surlignerclignote {
+    0% {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    }
+
+    40% {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    }
+
+    50% {
+        box-shadow: 0 0px 2px yellow;
+    }
+
+    60% {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    }
+
+    100% {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    }
+}
+
+/* Tests tlegplus */
+
+.tlegplus {
+
+    .xxLabel.typeLabel_standard, .xxLabel.typeLabel_description {
+        font-size: 14px;
+    }
+
+    .xxLabel.typeLabel_soustitre {
+        padding: 0;
+        font-size: 18px;
+    }
+}

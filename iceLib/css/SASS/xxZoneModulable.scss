@@ -1,0 +1,239 @@
+﻿
+/***************************************/
+/***** xxZoneModulable Emed - SCSS *****/
+/***************************************/
+
+
+
+.xxZoneModulable {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    .xxZoneModulable_cache_orientation_horizontale {
+        background-color: rgba(0,0,0,0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+
+        .zonedock_action {
+            display: flex;
+            justify-content: center;
+            flex: 0 0 auto;
+            padding: 10px;
+        }
+
+        .xxDockPanelPrincipal .xxDockPanel {
+            flex: 1;
+        }
+    }
+
+    .xxZoneModulable_cache_orientation_verticale {
+        background-color: rgba(0,0,0,0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+
+        .zonedock_action {
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+            padding: 10px;
+        }
+    }
+
+    .xxZoneModulable_repliee_orientation_horizontale {
+        display: flex;
+        align-items: center;
+        background-color: #eee;
+        height: 100%;
+        width: 34px;
+        border-left: 1px solid #aaa;
+        border-right: 1px solid #aaa;
+
+        .titreZoneReplie {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 0;
+        }
+    }
+
+    .xxZoneModulable_repliee_orientation_verticale {
+        display: flex;
+        align-items: center;
+        background-color: #eee;
+        height: 34px;
+        width: 100%;
+        border-top: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+
+        .titreZoneReplie {
+            transform-origin: 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+    }
+
+    .xxZoneModulable_premiere_zone {
+        &.orientation_horizontale {
+            width: 50%;
+        }
+
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    .xxZoneModulable_premiere_zone {
+        &.orientation_verticale {
+            height: 50%;
+            width: auto;
+        }
+
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    .xxZoneModulable_seconde_zone {
+        flex: 1;
+        overflow: auto;
+    }
+
+    .xxZoneModulable_zone_centrale {
+        flex: 0 0 auto;
+        border: 1px solid #777;
+        box-sizing: border-box;
+        background-color: $EmedFondGris;
+
+        &.orientation_horizontale {
+            cursor: col-resize;
+            width: 8px;
+            border-width: 0 1px;
+        }
+
+        &.orientation_verticale {
+            cursor: row-resize;
+            height: 8px;
+            width: auto;
+            border-width: 1px 0;
+        }
+    }
+
+    .zonedock_deplacement.orientation_horizontale {
+        cursor: col-resize;
+        box-sizing: border-box;
+        color: #fff;
+        width: 100%;
+        justify-content: center;
+        background-color: rgba(0,0,0,0.6);
+        background-image: url('images/line_repere.svg?embed');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+
+        .zone_deplacement {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .zone_replie {
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.4);
+
+                &.premiere {
+                    background-image: url('images/xxZoneModulable/zone_repli_fleche_gauche.svg?embed');
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                }
+
+                &.deuxieme {
+                    background-image: url('images/xxZoneModulable/zone_repli_fleche_droite.svg?embed');
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        .typeLabel_titre {
+            color: #fff;
+            cursor: col-resize;
+            text-align: center;
+            flex: 1 1 auto;
+            font-size: 12px;
+        }
+    }
+
+    .zonedock_deplacement.orientation_verticale {
+        cursor: row-resize;
+        box-sizing: border-box;
+        color: #fff;
+        height: 100%;
+        width: 200px;
+        justify-content: center;
+        background-color: rgba(0,0,0,0.6);
+        background-image: url('images/line_repere_h.svg?embed');
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+
+        .zone_deplacement {
+            width: 200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .zone_replie {
+                width: 100px;
+                height: 100px;
+                flex: 0 0 auto;
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.4);
+
+                &.premiere {
+                    background-image: url('images/xxZoneModulable/zone_repli_fleche_gauche.svg?embed');
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    transform: rotate(90deg);
+                }
+
+                &.deuxieme {
+                    background-image: url('images/xxZoneModulable/zone_repli_fleche_droite.svg?embed');
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .typeLabel_titre {
+            display: flex;
+            color: #fff;
+            cursor: row-resize;
+            flex: 1 1 auto;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+
+    &.orientation_verticale {
+        flex-direction: column;
+    }
+}

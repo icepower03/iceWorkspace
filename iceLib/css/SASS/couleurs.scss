@@ -1,0 +1,82 @@
+﻿// -----------------------------------------------------
+// ------------ VARIABLES DES COULEURS EMED ------------
+// -----------------------------------------------------
+
+//!!---!!
+//ATTENTION : NE PAS METTRE DE CSS DANS CETTE FEUILLE, UNIQUEMENT DES VARIABLES ET MIXINS !
+//!!---!!
+
+$NexusRouge: #B72842; //hsl(349,78%,72%)
+
+// ------ THEME LEGACY ------ 
+$EmedBleu:           #5692ae;    //hsl(199,51%,68%)
+$EmedVert:           #bdd13a;    //hsl(68,72%,82%)
+$EmedBorder:         #aaaaaa;    //hsl(0,0,67%)
+$EmedFondGris:       #eeeeee;    //hsl(0,0,93%)
+$EmedFondGrisFonce:  #696969;    //hsl(0,0,41%)
+$EmedTexteBleu:      #1c779c;    //hsl(197,82%,61%)
+$EmedSelected:       #8be1b4;    //hsl(149,38%,88%)
+$BorderLight: rgba(0,0,0,0.1);
+
+// ------ THEME 2020 ------
+
+$coul-t20-rouge: #B71540;
+$coul-t20-bleu: #4F6792;
+$coul-t20-bleufonce: #1F2336;
+$coul-t20-bleu-darkmode: #DFE7EB;
+$coul-t20-vert: #10AC84;
+$coul-t20-user: var(--coul-t20-user); //valeurs : rouge(--coul-t20-user:#B71540) ou bleu(--coul-t20-user:#4F6792)
+
+$coul-t20-alt: var(--coul-t20-alt); //couleur alternative à celle du user
+$coul-t20-border: var(--coul-t20-border);
+$coul-t20-fondgris: var(--coul-t20-fondgris);
+$coul-t20-texte: var(--coul-t20-texte);
+$coul-t20-textelight: var(--coul-t20-textelight);
+$coul-t20-bgtheme: var(--coul-t20-bgtheme); // en darkmode : #292F48;
+
+
+// ------ COULEUR USER ------ 
+@mixin MainCouleur($propriete,$opacite: 1,$saturation: 60,$luminosite: 60) {
+    $valeurSaturation: "#{$saturation}%";
+    $valeurLuminosite: "#{$luminosite}%";
+    #{$propriete}: hsla(var(--h),#{$valeurSaturation},#{$valeurLuminosite},#{$opacite});
+}
+
+// Mixin de customization des monochromes svg
+@mixin xSVG-Color($couleur) {
+    .xsvg-elem_filled {
+        fill: $couleur;
+    }
+
+    .xsvg-elem_stroked {
+        stroke: $couleur;
+    }
+}
+
+
+ // ------ COULEURS ICONES ------
+$icone-noir: #000000; 
+$icone-grisfonce: #585858;
+$icone-grisclair: #C6C6C6;
+$icone-blanc: #FFFFFF;
+$icone-marronfonce: #926036;
+$icone-marronclair: #C99D66;
+$icone-rougefonce: #AC0800;
+$icone-rouge: #ED1D25;
+$icone-orange: #EF8208;
+$icone-jaune: #EACF0F;
+$icone-vert: #39AD47;
+$icone-turquoise: #5BB996;
+$icone-bleu: #1C779C;
+$icone-violet: #662482;
+$icone-peau: #f6b478;
+$icone-rose: #a3195c;
+
+// ------- Couleurs Cabinet Médical ------//
+
+$cabinet-bleu: #4F6792;
+
+// ------- Couleurs pour mixin -------//
+$couleurEmed: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $icone-grisclair, "blanc" $icone-blanc, "marronfonce" $icone-marronfonce, "marronclair" $icone-marronclair, "rougefonce" $icone-rougefonce, "rouge" $icone-rouge, "orange" $icone-orange, "jaune" $icone-jaune, "vert" $icone-vert, "turquoise" $icone-turquoise, "bleu" $icone-bleu, "violet" $icone-violet, "peau" $icone-peau, "rose" $icone-rose);
+
+$couleurT20: ( "alt" $coul-t20-alt, "texte" $coul-t20-texte, "textelight" $coul-t20-textelight, "rouge" $coul-t20-rouge, "bleu" $coul-t20-bleu, "bleufonce" $coul-t20-bleufonce, "bleu-darkmode" $coul-t20-bleu-darkmode, "vert" $coul-t20-vert, "user" $coul-t20-user);

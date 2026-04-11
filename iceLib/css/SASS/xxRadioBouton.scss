@@ -1,0 +1,224 @@
+﻿/*************************************/
+/***** xxRadioBouton Emed - SCSS *****/
+/*************************************/
+
+.xxRadioButton {
+    &.xxWrapPanelMaster .xxWrapPanel {
+        padding: 0;
+    }
+
+
+    .xxRadioButtonItem {
+        &.xrbti-inactif {
+            opacity: 0.6;
+
+            .xxBoutonContainer {
+                cursor: not-allowed;
+            }
+
+            .xxbouton {
+                span:hover {
+                    background-color: transparent;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .xxbouton {
+            border-radius: 0;
+
+            span:hover {
+                background-color: transparent;
+            }
+
+            &:hover {
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+
+            margin: 0 0 0 -1px;
+        }
+    }
+
+    &.xxWrapPanel .xxWrapPanelItem:first-child > .xxListItem .xxRadioButtonItem .xxbouton {
+        margin: 0;
+        border-radius: 5px 0 0 5px;
+    }
+
+    &.xxWrapPanel .xxWrapPanelItem:last-child > .xxListItem .xxRadioButtonItem .xxbouton {
+        margin: 0;
+        border-radius: 0 5px 5px 0;
+    }
+
+    &.xxStackPanelMaster .xxStackPanelItem:first-child > .xxListItem .xxRadioButtonItem .xxbouton {
+        margin: 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &.xxStackPanelMaster .xxStackPanelItem:last-child > .xxListItem .xxRadioButtonItem .xxbouton {
+        margin: 0;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .xxStackPanel {
+        .xxbouton {
+            margin: -1px 0 0 0;
+        }
+    }
+
+    &.displayStandard {
+        .xxRadioButtonItemSelected {
+            & > .xxbouton {
+                position: relative;
+                font-weight: bold;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                background-color: $EmedSelected;
+            }
+
+            & > .xxBoutonContainer .xxBoutonContent {
+                position: relative;
+                background-color: $EmedSelected;
+
+                &.t20 {
+                    border-color: rgb(0,0,0,0.2);
+                }
+
+                span.t20 {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    &.displayOnlySelected {
+
+
+        .xxRadioButtonItem {
+            .xxbouton {
+                span:hover {
+                    background-color: transparent;
+                }
+            }
+
+            &:hover, &.xxRadioButtonItemSelected {
+                & > .xxbouton {
+                    //   border: 2px solid black;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                    transition: $vitesseAnimationRapide $easingAnimationZinzin;
+                }
+            }
+
+            &.xxRadioButtonItemSelected {
+                .xxbouton {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &.hasValue {
+            .xxWrapPanelItem .xxRadioButtonItem:not(.xxRadioButtonItemSelected) {
+                width: 0 !important;
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+
+            .xxStackPanelItem .xxRadioButtonItem:not(.xxRadioButtonItemSelected) {
+                height: 0 !important;
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+        }
+
+        &.NothasValue {
+            .xxWrapPanelItem .xxRadioButtonItem:not(.xxRadioButtonItemSelected) {
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+
+            .xxStackPanelItem .xxRadioButtonItem:not(.xxRadioButtonItemSelected) {
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+        }
+    }
+}
+
+.xxRadioButtonClassique {
+
+    & > .xxBoutonContent {
+        border: none;
+        background: none;
+        color: $coul-t20-texte;
+
+        &:hover {
+            background: none;
+        }
+
+        &:before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        &.tleg {
+            padding-left: 32px;
+
+            &:before {
+                border: 1px solid $EmedBorder;
+                top: 4px;
+                left: 10px;
+            }
+        }
+
+        &.t20 {
+            padding-left: 36px;
+
+            &:before {
+                border: 1px solid $coul-t20-textelight;
+                top: 9px;
+                left: 14px;
+            }
+        }
+    }
+}
+
+.xxRadioButtonItemSelected .xxRadioButtonClassique .xxBoutonContent {
+
+    &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    &.tleg {
+
+        &:before {
+            border-color: $EmedBorder;
+        }
+
+        &:after {
+            background: $icone-vert;
+            top: 7px;
+            left: 13px;
+        }
+    }
+
+    &.t20 {
+
+        &:before {
+            border-color: $coul-t20-vert;
+        }
+
+        &:after {
+            background: $coul-t20-vert;
+            top: 12px;
+            left: 17px;
+        }
+    }
+}
+
+

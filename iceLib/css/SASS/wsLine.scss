@@ -1,0 +1,54 @@
+﻿/*********************************************/
+/***** wsLine Emed - SCSS *****/
+/*********************************************/
+
+.xxpage_wsLine {
+    display:flex;
+    position:absolute;
+    flex:0 0 auto;
+    height:2px;
+    width:100%;
+    z-index:999999999999999;
+    top:0;
+    left:0;
+}
+
+.Global_wsLineElement {
+    top: 0;
+    left: 0;
+    background: #0f0;
+    height: 2px !important;
+    display: flex;
+    position: fixed;
+    flex: 0 0 auto;
+    width: 100%;
+    z-index: 999999999999999;
+}
+
+.xxPage_wsLineElement {
+    border-right: 3px solid #eee;
+    
+    &.ws_launch {
+        flex: 1;
+    }
+
+    &.ws_launch.pair {
+        background-color: #f5954d;
+    }
+
+    &.ws_launch.impair {
+        background-color: #ffdc7c;
+    }
+
+    &.ws_ok {
+        background-color: #8eea87;
+        flex: 1;
+    }
+
+    &.ws_error {
+        background-color: red;
+        flex: 1;
+    }
+}
+
+

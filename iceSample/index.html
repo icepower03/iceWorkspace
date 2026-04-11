@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Sample</title>
+    <link rel="stylesheet" href="../iceLib/jsBin/x.css" type="text/css" />
+
+    <script src="../iceLib/jsBin/libxElements.js"></script>
+
+    <!-- configuration de la librairie -->
+    <script type="text/javascript">
+        var xConfigActive = {
+            langDictionaryData: { "test": "test traduit" },
+            missingTranslationCallback: function (val) {
+                console.log('traduction manquante : ' + val);
+            },
+            jsDependencyPath: "../iceLib/include/",
+            theme: function () {
+                return enumThemes.ThemeLegacy;
+            }
+        };
+        var xConfigPageActive = { debug: false, contexteUrlPage: './', fileCacheTag: 'cc' };
+    </script>
+
+    <script src="../iceLib/jsBin/x.js"></script>
+
+    <!-- application -->
+    <script src="src/sample.js"></script>
+</head>
+<body>
+</body>
+</html>

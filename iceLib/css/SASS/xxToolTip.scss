@@ -1,0 +1,209 @@
+﻿/***********************************/
+/***** xxToolTip Emed - SCSS *****/
+/***********************************/
+
+.xxTooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.xxTooltip_Box {
+
+    &.xxTooltip_Box_With_BackGround, .xxTooltip_Box_BackGround {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .xxTooltip_Box_BackGround {
+        background-color: rgba(86, 146, 174, 0.5);
+
+        &.t20 {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &.xxTooltipOn {
+        display: flex;
+        z-index: 11000;
+    }
+
+    &.xxTooltipOff {
+        display: none;
+    }
+
+    .xxTooltip_Box_Header {
+        background-color: $EmedBleu;
+        padding: 6px;
+        border-radius: 5px 5px 0 0;
+
+        .xxLabel {
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+
+    .xxTooltip_Box_Footer {
+        background-color: $EmedFondGris;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px;
+        align-items: center;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .xxTooltip_Box_Header_Custom {
+        border: 1px solid $EmedBorder;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .xxTooltip_Box_Event {
+        position: absolute;
+        z-index: 20000;
+        animation-name: fadeIn;
+        animation-duration: 0.05s;
+        animation-timing-function: ease;
+
+        &.Fleche::after {
+            content: "";
+            position: absolute;
+            border-width: 12px;
+            border-style: solid;
+            border-color: transparent;
+        }
+
+        &.xxToolTip_overload {
+            .xxTooltip_Box_Contenu {
+                overflow-x: auto;
+            }
+        }
+    }
+
+    .xxTooltip_Box_Contenu {
+        padding: 8px;
+        background-color: #fff;
+        position: sticky;
+        border: 1px solid $EmedBorder;
+        border-radius: 5px;
+        @include scrollbarFine;
+
+        &.t20.lm {
+            border: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        }
+    }
+
+    .xxTooltip_Box_Header {
+    }
+    //********//
+    // Fleche //
+    //********//
+    //** Correction de centrage **//
+    &.positionW_center, &.positionW_gauche, &.positionW_droite {
+        .xxTooltip_Box_Event.Fleche::after {
+            margin-left: -12px;
+        }
+    }
+
+    &.positionW_extremiteGauche, &.positionW_extremiteDroite {
+        .xxTooltip_Box_Event.Fleche::after {
+            margin-top: -12px;
+        }
+    }
+
+    &.positionH_haut {
+        // ** Fleche creation tooltip haut ** //
+        &.positionW_center, &.positionW_gauche, &.positionW_droite {
+            .xxTooltip_Box_Event.Fleche::after {
+                top: 100%;
+                border-bottom-width: 0;
+                border-bottom: 0;
+                border-color: #555 transparent transparent transparent;
+            }
+        }
+        // ** correction fleche mode position width **//
+        &.positionW_extremiteGauche, &.positionW_extremiteDroite {
+            .xxTooltip_Box_Event.Fleche::after {
+                bottom: 12px;
+            }
+        }
+    }
+
+    &.positionH_bas {
+        // ** Fleche creation tooltip bas ** //
+        &.positionW_center, &.positionW_gauche, &.positionW_droite {
+            .xxTooltip_Box_Event.Fleche::after {
+                bottom: 100%;
+                border-top: 0;
+                border-color: transparent transparent #555 transparent;
+            }
+        }
+        // ** correction fleche mode position width **//
+        &.positionW_extremiteGauche, &.positionW_extremiteDroite {
+            .xxTooltip_Box_Event.Fleche::after {
+                top: 26px;
+            }
+        }
+    }
+    // ** correction fleche mode position width **//
+    &.positionH_center {
+        &.positionW_extremiteGauche, &.positionW_extremiteDroite {
+            .xxTooltip_Box_Event.Fleche::after {
+                top: 50%;
+            }
+        }
+    }
+    // ** Fleche creation tooltip extremite Gauche ** //
+    &.positionW_extremiteGauche {
+        .xxTooltip_Box_Event.Fleche::after {
+            left: 100%;
+            border-right: 0;
+            border-color: transparent transparent transparent #555;
+        }
+    }
+    // ** Fleche creation tooltip extremite Droite ** //
+    &.positionW_extremiteDroite {
+        .xxTooltip_Box_Event.Fleche::after {
+            right: 100%;
+            border-left: 0;
+            border-color: transparent #555 transparent transparent;
+        }
+    }
+    // ** correction fleche mode position height ** //
+    &.positionW_center {
+        .xxTooltip_Box_Event.Fleche::after {
+            left: 50%;
+        }
+    }
+
+    &.positionW_gauche {
+        .xxTooltip_Box_Event.Fleche::after {
+            right: 12px;
+        }
+    }
+
+    &.positionW_droite {
+        .xxTooltip_Box_Event.Fleche::after {
+            left: 26px;
+        }
+    }
+
+    &.xxTooltip_AvecHeader, &.xxTooltip_AvecHeaderCustom {
+        .xxTooltip_Box_Contenu {
+            border-top: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+
+    &.xxTooltip_AvecFooter {
+        .xxTooltip_Box_Contenu {
+            border-bottom: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}

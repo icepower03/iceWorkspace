@@ -1,0 +1,139 @@
+﻿#blockAidedecision {
+    width: 50%;
+
+    #zoneRecapitulatif {
+        width: 100%;
+
+        .stackQuestion {
+            text-align: start;
+        }
+
+        .stackReponse {
+            text-align: right;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: flex-end;
+            border-radius: 10px 10px 0 10px;
+            @include MainCouleur(background,0.25);
+            margin-left: 20%;
+            padding: 10px;
+
+            div {
+                .xxbouton {
+                    margin: 0px 0px -8px 0px;
+                }
+            }
+        }
+
+        .xxStackPanelItem {
+            /*width: 80%;*/
+            padding: 10px;
+            box-sizing: border-box;
+            /*margin-top: 10px;*/
+            &.stackQuestion {
+                border-radius: 10px 10px 10px 0;
+                background: #E8E8E8;
+                padding: 10px;
+            }
+            /*.reponse {
+                border-radius: 10px 10px 0 10px;
+                @include MainCouleur(background,0.25);
+                margin-left: 20%;
+                padding: 10px;
+            }*/
+        }
+
+        .loading span {
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            @include MainCouleur(background,0.25);
+            border-radius: 50%;
+            display: inline-block;
+            animation-name: dots;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .loading span:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .loading span:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes dots {
+            50% {
+                opacity: 0;
+                transform: scale(0.7) translateY(10px);
+            }
+        }
+    }
+
+    #zoneChoix {
+        background-color: red;
+        box-sizing: border-box;
+        border-radius: 10px;
+        @include MainCouleur(background,0.25);
+
+        &.t20{
+            padding: 20px;
+        }
+
+        .xxStackPanelItem.saisie_saisie {
+            justify-content: flex-end;
+            text-align: end;
+            padding: 5px;
+
+            textarea {
+                width: 80%;
+            }
+
+            .titreLong {
+                width: 100%;
+            }
+
+            .xxbouton .iconeCs3i_aucun {
+                padding: 10px 15px;
+            }
+        }
+
+        .xxWrapPanelMaster {
+            .xxWrapPanel {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}
+.xxxPageDossier.pageColoredHeader .xxpage_header {
+    .xxAssistantUser-etapes {
+        align-items: center;
+
+        .xxRadioButton.displayStandard .xxRadioButtonItemSelected > .xxBoutonContainer .xxBoutonContent {
+            background: #FFF;
+            border-radius: 50%;
+
+            span {
+                color: $coul-t20-user;
+            }
+        }
+
+        &.t20 {
+            > .xxStackPanel > .xxStackPanelItem {
+                display: flex;
+                justify-content: center;
+
+                span {
+                    text-align: center;
+                }
+
+                .rb-etapes {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

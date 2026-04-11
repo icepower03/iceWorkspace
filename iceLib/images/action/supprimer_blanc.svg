@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_00000125586275414645004940000007424814682708962965_);}
+</style>
+<g>
+	<g>
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.2863" y1="-2.6262" x2="33.7131" y2="16.8006">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="0.5338" style="stop-color:#F7F7F7"/>
+				<stop  offset="1" style="stop-color:#EBEBEB"/>
+			</linearGradient>
+			<path class="st0" d="M39.17,4h-8.94V3.12c0-1.72-1.4-3.12-3.12-3.12H24h-3.11c-1.72,0-3.12,1.4-3.12,3.12V4H8.83
+				C7.27,4,6,5.27,6,6.83v1.34C6,8.63,6.37,9,6.83,9h34.33C41.63,9,42,8.63,42,8.17V6.83C42,5.27,40.73,4,39.17,4z"/>
+		</g>
+	</g>
+	
+		<linearGradient id="SVGID_00000127739602116163710800000014675115192345272766_" gradientUnits="userSpaceOnUse" x1="8.3582" y1="10.6643" x2="39.6398" y2="41.9459">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.5338" style="stop-color:#F7F7F7"/>
+		<stop  offset="1" style="stop-color:#EBEBEB"/>
+	</linearGradient>
+	<path style="fill:url(#SVGID_00000127739602116163710800000014675115192345272766_);" d="M39.25,11H24H8.75
+		C7.78,11,7,11.78,7,12.75v0.64c0,0.39,0.13,0.77,0.37,1.08l1.65,2.11c0.2,0.26,0.33,0.58,0.36,0.91l2.6,26.73
+		c0.21,2.15,2.01,3.78,4.17,3.78H24h7.85c2.16,0,3.96-1.64,4.17-3.78l2.6-26.73c0.03-0.33,0.16-0.64,0.36-0.91l1.65-2.11
+		c0.24-0.31,0.37-0.69,0.37-1.08v-0.64C41,11.78,40.22,11,39.25,11z M17.48,43.31c-0.83,0.07-1.55-0.54-1.62-1.36L13.7,17.32
+		c-0.07-0.83,0.54-1.55,1.36-1.62s1.55,0.54,1.62,1.36l2.15,24.62C18.92,42.51,18.3,43.23,17.48,43.31z M25.5,41.86
+		c0,0.83-0.67,1.5-1.5,1.5l0,0c-0.83,0-1.5-0.67-1.5-1.5V17.14c0-0.83,0.67-1.5,1.5-1.5l0,0c0.83,0,1.5,0.67,1.5,1.5V41.86z
+		 M32.15,41.94c-0.07,0.83-0.8,1.44-1.62,1.36s-1.44-0.8-1.36-1.63l2.15-24.62c0.07-0.83,0.8-1.44,1.62-1.36s1.44,0.8,1.36,1.62
+		L32.15,41.94z"/>
+</g>
+</svg>

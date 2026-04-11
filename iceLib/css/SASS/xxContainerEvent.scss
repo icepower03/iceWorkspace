@@ -1,0 +1,56 @@
+﻿/****************************/
+/***** xxContainerEvent *****/
+/****************************/
+
+.xxContainerEvent.clicEnCours {
+    position: relative;
+    cursor: default;
+
+    &:before, &:after {
+        content: "";
+        width: 30%;
+        height: 30%;
+        max-width: 24px;
+        max-height: 24px;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        clip-path: circle(closest-side);
+        position: absolute;
+        display: block;
+        opacity: 0.8;
+    }
+
+    &:before {
+        animation-name: boule1;
+    }
+
+    &:after {
+        animation-name: boule2;
+    }
+
+    &.tleg {
+        &:before {
+            background: $EmedTexteBleu;
+        }
+
+        &:after {
+            background: $EmedSelected;
+        }
+    }
+
+    &.t20 {
+        &:before {
+            background: $coul-t20-user;
+        }
+
+        &:after {
+            background: $coul-t20-user;
+            opacity: .6;
+        }
+    }
+
+    & > * {
+        transition: all $vitesseAnimationRapide $easingAnimationZinzin;
+        opacity: 0.3;
+    }
+}

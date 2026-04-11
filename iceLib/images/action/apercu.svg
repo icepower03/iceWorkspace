@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_00000005956828157731255220000005327108486689127845_);}
+	.st2{fill:url(#SVGID_00000026145700194355997860000013683249498738775716_);}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-7.629754e-06" y1="24" x2="48" y2="24">
+		<stop  offset="0" style="stop-color:#1C779C"/>
+		<stop  offset="0.4548" style="stop-color:#1C6F9C"/>
+		<stop  offset="1" style="stop-color:#1C5E9C"/>
+	</linearGradient>
+	<path class="st0" d="M47.27,21.11C42.7,12.71,33.78,7.5,24,7.5S5.3,12.71,0.73,21.11c-0.97,1.79-0.97,4,0,5.79
+		C5.3,35.29,14.22,40.5,24,40.5s18.7-5.21,23.27-13.61C48.24,25.11,48.24,22.89,47.27,21.11z"/>
+	
+		<linearGradient id="SVGID_00000135658688144639571750000008052283994831154102_" gradientUnits="userSpaceOnUse" x1="14.4542" y1="14.454" x2="33.5461" y2="33.5459">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.5338" style="stop-color:#F7F7F7"/>
+		<stop  offset="1" style="stop-color:#EBEBEB"/>
+	</linearGradient>
+	<circle style="fill:url(#SVGID_00000135658688144639571750000008052283994831154102_);" cx="24" cy="24" r="13.5"/>
+	
+		<linearGradient id="SVGID_00000117655401249058323350000007285907859595714966_" gradientUnits="userSpaceOnUse" x1="18.0796" y1="19.0932" x2="28.907" y2="29.9205">
+		<stop  offset="0" style="stop-color:#1C779C"/>
+		<stop  offset="0.4548" style="stop-color:#1C6F9C"/>
+		<stop  offset="1" style="stop-color:#1C5E9C"/>
+	</linearGradient>
+	<path style="fill:url(#SVGID_00000117655401249058323350000007285907859595714966_);" d="M26.84,24.13
+		c-1.47-0.31-2.66-1.51-2.97-2.97c-0.35-1.61,0.3-3.11,1.44-3.99c0.29-0.22,0.17-0.69-0.19-0.74c-1.07-0.16-2.21-0.1-3.38,0.26
+		c-2.74,0.84-4.83,3.21-5.28,6.03c-0.85,5.23,3.61,9.68,8.83,8.83c2.82-0.46,5.2-2.55,6.03-5.29c0.36-1.17,0.42-2.31,0.26-3.37
+		c-0.05-0.36-0.52-0.48-0.74-0.19C29.95,23.84,28.46,24.48,26.84,24.13z"/>
+</g>
+</svg>

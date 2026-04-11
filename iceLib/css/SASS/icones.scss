@@ -1,0 +1,83 @@
+﻿//*********************************************
+//****************** ICONES *******************
+//*********************************************
+
+//!!---!!
+//ATTENTION : NE PAS METTRE DE CSS DANS CETTE FEUILLE, UNIQUEMENT DES VARIABLES ET MIXINS !
+//!!---!!
+
+//## ICONES STANDARD
+
+//-- Set d'icônes : créer les iconeCs3i en ajoutant automatiquement le folder et nom de fichier
+//  ex généré : .iconeCs3i_Ledossier_Lefichier {background-image: url('images/Ledossier/Lefichier.png?embed');}
+
+@mixin SetIcones($sousdossier,$seticones, $format: png) {
+    @each $icone in $seticones {
+        .iconeCs3i_#{$sousdossier}_#{""+$icone} {
+            background-image: url("images/#{$sousdossier}/#{$icone}.#{$format}?embed");
+        }
+    }
+}
+
+//-- Version destinée aux anciens icônes = pas de nom du folder dans la classe + évenutelle particule dans la classe
+//  ex généré : .iconeCs3i_Particule_Lefichier {background-image: url('images/Ledossier/Lefichier.png?embed');}
+@mixin OldSetIcones($sousdossier,$seticones, $ParticuleDebutClasse: null) {
+    @each $icone in $seticones {
+        @if ($ParticuleDebutClasse) {
+            .iconeCs3i_#{$ParticuleDebutClasse}_#{$icone} {
+                background-image: url("images/#{$sousdossier}/#{$icone}.png?embed");
+            }
+        }
+        @else { // Si pas de particule : on n'affiche pas le underscore_ associé
+            .iconeCs3i_#{$icone} {
+                background-image: url("images/#{$sousdossier}/#{$icone}.png?embed");
+            }
+        }
+    }
+}
+//## ICONES MINI ##
+
+// ------Transition 2020 des icônes mini en icônes------
+@mixin SetIconesOldMini($sousdossier,$seticones, $ParticuleDebutClasse: null, $formatFinFichier:'_mini.png') {
+    @each $icone in $seticones {
+        @if ($ParticuleDebutClasse) {
+            .iconeCs3i_#{$sousdossier}_#{$icone} {
+                background-image: url("images/#{$sousdossier}/#{$sousdossier}_#{$icone}#{$formatFinFichier}?embed");
+            }
+        }
+        @else {
+            .iconeCs3i_#{$icone} {
+                background-image: url("images/#{$sousdossier}/#{$icone}#{$formatFinFichier}?embed");
+            }
+        }
+    }
+}
+
+//Génération d'un set d'icônes mini, avec l'option d'inclure le nom du dossier dans la classe si l'url le comporte (gain de lisibilité du scss)
+@mixin SetIconesMini($dossier,$listeIcones,$dossierInclusDansNom: false) {
+    //Si l'option est à true...
+    @if $dossierInclusDansNom {
+        @each $icone in $listeIcones { //Pour chaque icône dans la liste
+            .iconeMiniCs3i_#{$dossier}_#{$icone} { // On crée la classe .iconeMiniCs3i_dossier_icone
+                background-image: url("images/#{$dossier}/#{$dossier}_#{$icone}_mini.png?embed");
+            }
+        }
+    }
+    //Si elle est à false (par défaut)...
+    @else {
+        @each $icone in $listeIcones { //Pour chaque icône dans la liste
+            .iconeMiniCs3i_#{$icone} { // On crée la classe .iconeMiniCs3i_icone
+                background-image: url("images/#{$dossier}/#{$icone}_mini.png?embed");
+            }
+        }
+    }
+}
+
+//## PICTOS
+// Pictos Décoratifs qui ne sont pas utilisés dans des boutons. La taille est à 24px par défaut.
+@mixin picto($urlpicto, $sizepicto: 24px) {
+    background-image: url("images/#{$urlpicto}?embed");
+    background-size: $sizepicto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

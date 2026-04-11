@@ -1,0 +1,13 @@
+# Dépendances
+node_modules/
+
+# Artefacts de build (définis aussi à la racine, redondant mais explicite)
+jsBin/x.js
+jsBin/x.css
+jsBin/libxElements.js
+jsBin/*.tsbuildinfo
+
+# Fichiers Visual Studio hérités
+bin/
+obj/
+*.csproj.vspscc

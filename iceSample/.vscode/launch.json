@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug iceSample (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173/iceSample/index.html",
+      "webRoot": "${workspaceFolder}/..",
+      "preLaunchTask": "vite: dev",
+      "sourceMapPathOverrides": {
+        "/@fs/*": "/*"
+      }
+    },
+    {
+      "name": "Debug iceSample (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5173/iceSample/index.html",
+      "webRoot": "${workspaceFolder}/..",
+      "preLaunchTask": "vite: dev",
+      "sourceMapPathOverrides": {
+        "/@fs/*": "/*"
+      }
+    }
+  ]
+}

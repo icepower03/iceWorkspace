@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="88" height="80" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_505" data-name="Groupe 505" transform="translate(-778 -311)">
+    <g id="Grille_de_répétition_4" data-name="Grille de répétition 4" transform="translate(778 319)" clip-path="url(#clip-path)">
+      <g transform="translate(-470 -349)">
+        <rect id="Rectangle_215" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -339)">
+        <rect id="Rectangle_215-2" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-2" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -329)">
+        <rect id="Rectangle_215-3" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-3" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -319)">
+        <rect id="Rectangle_215-4" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-4" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -309)">
+        <rect id="Rectangle_215-5" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-5" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -299)">
+        <rect id="Rectangle_215-6" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-6" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -289)">
+        <rect id="Rectangle_215-7" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-7" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+      <g transform="translate(-470 -279)">
+        <rect id="Rectangle_215-8" data-name="Rectangle 215" width="138" height="5" transform="translate(470 349)" fill="#fff"/>
+        <rect id="Rectangle_216-8" data-name="Rectangle 216" width="138" height="5" transform="translate(470 354)" fill="#eee"/>
+      </g>
+    </g>
+    <rect id="Rectangle_225" data-name="Rectangle 225" width="88" height="10" transform="translate(778 319)" fill="#aaa"/>
+    <rect id="Rectangle_228" data-name="Rectangle 228" width="88" height="10" transform="translate(778 344)" fill="#aaa"/>
+    <rect id="Rectangle_229" data-name="Rectangle 229" width="88" height="10" transform="translate(778 374)" fill="#aaa"/>
+    <g id="Rectangle_226" data-name="Rectangle 226" transform="translate(778 311)" fill="none" stroke="#aaa" stroke-width="1">
+      <rect width="88" height="88" stroke="none"/>
+      <rect x="0.5" y="0.5" width="87" height="87" fill="none"/>
+    </g>
+    <rect id="Rectangle_227" data-name="Rectangle 227" width="88" height="8" transform="translate(778 311)" fill="#5692ae"/>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+# Dépendances
+node_modules/
+
+# Artefacts de build iceLib (gros fichiers, reconstruits via npm run build)
+iceLib/jsBin/x.js
+iceLib/jsBin/x.css
+iceLib/jsBin/libxElements.js
+iceLib/jsBin/*.tsbuildinfo
+
+# x.d.ts est commité volontairement :
+# il est nécessaire pour l'IntelliSense dans iceSample sans avoir à rebuild la lib.
+# !iceLib/jsBin/x.d.ts  ← déjà inclus par défaut (non ignoré)
+
+# Artefacts de build iceSample
+iceSample/src/*.js
+iceSample/src/*.d.ts
+iceSample/src/*.tsbuildinfo
+
+# Claude Code (configs locales)
+.claude/
+
+# Visual Studio / IDE
+.vs/
+*.user
+*.suo
+*.csproj.vspscc
+*.csproj.vspscc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

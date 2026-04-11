@@ -1,0 +1,151 @@
+﻿/*----- xxIMC -----*/
+
+$opaciteImc: bb;
+
+.xxLabelContainer.xxIMC {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+
+    &.nonrenseigne {
+        background: #{$icone-grisfonce};
+    }
+
+    &.denutrition {
+        background-color: #{$icone-rougefonce}#{$opaciteImc};
+    }
+
+    &.maigreur {
+        background-color: #{$icone-orange}#{$opaciteImc};
+        color: $icone-noir;
+
+        .xxLabelContainerTitre {
+            border-right: 1px solid rgba(0,0,0, .5);
+        }
+    }
+
+    &.normal {
+        background-color: #{$icone-vert}#{$opaciteImc};
+    }
+
+    &.surpoids {
+        background-color: #{$icone-jaune}#{$opaciteImc};
+        color: $icone-noir;
+
+        .xxLabelContainerTitre {
+            border-right: 1px solid rgba(0,0,0, .5);
+        }
+    }
+
+    &.moderee {
+        background-color: #{$icone-orange}#{$opaciteImc};
+        color: $icone-noir;
+
+        .xxLabelContainerTitre {
+            border-right: 1px solid rgba(0,0,0, .5);
+        }
+    }
+
+    &.severe {
+        background-color: #{$icone-rouge}#{$opaciteImc};
+        color: $icone-noir;
+
+        .xxLabelContainerTitre {
+            border-right: 1px solid rgba(0,0,0, .5);
+        }
+    }
+
+    &.morbide {
+        background-color: #{$icone-rougefonce}#{$opaciteImc};
+    }
+
+    .xxLabelContainerTitre {
+        margin: 0 5px 0 0;
+        border-right: 1px solid rgba(255,255,255, .5);
+        padding-right: 5px;
+    }
+}
+
+.tooltipImc.xxTooltip {
+    cursor: help;
+}
+
+.gridIMC {
+    .xxGridItem:not(.fleche) {
+        padding: 5px;
+        color: white;
+
+        &.morbide {
+            background-color: #{$icone-rougefonce}#{$opaciteImc};
+            border-radius: 5px 5px 0 0;
+        }
+
+        &.severe {
+            background-color: #{$icone-rouge}#{$opaciteImc};
+            color: $icone-noir;
+
+            .xxLabelContainerTitre {
+                border-right: 1px solid rgba(0,0,0, .5);
+            }
+        }
+
+        &.moderee {
+            background-color: #{$icone-orange}#{$opaciteImc};
+            color: $icone-noir;
+
+            .xxLabelContainerTitre {
+                border-right: 1px solid rgba(0,0,0, .5);
+            }
+        }
+
+
+        &.denutrition {
+            background-color: #{$icone-rougefonce}#{$opaciteImc};
+            border-radius: 0 0 5px 5px;
+        }
+
+        &.maigreur {
+            background-color: #{$icone-orange}#{$opaciteImc};
+            color: $icone-noir;
+
+            .xxLabelContainerTitre {
+                border-right: 1px solid rgba(0,0,0, .5);
+            }
+        }
+
+        &.normal {
+            background-color: #{$icone-vert}#{$opaciteImc};
+        }
+
+        &.surpoids {
+            background-color: #{$icone-jaune}#{$opaciteImc};
+            color: $icone-noir;
+
+
+            .xxLabelContainerTitre {
+                border-right: 1px solid rgba(0,0,0, .5);
+            }
+        }
+    }
+}
+
+.gridIMC {
+    .xxGridItem.fleche {
+        position: relative;
+
+        .flecheImc {
+            position: absolute;
+            margin-bottom: -7.5px;
+        }
+
+        &.sansPosition {
+            display: flex;
+            align-items: center;
+
+            .flecheImc {
+                position: relative;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

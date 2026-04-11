@@ -1,0 +1,142 @@
+﻿/**********************************/
+/***** xlibrairie Emed - SCSS *****/
+/**********************************/
+/*******************************************/
+/***** Couleurs génériques Emed - SCSS *****/
+/*******************************************/
+
+ 
+/***** Import - SCSS *****/
+@import "SASS/couleurs";
+@import "SASS/icones";
+@import "SASS/medias"; 
+@import "SASS/divers";
+@import "SASS/fonts.scss";
+@import "SASS/wsLine";
+@import "SASS/xInput";
+@import "SASS/xInputDate_xInputTime";
+@import "SASS/xInputFile.scss";
+@import "SASS/xInputUploadImage.scss";
+@import "SASS/xSeparateur";
+@import "SASS/xSVG.scss";
+@import "SASS/xxAutoComplete";
+@import "SASS/xxBloqueEcran";
+@import "SASS/xxbouton_icones";
+@import "SASS/xxbouton_icones_minis";
+@import "SASS/xxBouton.scss";
+@import "SASS/xxBoxer";
+@import "SASS/xxChart";
+@import "SASS/xxCheckbox";
+@import "SASS/xxContainerEvent.scss";
+@import "SASS/xxDockPanel";
+@import "SASS/xxGantt";
+@import "SASS/xxGrid";
+@import "SASS/xxGridLayout.scss";
+@import "SASS/xxImageTabByte";
+@import "SASS//xxIndicateur";
+@import "SASS/xxLabel";
+@import "SASS/xxLabelContainer";
+@import "SASS/xxLabelModifiable";
+@import "SASS/xxLecteurCarteMagnetique.scss";
+@import "SASS/xxLecteurAudio.scss";
+@import "SASS/xxList";
+@import "SASS/xxListCheckBox";
+@import "SASS/xxListChoix";
+@import "SASS/xxListeDeroulante";
+@import "SASS/xxListeDeroulanteSimple";
+@import "SASS/xxMenu";
+@import "SASS/xxNavOngletControl";
+@import "SASS/xxPageWrapper";
+@import "SASS/xxPlanneur";
+@import "SASS/xxPlanning";
+@import "SASS/xxProgressBar.scss";
+@import "SASS/xxRadioBouton";
+@import "SASS/xxRecorder.scss";
+@import "SASS/xxRouteContainer";
+@import "SASS/xxShowroom.scss";
+@import "SASS/xxSpecificationCreneaux.scss";
+@import "SASS/xxTabControl";
+@import "SASS/xxTableau.scss";
+@import "SASS/xxToolTip";
+@import "SASS/xxStackPanel";
+@import "SASS/xxWrapPanel";
+@import "SASS/xxZoneModulable";
+@import "SASS/xxZoneRepliable";
+@import "SASS/xxVolet";
+@import "SASS/xxZoom";
+@import "SASS/xCouleur";
+@import "SASS/xxInputIntellisense.scss";
+@import "SASS/xxInputNumeric.scss";
+@import "SASS/xxInputSpeech";
+@import "SASS/xDatePicker.scss";
+@import "SASS/xTimePicker.scss";
+@import "SASS/xxListeSelection.scss";
+@import "SASS/xxAssistantSaisieUtilisateur.scss";
+@import "SASS/xxCarrousel.scss";
+@import "SASS/xxHref.scss";
+@import "SASS/xElement.scss";
+@import "SASS/xxIMC.scss";
+@import "SASS/xxChoixCouleur.scss";
+@import "SASS/xxViewerPdf.scss";
+@import "SASS/xInputTextAvecIcone.scss";
+@import "SASS/xSeparateurAvecFleche.scss";
+@import "SASS/xIconeAvecAction.scss";
+@import "SASS/xxDialog.scss";
+@import "SASS/xxMenuContextuel.scss";
+
+@import "SASS/zFontsImport.scss";
+@import "SASS/zAnimations.scss";
+@import "SASS/zBackgrounds.scss";
+@import "SASS/xHref.scss";
+
+/**********************************/
+
+html {
+    --coul-t20-border: #DCDADA;
+    --coul-t20-fondgris: #EAEAEA;
+    --coul-t20-texte: #2F3336;
+    --coul-t20-textelight: #898989;
+    --coul-t20-bgtheme: white;
+
+    &.dm {
+        --coul-t20-border: #4D5060;
+        --coul-t20-fondgris: #292F48;
+        --coul-t20-texte: #FFFFFF;
+        --coul-t20-textelight: #898989;
+        --coul-t20-bgtheme: #1F2336;
+    }
+
+    background:$coul-t20-bgtheme;
+}
+
+.test{
+    background:#e4ee00;
+}
+select {
+    height: 20px;
+    padding:2px;
+    box-sizing: border-box;
+    border: 1px solid $EmedBorder;
+    font-size: 11px;
+}
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+}
+.xdisabled {display: none !important;}
+.xInvisible {visibility: hidden !important;}
+
+.xInline{
+    display: inline-flex;
+}
+
+.confirmationPossible {
+    padding: 6px 10px;
+    background-color: #e4ee00;
+}
+.annulationPossible {
+    padding: 6px 10px;
+    background-color: #f23e3e;
+}

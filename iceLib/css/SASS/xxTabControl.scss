@@ -1,0 +1,430 @@
+﻿/*********************************/
+/***** xxTabControl Emed - SCSS *****/
+/*********************************/
+
+.xxTabControlContainer {
+    .withDecorator span.iconeCs3i.orientation_verticale.iconeCs3i_aucun:after {
+        content: '\002022';
+        font-weight: normal;
+        position: relative;
+        font-size: 11px;
+        top: 6px;
+        left: 8px;
+    }
+
+    & > .xxDockPanel {
+        width: 100%;
+
+        .xxDockPanelItem {
+            padding: 0;
+
+            &.xxTabControlMenu {
+                padding: 6px 0 0 0;
+            }
+        }
+    }
+
+    .WPxxTabMenu {
+        width: 100%;
+    }
+
+    .xxTabMenu .xxWrapPanel {
+        padding: 0;
+    }
+
+    .xxTabControlContentHolder {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .xxTabControlItemContent {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .xxTabMenu .xxRadioButton .xxbouton {
+        background-color: $EmedFondGris;
+    }
+
+    .xxTabMenu {
+        .xxListItem {
+            &.Tabfavori {
+                .xxBoutonContainer {
+                    font-style: italic;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+
+            &.ongletAvecContenu {
+                position: relative;
+
+                &::after {
+                    content: " ";
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border-top: 10px solid $icone-orange;
+                    border-left: 10px solid transparent;
+                }
+            }
+        }
+
+
+
+        .xxTabMenu_groupTab {
+            .xxLabel.labelGroupe {
+                padding-bottom: 7px;
+                margin-left: 10px;
+            }
+
+            .xxbouton.sensInverse.espaceMinimaliste span.iconeCs3i {
+                padding-right: 24px;
+                padding-top: 3px;
+            }
+
+            .xxTabControl_saveGroupe {
+                span.iconeCs3i {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .xxTabContent {
+        height: 100%;
+    }
+
+    &.orientation_horizontale {
+        .xxRadioButtonItem.xxTabControl {
+            border-image: linear-gradient(-90deg, #aaa, white) 1;
+            border-bottom-color: #aaa;
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+            border-right-color: #aaa;
+            border-right-width: 1px;
+            border-right-style: solid;
+        }
+
+        .xxTabMenu {
+            border-bottom: 1px solid #aaa;
+
+            &.t20 {
+                padding: 0 6px;
+            }
+
+            div.xxGridItem.zoneOnglets {
+                overflow-x: auto;
+                overflow-y: hidden;
+                display: flex;
+                @include scrollbarFine;
+
+                .xxWrapPanel.xxRadioButton {
+
+                    .xxBoutonContainer .xxBoutonContent {
+                        border-radius: 5px 5px 0 0;
+                        margin: 0;
+
+                        &.t20 {
+                            border-left-width: 0;
+                        }
+                    }
+
+                    .xxWrapPanelItem:first-child .xxBoutonContainer .xxBoutonContent.t20 {
+                        border-left-width: 1px;
+                    }
+                }
+            }
+
+            .zoneApresOnglets {
+
+                .xxbouton {
+                    margin: 0;
+                }
+            }
+
+
+            .xxWrapPanelMaster.xxRadioButton {
+                display: flex;
+                width: 100%;
+
+                .xxWrapPanel.xxRadioButton {
+                    width: 100%;
+                    flex-wrap: nowrap;
+                }
+
+                &.xxtabcontrol_styleArrondi {
+                    border-left: 0;
+
+                    .xxWrapPanelItem {
+                        overflow: visible;
+                    }
+
+                    .xxbouton {
+                        background: transparent;
+                        border: none;
+                        margin-left: 0px;
+                        box-shadow: none;
+
+                        span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                            padding-top: 6px;
+                            background: transparent;
+
+                            &:hover {
+                                background: transparent;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+
+                    .xxRadioButtonItem {
+                        border-radius: 5px 5px 0 0;
+                        display: flex;
+                        border: 1px solid $EmedBorder;
+                        border-bottom: none;
+
+                        &:after {
+                            content: "";
+                            height: 14px;
+                            width: 1px;
+                            background: $EmedBorder;
+                            align-self: center;
+                        }
+
+                        &:hover {
+                            background: $EmedSelected;
+                            border-bottom: 3px solid $EmedSelected;
+                        }
+
+                        .xxBoutonContent {
+                            background: transparent;
+                            border: none;
+                        }
+                    }
+
+
+                    .xxRadioButtonItemSelected {
+                        background: $EmedBorder;
+                        margin-left: -1px;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+                    .xxWrapPanelItem:last-child {
+
+                        .xxRadioButtonItem:after {
+                            display: none;
+                        }
+                    }
+
+                    .xxTabControlOngletFermable {
+                        .xxbouton {
+                            span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+
+
+                    .closeTab:not(.avecTexte) {
+
+                        .xxBoutonContent {
+                            border: none;
+                            background: transparent;
+                            margin: 0 4px;
+                        }
+
+                        .xSVG {
+                            width: 10px;
+                            height: 10px;
+
+                            .xsvg-elem_stroked {
+                                stroke-width: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .xxRadioButton .xxRadioButtonItem.xxRadioButtonItemSelected .xxbouton {
+                border-left: 1px solid $EmedBorder;
+                border-top: 1px solid $EmedBorder;
+                border-right: 1px solid $EmedBorder;
+                border-bottom: none;
+            }
+
+            .xxRadioButton .xxRadioButtonItem .xxbouton {
+                border-bottom: none;
+
+                span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                    padding: 4px 10px 7px;
+                }
+            }
+
+            .xxRadioButton .xxRadioButtonItem.xxTabItemColor, .xxRadioButton .xxRadioButtonItem.xxTabItemNoColor {
+                .xxbouton {
+
+                    span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                        padding: 4px 10px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            .xxRadioButton .xxRadioButtonItem.xxTabItemNoColor {
+                /*border-bottom: 3px solid #EAEAEA;*/
+            }
+
+            .xxbouton.closeTab {
+                margin: 0 0 0 -1px;
+            }
+
+            .xxWrapPanelItem {
+                overflow-x: visible;
+                overflow-y: unset;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .xxListItem {
+                margin: 0 0 -1px 0;
+            }
+
+            .xxListeDeroulante .xxListItem { /* Debug listes deroulantes à l'intérieur des tabcontrol */
+                margin: 0;
+            }
+
+            .xxRadioButton .xxRadioButtonItem.xxRadioButtonItemSelected .xxbouton {
+                font-weight: bold;
+                background-color: #fff;
+            }
+        }
+    }
+
+    &.orientation_verticale {
+        .xxTabControlMenu {
+            border-right: 1px solid $EmedBorder;
+            padding: 10px 0;
+            width: 200px;
+
+
+            .xxTabMenu {
+                height: 100%;
+
+                .xxTabMenu_zoneOnglets .xxRadioButtonItem {
+                    width: 100%;
+                    box-sizing: border-box;
+                    margin-bottom: 10px;
+
+                    > .xxBoutonContainer {
+                        width: 100%;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+
+                        > .xxBoutonContent {
+                            width: 100%;
+                            justify-content: flex-start;
+                            margin: 0;
+                            border: 1px solid $EmedBorder;
+                        }
+                    }
+
+                    &.xxRadioButtonItemSelected {
+                        > .xxBoutonContainer {
+                            padding: 0 0 0 10px;
+
+                            &:after {
+                                content: " ";
+                                width: 1px;
+                                height: calc(100% - 2px);
+                                display: block;
+                                background-color: $EmedSelected;
+                                position: absolute;
+                                top: 1px;
+                                right: -1px;
+                            }
+
+                            > .xxBoutonContent {
+                                border-right: unset;
+                                border-radius: 5px 0 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > .DP_xxTabControlMenu .xxDockPanel.Direction_gauche {
+            > .xxDockPanelItem:not(.xxTabControlMenu) {
+                width: 100%;
+            }
+        }
+    }
+
+    .xxRadioButtonItem {
+        /*border-bottom: 3px solid $EmedFondGris;*/
+    }
+
+    .xxRadioButtonItem.xxTabControlOngletFermable {
+        display: flex;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        border: 1px solid #aaa;
+        padding-right: 7px;
+
+        > .xxBoutonContainer .xxBoutonContent {
+            border: none;
+            border-radius: 0;
+
+            &:hover{
+                box-shadow: none;
+                background-color: inherit;
+            }
+        }
+
+        &.xxRadioButtonItemSelected {
+            background: $EmedSelected;
+        }
+    }
+
+    .xxTabContentParent, .xxTabControlContentHolder {
+        overflow: auto;
+    }
+
+    &.t20 {
+        .xxRadioButtonItemSelected {
+            .xxBoutonContent {
+                color: white;
+                background-color: $coul-t20-user;
+            }
+        }
+    }
+}
+
+.listeGroupes {
+    .xxTooltip_Box_Event {
+        min-width: 125px;
+
+        .xxListeDeroulanteStdListeHoster {
+            width: 100%;
+        }
+
+        .gridNomGroupes {
+            padding: 2px 5px;
+        }
+    }
+}
+
+.boxerNomGRoupe {
+    .libelleGroupe {
+        padding-top: 10px;
+    }
+}

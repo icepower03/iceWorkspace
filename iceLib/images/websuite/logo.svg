@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.4.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Tracé_33_00000139285798901306150100000002292612691264679050_);}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:url(#Tracé_35_00000145017070092365051950000000418404037629290637_);}
+</style>
+<g id="logo-dedalus" transform="translate(-5)">
+	
+		<linearGradient id="Tracé_33_00000047042607973204071730000014961733610845632406_" gradientUnits="userSpaceOnUse" x1="21.6001" y1="26.3115" x2="21.6001" y2="28.3115" gradientTransform="matrix(19.0127 0 0 -19.65 -381.6764 567.01)">
+		<stop  offset="0.16" style="stop-color:#0081BE"/>
+		<stop  offset="0.27" style="stop-color:#2B8CC1"/>
+		<stop  offset="0.4" style="stop-color:#639BC5"/>
+		<stop  offset="0.59" style="stop-color:#88B0D1"/>
+		<stop  offset="0.64" style="stop-color:#8CB2D2"/>
+		<stop  offset="0.7" style="stop-color:#99B8D5"/>
+		<stop  offset="0.77" style="stop-color:#AFC3DB"/>
+		<stop  offset="0.83" style="stop-color:#CDD2E2"/>
+		<stop  offset="0.83" style="stop-color:#CED2E2"/>
+		<stop  offset="0.91" style="stop-color:#E2E4EC"/>
+		<stop  offset="1" style="stop-color:#F6F6F6"/>
+	</linearGradient>
+	<path id="Tracé_33" style="fill:url(#Tracé_33_00000047042607973204071730000014961733610845632406_);" d="M43.6,28.3l-22.2,11
+		v-5.7L40.9,24c1.5-0.7,2.1-2.6,1.4-4.1c0,0,0,0,0,0c-0.3-0.6-0.8-1.1-1.4-1.4L10,2.9L15.7,0l28,14.1c3.9,2,5.5,6.8,3.4,10.7
+		C46.4,26.3,45.1,27.5,43.6,28.3z"/>
+	<path id="Tracé_34" class="st1" d="M40.9,18.6L10,2.9V45l5.7,3V11.5l23.8,11.8c0.4,0.2,0.8,0.5,1,0.9l0.4-0.2
+		c1.5-0.7,2.2-2.5,1.4-4c0,0,0,0,0-0.1C42,19.3,41.5,18.9,40.9,18.6z"/>
+	
+		<linearGradient id="Tracé_35_00000055672394264429500670000013464090537067596720_" gradientUnits="userSpaceOnUse" x1="23.3644" y1="25.9319" x2="25.3644" y2="25.9319" gradientTransform="matrix(16.1501 0 0 -18.2 -361.6506 501.7599)">
+		<stop  offset="0" style="stop-color:#0078B3"/>
+		<stop  offset="0.36" style="stop-color:#468DC4"/>
+		<stop  offset="0.42" style="stop-color:#5695C9"/>
+		<stop  offset="0.58" style="stop-color:#7FA9D4"/>
+		<stop  offset="0.66" style="stop-color:#8FB1D9"/>
+		<stop  offset="0.69" style="stop-color:#99B7DC"/>
+		<stop  offset="0.82" style="stop-color:#BFCFE9"/>
+		<stop  offset="0.93" style="stop-color:#D6DDF0"/>
+		<stop  offset="1" style="stop-color:#DEE2F3"/>
+	</linearGradient>
+	<path id="Tracé_35" style="fill:url(#Tracé_35_00000055672394264429500670000013464090537067596720_);" d="M48,21.3
+		c0,3-1.7,5.7-4.4,6.9L21.4,39.3V14.4l-5.7-2.8V48l28-14c2.7-1.3,4.3-4,4.3-7V21.3z"/>
+</g>
+</svg>

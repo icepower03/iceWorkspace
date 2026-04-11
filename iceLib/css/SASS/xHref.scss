@@ -1,0 +1,82 @@
+﻿/********************/
+/****** xHref  ******/
+/********************/
+
+.xHref {
+
+    &.couleuremed_noir {
+        color: $icone-noir;
+    }
+
+    &.couleuremed_grisfonce {
+        color: $icone-grisfonce;
+    }
+
+    &.couleuremed_grisclair {
+        color: $icone-grisclair;
+    }
+
+    &.couleuremed_blanc {
+        color: $icone-blanc;
+    }
+
+    &.couleuremed_marronfonce {
+        color: $icone-marronfonce;
+    }
+
+    &.couleuremed_marronclair {
+        color: $icone-marronclair;
+    }
+
+    &.couleuremed_rougefonce {
+        color: $icone-rougefonce;
+    }
+
+    &.couleuremed_rouge {
+        color: $icone-rouge;
+    }
+
+    &.couleuremed_orange {
+        color: $icone-orange;
+    }
+
+    &.couleuremed_jaune {
+        color: $icone-jaune;
+    }
+
+    &.couleuremed_vert {
+        color: $icone-vert;
+    }
+
+    &.couleuremed_bleu {
+        color: $icone-bleu;
+    }
+
+    &.couleuremed_violet {
+        color: $icone-violet;
+    }
+
+    &.couleuremed_peau {
+        color: $icone-peau;
+    }
+
+    &.couleuremed_rose {
+        color: $icone-rose;
+    }
+
+    &:hover {
+        color: $icone-grisfonce;
+    }
+
+    &.couleuremed_grisfonce:hover {
+        color: $icone-grisclair;
+    }
+
+    &.couleuremed_blanc:hover {
+        color: #{$icone-blanc} + b3;
+    }
+
+    &.xHref_noWrap{
+        white-space: nowrap;
+    }
+}

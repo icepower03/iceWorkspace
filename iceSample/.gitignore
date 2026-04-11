@@ -1,0 +1,10 @@
+# Dépendances
+node_modules/
+
+# Artefacts compilés TypeScript
+src/*.js
+src/*.d.ts
+src/*.tsbuildinfo
+
+# OS
+.DS_Store

@@ -1,0 +1,13 @@
+﻿// -------------------------------------------------------
+// ------------- POINTS DE RUPTURE RESPONSIVE ------------
+// -------------------------------------------------------
+
+//!!---!!
+//ATTENTION : NE PAS METTRE DE CSS DANS CETTE FEUILLE, UNIQUEMENT DES VARIABLES ET MIXINS !
+//!!---!!
+
+$Mobile:            "screen and (max-width:768px)";
+$MobileTablette:    "screen and (max-width:1024px)";
+$Tablette:          "screen and (min-width:769px) and (max-width:1024px)";
+$TabletteDesktop:   "screen and (min-width:769px)";
+$Desktop:           "screen and (min-width:1025px)";

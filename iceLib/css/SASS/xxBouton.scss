@@ -1,0 +1,645 @@
+﻿/************************************/
+/* xxBouton - The King of xElements */
+/************************************/
+
+@import "couleurs.scss";
+@import "fonts.scss";
+@import "medias.scss";
+
+.xxBoutonContainer {
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.xxBoutonContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    &.tleg {
+        border: 1px solid $EmedBorder;
+        background: white;
+
+        &:hover {
+            background-color: $EmedFondGris;
+            box-shadow: 0 3px 5px $EmedBorder;
+        }
+    }
+}
+
+//
+/*-------------------TYPE-------------------*/
+//
+.xbtn-typ_standard {
+}
+
+.xbtn-typ_labelled, .xbtn-typ_textehorsbouton {
+    .btnContent {
+    }
+}
+//
+/*--------------POSITION ICONE--------------*/
+//
+.xbtn-pos_left,
+.xbtn-pos_right {
+    flex-direction: row;
+
+    *:nth-child(2) {
+        margin-left: 8px;
+    }
+}
+
+.xbtn-pos_top,
+.xbtn-pos_bottom {
+    flex-direction: column;
+
+    *:nth-child(2) {
+        margin-top: 5px;
+    }
+}
+//
+/*---------------RESPONSIVE-----------------*/
+//
+@media #{$MobileTablette} {
+
+    .xbtn-res_fullwidth, .xbtn-res_pleinelargeur {
+        &, & .xxBoutonContent {
+            width: 100%;
+        }
+    }
+
+    .xbtn-res_floatcorner, .xbtn-res_danslecoin {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 100;
+
+        &.xxContainerEvent.clicEnCours {
+            position: fixed;
+        }
+    }
+
+    .xbtn-res_floatcenter, .xbtn-res_enbas {
+        position: fixed;
+        z-index: 100;
+        bottom: 20px;
+        left: 50vw;
+        transform: translateX(-50%);
+
+        &.xxContainerEvent.clicEnCours {
+            position: fixed;
+        }
+    }
+}
+//
+/*--------------------STYLES----------------*/
+//
+.t20 {
+    &.xbtn-sty_flat, &.xbtn-sty_shadow, &.xbtn-sty_avecfond, &.xbtn-sty_ombre {
+        color: white;
+        @include xSVG-Color(white);
+    }
+
+    &.xbtn-sty_shadow, &.xbtn-sty_ombre {
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0,0,0,.12);
+    }
+
+    &.xbtn-styl_outline:hover, &.xbtn-styl_simple:hover {
+    }
+
+    &.xbtn-styl_flat:hover, &.xbtn-styl_shadow:hover {
+    }
+}
+
+//
+/*------------------COULEURS-----------------*/
+//
+/*Liste couleurs*/
+$buttonColorsList: ( 
+    "user" $coul-t20-user, 
+    "alternative" $coul-t20-alt, 
+    "neutral" $coul-t20-texte, 
+    "white" #fff, 
+    "warning" #f62626, 
+    "valid" #10AC84, 
+    "utilisateur" $coul-t20-user, 
+    "alternatif" $coul-t20-alt, 
+    "neutre" $coul-t20-texte, 
+    "blanc" #fff, 
+    "alerte" #f62626, 
+    "valide" #10AC84 );
+/* Chaque couleur */
+@each $name, $color in $buttonColorsList {
+    .t20 {
+        &.xbtn-sty_simple.xbtn-cou_#{$name},
+        &.xbtn-sty_outlined.xbtn-cou_#{$name},
+        &.xbtn-sty_sansfondaveccontour.xbtn-cou_#{$name},
+        &.xbtn-sty_avecfondblancaveccontour.xbtn-cou_#{$name} {
+            color: $color;
+            @include xSVG-Color($color);
+        }
+
+        &.xbtn-sty_outlined.xbtn-cou_#{$name},
+        &.xbtn-sty_sansfondaveccontour.xbtn-cou_#{$name},
+        &.xbtn-sty_avecfondblancaveccontour.xbtn-cou_#{$name} {
+            border: 1px solid $color;
+        }
+
+        &.xbtn-sty_flat.xbtn-cou_#{$name},
+        &.xbtn-sty_avecfond.xbtn-cou_#{$name},
+        &.xbtn-sty_shadow.xbtn-cou_#{$name},
+        &.xbtn-sty_ombre.xbtn-cou_#{$name} {
+            background: $color;
+        }
+
+        
+    }
+}
+/* Cas blanc */
+.t20.xbtn-cou_white, .t20.xbtn-cou_blanc {
+    &.xbtn-sty_flat,
+    &.xbtn-sty_shadow,
+    &.xbtn-sty_avecfond,
+    &.xbtn-sty_ombre {
+        background: white;
+        color: $coul-t20-texte;
+        @include xSVG-Color($coul-t20-user);
+    }
+}
+.t20.xbtn-sty_avecfondblancaveccontour {
+    background: white;
+}
+
+/* Cas sans couleur (pour icones Svg colorables) */
+.t20.xbtn-cou_sans {
+    &.xbtn-sty_flat,
+    &.xbtn-sty_shadow,
+    &.xbtn-sty_avecfond,
+    &.xbtn-sty_ombre {
+        background: transparent;
+        color: $coul-t20-texte;
+    }
+}
+
+//
+/*----------------SIZE------------------*/
+//
+.xbtn-siz_fit {
+    margin: 5px;
+}
+
+.t20 {
+    &.xbtn-siz_xs {
+        min-height: 24px;
+        min-width: 24px;
+        font-size: 11px;
+        padding: 4px 8px;
+        margin: 5px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            width: 12px;
+            height: 12px;
+            min-width: 12px;
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            background-size: 12px;
+        }
+
+        .xIconeAvecAction .xxGridItem {
+            margin: 0;
+        }
+    }
+
+    &.xbtn-siz_s {
+        min-height: 32px;
+        min-width: 32px;
+        font-size: 12px;
+        padding: 5px 12px;
+        margin: 4px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            width: 14px;
+            height: 14px;
+            min-width: 14px;
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            background-size: 14px;
+        }
+
+        .xIconeAvecAction .xxGridItem {
+            margin: 0;
+        }
+    }
+
+    &.xbtn-siz_m {
+        min-height: 36px;
+        min-width: 36px;
+        font-size: 14px;
+        padding: 6px 14px;
+        margin: 3px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            background-size: 16px;
+        }
+
+        .xIconeAvecAction .xxGridItem {
+            margin: 0;
+        }
+    }
+
+    &.xbtn-siz_l {
+        min-height: 40px;
+        min-width: 40px;
+        font-size: 16px;
+        padding: 8px 16px;
+        margin: 2px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            background-size: 18px;
+        }
+
+        .xIconeAvecAction .xxGridItem {
+            margin: 0;
+        }
+    }
+
+    &.xbtn-siz_xl {
+        min-height: 56px;
+        min-width: 56px;
+        font-size: 24px;
+        padding: 12px 24px;
+        margin: 2px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            background-size: 24px;
+        }
+
+        .xIconeAvecAction .xxGridItem {
+            margin: 0;
+        }
+    }
+
+    &.xbtn-siz_tuile {
+        min-height: 250px;
+        min-width: 150px;
+        font-size: 24px;
+        padding: 12px 24px;
+        margin: 2px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            background-size: 24px;
+        }
+
+        .xIconeAvecAction .xxGridItem {
+            margin: 0;
+        }
+    }
+}
+
+.tleg {
+    &.xbtn-siz_xs {
+        min-height: 20px;
+        min-width: 24px;
+        padding: 1px 6px;
+        margin: 4px;
+        line-height: 10px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            &.icone_M {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            &.icone_M {
+                background-size: 15px;
+            }
+        }
+    }
+
+    &.xbtn-siz_s {
+        min-height: 23px;
+        min-width: 25px;
+        padding: 3px 6px;
+        margin: 4px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            &.icone_M {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            &.icone_M {
+                background-size: 18px;
+            }
+        }
+    }
+
+    &.xbtn-siz_m {
+        min-height: 23px;
+        min-width: 30px;
+        padding: 4px 10px;
+        margin: 3px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            &.icone_M {
+                width: 24px;
+                height: 24px;
+                padding: 2px 0;
+            }
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            &.icone_M {
+                background-size: 24px;
+            }
+        }
+    }
+
+    &.xbtn-siz_l {
+        min-height: 40px;
+        min-width: 40px;
+        padding: 10px 9px;
+        margin: 2px;
+        border: 0;
+        border-left: 1px solid #aaa;
+        height: 54px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            &.icone_M {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            &.icone_M {
+                background-size: 24px;
+            }
+        }
+
+        &.xbtn-pos_top, &.xbtn-pos_bottom {
+            padding: 6px 10px 4px 10px;
+
+            *:nth-child(2) {
+                margin-top: 4px;
+            }
+        }
+    }
+
+    &.xbtn-siz_xl {
+        min-height: 56px;
+        min-width: 56px;
+        padding: 10px 9px;
+        margin: 2px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            &.icone_M {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            &.icone_M {
+                background-size: 24px;
+            }
+        }
+
+        &.xbtn-pos_top, &.xbtn-pos_bottom {
+            padding: 6px 10px 4px 10px;
+
+            *:nth-child(2) {
+                margin-top: 4px;
+            }
+        }
+    }
+
+    &.xbtn-siz_fit {
+        border: none;
+        background: none;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    &.xbtn-siz_tuile {
+        height: 150px;
+        width: 250px;
+        font-size: 15px;
+        padding: 12px 24px;
+        margin: 10px;
+
+        .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne, .xIconeAvecAction {
+            &.icone_M {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .iconeSeuleCs3i, .iconeSeuleExterne {
+            &.icone_M {
+                background-size: 48px;
+            }
+        }
+    }
+
+    &.xbtn-siz_header {
+        height: 54px;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        padding: 5px 10px;
+        border-radius: 0;
+    }
+
+
+    .xxBoutonContent .xIconeAvecAction {
+        padding: 0;
+
+        > .xxGridItem {
+            margin: 0;
+
+            .xSVG, .iconeSeuleCs3i, .iconeSeuleExterne {
+                padding: 0;
+            }
+        }
+    }
+}
+
+//
+/*-----------------SPECIFIQUE---------------*/
+//
+//
+/*---- Icon only ----*/
+//
+
+.xbtn-icon_only.t20 {
+    padding: 8px;
+
+
+    &.xbtn-siz_xs {
+        padding: 4px;
+    }
+
+    &.xbtn-siz_fit {
+        padding: 0;
+    }
+}
+
+.xbtn-icon_only.tleg {
+    padding: 0 2px;
+
+    &.xbtn-siz_fit {
+        padding: 0;
+    }
+
+    &:hover {
+        background-color: rgba(0,0,0,.15);
+        box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+        border-radius: 3px;
+    }
+}
+
+//
+/*---- Rounded ----*/
+//
+.t20.xbtn-rounded {
+    border-radius: 40px;
+
+    &.xbtn-icon_only {
+        border-radius: 50%;
+    }
+}
+
+//
+/*---- No margin ----*/
+//
+.xbtn-no_margin {
+    &, &.tleg, &.t20 {
+        margin: 0;
+    }
+}
+//
+
+//
+/*---- Full Height, Full Width ----*/
+//
+.xbtn-fullHeight {
+    height: 100%
+}
+
+.xbtn-fullWidth {
+    width: 100%
+}
+//
+
+/*---- Disabled ----*/
+//
+.xbtn-disabled.xxBoutonContainer {
+    cursor: default;
+
+    .xbtn-sty_simple, .xbtn-sty_outlined, .xbtn-sty_sansfondaveccontour, .xbtn-sty_avecfondblancaveccontour {
+        color: $coul-t20-textelight;
+        border-color: $coul-t20-textelight;
+    }
+
+    .xbtn-sty_simple,
+    .xbtn-sty_outlined,
+    .xbtn-sty_flat,
+    .xbtn-sty_shadow,
+    .xbtn-sty_sansfondaveccontour,
+    .xbtn-sty_avecfond,
+    .xbtn-sty_avecfondblancaveccontour,
+    .xbtn-sty_ombre {
+        color: $coul-t20-textelight;
+        @include xSVG-Color($coul-t20-textelight);
+        opacity: 0.8;
+        background: #dedede;
+        border: none;
+        box-shadow: none;
+        filter: saturate(0);
+    }
+}
+//
+/*---- Loading ----*/
+//
+/*Anim*/
+@keyframes btnLoading {
+    0% {
+        margin-left: -66%;
+        width: 66%;
+    }
+
+    45% {
+        width: 66%;
+    }
+
+    90%,100% {
+        margin-left: 105%;
+        width: 0%;
+    }
+}
+
+.xbtn-loading {
+    overflow: hidden;
+
+    .btnContent:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 66%;
+        animation: btnLoading 1.5s cubic-bezier(.88,.17,.58,.97) infinite;
+        opacity: 0.8;
+    }
+
+    &.tleg {
+        .btnContent:before {
+            background: $EmedSelected;
+        }
+    }
+
+    &.t20 {
+        .btnContent:before {
+            background: $coul-t20-user;
+        }
+    }
+}

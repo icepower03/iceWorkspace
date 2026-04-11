@@ -1,0 +1,16 @@
+{
+  "extends": "./baseTsConfigDebug.json",
+
+  "compilerOptions": {
+    //#RELEASE"sourceMap": true,
+    //#RELEASE"inlineSourceMap": false,
+    //#RELEASE"inlineSources": false,
+    //#RELEASE"removeComments": true,
+    //#RELEASE"sourceRoot": null
+  }
+
+  
+
+}
+
+  

@@ -1,0 +1,46 @@
+﻿@import "couleurs.scss";
+
+.xSeparateur {
+    display: flex;
+    flex: 1 0 auto;
+
+    &.tleg, &.tdef {
+        background: $EmedBorder;
+    }
+
+    &.t20 {
+        background: $coul-t20-border;
+    }
+
+    &.orientation_horizontale {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        &.xsep-epais_f {
+            height: 1px;
+            max-height: 1px;
+        }
+
+        &.xsep-epais_l {
+            height: 2px;
+            max-height: 2px;
+        }
+    }
+
+    &.orientation_verticale {
+        height: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &.xsep-epais_f {
+            width: 1px;
+            max-width: 1px;
+        }
+
+        &.xsep-epais_l {
+            width: 2px;
+            max-width: 2px;
+        }
+    }
+}

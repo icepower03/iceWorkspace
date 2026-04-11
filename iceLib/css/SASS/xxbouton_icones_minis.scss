@@ -1,0 +1,20 @@
+﻿/**********************************************/
+/***** Icones minis xxbouton Emed  - SCSS *****/
+/**********************************************/
+
+.iconeSeuleMiniCs3i{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size:20px 20px;
+}
+.xxbouton.habillage_modeMiniSansTexte .iconeExterne {
+    background-size:20px;
+}
+
+
+/*Icône non défini*/
+.iconeMiniCs3i_undefined {background-image: url('images/undefined.svg?embed');}
+

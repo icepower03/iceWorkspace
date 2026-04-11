@@ -1,0 +1,232 @@
+﻿
+enum enumXxZoneRepliablePosition { droite, gauche }
+enum enumXxZoneRepliableCouleurFleche {Bleu,Blanc,Noir,Perso}
+
+interface OptionsZoneRepliable {
+    renderTitre: (ici: iXElementHolder, plier?: (b: boolean) => void, refreshTitre?: () => void, plie?: boolean) => void;
+    renderDetail: (ici: iXElementHolder, plier?: (b: boolean) => void, refreshTitre?: () => void) => void;
+    plie?: boolean;
+    class?: string;
+    fleche?: boolean;
+    flechePosition?: enumXxZoneRepliablePosition;
+    CouleurFleche?: enumXxZoneRepliableCouleurFleche;
+    iconeRepliePerso?: Icone;
+    iconeDepliePerso?: Icone;
+    fullTitleToggle?: boolean;
+    onToggle?: (plie?: boolean, refreshTitre?: () => void) => void;
+}
+
+class xxZoneRepliable implements iXElement {
+
+    private renderTitre: (ici: iXElementHolder, plier: (b: boolean) => void, refreshTitre: () => void,plie:boolean) => void;
+    private renderDetail: (ici: iXElementHolder, plier: (b: boolean) => void, refreshTitre: () => void) => void
+    private stackPrincipal: xxStackPanel = null;
+    private divTitre: xxDockPanelDeprecated = null;
+    private divDetail: xDiv = null;
+    private etatPlie: boolean;
+    private PositionFleche: enumXxZoneRepliablePosition
+    private CouleurFleche: enumXxZoneRepliableCouleurFleche;
+    private IconeRepliePerso: Icone;
+    private IconeDepliePerso: Icone;
+    private fleche: boolean;
+    private cssClasse: string;
+    private noDeleteContentOnRender: boolean = false;
+    private onToggleCallBack: (plie?: boolean, refreshTitre?: () => void) => void;
+    private isRendered: boolean = false;
+
+    private btnSwap: xxBouton;
+
+  
+
+    get y() { return this.stackPrincipal.y; }
+
+    constructor(opt: OptionsZoneRepliable) {
+        let myThis: xxZoneRepliable = this;
+
+        myThis.renderTitre = opt.renderTitre;
+        myThis.renderDetail = opt.renderDetail;
+        myThis.cssClasse = (opt.class != null) ? opt.class : "";
+        myThis.etatPlie = false;
+        myThis.PositionFleche = enumXxZoneRepliablePosition.droite;
+        myThis.CouleurFleche = enumXxZoneRepliableCouleurFleche.Bleu;
+        myThis.IconeDepliePerso = opt.iconeDepliePerso;
+        myThis.IconeRepliePerso = opt.iconeRepliePerso;
+
+        myThis.onToggleCallBack = opt.onToggle;
+        if (myThis.onToggleCallBack == undefined) {
+            myThis.onToggleCallBack = () => { };
+        }
+
+        myThis.fleche = opt.fleche;
+
+        if (myThis.fleche == undefined) { myThis.fleche = true; }
+        if (opt.flechePosition != undefined) { myThis.PositionFleche = opt.flechePosition; }
+        if (opt.CouleurFleche != undefined) { myThis.CouleurFleche = opt.CouleurFleche; }
+        if (opt.plie != undefined) { myThis.etatPlie = opt.plie; }
+        myThis.divTitre = new xxDockPanelDeprecated({ class: "titreZoneRepliable" });
+        if (opt.fullTitleToggle == true) {
+            myThis.divTitre.y.onclick = () => { myThis.toggleDetail(); };
+        }
+        myThis.divDetail = new xDiv({ class: "detailZoneRepliable" });
+        myThis.stackPrincipal = new xxStackPanel({ class: "ZoneRepliable " + myThis.cssClasse });
+
+        myThis.stackPrincipal
+            .append(myThis.divTitre)
+            .append(myThis.divDetail);
+
+        myThis.genTitre();
+        if (!myThis.etatPlie) {
+            myThis.genDetail();
+        }
+        else {
+            cacherxElements(myThis.divDetail, true);
+        }
+    }
+
+
+    private getICone(): Icone {
+        let myThis: xxZoneRepliable = this;
+        
+        switch (myThis.CouleurFleche) {
+            case enumXxZoneRepliableCouleurFleche.Bleu:
+                if (myThis.etatPlie) {
+                    if (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) {
+                        return new IconeCs3i(enumIconeCs3i.action_fleche_simple_gauche);
+                    }
+                    else {
+                        return new IconeCs3i(enumIconeCs3i.action_plier_bleu);
+                    }
+                }
+                else {
+                    return new IconeCs3i(enumIconeCs3i.action_deplier_bleu);
+                }
+                break;
+
+            case enumXxZoneRepliableCouleurFleche.Blanc:
+                if (myThis.etatPlie) {
+                    if (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) {
+                        return new IconeCs3i(enumIconeCs3i.fleche_blanche_gauche);
+                    }
+                    else {
+                        return new IconeCs3i(enumIconeCs3i.action_plier_blanc);
+                    }
+                }
+                else {
+                    return new IconeCs3i(enumIconeCs3i.action_deplier_blanc);
+                }
+                break;
+
+            case enumXxZoneRepliableCouleurFleche.Noir:
+                if (myThis.etatPlie) {
+                    if (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) {
+                        return new IconeCs3i(enumIconeCs3i.fleche_noire_gauche);
+                    }
+                    else {
+                        return new IconeCs3i(enumIconeCs3i.fleche_noire_droite);
+                    }
+                }
+                else {
+                    return new IconeCs3i(enumIconeCs3i.fleche_noire_bas);
+                }
+                break;
+
+            case enumXxZoneRepliableCouleurFleche.Perso:
+                if (myThis.etatPlie) {
+                    return myThis.IconeRepliePerso;
+                }
+                else {
+                    return myThis.IconeDepliePerso;
+                }
+                break;
+        }
+    }
+
+    private genTitre() {
+        let myThis: xxZoneRepliable = this;
+        myThis.btnSwap = new xxBouton({
+            class: "BtnReplier",
+            titleLocalise: "Déplier/Replier",
+            icone: myThis.getICone(),
+            optionsAffichage: {
+                tailleBouton: enumTailleBouton.Fit
+            },
+            click: function (cb)
+            {
+                myThis.toggleDetail();
+                cb();
+            }
+        });
+
+        let zoneTitre: xDiv = new xDiv({ class: 'zoneTitre' });
+        myThis.divTitre.effacer()
+        if (myThis.fleche) {
+            myThis.divTitre.append(myThis.btnSwap, (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) ? DockPosition.droite : DockPosition.gauche, "zoneBtnReplier")
+        }
+        myThis.divTitre.append(zoneTitre, DockPosition.gauche, "zoneTitreContenu");
+        
+        myThis.renderTitre(zoneTitre.asHolder, (b: boolean) => { myThis.plier(b); }, () => { myThis.genTitre(); }, myThis.etatPlie);
+
+    }
+
+    private genDetail()
+    {
+        let myThis: xxZoneRepliable = this;
+
+        if (!myThis.isRendered)
+        {
+            myThis.renderDetail(myThis.divDetail.asHolder, function (b: boolean) { myThis.plier(b); }, function () { myThis.genTitre(); });
+            myThis.isRendered = true;
+        }
+    }
+
+    public forcerRenderDetail()
+    {
+        let myThis: xxZoneRepliable = this;
+        let etatPlie: boolean = myThis.etatPlie;
+        myThis.isRendered = false;
+        myThis.etatPlie = true;
+        myThis.toggleDetail();
+        if (etatPlie)
+            myThis.toggleDetail();
+
+    }
+    public toggleDetail() {
+        let myThis: xxZoneRepliable = this;
+
+        myThis.etatPlie = !myThis.etatPlie;
+
+        myThis.btnSwap.setIcone(myThis.getICone());
+
+        if (myThis.etatPlie) {
+
+            cacherxElements(myThis.divDetail, true);
+        }
+        else {
+            myThis.genDetail();
+            afficherxElements(myThis.divDetail);
+        }
+
+        myThis.divTitre.toggleClass("selected", myThis.etatPlie);
+
+        myThis.onToggleCallBack(myThis.etatPlie, () => { myThis.genTitre(); });
+    }
+
+    public plier(inPlier: boolean) {
+        let myThis: xxZoneRepliable = this;
+
+        if (inPlier != myThis.etatPlie) {
+            myThis.toggleDetail();
+        }
+    }
+
+    public refreshTitre() {
+        let myThis: xxZoneRepliable = this;
+
+        myThis.genTitre();
+    }
+
+    //public async test(): Promise<void> {
+    //    let myThis: xxZoneRepliable = this;
+    //    await myThis.btnSwap.TestClick();
+    //}
+}

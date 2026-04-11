@@ -1,0 +1,209 @@
+﻿.xxNavOngletControl {
+    .xxNavOngletControl_GridItem_ZoneAvantOnglet, .xxNavOngletControl_GridItem_ZoneApresOnglet, .xxNavOngletControl_GridItem_GridOngletPrincipale {
+        border-bottom: 1px solid #aaaaaa;
+    }
+}
+
+.xxNavOngletBar {
+    /* ----- Flag ----- */
+    /* HasContenu */
+    .xxNavOngletBar_ongletItem, .xxNavOngletBar_ongletItem_ToolTip, .xxNavOngletBar_GridTooltip_item, .xxNavOngletBar_barHome, .xxNavOngletBar_GridTooltip_item_home {
+        &.FlagHasContenu {
+            .xxNavOngletBar_FlagHasContenu {
+                display: inline-block;
+            }
+        }
+
+        &.FlagSousOngletHasContenu {
+            .xxNavOngletBar_FlagSousOngletHasContenu {
+                display: inline-block;
+            }
+        }
+    }
+
+    .xxNavOngletBar_FlagHasContenu {
+        display: none;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        border-top: 6px solid #EF8208;
+        border-left: 6px solid transparent;
+    }
+
+    .xxNavOngletBar_FlagSousOngletHasContenu {
+        display: none;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        border-top: 6px solid #aaaaaa;
+        border-left: 6px solid transparent;
+    }
+    /* SousOngletHasContenu */
+    /* ----- Global ----- */
+    .xxNavOngletBar_ongletItem, .xxNavOngletBar_GridTooltip_item_home {
+        padding: 4px 10px;
+        border-bottom: #aaaaaa solid 3px;
+        border-right: #aaaaaa solid 1px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+
+        &.NotSelected:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -15px;
+            right: -15px;
+            box-shadow: inset -50px 0px 20px -25px;
+            color: #fff;
+        }
+    }
+    /* ----- Barre principal ----- */
+    .xxNavOngletBar_GridItem_FlecheReduction {
+
+        .xxNavOngletBar_GridItem_FlecheReduction_ChevronUP svg {
+            transform: rotate(-180deg);
+        }
+
+        svg {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .xxCheckbox.BoutonWapper2-text.xxchecked .tleg .xxBoutonContent {
+            background-color: transparent;
+            border: 0;
+        }
+    }
+
+    .xxNavOngletBar_GridItem_ongletItem {
+        background-color: #fff;
+    }
+    /* ----- Barre Secondaire ----- */
+    .xxNavOngletBar_GridItem_SousOnglet {
+        overflow: hidden;
+
+        .xxNavOngletBar_GridOngletSecondaire {
+            overflow: hidden;
+            height: 24px;
+            transition: height 0.3s ease-in-out; // Anime variable
+        }
+
+        &.xxNavOngletBar_Cacher {
+            .xxNavOngletBar_GridOngletSecondaire {
+                height: 0;
+            }
+        }
+    }
+
+    &.xxNavOngletBar_GridOngletSecondaire {
+        border-left: #aaaaaa solid 10px;
+    }
+
+    .xxNavOngletBar_barHome {
+        padding: 4px 10px;
+        border-bottom: #aaaaaa solid 3px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .xxNavOngletBar_GridItem_barHome {
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -7px;
+            height: 100%;
+            width: 8px;
+            background-color: rgba(15,15,15,.2);
+            clip-path: polygon(0px 0px, 2px 0, 100% 50%, 2px 100%, 0px 100%);
+            z-index: 1;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -5px;
+            height: 100%;
+            width: 5px;
+            clip-path: polygon(0px 0px, 100% 50%, 0px 100%);
+            z-index: 2;
+            border-left-style: solid;
+            border-left-width: 1px;
+        }
+    }
+
+    .xxNavOngletBar_GridItem_ongletItem_firstWithHome .xxNavOngletBar_ongletItem {
+        padding-left: 12px;
+    }
+    /* ----- Tooltip mode ----- */
+    &.xxTooltip_Box {
+        .xxTooltip_Box_Contenu {
+            padding: 0;
+            border-left: 0;
+            border-radius: 0;
+            border: none;
+
+            .xxNavOngletBar_GridTooltip {
+                border-left: #aaaaaa solid 10px;
+            }
+        }
+
+        .xxContainerEvent.xxNavOngletBar_GridTooltip_item {
+            width: 100%;
+        }
+
+        .xxContainerEvent.xxNavOngletBar_GridTooltip_item_home {
+            width: 100%;
+        }
+    }
+
+    .xxTooltip.xxNavOngletBar_ongletItem_ToolTip {
+        border-bottom: #aaaaaa solid 3px;
+        border-right: #aaaaaa solid 1px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+
+        .xxTooltip_Contenu {
+            padding: 4px 10px;
+            position: relative;
+        }
+
+        &.NotSelected {
+            .xxTooltip_Contenu:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -15px;
+                right: -15px;
+                box-shadow: inset -50px 0px 20px -25px;
+                color: #fff;
+            }
+        }
+    }
+
+    .xxNavOngletBar_GridTooltip .xxGridItem {
+        border-right: #aaaaaa solid 1px;
+
+        .xxNavOngletBar_GridTooltip_item {
+            padding: 4px 10px;
+            border-bottom: #aaaaaa solid 3px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+}

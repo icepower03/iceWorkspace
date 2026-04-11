@@ -1,0 +1,35 @@
+﻿@import "couleurs.scss";
+
+.xSeparateurAvecFleche {
+
+    .flecheXSeparateur {
+        width: 0;
+        height: 0;
+
+        &.Droite, &.Gauche {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+        }
+
+        &.Droite {
+            border-left: 10px solid $EmedBorder;
+        }
+
+        &.Gauche {
+            border-right: 10px solid $EmedBorder;
+        }
+
+        &.Haut, &.Bas {
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+
+        &.Haut {
+            border-bottom: 10px solid $EmedBorder;
+        }
+
+        &.Bas {
+            border-top: 10px solid $EmedBorder;
+        }
+    }
+}

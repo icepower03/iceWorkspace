@@ -1,0 +1,48 @@
+﻿/*-----------------------------*/
+/*------ xxMenuContextuel -----*/
+/*-----------------------------*/
+
+.xxMenuContextuel {
+    position: absolute;
+    z-index: 20000;
+    animation-name: fadeIn;
+    animation-duration: 0.05s;
+    animation-timing-function: ease;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid $EmedBorder;
+    box-shadow: 0 3px 5px $EmedBorder;
+    
+    .item_label_jour_heure {
+        padding: 5px;
+        border-bottom: 1px solid $EmedBorder;
+    }
+
+    .xxBoutonContainer {
+        border-bottom: 1px solid $EmedBorder;
+        width: 100%;
+
+        &:hover {
+            background-color: $EmedFondGris;
+        }
+
+        .xxBoutonContent {
+            padding: 0;
+            justify-content: flex-start;
+
+            &.xbtn-pos_left *:nth-child(2), &.xbtn-pos_right *:nth-child(2) {
+                margin-left: 5px;
+            }
+
+            &:hover {
+                box-shadow: none;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .xxGridItem:last-child .xxBoutonContainer {
+        border-bottom: none;
+    }
+}

@@ -1,0 +1,20 @@
+﻿/********************************/
+/***** xxBloqueEcran - SCSS *****/
+/********************************/
+
+.xxBoxerContainer.xxBoxerOn.xxBoxerDisplayStandard.xxBloqueEcran {
+
+    .xxBoxerContent {
+        padding: 10px;
+        justify-content: center;
+        max-width:500px;
+
+        .xxStackPanelMaster {
+            text-align: center;
+        }
+
+        .xxLabel {
+            font-size: 14px;
+        }
+    }
+}

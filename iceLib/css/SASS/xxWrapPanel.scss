@@ -1,0 +1,79 @@
+﻿
+/***********************************/
+/***** xxWrapPanel Emed - SCSS *****/
+/***********************************/
+
+.xxWrapPanelMaster {
+    display: flex;
+
+    .xxWrapPanel {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: inherit;
+
+        .xxWrapPanelItem {
+            display: flex;
+            justify-content: center;
+        }
+
+        &.position_verticale_bas {
+            & > .xxWrapPanelItem {
+                align-items: flex-end;
+            }
+        }
+
+        &.position_verticale_centre {
+            & > .xxWrapPanelItem {
+                align-items: center;
+            }
+        }
+
+        &.position_verticale_haut {
+            & > .xxWrapPanelItem {
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &.alignementDroite {
+        justify-content: flex-end;
+    }
+
+    &.alignementGauche {
+        justify-content: flex-start;
+    }
+
+    &.alignementCentre {
+        justify-content: center;
+    }
+
+    &.no_retour {
+        & > .xxWrapPanel {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &.no_padding {
+        & > .xxWrapPanel {
+            padding: 0;
+        }
+    }
+
+    &.espaceMinimaliste {
+        & > .xxWrapPanel {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &.itemsLargeurEgale {
+        & > .xxWrapPanel .xxWrapPanelItem {
+            flex: 1 0 auto;
+        }
+    }
+
+    &.pleineLargeur{
+        width: 100%;
+    }
+}

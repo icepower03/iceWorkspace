@@ -1,0 +1,17 @@
+{
+  "name": "ice-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "iceLib",
+    "iceSample"
+  ],
+  "scripts": {
+    "build":       "npm run build -w iceLib && npm run build -w iceSample",
+    "build:lib":   "npm run build -w iceLib",
+    "build:css":   "npm run build:css -w iceLib",
+    "build:libs":  "npm run build:libs -w iceLib",
+    "watch:css":   "npm run watch:css -w iceLib",
+    "dev":         "npm run dev -w iceSample"
+  }
+}

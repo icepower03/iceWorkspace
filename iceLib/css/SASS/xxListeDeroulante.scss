@@ -1,0 +1,348 @@
+﻿/****************************************/
+/***** xxListDeroulante Emed - SCSS *****/
+/****************************************/
+
+@import "couleurs.scss";
+@import "divers.scss";
+
+.xxListeDeroulanteZoneBoxer {
+    &.xxpage_body {
+        background-color: $EmedFondGrisFonce;
+    }
+
+    .xxListItem.selected {
+        .xxbouton {
+            background-color: $EmedSelected;
+        }
+    }
+
+    .xxGridItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.xxListeDeroulante {
+
+    &.t20 {
+        .xlsd-valeurSelected > .xxbouton {
+            border-radius: 5px;
+        }
+    }
+
+    &.tleg {
+        .xxListItem:hover {
+            cursor: pointer;
+            background-color: $EmedFondGris;
+
+            .xxbouton {
+                background-color: $EmedFondGris;
+            }
+        }
+    }
+
+    .xlsd-titre_mobile {
+        display: none;
+        justify-content: center;
+
+        &.tleg {
+            color: $EmedTexteBleu;
+            padding: 10px 0;
+            align-items: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        &.t20 {
+            color: $coul-t20-user;
+            padding: 10px 15px 0px 50px;
+            align-items: flex-end;
+            font-size: 15px;
+            font-weight: 500;
+            box-sizing: border-box;
+            border-bottom: 1px solid $coul-t20-user;
+            z-index: 2;
+            min-height: 50px;
+
+            .xxLabelContainerTitre {
+                padding-bottom: 10px;
+                line-height: 1em;
+                display: flex;
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    }
+
+    .xlsd-align_gauche * {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .xxbouton.sensInverse.espaceMinimaliste span.iconeCs3i {
+        padding-right: 22px;
+        background-position: calc(100% - 5px) 50%;
+    }
+
+    .xxTooltip_Contenu .itemInListe.tleg {
+        border-radius: 5px;
+        border: 1px solid $EmedBorder;
+    }
+
+    &.xxTooltip_Box {
+        .xxTooltip_Box_Contenu {
+            padding: 0px;
+            overflow-y: hidden;
+        }
+
+        .xxListeDeroulanteStdListeRelativeOrigin {
+            display: flex;
+            height: 100%;
+            overflow-y: hidden;
+        }
+
+        .xxListeDeroulanteStdListeHoster {
+            display: flex;
+            height: 100%;
+            overflow-y: hidden;
+            flex-direction: column;
+
+            .xxStackPanelMaster, .xxListeDeroulanteStdListeRelativeOrigin {
+                display: flex;
+                height: 100%;
+            }
+
+            .xxListeDeroulanteStdListeRelativeOrigin {
+                overflow-y: hidden;
+            }
+
+            .xxStackPanelMaster {
+                overflow-y: auto;
+                @include scrollbarFine;
+            }
+
+            .xxStackPanel {
+                width: 100%;
+                max-height: 300px;
+            }
+
+            .xxListItem > .xxbouton span {
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .xxStackPanelItem {
+                border-bottom: 1px solid #EEE;
+
+                .xxbouton {
+                    width: 100%;
+                    border: none;
+                    margin: 0;
+
+                    span.iconeCs3i {
+                        white-space: nowrap;
+                        font-weight: normal;
+                        color: black;
+                    }
+                }
+
+                .xxBoutonContainer {
+                    width: 100%;
+
+                    .xxBoutonContent {
+                        border: none;
+                        background: none;
+                        margin: 0;
+                        width: 100%;
+                        justify-content: flex-start;
+                        border-radius: 0;
+
+                        &:hover {
+                            box-shadow: none;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            &.listeAvecScroll {
+                .xxStackPanel {
+                    overflow-x: hidden;
+
+                    .xxbouton {
+                        margin-right: 20px;
+
+                        &:not(*:root) {
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }
+
+            .xxListeDeroulanteEndList {
+                background: $EmedFondGris;
+
+                &.t20 {
+                    background: none;
+                    margin-top: 20px;
+                }
+
+                .xxbouton, .xxBoutonContainer, .xxBoutonContainer .xxBoutonContent {
+                    width: calc(100% - 10px);
+
+                    &.t20 {
+                        width: 100%;
+                        margin: 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .Boutonu {
+                background: white !important;
+
+                .xxbouton:first-child {
+                    border-bottom: 1px solid #eee;
+                }
+
+                .btnFinDeListe {
+                    margin: 4px;
+                    border: 1px solid $EmedBorder;
+                    box-sizing: border-box;
+                    width: calc(100% - 8px);
+                    display: flex;
+
+                    span {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    &.retourALaLigne {
+        .xxListeDeroulanteStdListeHoster .xxStackPanelItem .xxbouton span.iconeCs3i {
+            white-space: normal;
+        }
+    }
+}
+
+@media #{$MobileTablette} {
+    .t20.xxListeDeroulante:not(.xttip-noresponsive) {
+        > .xxContainerEvent.xxTooltip_Box_Event {
+            top: unset !important;
+            left: unset !important;
+            animation: none;
+        }
+
+        .xxListeDeroulanteStdListeRelativeOrigin {
+            position: fixed;
+            bottom: calc(-50vh - 20px); // hauteur max du div + 20px pour le box-shadow
+            opacity: 0;
+            left: 20px;
+            width: calc(100vw - 40px);
+            height: auto;
+            max-height: 50vh;
+            display: flex;
+            z-index: 10000;
+            flex-direction: column;
+            background: white;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 0 20px rgba(0,0,0,.2);
+            padding: 20px;
+            box-sizing: border-box;
+            transition: bottom $vitesseAnimationMoyenne $easingAnimationChillax, opacity $vitesseAnimationMoyenne $easingAnimationChillax;
+
+
+            &.visible {
+                bottom: 0;
+                opacity: 1;
+            }
+
+
+            .xlsd-titre_mobile {
+                display: flex;
+                padding: 0;
+                min-height: unset;
+                border: none;
+                font-size: 28px;
+                font-weight: 700;
+                align-items: center;
+                margin-bottom: 20px;
+
+                .xxLabelContainerTitre {
+                    padding: 0;
+                    justify-content: left;
+                }
+            }
+
+            .xxListeDeroulanteStdListeHoster {
+                overflow: hidden;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                flex: 1;
+                max-height: none;
+                z-index: 1;
+
+                .xxStackPanelMaster {
+                    height: 100%;
+                    overflow: auto;
+                }
+
+                .xxStackPanel {
+                    max-height: 100vh;
+                    height: 100%;
+                    box-sizing: border-box;
+                    border: none;
+                }
+
+                .xxStackPanelItem {
+                    border-bottom: none;
+                    margin-bottom: 2px;
+
+                    .xxListItem {
+
+                        .xxbouton, .xxBoutonContent {
+                            position: relative;
+                            text-align: left;
+                            background: $coul-t20-fondgris;
+                            padding: 0;
+                            border-radius: 5px;
+
+                            span, span.iconeCs3i {
+                                white-space: normal;
+                                padding: 15px;
+                                font-size: 15px;
+                                height: auto;
+                                font-weight: 500;
+                                color: $coul-t20-texte;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.xxbouton.xDeprecated.xxAutoComplete_bouton {
+    &:hover {
+        border-radius: 0;
+    }
+}
+
+.xxbouton.xDeprecated.xxListChoix_item {
+    &:hover {
+        border-radius: 0;
+    }
+}
+

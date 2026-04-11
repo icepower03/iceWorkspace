@@ -1,0 +1,200 @@
+﻿/***************************************/
+/************* xDatePicker *************/
+/***************************************/
+
+.xDatePicker {
+    background: white;
+    width: 210px; /*safety IE*/
+    width: min-content;
+    justify-content: center;
+    border: 1px solid #aaa;
+    padding: 3px;
+    border-radius: 4px;
+
+    &.t20 {
+        background: $coul-t20-bgtheme;
+    }
+
+
+    .enTeteDatePicker {
+        justify-content: center;
+        background: #5692ae;
+        padding: 4px 2px;
+        border-radius: 4px 4px 0px 0px;
+        box-sizing: border-box;
+    }
+
+    .WPenTeteDatePicker {
+        width: 100%;
+        padding: 0 2px;
+        margin: 0;
+        box-sizing: border-box;
+
+        .xxWrapPanelItem:nth-child(2) {
+            margin-left: 2px;
+        }
+
+        .xxWrapPanelItem:nth-last-child(2) {
+            flex: 1;
+            justify-content: flex-end;
+        }
+    }
+
+    .labelMoisAnnee {
+        color: white;
+        padding-left: 3px;
+        font-weight: bold;
+    }
+
+    .xxbouton.espaceMinimaliste {
+        span.iconeCs3i.iconeCs3i_aucun {
+            padding: 2px 4px;
+        }
+    }
+
+    .labelJour {
+        justify-self: center;
+
+        .xxLabel {
+            font-weight: bold;
+            margin: 3px 0;
+            display: flex;
+        }
+
+        &.t20 {
+            color: $coul-t20-texte;
+        }
+    }
+
+    .NumSemaine {
+        align-self: center;
+        justify-self: center;
+    }
+
+    .BtnJours {
+        &.Defaut {
+            //background-color: #ffd800; /* Couleur de test */
+            .xxBoutonContent {
+                border: 1px solid #fcefa1;
+                background: #FFF;
+            }
+        }
+
+        &.Selected {
+            .xxBoutonContent {
+                background: $EmedSelected;
+                border-color: $EmedSelected;
+            }
+        }
+
+        .xxBoutonContent {
+            width: 100%;
+            margin: 0;
+            border: 1px solid #d3d3d3;
+            background: #eee;
+            box-sizing: border-box;
+            border-radius: 0;
+
+            &.t20 {
+                background: $coul-t20-bgtheme;
+                color: $coul-t20-texte;
+                border: 1px solid $coul-t20-border;
+            }
+        }
+    }
+
+    .Btnfooter {
+        width: 100%;
+    }
+
+    .sepatateur {
+        border-top: 1px solid #aaaaaa;
+        margin: 10px 0 5px;
+    }
+
+    .xxGridItem.Selected {
+        background-color: transparent;
+    }
+}
+
+
+
+.ToolTipDatePicker .xxTooltip_Box_Contenu {
+    padding: 0;
+    border: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.16);
+}
+
+
+@media #{$MobileTablette} {
+
+    .t20{
+
+        .ToolTipDatePicker:not(.xttip-noresponsive) .xxGridMaster {
+            grid-template-columns: unset !important;
+            width: 100%;
+        }
+
+        .ToolTipDatePicker:not(.xttip-noresponsive), .ToolTipTimePicker:not(.xttip-noresponsive) {
+            background: url("images/xxRouteContainer/Fermer.svg?embed") no-repeat top right/24px 24px;
+
+            .xxTooltip_Box_Event {
+                width: 100vw;
+                height: 100vh;
+                left: 0 !important;
+                top: 0 !important;
+                margin-top: 45px;
+
+                &:after {
+                    display: none;
+                }
+
+                .xxTooltip_Box_Contenu {
+                    background: white;
+                    box-shadow: 0 1000px 1000px 1000px white;
+                    border: none;
+                    height: 100% !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+
+                    .xxGridMaster {
+                        width: 100%;
+                        grid-auto-columns: 1fr;
+                        box-sizing: border-box;
+                        /*Boutons jours*/
+                        .xxbouton.espaceMinimaliste span.iconeCs3i.iconeCs3i_aucun {
+                            height: 46px;
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+                        }
+                        /*Boutons switch mois*/
+                        .xxbouton.espaceMinimaliste.habillage_modeMiniSansTexte span.iconeCs3i {
+                            height: 40px;
+                            width: 40px;
+                        }
+                        /*boutons liste*/
+                        .xxListeDeroulante {
+                            margin-left: 5px;
+
+                            .xxbouton.habillage_modeStd.sensInverse {
+                                border-top: 0;
+                                border-right: 0;
+                                border-left: 0;
+                                border-bottom: 2px solid white;
+                                border-radius: 3px;
+
+                                span.iconeCs3i {
+                                    padding: 15px 35px 15px 10px;
+                                    display: flex;
+                                    align-items: center;
+                                    background-position: calc(100% - 10px) 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

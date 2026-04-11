@@ -1,0 +1,46 @@
+﻿/************************************/
+/***** xxIndicateur Emed - SCSS *****/
+/************************************/
+@import "couleurs.scss";
+
+.xxIndicateur {
+    &.xxIndicateurContenu {
+        position: relative;
+        display: inline-block;
+    }
+
+    .xxIndicateurNotifStack {
+        position: absolute;
+        right: 0px;
+        top: -3px;
+        width: 15px;
+
+        .xxIndicateurNotif {
+            width: 15px;
+            height: 15px;
+            margin-top: 2px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 0 1px;
+
+            &.OverNotif {
+                width: 18px;
+
+                .xxLabel {
+                    font-size: 9px;
+                }
+            }
+
+            .xxLabel {
+                color: #fff !important;
+            }
+
+            @each $couleur, $codecouleur in $couleurSvg {
+                &.emed_#{$couleur} {
+                    background-color: $codecouleur;
+                }
+            }
+
+        }
+    }
+}

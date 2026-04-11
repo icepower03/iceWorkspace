@@ -1,0 +1,174 @@
+﻿/***********************/
+/****** xxDialog  ******/
+/***********************/
+
+$couleurInformation: rgb(28,119,156);
+$couleurDebug: rgb(31,35,54);
+$couleurErreur: rgb(193,14,14);
+$couleurValider: rgb(32,155,128);
+$couleurAlerte: rgb(239,130,8);
+
+
+.stackPanelxxDialog {
+    position: absolute;
+    z-index: 2000000000; //volontairement très haut pour toujours être au dessus de tout le reste
+    bottom: 20px;
+    right: 20px;
+
+    &.xxdg_position-bas {
+        bottom: 20px;
+        right: unset;
+        left: 50vw;
+        transform: translate(-50%);
+    }
+
+    &.xxdg_position-centre {
+        bottom: unset;
+        top: 50vh;
+        right: unset;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+    }
+
+    &.xxdg_position-haut_droite {
+        bottom: unset;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.xDivxxDialog {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    z-index: 2100000000; //volontairement très haut pour toujours être au dessus de tout le reste
+
+    /*&.dialogMobile {
+        width: 80vw;
+    }*/
+}
+
+.xxDialog {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Roboto', Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+
+    &.typeXxDialog_information, &.typeXxDialog_debug {
+        background-color: rgba($couleurInformation,.9);
+
+        .boutonPrimaire {
+            color: rgba($couleurInformation, 1);
+        }
+
+        .boutonSecondaire .xxBoutonContent {
+            background-color: rgba($couleurInformation, 1);
+        }
+    }
+
+    &.typeXxDialog_erreur {
+        background-color: rgba($couleurErreur,.9);
+
+        .boutonPrimaire {
+            color: rgba($couleurErreur, 1);
+        }
+
+        .boutonSecondaire .xxBoutonContent {
+            background-color: rgba($couleurErreur, 1);
+        }
+    }
+
+    &.typeXxDialog_validation {
+        background-color: rgba($couleurValider,.9);
+
+        .boutonPrimaire {
+            color: rgba($couleurValider, 1);
+        }
+
+        .boutonSecondaire .xxBoutonContent {
+            background-color: rgba($couleurValider, 1);
+        }
+    }
+
+    &.typeXxDialog_alerte {
+        background-color: rgba($couleurAlerte,.9);
+
+        .boutonPrimaire {
+            color: rgba($couleurAlerte, 1);
+        }
+
+        .boutonSecondaire .xxBoutonContent {
+            background-color: rgba($couleurAlerte, 1);
+        }
+    }
+
+    .xxLabel.typeLabel_titre {
+        font-size: 24px;
+        color: white;
+        padding: 0;
+    }
+
+    .gi_label {
+        max-width: 25vw;
+    }
+
+    .gi_infoPatient {
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .xSVG {
+            .xsvg-elem_filled {
+                fill: white;
+            }
+
+            .xsvg-elem_stroked {
+                stroke: white;
+            }
+        }
+    }
+
+    .boutonPrimaire, .boutonSecondaire {
+        font-size: 17px;
+        font-weight: bold;
+
+        .xxBoutonContent {
+            padding: 6px 10px;
+            border: none;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .boutonSecondaire {
+        .xxBoutonContent {
+            border: 2px solid white;
+        }
+    }
+
+    .xxpbar-bar_container {
+        background-color: transparent;
+    }
+
+    .xxpbar-bar {
+        background-color: rgb(255,255,255,.3);
+
+        &:before {
+            content: none;
+        }
+    }
+}

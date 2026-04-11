@@ -1,0 +1,55 @@
+﻿/******************************/
+/***** ProgressBar - SCSS *****/
+/******************************/
+
+@import "couleurs.scss";
+
+.xxProgressBar {
+    .xxpbar-label {
+        margin-bottom: 5px;
+    }
+
+    .xxpbar-bar_container {
+        &, & .xxpbar-bar {
+            border-radius: 10px;
+        }
+
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    .xxpbar-bar {
+        transition: all $vitesseAnimationLente $easingAnimationZinzin;
+        background-color: $coul-t20-rouge;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            animation: translote 1.5s cubic-bezier(.86,0,.07,1) infinite, booty 1.5s cubic-bezier(.87,0,.75,.97) infinite;
+            background: rgba(255,255,255,0.5);
+        }
+    }
+}
+
+@keyframes translote {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes booty {
+    from,to {
+        width: 0%;
+    }
+
+    50% {
+        width: 50%;
+    }
+}
+

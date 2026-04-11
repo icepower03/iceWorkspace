@@ -1,0 +1,85 @@
+﻿/******************************/
+/***** xxMenu Emed - SCSS *****/
+/******************************/
+
+.xxMenu_global {
+    .xxMenu_recherche {
+        display: flex;
+        padding: 10px;
+
+        input {
+            flex: 1 1 auto;
+            height: 30px;
+        }
+
+        #txtRecherche {
+            border-radius: 3px 0 0 0;
+        }
+
+        .boutonFiltre {
+            .xxBoutonContent {
+                margin: 0 0 1px;
+                padding: 5px 7px;
+                border-left: none;
+                border-radius: 0;
+            }
+        }
+
+        .boutonAnnulerFiltre {
+            .xxBoutonContent {
+                margin: 0 0 1px;
+                padding: 5px 7px;
+                border-left: none;
+                border-radius: 0 3px 3px 0;
+            }
+        }
+    }
+
+    .xxMenu_itemGroupe {
+        border-top: 1px solid $EmedBorder;
+        border-bottom: 1px solid $EmedBorder;
+        margin: -1px 0 0 0;
+        width: 100%;
+
+        &.xxBoutonContainer {
+            display: block;
+            padding: 0;
+            font-weight: bold;
+            text-align: left;
+            margin: -1px 0 0 0;
+
+            .xxBoutonContent {
+                width: 100%;
+                border: none;
+                background-color: $EmedFondGris;
+                margin: 0;
+                justify-content: left;
+            }
+        }
+    }
+
+    .xxMenu_itemListElement {
+        &.xxBoutonContainer {
+            text-align: left;
+            padding: 0;
+            display: block;
+            margin: 0;
+            border: none;
+
+            .xxBoutonContent {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $BorderLight;
+                margin: 0;
+                justify-content: left;
+            }
+        }
+
+        &:last-child {
+            .xxBoutonContent {
+                border: none;
+            }
+        }
+    }
+}
+

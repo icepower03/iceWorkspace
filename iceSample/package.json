@@ -1,0 +1,15 @@
+{
+  "name": "icesample",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"tsc -p tsconfig.json --watch --preserveWatchOutput\" \"vite\"",
+    "build": "tsc -p tsconfig.json",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "~4.3.2",
+    "vite": "^8.0.8"
+  }
+}

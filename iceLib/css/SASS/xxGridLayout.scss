@@ -1,0 +1,78 @@
+﻿/***********************************/
+/*********** xxGRIDLAYOUT **********/
+/***********************************/
+
+@import "medias.scss";
+
+/*Structure Grid Layout*/
+.xxGridLayout {
+    margin: 20px;
+
+    &.GL_fluid {
+        width: calc(100% - 40px);
+
+        &.GL_NoMargin {
+            width: 100%;
+        }
+    }
+
+    &.GL_NoMargin {
+        margin: 0;
+    }
+
+    &.GL_Page {
+    }
+}
+
+/*Grid items*/
+.xxGridLayoutItem {
+    /*Alignement horizontal*/
+    .GLI_halign_ {
+        &gauche         {justify-self: flex-start;}
+        &centre         {justify-self: center;}
+        &droite         {justify-self: flex-end;}
+        &fullHauteur    {justify-self: stretch;}
+    }
+    /*Alignement vertical*/
+    .GLI_valign_ {
+        &haut           {align-self: flex-start;}
+        &centre         {align-self: center;}
+        &bas            {align-self: flex-end;}
+        &fullHauteur    {align-self: stretch;}
+    }
+    /*Displays responsives*/
+    //Création de toutes les classes des xxGridLayoutItem liées à un device
+    @mixin displays($device) {
+        @for $i from 1 through 12 { //d'1 colonne à 12...
+            &.col-#{$device}-#{$i} { //ex : col-pc-5
+                grid-column-end: span #{$i};
+            }
+
+            &.row-#{$device}-#{$i} { //ex : row-tab-8
+                grid-row-end: span #{$i};
+            }
+
+            &.colstart-#{$device}-#{$i} { //ex : colstart-mob-2
+                grid-column-start: #{$i};
+            }
+        }
+        &.GLI_hidden_#{$device} { //Caché sur ce device
+            display:none;
+        }
+    }
+
+    @media #{$TabletteDesktop} {
+        @include displays(pc);
+    }
+    //Si spécifié, le format tablette devient différent du pc
+    @media #{$Tablette} {
+        @include displays(tab);
+    }
+
+    @media #{$Mobile} {
+        /*Par défaut sur mobile : toute la largeur*/
+        grid-column-end: span 12;
+        /* Autre cas mobile*/
+        @include displays(mob);
+    }
+}

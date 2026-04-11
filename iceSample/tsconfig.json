@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "inlineSourceMap": true,
+    "removeComments": false,
+    "declaration": false,
+    "lib": ["ES2016", "DOM", "DOM.Iterable"]
+  },
+
+  "include": [
+    "../iceLib/d.ts/jquery.d.ts",
+    "../iceLib/private_d.ts/alertify.d.ts",
+    "../iceLib/jsBin/x.d.ts",
+    "src/**/*.ts"
+  ]
+}

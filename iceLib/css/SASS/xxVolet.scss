@@ -1,0 +1,172 @@
+﻿/*********************************/
+/*****  xxVolet Emed - SCSS  *****/
+/*********************************/
+
+.xxVolet {
+    background-color: whitesmoke;
+    z-index: 5000;
+    min-height: 150px;
+    min-width: 200px;
+    position: absolute;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
+
+    &.Direction_haut {
+        top: 55px;
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+
+        &.invisible {
+            transform: translateY(calc(-100% - 10px));
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+
+        &.visible {
+            transform: translateY(0);
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+    }
+
+    &.Direction_bas {
+        bottom: 0px;
+        box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.25);
+
+        &.invisible {
+            transform: translateY(calc(100% + 10px));
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+
+        &.visible {
+            transform: translateY(0);
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+    }
+
+    &.Direction_gauche {
+        left: 0px;
+
+        &.invisible {
+            transform: translateX(calc(-100% - 10px));
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+
+        &.visible {
+            transform: translateX(0);
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+    }
+
+    &.Direction_droite {
+        right: 0px;
+
+        &.invisible {
+            transform: translateX(calc(100% + 10px));
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+
+        &.visible {
+            transform: translateX(0);
+            transition: transform $vitesseAnimationMoyenne $easingAnimationZinzin;
+        }
+    }
+
+    &.Direction_droite, &.Direction_gauche {
+        height: 100%;
+        width: 300px;
+        top: 55px;
+
+        .xxVoletContent {
+            height: calc(100% - 85px);
+        }
+    }
+
+    &.Direction_haut, &.Direction_bas {
+        width: 100%;
+        height: 200px;
+        right: 0px;
+
+        .xxVoletContent {
+            height: calc(100% - 30px);
+            padding-bottom: 20px;
+
+            .ContenuVoletPatient {
+                height: 100%;
+
+                .SPContenuVoletPatient {
+                    flex-wrap: wrap;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    width: max-content;
+
+                    & > .xxStackPanelItem {
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    #BoutonFermer {
+        position: absolute;
+        right: 0;
+    }
+
+    .BoutonPosition {
+        position: absolute;
+        left: 0;
+    }
+
+    .xxVoletContent {
+        position: relative;
+        top: 0px;
+        padding: 0 10px 10px;
+        overflow-y: auto;
+        width: 100%;
+        box-sizing: border-box;
+
+        .xxWrapPanel {
+            width: 100%;
+        }
+    }
+}
+
+//animations volet
+
+@keyframes animVoletBas {
+    from {
+        transform: translateY(calc(100% + 10px));
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animVoletHaut {
+    from {
+        transform: translateY(calc(-100% - 10px));
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animVoletDroite {
+    from {
+        transform: translateX(calc(100% + 10px));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animVoletGauche {
+    from {
+        transform: translateX(calc(-100% - 10px));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
