@@ -1,4 +1,11 @@
-﻿enum enumTypeOuvertureHref
+﻿import { xElement } from '../../xElement';
+import { OptionsHtml, optionsAffichage, enumCouleur } from '../xBase';
+import { xLString } from '../xLString';
+import { xStyle } from './xStyle';
+declare const xxBoxer: any;
+declare const xIFrame: any;
+
+export enum enumTypeOuvertureHref
 {
     NouvelleFenetre,
     MemeEmplacement,
@@ -6,7 +13,7 @@
     Boxer
 }
 
-interface OptionsHref extends OptionsHtml
+export interface OptionsHref extends OptionsHtml
 {
     textVariable?: string|number;
     textLocalise?: string;
@@ -15,13 +22,13 @@ interface OptionsHref extends OptionsHtml
     optionsAffichage?: optionsAffichagexHref;
 }
 
-interface optionsAffichagexHref extends optionsAffichage
+export interface optionsAffichagexHref extends optionsAffichage
 {
     couleur?: enumCouleur;
     retourALaLigne?: boolean;
 }
 
-class xHref extends xElement
+export class xHref extends xElement
 {
     constructor(options?: OptionsHref)
     {
@@ -80,7 +87,7 @@ class xHref extends xElement
             this.y.setAttribute('href', '#');
             this.y.onclick= ()=>
             {
-                let boxer: xxBoxer = new xxBoxer(
+                let boxer: any = new xxBoxer(
                     {
                         initContent: new xIFrame({ src: options.url })
                     });

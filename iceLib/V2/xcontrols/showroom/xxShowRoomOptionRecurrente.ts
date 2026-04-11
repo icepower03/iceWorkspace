@@ -1,4 +1,5 @@
-﻿class xxShowRoomOptionRecurrente
+﻿// @ts-nocheck
+export class xxShowRoomOptionRecurrente
 {
     public static get_OptionsHtml(addon?: IxxShowRoomContainerDefineOption[], ValeurDefaut?: OptionsHtml): IxxShowRoomContainerDefineOption[]
     {

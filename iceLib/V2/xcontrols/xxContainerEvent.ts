@@ -1,4 +1,9 @@
-﻿interface OptionsContainerEvent {
+﻿import { iXElement, iXElementHolder, iXElementHolderEnable, optionsAffichage } from '../xBase';
+import { xLString } from '../xLString';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+
+export interface OptionsContainerEvent {
     id?: string;
     class?: string;
     initContent?: iXElement;
@@ -19,7 +24,7 @@
     withDelaiPourMouseEnterMs?: number;
 }
 
-class xxContainerEvent implements iXElement, iXElementHolderEnable {
+export class xxContainerEvent implements iXElement, iXElementHolderEnable {
     private static CLASS_CLICK_EN_COURS: string = "clicEnCours";
     private static CLASS_DISABLED: string = "xxCtnEvent-disabled";
     private divForHolder: xDiv;

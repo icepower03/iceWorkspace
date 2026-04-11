@@ -1,4 +1,7 @@
-﻿interface OptionZoneModulable {
+﻿import { enumTypeOrientation, iXElement, iXElementHolder } from '../xBase';
+import { xDiv } from './xDiv';
+
+interface OptionZoneModulable {
     id?: string,
     class?: string,
     typeOrientation?: enumTypeOrientation,
@@ -158,7 +161,7 @@ class xxZoneModulable implements iXElement {
 
         //init de la zone centrale
         mythis.centralZone = new xDiv({ class: "xxZoneModulable_zone_centrale " + mythis.orientation });
-        mythis.centralZone.y.addEventListener('mousedown', ev => { mythis.attacherSouris(ev) })
+        mythis.centralZone.y.addEventListener('mousedown', (ev: MouseEvent) => { mythis.attacherSouris(ev) })
 
         //creation du cache
         mythis.cache = new xDiv({ class: "xxZoneModulable_cache_" + mythis.orientation });

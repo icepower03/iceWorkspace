@@ -1,10 +1,14 @@
-﻿interface OptionsSpan extends OptionsHtml {
+﻿import { xElement } from '../../xElement';
+import { OptionsHtml } from '../xBase';
+import { xLString } from '../xLString';
+
+export interface OptionsSpan extends OptionsHtml {
     textVariable?: string;
     textLocalise?: string;
     title?: string;
 }
 
-class xSpan extends xElement {
+export class xSpan extends xElement {
     constructor(options?: OptionsSpan) {
         let texteFinal: string;
         if (options != undefined) {

@@ -1,4 +1,9 @@
-﻿enum enumPositionVolet {
+﻿import { iXElement } from '../xBase';
+import { IconeCs3i, IconeMiniCs3i, enumIconeCs3i } from '../xIcones';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxToolTipBouton } from './xxToolTip';
+
+enum enumPositionVolet {
     haut,
     bas,
     gauche,
@@ -42,7 +47,7 @@ class xxVolet implements iXElement {
             },
             icone: new IconeCs3i(enumIconeCs3i.action_annuler),
             titleLocalise: "Fermer",
-            click: function (cb) {
+            click: function (cb: any) {
                 myThis.fermer();
                 cb();
             }
@@ -61,7 +66,7 @@ class xxVolet implements iXElement {
                         optionsAffichage: {
                             tailleBouton: enumTailleBouton.Fit
                         },
-                        click: function (cb) {
+                        click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.gauche);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
                             myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_gauche));
@@ -74,7 +79,7 @@ class xxVolet implements iXElement {
                         optionsAffichage: {
                             tailleBouton: enumTailleBouton.Fit
                         },
-                        click: function (cb) {
+                        click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.haut);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
                             myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_haut));
@@ -87,7 +92,7 @@ class xxVolet implements iXElement {
                         optionsAffichage: {
                             tailleBouton: enumTailleBouton.Fit
                         },
-                        click: function (cb) {
+                        click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.droite);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
                             myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_droite));
@@ -100,7 +105,7 @@ class xxVolet implements iXElement {
                         optionsAffichage: {
                             tailleBouton: enumTailleBouton.Fit
                         },
-                        click: function (cb) {
+                        click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.bas);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
                             myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_bas));

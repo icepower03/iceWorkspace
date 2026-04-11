@@ -1,7 +1,7 @@
 ﻿
 
 
-class ObservableCollection<T>
+export class ObservableCollection<T>
 {
     private donnees: T[];
 

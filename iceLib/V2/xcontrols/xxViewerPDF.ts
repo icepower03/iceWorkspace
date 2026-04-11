@@ -1,4 +1,12 @@
-﻿interface OptionViewerPDF
+﻿import { xDiv } from './xDiv';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xOutils } from '../../xOutils';
+import { xClass } from '../xBase';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { IconeCs3i, enumIconeCs3i } from '../xIcones';
+
+interface OptionViewerPDF
 {
     WithBoutonTelecharger?: boolean;
     AffichagePageWrapper?: boolean;
@@ -84,7 +92,7 @@ class xxViewerPDF implements iXElement
             }
         }
 
-        let path: string = xOutils.convertDevUrlToRelativeUrl(xConfigActive.jsDependencyPath);
+        let path: string = xOutils.convertDevUrlToRelativeUrl(xClass.config.jsDependencyPath);
         pdfjsLib.GlobalWorkerOptions.workerSrc = path + 'pdf.worker.js';
     }
 

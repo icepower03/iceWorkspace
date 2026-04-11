@@ -1,4 +1,8 @@
 ﻿
+import { iXElement, optionsAffichage, Container } from '../xBase';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+
 enum enumAlignementVerticalWrapPanel { haut, centre, bas }
 enum enumAlignementHorizontalWrapPanel { Gauche, Centre, Droite }
 

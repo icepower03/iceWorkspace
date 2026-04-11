@@ -1,7 +1,7 @@
 ﻿
+import { xElement } from '../../xElement';
 
-
-class xBr extends xElement {
+export class xBr extends xElement {
 
     constructor() {
         super("br", {});

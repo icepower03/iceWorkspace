@@ -1,8 +1,10 @@
 ﻿
+import { xCache } from './xCache';
+
 /**
  * Classe pour gérer la localisation des strings
  */
-class xLString {
+export class xLString {
 
     private _text: string;
     private code: string;
@@ -71,7 +73,7 @@ class xLString {
                     if (retour === undefined) 
                     {
 
-                        xCache.dicoRessources[myThis.code] = null;
+                        (xCache.dicoRessources as any)[myThis.code] = null;
                         myThis._text = trimstart + myThis.code + trimend;
                         try
                         {

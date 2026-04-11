@@ -1,11 +1,18 @@
 {
   "name": "icelib",
   "version": "1.0.0",
-  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/lib/iceLib.mjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "scripts": {
     "build:css": "node scripts/build-css.mjs",
     "build:libs": "node scripts/concat-libs.mjs",
-    "build": "npm run build:libs && npm run build:css",
+    "build:ts": "tsc -p tsconfig.esm.json",
+    "build:vite": "vite build -c vite.config.lib.ts",
+    "build": "npm run build:vite && npm run build:libs && npm run build:css",
     "watch:css": "node scripts/watch-css.mjs"
   },
   "devDependencies": {

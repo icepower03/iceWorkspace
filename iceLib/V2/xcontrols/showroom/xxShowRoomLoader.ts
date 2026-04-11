@@ -1,4 +1,16 @@
-﻿class xxShowRoomLoader
+﻿// @ts-nocheck
+import { xxShowRoomContainer } from './xxShowRoomContainer';
+import { xxLabel } from '../xxLabel';
+import { xxBouton } from '../xxBouton';
+import { xBr } from '../xBr';
+import { xDiv } from '../xDiv';
+import { xSpan } from '../xSpan';
+import { xLString } from '../../xLString';
+import { xxShowRoomSample } from './xxShowRoomSample';
+import { xxShowRoomImageTooltipPreview } from './xxShowRoomImageTooltipPreview';
+import { xxShowRoomOptionRecurrente } from './xxShowRoomOptionRecurrente';
+
+export class xxShowRoomLoader
 {
     public static XElement_Load() : void
     {

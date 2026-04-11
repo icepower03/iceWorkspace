@@ -1,14 +1,18 @@
 ﻿
+import { xClass, Dictionnaire } from './xBase';
+import { xOutils } from '../xOutils';
+declare function xRequire(url: string): any;
+declare const etype_messagebox: any;
 
-interface iCacheGeneric<T> {
+export interface iCacheGeneric<T> {
     dicoNePasInitiliaser?: T,//pour faire le cache pour une autre méthode refaire en dessous
     promesseNePasInitiliaser?: Promise<T>,
     nomVariableUnique: string,
-        /*méthode retournant la promesse capable de charger les données depuis le serveur */chargeurSimple: (p: xxPageWrapper) => Promise<T>,
+        /*méthode retournant la promesse capable de charger les données depuis le serveur */chargeurSimple: (p: any) => Promise<T>,
 
 }
 
-class xCache {
+export class xCache {
 
 
     //moyen d'écrire et lire les données de cache avec une pérennité correspondant à une session d'emed
@@ -57,10 +61,10 @@ class xCache {
     }
 
     public static genericCache<T>(/* nom unique à donner pour pouvoir stocker les données du cache*/nomVar: string,
-        /*méthode retournant la promesse capable de charger les données depuis le serveur */chargeur: (page: xxPageWrapper) => Promise<T>,
+        /*méthode retournant la promesse capable de charger les données depuis le serveur */chargeur: (page: any) => Promise<T>,
         /*méthode capable de retourner les données depuis une variable locale */getterLocal: () => T,
         /*méthode capable d'enregistrer les données dans une variable locale */setterLocal: (t: T) => void,
-        inPage: xxPageWrapper): Promise<T> {
+        inPage: any): Promise<T> {
         let myThis: typeof xCache = this;
         let nomVarPromesse = 'genericCache_' + nomVar;
         if (myThis.getVariable(nomVarPromesse) == null) {
@@ -111,7 +115,7 @@ class xCache {
         this.deleteVariable(nomVariableUniqueDico);
     }
     
-    public static getDicoWithDelete<T>(paramsDico: iCacheGeneric<T>, page: xxPageWrapper): { data: Promise<T>, reset: () => void } {
+    public static getDicoWithDelete<T>(paramsDico: iCacheGeneric<T>, page: any): { data: Promise<T>, reset: () => void } {
         
         return {
             data: xCache.genericCache<T>(paramsDico.nomVariableUnique,
@@ -139,7 +143,7 @@ class xCache {
     };
     }
 
-    public static getDico<T>(paramsDico: iCacheGeneric<T>, page: xxPageWrapper): Promise<T>{
+    public static getDico<T>(paramsDico: iCacheGeneric<T>, page: any): Promise<T>{
         return this.getDicoWithDelete<T>(paramsDico, page).data;
     }
 
@@ -154,6 +158,10 @@ class xCache {
 
             //on va le chercher sur le serveur
             if (xCache._dicoRessource == undefined) {//on essaye de recuperer le dico sur le top
+                if (xClass.config == undefined) {
+                    // xLib.init() n'a pas encore été appelé (initialisation statique de classes)
+                    return {} as Dictionnaire<string>;
+                }
                 if (xClass.config.langDictionaryData != undefined) {
                     xCache._dicoRessource = xClass.config.langDictionaryData;
                 }
@@ -191,7 +199,8 @@ class xCache {
 
 
     public static setTraductionManquante(val: string,commentaire :string) {
-        if (false /*xClass.debugMode*/) {          
+        if (xClass.config == undefined) { return; } // xLib.init() pas encore appelé
+        if (false /*xClass.debugMode*/) {
 
             let isOverLength: boolean = false;
 

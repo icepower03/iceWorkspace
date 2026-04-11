@@ -2,7 +2,14 @@
 //const prefixeIconeMiniCs3i: string = "iconeMiniCs3i_";
 //const prefixeIconeExterne: string = "iconeExterne_";
 
-enum enumIconeCs3i
+import { iXElement, enumCouleur } from './xBase';
+import { xDiv } from './xcontrols/xDiv';
+import { xSVG } from './xcontrols/xSVG';
+declare const xImg: any;
+declare const ContenusSVG: any;
+declare const xListeIconeSVG: any;
+
+export enum enumIconeCs3i
 {
     //
     aucun, //undefined
@@ -402,7 +409,39 @@ enum enumIconeCs3i
     xxVolet_haut,
 };
 
-abstract class Icone implements iXElement
+export enum enumIconeAction
+{
+    ajouter = enumIconeCs3i.action_ajouter,
+    valider = enumIconeCs3i.action_valider,
+    valider_cercle = enumIconeCs3i.action_valider_cercle,
+    annuler = enumIconeCs3i.action_annuler,
+    annuler_cercle = enumIconeCs3i.action_annuler_cercle,
+    supprimer = enumIconeCs3i.action_supprimer,
+    enregistrer = enumIconeCs3i.action_enregistrer,
+    imprimer = enumIconeCs3i.action_imprimer,
+    visualiser = enumIconeCs3i.action_apercu,
+    verrouiller = enumIconeCs3i.action_verrouiller,
+    deverouiller = enumIconeCs3i.action_deverrouiller,
+    modifier = enumIconeCs3i.action_modifier,
+    historique = enumIconeCs3i.action_historique,
+    rechercher = enumIconeCs3i.action_rechercher,
+    erreur = enumIconeCs3i.action_erreur,
+    suspendre = enumIconeCs3i.etat_suspendu,
+    importer = enumIconeCs3i.action_importer,
+    alerte = enumIconeCs3i.alerte_rouge,
+    rafraichir = enumIconeCs3i.action_rafraichir,
+    parametres = enumIconeCs3i.admin_parametres_simple,
+    masquer = enumIconeCs3i.action_masquer,
+    info = enumIconeCs3i.action_info,
+    calendrier = enumIconeCs3i.action_planifier,
+    lister = enumIconeCs3i.liste_simple,
+    inconnu = enumIconeCs3i.aide_aide,
+    arreter = enumIconeCs3i.action_arret,
+    sablier = enumIconeCs3i.horloge_attente,
+    sablier_blanc = enumIconeCs3i.horloge_attente_blanc,
+}
+
+export abstract class Icone implements iXElement
 {
     public abstract getClasse(): string;
     public abstract getTypeIcone(): string;
@@ -413,7 +452,7 @@ abstract class Icone implements iXElement
     public abstract get y(): HTMLElement|SVGElement;
 }
 
-class IconeV2 extends Icone {
+export class IconeV2 extends Icone {
     private catalogue: string;
     private nomIcone: string;
     private classeComplete: string;
@@ -502,7 +541,7 @@ class IconeV2 extends Icone {
     }
 }
 
-class IconeCs3i extends IconeV2
+export class IconeCs3i extends IconeV2
 {
     private inType: enumIconeCs3i | enumIconeAction;
     constructor(inType: enumIconeCs3i | enumIconeAction, o?: OptionsIconeExterne)
@@ -524,7 +563,7 @@ class IconeCs3i extends IconeV2
 }
 
 
-class IconeMiniCs3i extends IconeV2
+export class IconeMiniCs3i extends IconeV2
 {
     public static getIconeLang(lang: string) {
         let enumIcone: enumIconeCs3i;
@@ -568,11 +607,11 @@ class IconeMiniCs3i extends IconeV2
     }
 }
 
-enum tailleIcone { M = 0, S = 1, L = 2, XS = 3, XL = 4, Custom = 5, XXS = 6  }
+export enum tailleIcone { M = 0, S = 1, L = 2, XS = 3, XL = 4, Custom = 5, XXS = 6  }
 
 
 
-interface OptionsIconeExterne
+export interface OptionsIconeExterne
 {
     taille?: tailleIcone,
     modeGrise?: boolean,
@@ -582,7 +621,7 @@ interface OptionsIconeExterne
 }
 
 
-class IconeExterne extends IconeV2 {
+export class IconeExterne extends IconeV2 {
 
     constructor(inClasse: string, o?: OptionsIconeExterne) {
 
@@ -600,13 +639,13 @@ class IconeExterne extends IconeV2 {
     }
 }
 
-interface OptionIconeTypeExamen {
+export interface OptionIconeTypeExamen {
     classEtat: string;
     urlImgTypeExamen: string;
     abreviationTypeExamen: string;
 }
 
-class IconeTypeExamen extends Icone {
+export class IconeTypeExamen extends Icone {
     private classEtat: string;
     private urlImgTypeExamen: string;
     private abreviationTypeExamen: string;
@@ -625,7 +664,7 @@ class IconeTypeExamen extends Icone {
       this.elem= new xDiv({ class: this.classEtat });
 
         if (this.abreviationTypeExamen != null) {
-            this.elem.asHolder.xdiv({ class: "abreviation icon_tags", textVariable: this.abreviationTypeExamen });
+            this.elem.asHolder.append(new xDiv({ class: "abreviation icon_tags", textVariable: this.abreviationTypeExamen }));
         }
         else if (this.urlImgTypeExamen != null) {
             this.elem.asHolder.append(
@@ -664,13 +703,13 @@ class IconeTypeExamen extends Icone {
 // -------------- ICONES SVG ------------------
 
 //----- ENUM LISTE D'ICONES -----//
-enum enumListeIcones {
+export enum enumListeIcones {
     svg,
     tuiles
 }
 
 // ----- ENUM ICONES SVG (DE 1 A 9999)-----
-enum enumIconeSvg {
+export enum enumIconeSvg {
     actualiser = 1,
     age = 2,
     ajouter = 3,
@@ -778,7 +817,7 @@ enum enumIconeSvg {
 };
 
 // ----- ENUM ICONES EMED (ENTRE 10001 et 19999) -----
-enum enumIconeEmedSvg {
+export enum enumIconeEmedSvg {
     soins = 10001,
     perfusions = 10002,
     posologie = 10003,
@@ -788,7 +827,7 @@ enum enumIconeEmedSvg {
 
 
 // ----- ENUM ICONES TUILES (ENTRE 20001 et 29999) -----
-enum enumIconeTuile {
+export enum enumIconeTuile {
     AdmiEmed = 20001,
     AideEmed = 20002,
     ClassementDocEmed = 20003,
@@ -819,11 +858,12 @@ enum enumIconeTuile {
     ValidationPharma = 20028,
     GestionIncoherences = 20029,
     InstallElive = 20030,
+    adminEmed = 20031,
 };
 
 
 
-interface multicoloreSVG
+export interface multicoloreSVG
 {
     couleurIconeComplete?: enumCouleur,
     couleurPrincipale?: enumCouleur,
@@ -832,21 +872,21 @@ interface multicoloreSVG
     couleurFond?: enumCouleur,
 }
 
-enum enumFormeFondIconeSvg
+export enum enumFormeFondIconeSvg
 { 
     carre = "carre",
     rond = "rond",
     bordsArrondis = "bordsArrondis"
 }
 
-interface OptionsIconeSVG extends OptionsIconeExterne
+export interface OptionsIconeSVG extends OptionsIconeExterne
 {
     couleurSvg?: multicoloreSVG,
     epaisseurTrait?: number,
     formeFond?: enumFormeFondIconeSvg
 }
 
-class IconeSvg extends Icone {
+export class IconeSvg extends Icone {
 
     private inType: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile;
     private couleurSvg: enumCouleur;
@@ -887,7 +927,7 @@ class IconeSvg extends Icone {
      */
     private getSVG(type: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile, o?: OptionsIconeSVG): xSVG {
 
-        let contenu: ContenusSVG = new ContenusSVG("", "");
+        let contenu: any = new ContenusSVG("", "");
 
         let nomIcone: string;
 
@@ -1446,12 +1486,7 @@ class IconeSvg extends Icone {
 // -------------- ICONES TUILES ------------------
 
 
-// 1 ------- ENUM -------
-enum enumIconeTuile {
-    adminEmed,
-};
-
-class IconeTuile extends Icone {
+export class IconeTuile extends Icone {
     private inType: enumIconeTuile;
     public svg: xSVG;
 
@@ -1474,7 +1509,7 @@ class IconeTuile extends Icone {
      */
     private getSVG(type: enumIconeTuile, o?: OptionsIconeSVG): xSVG {
 
-        let contenu: ContenusSVG = new ContenusSVG("", "");
+        let contenu: any = new ContenusSVG("", "");
 
         switch (type) {
             case enumIconeTuile.adminEmed:

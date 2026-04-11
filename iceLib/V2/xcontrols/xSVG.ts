@@ -1,4 +1,6 @@
-﻿enum enumSVGTaille
+﻿import { tailleIcone } from '../xIcones';
+
+export enum enumSVGTaille
 {
     xxs,
     xs,
@@ -8,7 +10,7 @@
     custom
 }
 
-enum enumSVGOrientation {
+export enum enumSVGOrientation {
     Left,
     Right,
     Top,
@@ -17,7 +19,7 @@ enum enumSVGOrientation {
 }
 
 
-interface OptionsSVG {
+export interface OptionsSVG {
     id?: string;
     viewBoxContains?: string;
     contains?: string;
@@ -29,7 +31,7 @@ interface OptionsSVG {
   //  orientation?: enumSVGOrientation;
 }
 
-class xSVG //implements iXElement 
+export class xSVG //implements iXElement 
 {
    /* public get x(): xQuery {
         return this.jq;

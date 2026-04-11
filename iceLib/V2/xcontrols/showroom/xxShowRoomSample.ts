@@ -1,4 +1,7 @@
-﻿class xxShowRoomSample
+﻿// @ts-nocheck
+import { xDiv } from '../xDiv';
+
+export class xxShowRoomSample
 {
     // ----------------- //
     //     Classes CSS   //
@@ -106,7 +109,7 @@
     }
 }
 
-class xxShowroomCustomSample
+export class xxShowroomCustomSample
 {
     public nom: string;
     public Group: string;

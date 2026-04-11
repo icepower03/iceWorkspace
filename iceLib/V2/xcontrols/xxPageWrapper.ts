@@ -1,21 +1,32 @@
-﻿enum enumAlignementZone {
+﻿import { iXElement, iXElementHolder, optionsAffichage } from '../xBase';
+import { xLString } from '../xLString';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xElementHolder } from '../../xElement';
+import { Icone, IconeSvg, enumIconeSvg, tailleIcone } from '../xIcones';
+import { xxLabel, enumHabillageLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton, enumCouleurBouton } from './xxBouton';
+declare const xxWrapPanel: any;
+declare const enumAlignementVerticalWrapPanel: any;
+
+export enum enumAlignementZone {
     gauche = "xpag-align_gauche",
     centre = "xpag-align_centre",
     droite = "xpag-align_droite"
 }
 
-enum enumStyleHeader
+export enum enumStyleHeader
 {
     avecOmbreT20 = "xpag-header_avecombre",
     sansOmbreT20 = "xpag-header_sansombre",
 }
 
-interface optionsAffichagePageWrapper extends optionsAffichage
+export interface optionsAffichagePageWrapper extends optionsAffichage
 {
     styleHeader?: enumStyleHeader;
 }
 
-interface OptionsPage {
+export interface OptionsPage {
     titleLocalise: string;
     localizationParams?: (number | string)[],
     /* defaut:true */
@@ -36,7 +47,7 @@ interface OptionsPage {
     optionsAffichage?: optionsAffichagePageWrapper;
 }
 
-class xxPageWrapper implements iXElement {
+export class xxPageWrapper implements iXElement {
 
     private zoneWS: xDiv;
     private zoneTitleDiv: xDiv;

@@ -1,17 +1,25 @@
 ﻿
+import { iXElement, enumVisibility, optionsAffichage, enumCouleur, OptionsHtml } from '../xBase';
+import { xLString } from '../xLString';
+import { xElement } from '../../xElement';
+import { xSpan } from './xSpan';
+import { xHref, OptionsHref } from './xHref';
+import { xStyle } from './xStyle';
+import { BindableObject } from './BindableObject';
+import { cacherxElements, afficherxElements } from '../../xStaticFunctions';
+import { xOutils } from '../../xOutils';
 
+export enum enumTypeLabel { standard, titre, soustitre, important, description, temps, bloc, information }
+export enum enumHabillageLabel { standard, warning, erreur, loading, disabled, valide, info, infoImportante }
+export enum enumMiseEnFormeLabel { standard, ligneUnique, espacesEtSautsDeLignePreserves }
+export enum enumDecorationLabel { aucun, souligne, barre }
 
-enum enumTypeLabel { standard, titre, soustitre, important, description, temps, bloc, information }
-enum enumHabillageLabel { standard, warning, erreur, loading, disabled, valide, info, infoImportante }
-enum enumMiseEnFormeLabel { standard, ligneUnique, espacesEtSautsDeLignePreserves }
-enum enumDecorationLabel { aucun, souligne, barre }
-
-interface optionsAffichageLabel extends optionsAffichage{
+export interface optionsAffichageLabel extends optionsAffichage{
     couleurTexte?: enumCouleur;
     largeurMaximum?: string;
 }
 
-interface OptionsLabel {
+export interface OptionsLabel {
     id?: string;
     class?: string;
     textVariable?: string|number;
@@ -36,7 +44,7 @@ interface OptionsLabel {
     optionsAffichage?: optionsAffichageLabel;
 }
 
-class xxLabel implements iXElement 
+export class xxLabel implements iXElement 
 {
     private elementPrincipal: xSpan | xElement;
     private montexteVariable: string;

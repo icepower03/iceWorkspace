@@ -1,6 +1,5 @@
 ﻿
-
-class BindableObject<T>
+export class BindableObject<T>
 {
     private _value: T;
 

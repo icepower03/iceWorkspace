@@ -1,5 +1,5 @@
 ﻿
-class xTime {
+export class xTime {
     constructor(hr: number, min: number) {
         this.Minutes = min%60;
 

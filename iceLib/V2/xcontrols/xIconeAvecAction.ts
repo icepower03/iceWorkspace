@@ -1,38 +1,11 @@
-﻿enum enumIconeAction
-{
-    ajouter = enumIconeCs3i.action_ajouter,
-    valider = enumIconeCs3i.action_valider,
-    valider_cercle = enumIconeCs3i.action_valider_cercle,
-    annuler = enumIconeCs3i.action_annuler,
-    annuler_cercle = enumIconeCs3i.action_annuler_cercle,
-    supprimer = enumIconeCs3i.action_supprimer,
-    enregistrer = enumIconeCs3i.action_enregistrer,
-    imprimer = enumIconeCs3i.action_imprimer,
-    visualiser = enumIconeCs3i.action_apercu,
-    verrouiller = enumIconeCs3i.action_verrouiller,
-    deverouiller = enumIconeCs3i.action_deverrouiller,
-    modifier = enumIconeCs3i.action_modifier,
-    historique = enumIconeCs3i.action_historique,
-    rechercher = enumIconeCs3i.action_rechercher,
-    erreur = enumIconeCs3i.action_erreur,
-    suspendre = enumIconeCs3i.etat_suspendu,
-    importer = enumIconeCs3i.action_importer,
-    alerte = enumIconeCs3i.alerte_rouge,
-    rafraichir = enumIconeCs3i.action_rafraichir,
-    parametres = enumIconeCs3i.admin_parametres_simple,
-    masquer = enumIconeCs3i.action_masquer,
-    info = enumIconeCs3i.action_info,
-    calendrier = enumIconeCs3i.action_planifier,
-    lister = enumIconeCs3i.liste_simple,
-    inconnu = enumIconeCs3i.aide_aide,
-    arreter = enumIconeCs3i.action_arret,
-    sablier = enumIconeCs3i.horloge_attente,
-    sablier_blanc = enumIconeCs3i.horloge_attente_blanc,
-}
+﻿import { iXElement, optionsAffichage } from '../xBase';
+import { enumIconeCs3i, enumIconeAction, Icone, IconeV2, IconeSvg, IconeCs3i, tailleIcone } from '../xIcones';
+declare const xxGrid: any;
+declare const xxGridItem: any;
 
-enum enumPositionIconeAction {HautDroite, BasDroite}
+export enum enumPositionIconeAction {HautDroite, BasDroite}
 
-interface OptionsIconeAvecAction
+export interface OptionsIconeAvecAction
 {
     iconePrincipale: IconeV2 | IconeSvg;
     iconeSecondaire: enumIconeAction;
@@ -43,9 +16,9 @@ interface OptionsIconeAvecAction
     optionsAffichage?: optionsAffichage;
 }
 
-class xIconeAvecAction implements iXElement
+export class xIconeAvecAction implements iXElement
 {
-    private grid: xxGrid;
+    private grid: any;
     private iconePrincipale: IconeV2 | IconeSvg;
     private iconeSecondaire: IconeCs3i;
 

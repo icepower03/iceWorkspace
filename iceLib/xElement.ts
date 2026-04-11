@@ -1,7 +1,9 @@
 ﻿
+import { iXElement, iXElementHolder, OptionsHtml, xClass } from './V2/xBase';
+import { cacherxElements, afficherxElements, viderxElements } from './xStaticFunctions';
+import { setCouleurFondAvecContrasteTexteAuto } from './V2/xDomUtils';
 
-
-class xElementHolder implements iXElementHolder {
+export class xElementHolder implements iXElementHolder {
     //private e: JQuery;
     private _y: HTMLElement;
 
@@ -120,223 +122,8 @@ class xElementHolder implements iXElementHolder {
         return new xElementHolder({ y: h });
     }
 
-    public xxList<T>(o: OptionsList<T>, outElement?: Container<xxListWrapper<T>>): iXElementHolder {
-        let d = new xxListWrapper<T>(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-    public xxZoneModulable(o: OptionZoneModulable, outElement?: Container<xxZoneModulable>): xElementHolder {
-        let d = new xxZoneModulable(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xxTreeTabControl(o: OptionsTreeTabControl, outElement?: Container<xxTreeTabControl>) {
-        let d = new xxTreeTabControl(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-    public xxTabControl(o: OptionsTabControl): xElementHolder {
-        this.append(new xxTabControl(o));
-        return this;
-    }
-
-    public xxAutoComplete<T>(o: OptionsAutoComplete<T>): xElementHolder {
-        this.append(new xxAutoComplete<T>(o));
-        return this;
-    }
-    public xxMenu(o: OptionsMenu): xElementHolder {
-        this.append(new xxMenu(o));
-        return this;
-    }
-    public xxListChoix(o: OptionsSelect): xElementHolder {
-        this.append(new xxListChoix(o));
-        return this;
-    }
-    public xul(o: OptionsHtml, outElement?: Container<xUl>): xElementHolder {
-        let d = new xUl(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xxListeChoixLang(o: OptionsListeChoixLang, outElement?: Container<xxListeChoixLang>): xElementHolder {
-        let d = new xxListeChoixLang(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xinputCheckBox(o: OptionsInputCheckBox, outElement?: Container<xInputCheckBox>): xElementHolder {
-        let d = new xInputCheckBox(o)
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xxTableau<T>(o: OptionsTableau<T>, outElement?: Container<xxTableauWrapper<T>>): xElementHolder {
-        let d = new xxTableauWrapper(o);
-
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-    public xxStackPanel(o: OptionsStackPanel, outElement?: Container<xxStackPanel>): xElementHolder {
-        let d = new xxStackPanel(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-    public xxDockPanelDeprecated(o: OptionsxxDockPanel, outElement?: Container<xxDockPanelDeprecated>): xElementHolder {
-        let d = new xxDockPanelDeprecated(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-    public xinputDateAndTime(o: OptionsInputDateAndTime): xElementHolder {
-        this.append(new xInputDateAndTime(o));
-        return this;
-    }
-
-
-
-    public xdiv(o: OptionsDiv, outElement?: Container<xDiv>): xElementHolder {
-        let d = new xDiv(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-    public xxRadioButton<T>(o: OptionsRadioButton<T>, outElement?: Container<xxRadioButton<T>>): xElementHolder {
-        let d = new xxRadioButton(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xxCheckBox(o: OptionsInputCheckBox, outElement?: Container<xxCheckBox>): xElementHolder {
-        let d = new xxCheckBox(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xxLabel(o: OptionsLabel, outElement?: Container<xxLabel>): xElementHolder {
-        let d = new xxLabel(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xinputText(o: OptionsInput, outElement?: Container<xInputText>): xElementHolder {
-        let d = new xInputText(o);
-
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-    public xxInputIntellisense(o: OptionsInputIntellisense, outElement?: Container<xxInputIntellisense>): xElementHolder {
-        let d = new xxInputIntellisense(o);
-
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-    }
-
-
-    public xinputDate(o: OptionsInputDate): xElementHolder {
-        this.append(new xInputDate(o));
-        return this;
-    }
-  /*  public xxBoutonDeprecated(o: OptionsBoutons, outElement?: Container<xxBoutonDeprecated>): xElementHolder {
-
-        let d = new xxBoutonDeprecated(o);
-
-        if (outElement != undefined && outElement != null) {
-            outElement.content = d;
-        }
-
-        this.append(d);
-        return this;
-    }   
-    */
-     public xxBouton(o: optionButton, outElement?: Container<xxBouton>): xElementHolder {
-
-        let d = new xxBouton(o);
-
-        if (outElement != undefined && outElement != null) {
-            outElement.content = d;
-        }
-
-        this.append(d);
-        return this;
-    }
-
-    public xxLabelModifiable(o: OptionsLabelModifiable): xElementHolder {
-        this.append(new xxLabelModifiable(o));
-        return this;
-    }
-
-    public xxLabelContainer(o: OptionsLabelContainer, outElement?: Container<xxLabelContainer>): xElementHolder {
-        let d = new xxLabelContainer(o);
-
-        if (outElement != undefined && outElement != null) {
-            outElement.content = d;
-        }
-        this.append(d);
-        return this;
-    }
-    public xxWrapPanel(o: OptionsWrapPanel, outElement?: Container<xxWrapPanel>): xElementHolder {
-        let d = new xxWrapPanel(o);
-        this.append(d);
-        if (outElement != undefined && outElement != null) {
-            outElement.content = d;
-        }
-        return this;
-    }
-    public xspan(o: OptionsSpan, outElement?: Container<xSpan>): xElementHolder {
-        let d = new xSpan(o);
-        this.append(d);
-        if (outElement != undefined && outElement != null) {
-            outElement.content = d;
-        }
-        return this;
-    }
-
-    public xxToolTip(o: OptionsToolTip): xElementHolder {
-        this.append(new xxToolTip(o));
-        return this;
-
-    }
-
-    public xxRecorder(o: OptionsRecorder): xElementHolder {
-        this.append(new xxRecorder(o));
-        return this;
-
-    }
-
-    public xxArbre<T>(o: IOptionsxxArbre<T>): xElementHolder {
-        this.append(new xxArbre<T>(o));
-        return this;
-
-    }
-    public xxIMC(o: OptionsIMC): xElementHolder {
-        this.append(new xxIMC(o));
-        return this
-    }
-
-    public xxPage(o: OptionsPage, outElement?: Container<xxPageWrapper>): xElementHolder {
-        let d = new xxPageWrapper(o);
-        if (outElement != undefined && outElement != null) { outElement.content = d; }
-        this.append(d);
-        return this;
-
-    }
 }
-class xElement implements iXElement {
+export class xElement implements iXElement {
     //  private jq: xQuery;
     private elem: HTMLElement;
 
@@ -388,32 +175,8 @@ class xElement implements iXElement {
         afficherxElements(myThis);
     }
 
-    static setCouleurFondAvecContrasteTexteAuto(element: iXElement, couleurFondADefinir: string)
-    {
-        /* Couleur de fond imposée dans le cas où celle passée est aux fraises */
-        if (couleurFondADefinir == null || couleurFondADefinir == "" || (couleurFondADefinir != null && couleurFondADefinir.length != 6))
-            couleurFondADefinir = "F1F1F1";
-
-        couleurFondADefinir = couleurFondADefinir.replace("#", "");
-
-        xStyle.setCouleurFond(element, couleurFondADefinir);
-
-        let classCouleurTexte: string;
-
-        let r: number = parseInt(couleurFondADefinir.substr(0, 2), 16);
-        let v: number = parseInt(couleurFondADefinir.substr(2, 2), 16);
-        let b: number = parseInt(couleurFondADefinir.substr(4, 2), 16);
-
-        let luminosite: number = Math.round(Math.sqrt(r * r * .241 + v * v * .691 + b * b * .068));
-
-        element.y.classList.remove("couleurAutoBlanc", "couleurAutoNoir");
-
-        if (luminosite < 155)
-            classCouleurTexte = "couleurAutoBlanc";
-        else
-            classCouleurTexte = "couleurAutoNoir";
-
-        element.y.classList.add(classCouleurTexte);
+    static setCouleurFondAvecContrasteTexteAuto(element: iXElement, couleurFondADefinir: string) {
+        setCouleurFondAvecContrasteTexteAuto(element, couleurFondADefinir);
     }
     public removeClass(c: string): xElement {
         let myThis: xElement = this;

@@ -1,25 +1,28 @@
 ﻿
-function cacherxElements(j: iXElement, collapse?: boolean) {
+import { iXElement } from './V2/xBase';
+import { addClass, removeClass } from './V2/xDomUtils';
+
+export function cacherxElements(j: iXElement, collapse?: boolean) {
     if (collapse == undefined) { collapse = false; }
     if (j?.y != null) {
         if (collapse) {
-            xStyle.addClass("xdisabled", j);
+            addClass("xdisabled", j);
         }
         else {
-           
-            xStyle.addClass("xInvisible", j);
+
+            addClass("xInvisible", j);
         }
     }
 }
 
 
-function afficherxElements(j: iXElement) {
+export function afficherxElements(j: iXElement) {
     if (j?.y != null) {
-        xStyle.removeClass("xdisabled xInvisible", j);
+        removeClass("xdisabled xInvisible", j);
         
     }
 }
-function viderxElements(j: iXElement) {
+export function viderxElements(j: iXElement) {
     if (j?.y != null) {
         while (j.y.hasChildNodes()) {
             j.y.removeChild(j.y.lastChild);
@@ -27,7 +30,7 @@ function viderxElements(j: iXElement) {
     }
 }
 
-function assignerObjet<T>(target: T, source: T): T {
+export function assignerObjet<T>(target: T, source: T): T {
     if (typeof ((<any>Object).assign) != 'function') {
         // .length of function is 2
         'use strict';
@@ -56,7 +59,7 @@ function assignerObjet<T>(target: T, source: T): T {
     }
 }
 
-function GetDateTimeFromFrenchDateString(date: string): Date
+export function GetDateTimeFromFrenchDateString(date: string): Date
 ///<summary>Convertit une date fr en date JS</summary>
 {
     let dateRetour: Date = null;
@@ -78,7 +81,7 @@ function GetDateTimeFromFrenchDateString(date: string): Date
     return dateRetour;
 }
 
-function xRequire(urlJson: string): any {
+export function xRequire(urlJson: string): any {
 
 
     let aj: JQueryXHR;

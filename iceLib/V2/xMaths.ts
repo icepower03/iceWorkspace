@@ -1,4 +1,4 @@
-﻿class xMaths {
+﻿export class xMaths {
 
     /**
      * Permet de calculer le plus petit multiple commun de deux nombres

@@ -1,16 +1,29 @@
-﻿enum enumTypeBouton {
+﻿import { iXElement, enumVisibility, optionsAffichage, enumPosition, OptionsHtml } from '../xBase';
+import { xLString } from '../xLString';
+import { xDiv } from './xDiv';
+import { xSpan } from './xSpan';
+import { xxLabel, OptionsLabel } from './xxLabel';
+import { xxContainerEvent } from './xxContainerEvent';
+import { xStyle } from './xStyle';
+import { BindableObject } from './BindableObject';
+import { afficherxElements, cacherxElements } from '../../xStaticFunctions';
+import { xOutils } from '../../xOutils';
+import { Icone, IconeSvg, enumIconeSvg } from '../xIcones';
+import { xIconeAvecAction } from './xIconeAvecAction';
+
+export enum enumTypeBouton {
     Standard,
     TexteHorsBouton
 }
 
-enum enumComportementBouton {
+export enum enumComportementBouton {
     Standard,
     ActionDifferee,
     ActionAConfirmer,
     ValidationBloquante
 }
 
-enum enumStyleBouton {
+export enum enumStyleBouton {
     Simple,
     SansFondAvecContour,
     AvecFond,
@@ -18,14 +31,14 @@ enum enumStyleBouton {
     Ombre
 }
 
-enum enumPositionnementResponsiveBouton {
+export enum enumPositionnementResponsiveBouton {
     Defaut,
     PleineLargeur,
     DansLeCoin,
     EnBas
 }
 
-enum enumCouleurBouton {
+export enum enumCouleurBouton {
     Utilisateur,
     Alternatif,
     Alerte,
@@ -35,7 +48,7 @@ enum enumCouleurBouton {
     Sans
 }
 
-enum enumTailleBouton {
+export enum enumTailleBouton {
     Fit,
     XS,
     S,
@@ -46,17 +59,17 @@ enum enumTailleBouton {
     Header
 }
 
-interface optionTitleVariable {
+export interface optionTitleVariable {
     titleVariable: string;
     titleLocalise?: string;
 }
 
-interface optionTitleLocalise {
+export interface optionTitleLocalise {
     titleLocalise: string;
     titleVariable?: string;
 }
 
-interface optionBouton {
+export interface optionBouton {
     class?: string;
     id?: string;
     textLocalise?: string;
@@ -80,18 +93,18 @@ interface optionBouton {
     optionsAffichage?: optionsAffichageBouton;
 }
 
-interface optionBoutonStandard extends optionBouton {
+export interface optionBoutonStandard extends optionBouton {
     typeBouton?: enumTypeBouton;
 }
-interface optionBoutonLabelled extends optionBouton {
+export interface optionBoutonLabelled extends optionBouton {
     typeBouton: enumTypeBouton.TexteHorsBouton;
     optionsLabel: OptionsLabel;
 }
 
-type optionButton = (optionBoutonStandard | optionBoutonLabelled) & optionTitleLocalise
+export type optionButton = (optionBoutonStandard | optionBoutonLabelled) & optionTitleLocalise
                   | (optionBoutonStandard | optionBoutonLabelled) & optionTitleVariable;
 
-interface optionsAffichageBouton extends optionsAffichage{
+export interface optionsAffichageBouton extends optionsAffichage{
     styleBouton?: enumStyleBouton;
     positionnementResponsiveBouton?: enumPositionnementResponsiveBouton;
     tailleBouton?: enumTailleBouton;
@@ -102,7 +115,7 @@ interface optionsAffichageBouton extends optionsAffichage{
     fullWidth?: boolean;
 }
 
-class xxBouton implements iXElement {
+export class xxBouton implements iXElement {
     // Graphiques 
     private mainDiv: xxContainerEvent;
     private secondDiv: xDiv;    

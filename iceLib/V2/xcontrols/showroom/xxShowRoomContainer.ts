@@ -1,4 +1,20 @@
-﻿interface optionsxxShowRoomContainer
+﻿// @ts-nocheck
+import { iXElement } from '../../xBase';
+import { xStyle } from '../xStyle';
+import { xClass, enumThemes } from '../../xBase';
+import { BindableObject } from '../BindableObject';
+import { ObservableCollection } from '../ObservableCollection';
+import { xDiv } from '../xDiv';
+import { xSpan } from '../xSpan';
+import { xLString } from '../../xLString';
+import { xxPageWrapper } from '../xxPageWrapper';
+import { xxContainerEvent } from '../xxContainerEvent';
+import { xxLabel } from '../xxLabel';
+import { xxBouton } from '../xxBouton';
+import { Icone } from '../../xIcones';
+import { xxShowRoomSample } from './xxShowRoomSample';
+
+export interface optionsxxShowRoomContainer
 {
     CallOldShowRoom_Temporaire?: (cb: () => void)=>void
 }
@@ -223,7 +239,7 @@ interface IxxShowRoomContainerDefineElement<T>
     ListePreReglageOption?: IxxShowRoomContainerPreReglageOption<T>[]
 }
 
-class xxShowRoomContainer implements iXElement
+export class xxShowRoomContainer implements iXElement
 {
     private static listElements: ObservableCollection<IxxShowRoomContainerDefineElement<any>>;
     private static ListIcone: IxxShowRoomContainerIconeDef[] = [];

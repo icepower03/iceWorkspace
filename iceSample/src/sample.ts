@@ -1,3 +1,31 @@
+// @ts-ignore
+import {
+    
+    xLib,
+    enumThemes,
+    xxPageWrapper,
+    xxLabel,
+    xxBouton,
+    enumTypeBouton,
+    xxShowRoomLoader,
+    xxShowRoomContainer
+} from 'icelib';
+
+xLib.init(
+    {
+        langDictionaryData: { "test": "test traduit" },
+        missingTranslationCallback: (val: string) => { console.log('traduction manquante : ' + val); },
+        debugAddTranslationCallback: (val: string) => { console.log('debug traduction : ' + val); },
+        jsDependencyPath: "../iceLib/include/",
+        theme: () => enumThemes.ThemeLegacy,
+    },
+    {
+        debug: false,
+        contexteUrlPage: './',
+        fileCacheTag: 'cc',
+    }
+);
+
 document.addEventListener("DOMContentLoaded", () => {
 
     // ── Page principale ────────────────────────────────────────────────────
@@ -14,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         textLocalise: 'Click Me',
         titleLocalise: 'Click Me',
         typeBouton: enumTypeBouton.Standard,
-        click: (cb) => { cb?.(); },
+        click: (cb?: () => void) => { cb?.(); },
     }));
 
     // ── ShowRoom (API actuelle) ────────────────────────────────────────────

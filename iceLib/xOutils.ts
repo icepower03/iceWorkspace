@@ -1,48 +1,51 @@
-﻿enum etype_messagebox { Normal, Avertissement }
+﻿// @ts-nocheck
+import { xClass } from './V2/xBase';
+declare const iXElement: any;
+declare const iXElementHolder: any;
+declare const xDiv: any;
+declare const xLString: any;
+declare const xxDialog: any;
+declare const xxBloqueEcran: any;
+declare const xxPageWrapper: any;
+declare const DateSerialisable: any;
+declare const JQueryAjaxSettings: any;
+declare const JsBeautifyOptions: any;
+declare const js_beautify: any;
+declare const enumPositionAlerte: any;
+declare const $: any;
 
-interface ajaxRetour<T> { d: T; }
+export enum etype_messagebox { Normal, Avertissement }
 
-interface retourJsonWithErrors<T> {
+export interface ajaxRetour<T> { d: T; }
+
+export interface retourJsonWithErrors<T> {
     succes: T,
     erreur: string
 }
 
-enum ETypeAlertify {
+export enum ETypeAlertify {
     success,
     error,
     log,
     alert
 }
 
-enum ETypeStorage {
+export enum ETypeStorage {
     Session,
     Local
 }
 
-declare namespace alertify {
-    interface IProperties {
-        /** Default value for milliseconds display of log messages */
-        delay?: number;
-
-        /** Default values for display of labels */
-    //    labels?: ILabels;
-
-        /** Default button for focus */
-   //     buttonFocus?: string;
-
-        /** Should buttons be displayed in reverse order */
-     //    buttonReverse?: boolean;
-
-        position?: enumPositionAlerte;
+declare global {
+    namespace alertify {
+        interface IProperties {
+            /** Default value for milliseconds display of log messages */
+            delay?: number;
+            position?: enumPositionAlerte;
+        }
     }
-    /** Labels for altertify.set function */
-    //interface ILabels {
-    //    ok?: string;
-    //    cancel?: string;
-    //}
 }
 
-enum EPositionAlertify {
+export enum EPositionAlertify {
 
     topRight,
     topLeft,
@@ -50,7 +53,7 @@ enum EPositionAlertify {
     bottomLeft
 }
 
-enum EKeys
+export enum EKeys
 {
     Echap,
     FlecheHaut,
@@ -62,27 +65,27 @@ enum EKeys
     A
 }
 
-enum ETypeFichier {
+export enum ETypeFichier {
     JavaScript,
     CSS
 }
 
-enum EnumLibrairieJs {
+export enum EnumLibrairieJs {
     pdfMake = "pdfmake.min.js vfs_fonts.js",
     pdfJs = "pdf.js pdf.worker.js",
     d3js = "d3js.4.11.0.js d3pie.min.js"
 }
 
-interface iNotificationMessage<T> {
+export interface iNotificationMessage<T> {
     source: number,
     evenement: string,
     clefEvenement: string | number,
     data: T
 }
 
-const desktopDevice = "desktop-device";
+export const desktopDevice = "desktop-device";
 
-interface Echange {
+export interface Echange {
     Contenu: string,
     Source: string,
     FinessSrc: string,
@@ -91,20 +94,20 @@ interface Echange {
 }
 
 
-interface EchangeParamFrom {
+export interface EchangeParamFrom {
     data_crypte: string,
     jeton_echange: Echange
 
 }
 
-interface IEventKey
+export interface IEventKey
 {
     keyEvent: string;
     keyCode: EKeys;
     callBack: () => void;
 }
 
-class eventKey
+export class eventKey
 {
     private _eventListener: (event: KeyboardEvent) => void;
     private _keyEvent: string;
@@ -182,7 +185,7 @@ class eventKey
 }
 
 
-class xOutils {
+export class xOutils {
     public static getStackTrace() {
         let callstack = [];
         let isCallstackPopulated = false;
@@ -781,7 +784,7 @@ class xOutils {
     }
 
     public static async inclureLibrairie(key: EnumLibrairieJs) {
-        let path: string = xOutils.convertDevUrlToRelativeUrl(xConfigActive.jsDependencyPath);
+        let path: string = xOutils.convertDevUrlToRelativeUrl(xClass.config.jsDependencyPath);
         let tag: string = "";
         if (xClass.localConfig.fileCacheTag != undefined)
             tag = "?" + xClass.localConfig.fileCacheTag;

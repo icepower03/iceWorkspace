@@ -1,6 +1,11 @@
 ﻿
+import { xElement, xElementHolder } from '../../xElement';
+import { OptionsHtml, iXElementHolderEnable } from '../xBase';
+import { xLString } from '../xLString';
+import { cacherxElements, afficherxElements, viderxElements } from '../../xStaticFunctions';
+declare const $: any;
 
-interface OptionsDiv extends OptionsHtml {
+export interface OptionsDiv extends OptionsHtml {
 
     textVariable?: string;
     textLocalise?: string;
@@ -11,7 +16,7 @@ interface OptionsDiv extends OptionsHtml {
 
 
 
-class xDiv extends xElement implements iXElementHolderEnable {
+export class xDiv extends xElement implements iXElementHolderEnable {
     
     private xh: xElementHolder;
 

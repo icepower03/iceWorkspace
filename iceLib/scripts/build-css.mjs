@@ -1,6 +1,6 @@
 /**
  * build-css.mjs
- * Compile css/x.scss → jsBin/x.css
+ * Compile css/x.scss → dist/x.css
  * Remplace les url("...?embed") par des data URI base64
  */
 
@@ -57,7 +57,7 @@ const compiled = sass.compile(resolve(root, 'css/x.scss'), {
 });
 
 const finalCss = inlineEmbedAssets(compiled.css);
-writeFileSync(resolve(root, 'jsBin/x.css'), finalCss, 'utf8');
+writeFileSync(resolve(root, 'dist/x.css'), finalCss, 'utf8');
 
 console.timeEnd('  done');
-console.log('→ jsBin/x.css');
+console.log('→ dist/x.css');
