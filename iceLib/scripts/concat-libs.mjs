@@ -20,7 +20,6 @@ const LIBS = [
   'include/jquery-ui-1.11.4.js',
   'include/jquery.ui.datepicker-fr.js',
   'include/dropzone.js',
-  'include/jquery.colorpicker.js',
   'include/xlsx.full.min.js',
   'include/jsCookie.js',
 ];

@@ -141,27 +141,19 @@ export class xElement implements iXElement {
 
     public width(parame?: string | number): void | number {
         let myThis: xElement = this;
-        if (typeof $ === "undefined") {
-            throw new Error("jQuery ($) is not defined. Please install @types/jquery and ensure jQuery is loaded.");
-        }
         if (parame != undefined) {
-            ($ as any)(myThis.y).width(parame);
-        }
-        else {
-            return ($ as any)(myThis.y).width();
+            myThis.y.style.width = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetWidth;
         }
     }
 
     public height(parame?: string | number): void | number {
         let myThis: xElement = this;
-        if (typeof $ === "undefined") {
-            throw new Error("jQuery ($) is not defined. Please install @types/jquery and ensure jQuery is loaded.");
-        }
         if (parame != undefined) {
-            ($ as any)(myThis.y).height(parame);
-        }
-        else {
-            return ($ as any)(myThis.y).height();
+            myThis.y.style.height = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetHeight;
         }
     }
 

@@ -382,20 +382,18 @@ export class xInputText extends xElement {
     public width(parame?: string | number): void | number {
         let myThis: xInputText = this;
         if (parame != undefined) {
-            $(myThis.y).width(parame);
-        }
-        else {
-            return $(myThis.y).width();
+            myThis.y.style.width = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetWidth;
         }
     }
 
     public height(parame?: string | number): void | number {
         let myThis: xInputText = this;
         if (parame != undefined) {
-            $(myThis.y).height(parame);
-        }
-        else {
-            return $(myThis.y).height();
+            myThis.y.style.height = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetHeight;
         }
     }
     public setDisabled(disabled: boolean) {

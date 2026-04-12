@@ -1277,14 +1277,8 @@ function GetDateTimeFromFrenchDateString(e) {
 	return t = new Date(i, r, n), t.toLocaleDateString() != e && (t = new Date(i, r, n, 12)), t;
 }
 function xRequire$1(e) {
-	let t;
-	return t = $.ajax({
-		type: "POST",
-		url: e,
-		dataType: "json",
-		contentType: "application/json; charset=utf-8",
-		async: !1
-	}), t.responseJSON.d;
+	let t = new XMLHttpRequest();
+	return t.open("POST", e, !1), t.setRequestHeader("Content-Type", "application/json; charset=utf-8"), t.send(), JSON.parse(t.responseText).d;
 }
 //#endregion
 //#region xElement.ts
@@ -1346,21 +1340,19 @@ var xElementHolder$1 = class e {
 	static fromSVGElement(t) {
 		return new e({ y: t });
 	}
-}, xElement$1 = class {
+}, xElement = class {
 	get y() {
 		return this.elem;
 	}
 	width(e) {
 		let t = this;
-		if (typeof $ > "u") throw Error("jQuery ($) is not defined. Please install @types/jquery and ensure jQuery is loaded.");
-		if (e != null) $(t.y).width(e);
-		else return $(t.y).width();
+		if (e != null) t.y.style.width = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetWidth;
 	}
 	height(e) {
 		let t = this;
-		if (typeof $ > "u") throw Error("jQuery ($) is not defined. Please install @types/jquery and ensure jQuery is loaded.");
-		if (e != null) $(t.y).height(e);
-		else return $(t.y).height();
+		if (e != null) t.y.style.height = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetHeight;
 	}
 	hasClass(e) {
 		return this.elem.classList.contains(e);
@@ -1429,7 +1421,7 @@ var xElementHolder$1 = class e {
 			console.log("dragend"), n.removeClass("isCibleDrop");
 		})), n.addClass(xClass$1.Theme).addClass(xClass$1.ThemeLuminosite));
 	}
-}, xDiv$1 = class e extends xElement$1 {
+}, xDiv$1 = class e extends xElement {
 	get asHolder() {
 		return this.xh ??= new xElementHolder$1(this), this.xh;
 	}
@@ -1467,23 +1459,21 @@ var xElementHolder$1 = class e {
 	}
 	width(e) {
 		let t = this;
-		if (e != null) $(t.y).width(e);
-		else return $(t.y).width();
+		if (e != null) t.y.style.width = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetWidth;
 	}
 	contentsWidth() {
-		let e = this;
-		return $(e.y).contents().width();
+		return this.y.scrollWidth;
 	}
 	contentsHeight() {
-		let e = this;
-		return $(e.y).contents().height();
+		return this.y.scrollHeight;
 	}
 	height(e) {
 		let t = this;
-		if (e != null) $(t.y).height(e);
-		else return $(t.y).height();
+		if (e != null) t.y.style.height = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetHeight;
 	}
-}, xSpan$1 = class extends xElement$1 {
+}, xSpan$1 = class extends xElement {
 	constructor(e) {
 		let t;
 		e != null && (e.textVariable != null && (t = e.textVariable), e.textLocalise != null && (t = new xLString$1(e.textLocalise).text), delete e.textLocalise, delete e.textVariable), super("span", e), t != null && (this.y.innerHTML = t), e != null && e.title != null && (this.y.title = e.title);
@@ -1492,7 +1482,7 @@ var xElementHolder$1 = class e {
 		let t = this;
 		t.y.title = e;
 	}
-}, xUl = class extends xElement$1 {
+}, xUl = class extends xElement {
 	get asHolder() {
 		return this.xh;
 	}
@@ -1503,7 +1493,7 @@ var xElementHolder$1 = class e {
 	return e[e.Filled = 0] = "Filled", e[e.Outlined = 1] = "Outlined", e[e.Simple = 2] = "Simple", e;
 }({}), enumBackgroundInput$1 = /* @__PURE__ */ function(e) {
 	return e[e.Grey = 0] = "Grey", e[e.Transparent = 1] = "Transparent", e[e.BgTheme = 2] = "BgTheme", e;
-}({}), xInputText$1 = class extends xElement$1 {
+}({}), xInputText$1 = class extends xElement {
 	constructor(e) {
 		let t, n = "", r = e.numeric;
 		e.binding != null && (e.binding.value != null && (e.binding.value.bind((e) => {
@@ -1553,13 +1543,13 @@ var xElementHolder$1 = class e {
 	}
 	width(e) {
 		let t = this;
-		if (e != null) $(t.y).width(e);
-		else return $(t.y).width();
+		if (e != null) t.y.style.width = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetWidth;
 	}
 	height(e) {
 		let t = this;
-		if (e != null) $(t.y).height(e);
-		else return $(t.y).height();
+		if (e != null) t.y.style.height = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetHeight;
 	}
 	setDisabled(e) {
 		let t = this;
@@ -1623,7 +1613,7 @@ var xElementHolder$1 = class e {
 		let t = this;
 		return t.y.onblur = e, t;
 	}
-}, xInputCheckBox$1 = class extends xElement$1 {
+}, xInputCheckBox$1 = class extends xElement {
 	constructor(e) {
 		let t = e.ValueChange;
 		delete e.ValueChange, super("input", e);
@@ -1709,7 +1699,7 @@ var xElementHolder$1 = class e {
 		let t = this;
 		if (e > -1 && e < t.donnees.length) return t.donnees[e];
 	}
-}, xStyle$1 = class extends xElement$1 {
+}, xStyle$1 = class extends xElement {
 	constructor() {
 		super("style", { class: "xStyle" }), this.dicoTargetCss = {};
 		let e = this;
@@ -2131,7 +2121,7 @@ var xElementHolder$1 = class e {
 	getClass() {
 		return this.class;
 	}
-}, xImg$1 = class extends xElement$1 {
+}, xImg$1 = class extends xElement {
 	constructor(e) {
 		super("img", e), e.src != null && (this.y.src = e.src);
 	}
@@ -3558,13 +3548,13 @@ var xElementHolder$1 = class e {
 	}
 	width(e) {
 		let t = this;
-		if (e != null) $(t.y).width(e);
-		else return $(t.y).width();
+		if (e != null) t.y.style.width = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetWidth;
 	}
 	height(e) {
 		let t = this;
-		if (e != null) $(t.y).height(e);
-		else return $(t.y).height();
+		if (e != null) t.y.style.height = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetHeight;
 	}
 }, enumTypeBouton$1 = /* @__PURE__ */ function(e) {
 	return e[e.Standard = 0] = "Standard", e[e.TexteHorsBouton = 1] = "TexteHorsBouton", e;
@@ -4155,7 +4145,7 @@ var xElementHolder$1 = class e {
 			class: "xxLabelTitreBoxer"
 		}), DockPosition$1.gauche), t.contenuHolder = new xDiv$1({ class: "xxBoxerContent" }), e.initContent != null && t.ajouterContenu(e.initContent), e.tailleBoxer != null && (t.tailleBoxer = e.tailleBoxer), e.optionsAffichage != null && xStyle$1.AppliquerOptionsAffichage(t.contenuHolder, e.optionsAffichage), t.divPrincipal.asHolder.append(t.divPlexiglas), t.divPrincipal.asHolder.append(t.divBtn), t.divBtn.asHolder.append(t.contenuHolder), t.refreshClass(), xOutils.attachToBody(t.y);
 	}
-}, xIFrame$1 = class extends xElement$1 {
+}, xIFrame$1 = class extends xElement {
 	constructor(e) {
 		super("iframe", e);
 		let t = this;
@@ -4170,7 +4160,7 @@ var xElementHolder$1 = class e {
 	}
 }, enumTypeOuvertureHref = /* @__PURE__ */ function(e) {
 	return e[e.NouvelleFenetre = 0] = "NouvelleFenetre", e[e.MemeEmplacement = 1] = "MemeEmplacement", e[e.EmplacementParent = 2] = "EmplacementParent", e[e.Boxer = 3] = "Boxer", e;
-}({}), xHref = class extends xElement$1 {
+}({}), xHref = class extends xElement {
 	constructor(e) {
 		let t;
 		e != null && (e.textVariable != null && (t = e.textVariable.toString()), e.textLocalise != null && (t = new xLString$1(e.textLocalise).text), delete e.textLocalise, delete e.textVariable), super("a", e), this.addClass("xHref");
@@ -4797,9 +4787,9 @@ var xElementHolder$1 = class e {
 		}), Object.keys(e.regroupementUniqueBy_Dico).forEach((t) => {
 			e.regroupementUniqueBy_Dico[t].listeItem = [];
 		})), e.listeItems.forEach(function(t, n) {
-			if (n == 0 && e.listeItems.length > 1 ? $(t.renderPlace.y.parentElement).insertBefore(e.listeItems[1].renderPlace.y.parentElement) : e.listeItems.length > 1 && $(t.renderPlace.y.parentElement).insertAfter(e.listeItems[n - 1].renderPlace.y.parentElement), e.regroupementUniqueBy_GroupBy != null && t.donnee != null) {
+			if (n == 0 && e.listeItems.length > 1 ? e.listeItems[1].renderPlace.y.parentElement.before(t.renderPlace.y.parentElement) : e.listeItems.length > 1 && e.listeItems[n - 1].renderPlace.y.parentElement.after(t.renderPlace.y.parentElement), e.regroupementUniqueBy_GroupBy != null && t.donnee != null) {
 				let n, r = e.regroupementUniqueBy_GroupBy(t.donnee);
-				r != null && (n = HelperGeneric$1.IsDate(r) ? r.toLocalDateStringCompleteCS3I() : HelperGeneric$1.IsDateSerialisable(r) ? DateSerialisable$1.toLocalDateStringComplete(r) : r.toString()), n != null && (e.regroupementUniqueBy_Dico[n].listeItem.push(t), e.regroupementUniqueBy_Dico[n].listeItem.length > 0 && e.regroupementUniqueBy_Dico[n].listeItem.indexOf(t) == 0 && $(e.regroupementUniqueBy_Dico[n].headerZone.y.parentElement).insertBefore(t.renderPlace.y.parentElement));
+				r != null && (n = HelperGeneric$1.IsDate(r) ? r.toLocalDateStringCompleteCS3I() : HelperGeneric$1.IsDateSerialisable(r) ? DateSerialisable$1.toLocalDateStringComplete(r) : r.toString()), n != null && (e.regroupementUniqueBy_Dico[n].listeItem.push(t), e.regroupementUniqueBy_Dico[n].listeItem.length > 0 && e.regroupementUniqueBy_Dico[n].listeItem.indexOf(t) == 0 && t.renderPlace.y.parentElement.before(e.regroupementUniqueBy_Dico[n].headerZone.y.parentElement));
 			}
 		}), e.GenerateGroupGlobal(), e;
 	}
@@ -4928,10 +4918,10 @@ var xElementHolder$1 = class e {
 				}
 				if (u == 0 && t.listeItems.length > 1) if (t.regroupementUniqueBy_GroupBy) {
 					let e = t.regroupementUniqueBy_GroupBy(t.listeItems[1].donnee);
-					e != null && (e = HelperGeneric$1.IsDate(e) ? e.toLocalDateStringCompleteCS3I() : HelperGeneric$1.IsDateSerialisable(e) ? DateSerialisable$1.toLocalDateStringComplete(e) : e.toString(), $(l.renderPlace.y.parentElement).insertBefore(t.regroupementUniqueBy_Dico[e].headerZone.y.parentElement));
-				} else $(l.renderPlace.y.parentElement).insertBefore(t.listeItems[1].renderPlace.y.parentElement);
-				else t.listeItems.length > 1 && $(l.renderPlace.y.parentElement).insertAfter(t.listeItems[u - 1].renderPlace.y.parentElement);
-				p != null && u - d == 0 && $(t.regroupementUniqueBy_Dico[p].headerZone.y.parentElement).insertBefore(l.renderPlace.y.parentElement);
+					e != null && (e = HelperGeneric$1.IsDate(e) ? e.toLocalDateStringCompleteCS3I() : HelperGeneric$1.IsDateSerialisable(e) ? DateSerialisable$1.toLocalDateStringComplete(e) : e.toString(), t.regroupementUniqueBy_Dico[e].headerZone.y.parentElement.before(l.renderPlace.y.parentElement));
+				} else t.listeItems[1].renderPlace.y.parentElement.before(l.renderPlace.y.parentElement);
+				else t.listeItems.length > 1 && t.listeItems[u - 1].renderPlace.y.parentElement.after(l.renderPlace.y.parentElement);
+				p != null && u - d == 0 && l.renderPlace.y.parentElement.before(t.regroupementUniqueBy_Dico[p].headerZone.y.parentElement);
 			}
 		}) : t.appendToContener(new xxLabel$1({
 			textLocalise: "Trop de données, veuillez affiner votre recherche.",
@@ -4946,7 +4936,7 @@ var xElementHolder$1 = class e {
 			if (n.visible.Value) {
 				if (t == null || e.greaterThanGlobal(n.donnee, t.donnee) != 0) {
 					let r = new xDiv$1({ class: "xxListGroupGlobal" });
-					e.HeaderGroupGlobal.push(r.asHolder), e.groupeGlobal(r.asHolder, n.donnee, t == null ? null : t.donnee), $(r.y).insertBefore(n.renderPlace.y.parentElement);
+					e.HeaderGroupGlobal.push(r.asHolder), e.groupeGlobal(r.asHolder, n.donnee, t == null ? null : t.donnee), n.renderPlace.y.parentElement.before(r.y);
 				}
 				t = n;
 			}
@@ -9404,7 +9394,7 @@ var xElementHolder$1 = class e {
 		let r = window.getComputedStyle(n), i = r.getPropertyValue("line-height");
 		return i == "normal" ? (i = r.getPropertyValue("font-size"), i = i.replace("px", ""), t = parseInt(i), t = Math.round(t * 1.2)) : t = parseInt(i), n.innerHTML = "", t *= e.nbLigneAfficher, t + "px";
 	}
-}, xxLecteurAudio$1 = class extends xElement$1 {
+}, xxLecteurAudio$1 = class extends xElement {
 	constructor(e) {
 		super("audio", {});
 		let t = "xxLecteurAudio", n = this;
@@ -9889,36 +9879,28 @@ var xxShowRoomSample$1 = class e {
 	constructor(e) {
 		this.isChoixCouleurLibre = !1, this.typeNuancierCouleurs = enumNuancierCouleurs.defaut;
 		let t = this;
-		if (e.choixCouleurLibre != null && (t.isChoixCouleurLibre = e.choixCouleurLibre), e.nuancierCouleurs != null && (t.typeNuancierCouleurs = e.nuancierCouleurs), t.isChoixCouleurLibre) e.binding != null && (e.binding.value != null && (e.binding.value.bind((e) => {
-			t._color = e, t.elementPrincipal.setValue(e), xElement.setCouleurFondAvecContrasteTexteAuto(t.elementPrincipal, t._color);
-		}), e.binding.value.Value != null && (e.value = e.binding.value.Value)), e.binding.visibility != null && e.binding.visibility.bind((e) => {
-			switch (e) {
-				case enumVisibility$1.afficher:
-					afficherxElements(t.elementPrincipal);
-					break;
-				case enumVisibility$1.masquer:
-					cacherxElements(t.elementPrincipal, !1);
-					break;
-				case enumVisibility$1.masquerAvecCollapse:
-					cacherxElements(t.elementPrincipal, !0);
-					break;
-			}
-		})), t.elementPrincipal = new xInputText$1({
-			class: "xxChoixCouleur",
-			value: e.value,
-			ValueChange: (e) => {
-				t._color = e, xElement.setCouleurFondAvecContrasteTexteAuto(t.elementPrincipal, t._color);
-			}
-		}), e.value != null && xElement.setCouleurFondAvecContrasteTexteAuto(t.elementPrincipal, e.value), $(this.elementPrincipal.y).colorpicker({
-			closeOnEscape: !0,
-			closeOnOutside: !1,
-			altField: "#apercu_couleur",
-			altOnChange: !1,
-			ok: function() {
-				e.ValueChange != null && e.ValueChange(t._color), e.binding != null && (e.binding.value.Value = t._color);
-			}
-		});
-		else {
+		if (e.choixCouleurLibre != null && (t.isChoixCouleurLibre = e.choixCouleurLibre), e.nuancierCouleurs != null && (t.typeNuancierCouleurs = e.nuancierCouleurs), t.isChoixCouleurLibre) {
+			let n = document.createElement("input");
+			n.type = "color", n.className = "xxChoixCouleur", t.elementPrincipal = { y: n };
+			let r = (e) => e ? "#" + e.replace("#", "") : "#000000", i = (e) => e.replace("#", "");
+			e.binding?.value?.Value != null && (e.value = e.binding.value.Value), e.value != null && (t._color = e.value.replace("#", ""), n.value = r(e.value)), e.binding?.value != null && e.binding.value.bind((e) => {
+				t._color = i(e), n.value = r(e);
+			}), e.binding?.visibility != null && e.binding.visibility.bind((e) => {
+				switch (e) {
+					case enumVisibility$1.afficher:
+						afficherxElements(t.elementPrincipal);
+						break;
+					case enumVisibility$1.masquer:
+						cacherxElements(t.elementPrincipal, !1);
+						break;
+					case enumVisibility$1.masquerAvecCollapse:
+						cacherxElements(t.elementPrincipal, !0);
+						break;
+				}
+			}), n.addEventListener("input", () => {
+				t._color = i(n.value), e.ValueChange != null && e.ValueChange(t._color), e.binding?.value != null && (e.binding.value.Value = t._color);
+			});
+		} else {
 			let n, r;
 			switch (t.typeNuancierCouleurs) {
 				case enumNuancierCouleurs.defaut:
@@ -12327,7 +12309,7 @@ var xxShowRoomSample$1 = class e {
 	get y() {
 		return this.elementPrincipal.y;
 	}
-}, xBr = class extends xElement$1 {
+}, xBr = class extends xElement {
 	constructor() {
 		super("br", {});
 	}
@@ -12522,7 +12504,7 @@ var xxShowRoomSample$1 = class e {
 			Facultatif: !0
 		}), n;
 	}
-}, xCanvas$1 = class extends xElement$1 {
+}, xCanvas$1 = class extends xElement {
 	constructor(e) {
 		super("canvas", e);
 	}
@@ -12537,7 +12519,7 @@ var xxShowRoomSample$1 = class e {
 		e.titleLocalise != null && e.titleLocalise != "" ? r = new xLString(e.titleLocalise).text : e.titleVariable != null && e.titleVariable != "" && (r = e.titleVariable), e.class ??= "", this.element = new xDiv$1({
 			class: "xInputFile " + e.class,
 			title: r
-		}), delete e.class, t.monFile = new xElement$1("input", e), t.monFile.y.type = "file", e.id != null && t.monFile.y.setAttribute("id", e.id), delete e.id, e?.accept != null && (t.monFile.y.accept = e.accept), e?.capture != null && (t.monFile.y.capture = e.capture);
+		}), delete e.class, t.monFile = new xElement("input", e), t.monFile.y.type = "file", e.id != null && t.monFile.y.setAttribute("id", e.id), delete e.id, e?.accept != null && (t.monFile.y.accept = e.accept), e?.capture != null && (t.monFile.y.capture = e.capture);
 		let i = "Choisir un fichier";
 		e.textLocalise == null ? e.textVariable != null && (i = e.textVariable) : i = new xLString(e.textLocalise).text, t.textAAfficher = i, t.span = new xSpan$1({ textVariable: i }), t.label = document.createElement("Label"), e.iconeAppareilPhoto != null && e.iconeAppareilPhoto ? t.icone = new IconeSvg$1(enumIconeSvg$1.appareil_photo) : t.icone = new IconeSvg$1(enumIconeSvg$1.upload), t.label.prepend(t.monFile.y), t.label.append(t.icone.y), t.label.append(t.span.y), this.element.asHolder.y.append(t.label), t.monFile.y.onchange = () => {
 			let r = t.monFile.y, i = new FileReader();
@@ -12574,14 +12556,14 @@ var xxShowRoomSample$1 = class e {
 		let e = this;
 		cacherxElements(e.monFile, !0), e.monFile.y.click();
 	}
-}, xLi = class extends xElement$1 {
+}, xLi = class extends xElement {
 	constructor(e) {
 		super("li", e), e?.text != null && (this.y.textContent = e.text);
 	}
 	get asHolder() {
 		return this.xh ??= new xElementHolder(this), this.xh;
 	}
-}, xTable = class extends xElement$1 {
+}, xTable = class extends xElement {
 	constructor(e) {
 		super("table", e);
 	}
@@ -14902,13 +14884,13 @@ var xxShowRoomSample$1 = class e {
 	}
 	width(e) {
 		let t = this;
-		if (e != null) $(t.y).width(e);
-		else return $(t.y).width();
+		if (e != null) t.y.style.width = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetWidth;
 	}
 	height(e) {
 		let t = this;
-		if (e != null) $(t.y).height(e);
-		else return $(t.y).height();
+		if (e != null) t.y.style.height = typeof e == "number" ? e + "px" : e;
+		else return t.y.offsetHeight;
 	}
 	get y() {
 		return this.GridPrincipale.y;
@@ -22994,13 +22976,23 @@ var xLib = { init(e, t) {
 				}
 			});
 			e.append(n).append(t);
-		}, 2, xxInputUploadImage), d("xxChoixCouleur", "choix de couleur hexa ( colorpicker nécessaire en librairie js)", function(e) {
+		}, 2, xxInputUploadImage), d("xxChoixCouleur (nuancier)", "choix de couleur via nuancier prédéfini", function(e) {
 			e.append(new xxChoixCouleur({
 				choixCouleurLibre: !1,
 				value: "000000",
 				ValueChange: function(t) {
 					e.y.style.backgroundColor = "#" + t;
 				}
+			}));
+		}, 2, xxChoixCouleur), d("xxChoixCouleur (libre)", "choix de couleur libre via <input type=\"color\"> natif", function(e) {
+			let t = new BindableObject();
+			t.Value = "ff3333", e.append(new xxChoixCouleur({
+				choixCouleurLibre: !0,
+				value: "ff3333",
+				ValueChange: function(t) {
+					e.y.style.backgroundColor = "#" + t;
+				},
+				binding: { value: t }
 			}));
 		}, 2, xxChoixCouleur);
 		let w = new BindableObject(), T = new xInputText({ binding: { value: w } }), E = {
@@ -26396,6 +26388,6 @@ var xLib = { init(e, t) {
 	}
 };
 //#endregion
-export { AppliquerOptionsAffichage, Arbre$1 as Arbre, BindableObject$1 as BindableObject, Container$1 as Container, DictionnaireUtils$1 as DictionnaireUtils, EKeys$1 as EKeys, EPositionAlertify, ETypeAlertify$1 as ETypeAlertify, ETypeFichier, ETypeStorage, EnumLibrairieJs$1 as EnumLibrairieJs, ExxShowRoomContaineDataType, ExxShowRoomContaineGoupeElement, ExxShowRoomContainerTypeOption, GetDateTimeFromFrenchDateString, Icone, IconeExterne, IconeMiniP12$1 as IconeMiniP12, IconeP12$1 as IconeP12, IconeSvg$1 as IconeSvg, IconeTuile$1 as IconeTuile, IconeTypeExamen, IconeV2, ObservableCollection$1 as ObservableCollection, Visibility, addClass, afficherxElements$1 as afficherxElements, assignerObjet$1 as assignerObjet, cacherxElements$1 as cacherxElements, desktopDevice, eclaicirCouleurHex, enumAlignementZone, enumComportementBouton$1 as enumComportementBouton, enumCote, enumCouleur$1 as enumCouleur, enumCouleurBouton$1 as enumCouleurBouton, enumCouleurHexa, enumCurseur, enumDecorationLabel, enumFormeFondIconeSvg, enumHabillageLabel$1 as enumHabillageLabel, enumIconeAction, enumIconeEmedSvg$1 as enumIconeEmedSvg, enumIconeP12$1 as enumIconeP12, enumIconeSvg$1 as enumIconeSvg, enumIconeTuile$1 as enumIconeTuile, enumListeIcones, enumMiseEnFormeLabel, enumPosition$1 as enumPosition, enumPositionIconeAction, enumPositionnementResponsiveBouton$1 as enumPositionnementResponsiveBouton, enumSVGOrientation, enumSVGTaille, enumStyleBorderCSS, enumStyleBouton$1 as enumStyleBouton, enumStyleHeader, enumTailleBouton$1 as enumTailleBouton, enumThemeLuminosite, enumThemes$1 as enumThemes, enumTypeBouton$1 as enumTypeBouton, enumTypeLabel$1 as enumTypeLabel, enumTypeOrientation$1 as enumTypeOrientation, enumTypeOuvertureHref, enumVisibility$1 as enumVisibility, etype_messagebox$1 as etype_messagebox, eventKey, getLuminositeCouleurHexa, isCouleurHexa, removeClass, setBorder, setCouleurFond, setCouleurFondAvecContrasteTexteAuto, setCouleurTexte, setCurseur, setMargin, setPadding, supprimerCouleurFond, supprimerCurseur, tailleIcone$1 as tailleIcone, viderxElements$1 as viderxElements, xBr, xCache, xClass$1 as xClass, xDiv$1 as xDiv, xElement$1 as xElement, xElementHolder$1 as xElementHolder, xHref, xIconeAvecAction, xLString$1 as xLString, xLib, xMaths$1 as xMaths, xOutils$1 as xOutils, xRequire$1 as xRequire, xSVG, xSpan$1 as xSpan, xStyle$1 as xStyle, xTime$1 as xTime, xxBouton$1 as xxBouton, xxContainerEvent$1 as xxContainerEvent, xxLabel$1 as xxLabel, xxPageWrapper$1 as xxPageWrapper, xxShowRoomContainer, xxShowRoom as xxShowRoomDeprecated, xxShowRoomImageTooltipPreview, xxShowRoomLoader, xxShowRoomOptionRecurrente, xxShowRoomSample$1 as xxShowRoomSample, xxShowroomCustomSample };
+export { AppliquerOptionsAffichage, Arbre$1 as Arbre, BindableObject$1 as BindableObject, Container$1 as Container, DictionnaireUtils$1 as DictionnaireUtils, EKeys$1 as EKeys, EPositionAlertify, ETypeAlertify$1 as ETypeAlertify, ETypeFichier, ETypeStorage, EnumLibrairieJs$1 as EnumLibrairieJs, ExxShowRoomContaineDataType, ExxShowRoomContaineGoupeElement, ExxShowRoomContainerTypeOption, GetDateTimeFromFrenchDateString, Icone, IconeExterne, IconeMiniP12$1 as IconeMiniP12, IconeP12$1 as IconeP12, IconeSvg$1 as IconeSvg, IconeTuile$1 as IconeTuile, IconeTypeExamen, IconeV2, ObservableCollection$1 as ObservableCollection, Visibility, addClass, afficherxElements$1 as afficherxElements, assignerObjet$1 as assignerObjet, cacherxElements$1 as cacherxElements, desktopDevice, eclaicirCouleurHex, enumAlignementZone, enumComportementBouton$1 as enumComportementBouton, enumCote, enumCouleur$1 as enumCouleur, enumCouleurBouton$1 as enumCouleurBouton, enumCouleurHexa, enumCurseur, enumDecorationLabel, enumFormeFondIconeSvg, enumHabillageLabel$1 as enumHabillageLabel, enumIconeAction, enumIconeEmedSvg$1 as enumIconeEmedSvg, enumIconeP12$1 as enumIconeP12, enumIconeSvg$1 as enumIconeSvg, enumIconeTuile$1 as enumIconeTuile, enumListeIcones, enumMiseEnFormeLabel, enumPosition$1 as enumPosition, enumPositionIconeAction, enumPositionnementResponsiveBouton$1 as enumPositionnementResponsiveBouton, enumSVGOrientation, enumSVGTaille, enumStyleBorderCSS, enumStyleBouton$1 as enumStyleBouton, enumStyleHeader, enumTailleBouton$1 as enumTailleBouton, enumThemeLuminosite, enumThemes$1 as enumThemes, enumTypeBouton$1 as enumTypeBouton, enumTypeLabel$1 as enumTypeLabel, enumTypeOrientation$1 as enumTypeOrientation, enumTypeOuvertureHref, enumVisibility$1 as enumVisibility, etype_messagebox$1 as etype_messagebox, eventKey, getLuminositeCouleurHexa, isCouleurHexa, removeClass, setBorder, setCouleurFond, setCouleurFondAvecContrasteTexteAuto, setCouleurTexte, setCurseur, setMargin, setPadding, supprimerCouleurFond, supprimerCurseur, tailleIcone$1 as tailleIcone, viderxElements$1 as viderxElements, xBr, xCache, xClass$1 as xClass, xDiv$1 as xDiv, xElement, xElementHolder$1 as xElementHolder, xHref, xIconeAvecAction, xLString$1 as xLString, xLib, xMaths$1 as xMaths, xOutils$1 as xOutils, xRequire$1 as xRequire, xSVG, xSpan$1 as xSpan, xStyle$1 as xStyle, xTime$1 as xTime, xxBouton$1 as xxBouton, xxContainerEvent$1 as xxContainerEvent, xxLabel$1 as xxLabel, xxPageWrapper$1 as xxPageWrapper, xxShowRoomContainer, xxShowRoom as xxShowRoomDeprecated, xxShowRoomImageTooltipPreview, xxShowRoomLoader, xxShowRoomOptionRecurrente, xxShowRoomSample$1 as xxShowRoomSample, xxShowroomCustomSample };
 
 //# sourceMappingURL=iceLib.mjs.map

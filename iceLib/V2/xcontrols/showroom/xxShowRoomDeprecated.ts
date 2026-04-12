@@ -1,4 +1,5 @@
 ﻿// @ts-nocheck
+
 interface optionsShowRoom {
     page: xxPageWrapper
 }
@@ -1046,9 +1047,19 @@ export class xxShowRoom implements iXElement {
 
 
 
-        ajouter('xxChoixCouleur', 'choix de couleur hexa ( colorpicker nécessaire en librairie js)', function (ici: iXElementHolder) {
-
+        ajouter('xxChoixCouleur (nuancier)', 'choix de couleur via nuancier prédéfini', function (ici: iXElementHolder) {
             ici.append(new xxChoixCouleur({ choixCouleurLibre: false, value: '000000', ValueChange: function (s) { ici.y.style.backgroundColor = '#' + s; } }))
+        }, 2, xxChoixCouleur);
+
+        ajouter('xxChoixCouleur (libre)', 'choix de couleur libre via <input type="color"> natif', function (ici: iXElementHolder) {
+            let binding = new BindableObject();
+            binding.Value = 'ff3333';
+            ici.append(new xxChoixCouleur({
+                choixCouleurLibre: true,
+                value: 'ff3333',
+                ValueChange: function (s) { ici.y.style.backgroundColor = '#' + s; },
+                binding: { value: binding }
+            }));
         }, 2, xxChoixCouleur);
         let binding2emeOnglet = new BindableObject<string>();
         let input2emeOnglet = new xInputText({ binding: { value: binding2emeOnglet } });

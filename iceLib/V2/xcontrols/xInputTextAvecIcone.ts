@@ -164,29 +164,21 @@ export class xInputTextAvecIcone implements iXElement {
         myThis.grid.removeClass(classe);
     }
 
-    public width(parame?: string | number): void | number
-    {
+    public width(parame?: string | number): void | number {
         let myThis: xInputTextAvecIcone = this;
-        if (parame != undefined)
-        {
-            $(myThis.y).width(parame);
-        }
-        else
-        {
-            return $(myThis.y).width();
+        if (parame != undefined) {
+            myThis.y.style.width = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetWidth;
         }
     }
 
-    public height(parame?: string | number): void | number
-    {
+    public height(parame?: string | number): void | number {
         let myThis: xInputTextAvecIcone = this;
-        if (parame != undefined)
-        {
-            $(myThis.y).height(parame);
-        }
-        else
-        {
-            return $(myThis.y).height();
+        if (parame != undefined) {
+            myThis.y.style.height = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetHeight;
         }
     }
 

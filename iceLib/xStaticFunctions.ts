@@ -82,18 +82,10 @@ export function GetDateTimeFromFrenchDateString(date: string): Date
 }
 
 export function xRequire(urlJson: string): any {
-
-
-    let aj: JQueryXHR;
-    aj = $.ajax({
-        type: 'POST',
-        url: urlJson,
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        async: false
-    });
-
-    return aj.responseJSON.d;
-
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', urlJson, false); // synchrone — même comportement qu'avant
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+    xhr.send();
+    return JSON.parse(xhr.responseText).d;
 }
 

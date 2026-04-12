@@ -392,11 +392,11 @@ export class xxListWrapper<T> implements iXElement {
             //je déplace la dom au bon endroit
             if (index == 0 && myThis.listeItems.length > 1) {
 
-               $( item.renderPlace.y.parentElement).insertBefore(myThis.listeItems[1].renderPlace.y.parentElement);
+               myThis.listeItems[1].renderPlace.y.parentElement.before(item.renderPlace.y.parentElement);
             }
             else {
                 if (myThis.listeItems.length > 1) {
-                    $(item.renderPlace.y.parentElement).insertAfter(myThis.listeItems[index - 1].renderPlace.y.parentElement);
+                    myThis.listeItems[index - 1].renderPlace.y.parentElement.after(item.renderPlace.y.parentElement);
                 }
             }
 
@@ -417,7 +417,7 @@ export class xxListWrapper<T> implements iXElement {
                     myThis.regroupementUniqueBy_Dico[NameGroup].listeItem.push(item);
 
                     if (myThis.regroupementUniqueBy_Dico[NameGroup].listeItem.length > 0 && myThis.regroupementUniqueBy_Dico[NameGroup].listeItem.indexOf(item) == 0) {
-                        $(myThis.regroupementUniqueBy_Dico[NameGroup].headerZone.y.parentElement).insertBefore(item.renderPlace.y.parentElement);
+                        item.renderPlace.y.parentElement.before(myThis.regroupementUniqueBy_Dico[NameGroup].headerZone.y.parentElement);
                     }
                 }
             }
@@ -718,20 +718,20 @@ export class xxListWrapper<T> implements iXElement {
                                     NameGrouptempo = DateSerialisable.toLocalDateStringComplete(NameGrouptempo);
                                 else
                                     NameGrouptempo = NameGrouptempo.toString();
-                                $(item.renderPlace.y.parentElement).insertBefore(myThis.regroupementUniqueBy_Dico[NameGrouptempo].headerZone.y.parentElement);
+                                myThis.regroupementUniqueBy_Dico[NameGrouptempo].headerZone.y.parentElement.before(item.renderPlace.y.parentElement);
                             }
                         }
                         else
-                            $(item.renderPlace.y.parentElement).insertBefore(myThis.listeItems[1].renderPlace.y.parentElement);
+                            myThis.listeItems[1].renderPlace.y.parentElement.before(item.renderPlace.y.parentElement);
                     }
                     else {
                         if (myThis.listeItems.length > 1) {
-                            $(item.renderPlace.y.parentElement).insertAfter(myThis.listeItems[indexInsert - 1].renderPlace.y.parentElement);
+                            myThis.listeItems[indexInsert - 1].renderPlace.y.parentElement.after(item.renderPlace.y.parentElement);
                         }
                     }
 
                     if (NameGroup != null && (indexInsert - indexDebutGroups) == 0) {
-                        $(myThis.regroupementUniqueBy_Dico[NameGroup].headerZone.y.parentElement).insertBefore(item.renderPlace.y.parentElement);
+                        item.renderPlace.y.parentElement.before(myThis.regroupementUniqueBy_Dico[NameGroup].headerZone.y.parentElement);
                     }
                 }
             });
@@ -768,7 +768,7 @@ export class xxListWrapper<T> implements iXElement {
                         let div: xDiv = new xDiv({ class: "xxListGroupGlobal" });
                         myThis.HeaderGroupGlobal.push(div.asHolder);
                         myThis.groupeGlobal(div.asHolder, item.donnee, itemPrecedent == null ? null : itemPrecedent.donnee);
-                        $(div.y).insertBefore(item.renderPlace.y.parentElement);
+                        item.renderPlace.y.parentElement.before(div.y);
                     }
                     itemPrecedent = item;
                 }

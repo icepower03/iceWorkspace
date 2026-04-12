@@ -12,7 +12,6 @@ declare const JQueryAjaxSettings: any;
 declare const JsBeautifyOptions: any;
 declare const js_beautify: any;
 declare const enumPositionAlerte: any;
-declare const $: any;
 
 export enum etype_messagebox { Normal, Avertissement }
 

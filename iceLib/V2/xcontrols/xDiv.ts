@@ -3,7 +3,6 @@ import { xElement, xElementHolder } from '../../xElement';
 import { OptionsHtml, iXElementHolderEnable } from '../xBase';
 import { xLString } from '../xLString';
 import { cacherxElements, afficherxElements, viderxElements } from '../../xStaticFunctions';
-declare const $: any;
 
 export interface OptionsDiv extends OptionsHtml {
 
@@ -102,39 +101,26 @@ export class xDiv extends xElement implements iXElementHolderEnable {
         return myThis;
     }
 
-    //old jquery
-
-    public width(parame?: string|number): void | number {
+    public width(parame?: string | number): void | number {
         let myThis: xDiv = this;
         if (parame != undefined) {
-            $(myThis.y).width(parame);
+            myThis.y.style.width = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetWidth;
         }
-        else {
-            return $(myThis.y).width();
-        }
     }
-    public contentsWidth(): void | number
-    {
-        let myThis: xDiv = this;
-        
-         return $(myThis.y).contents().width();
-       
-           
+    public contentsWidth(): number {
+        return this.y.scrollWidth;
     }
-    public contentsHeight(): void | number
-    {
-        let myThis: xDiv = this;
-        
-            return $(myThis.y).contents().height();
-        
+    public contentsHeight(): number {
+        return this.y.scrollHeight;
     }
-    public height(parame?: string|number): void | number {
+    public height(parame?: string | number): void | number {
         let myThis: xDiv = this;
         if (parame != undefined) {
-            $(myThis.y).height(parame);
-        }
-        else {
-            return $(myThis.y).height();
+            myThis.y.style.height = typeof parame === 'number' ? parame + 'px' : parame;
+        } else {
+            return myThis.y.offsetHeight;
         }
     }
 }

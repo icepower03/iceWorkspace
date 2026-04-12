@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { iXElement, enumVisibility } from '../xBase';
 import { BindableObject } from './BindableObject';
-import { xInputText } from './xInput';
 import { xxListeDeroulante } from './xxListeDeroulante';
 import { xCouleur } from './xCouleur';
 ﻿enum enumNuancierCouleursDefaut
@@ -66,7 +65,7 @@ interface OptionsChoixCouleur {
 
 
 export class xxChoixCouleur implements iXElement {
-    private elementPrincipal: xInputText;
+    private elementPrincipal: iXElement;
     private _color: string;
 
     private listeCouleurs: xxListeDeroulante<{ key: string, Valeurhexa: string }>;
@@ -113,74 +112,52 @@ export class xxChoixCouleur implements iXElement {
 
         if (myThis.isChoixCouleurLibre) {
 
+            const colorInput = document.createElement('input');
+            colorInput.type = 'color';
+            colorInput.className = 'xxChoixCouleur';
 
-            if (o.binding != undefined)
-            {
-                if (o.binding.value != undefined)
-                {
+            // wrapper iXElement minimal pour cacherxElements / afficherxElements
+            myThis.elementPrincipal = { y: colorInput };
 
-                    o.binding.value.bind(c =>
-                    {
-                        myThis._color = c;
-                        myThis.elementPrincipal.setValue(c);
-                        xElement.setCouleurFondAvecContrasteTexteAuto(myThis.elementPrincipal, myThis._color);
-                    })
+            const toInputValue = (hex: string) => hex ? '#' + hex.replace('#', '') : '#000000';
+            const fromInputValue = (val: string) => val.replace('#', '');
 
-                    if (o.binding.value.Value != undefined)
-                        o.value = o.binding.value.Value;
-                }
-
-                if (o.binding.visibility != undefined)
-                {
-                    o.binding.visibility.bind(s =>
-                    {
-                        switch (s)
-                        {
-                            case enumVisibility.afficher:
-                                afficherxElements(myThis.elementPrincipal);
-                                break;
-                            case enumVisibility.masquer:
-                                cacherxElements(myThis.elementPrincipal, false);
-                                break;
-                            case enumVisibility.masquerAvecCollapse:
-                                cacherxElements(myThis.elementPrincipal, true);
-                                break;
-                        }
-                    })
-                }
-            }
-
-
-            myThis.elementPrincipal = new xInputText({
-                //numeric: {},
-                class:"xxChoixCouleur",
-                value: o.value,
-                ValueChange: (s: string) => {
-                    myThis._color = s;
-                    xElement.setCouleurFondAvecContrasteTexteAuto(myThis.elementPrincipal, myThis._color);
-
-                }
-            });
+            // valeur initiale
+            if (o.binding?.value?.Value != undefined)
+                o.value = o.binding.value.Value;
 
             if (o.value != undefined) {
-                xElement.setCouleurFondAvecContrasteTexteAuto(myThis.elementPrincipal, o.value);
+                myThis._color = o.value.replace('#', '');
+                colorInput.value = toInputValue(o.value);
             }
 
-       $ (this.elementPrincipal.y)
-            .colorpicker({
-                closeOnEscape: true,
-                closeOnOutside: false,
-                altField: "#apercu_couleur",
-                altOnChange: false,
-                ok: function () {
-                    if (o.ValueChange != undefined)
-                        o.ValueChange(myThis._color)
+            // binding value entrant
+            if (o.binding?.value != undefined) {
+                o.binding.value.bind(c => {
+                    myThis._color = fromInputValue(c);
+                    colorInput.value = toInputValue(c);
+                });
+            }
 
-                        if (o.binding != undefined) {
-                            o.binding.value.Value = myThis._color;
-                        }
+            // binding visibility
+            if (o.binding?.visibility != undefined) {
+                o.binding.visibility.bind(s => {
+                    switch (s) {
+                        case enumVisibility.afficher:              afficherxElements(myThis.elementPrincipal); break;
+                        case enumVisibility.masquer:               cacherxElements(myThis.elementPrincipal, false); break;
+                        case enumVisibility.masquerAvecCollapse:   cacherxElements(myThis.elementPrincipal, true); break;
                     }
                 });
+            }
+
+            // événement natif
+            colorInput.addEventListener('input', () => {
+                myThis._color = fromInputValue(colorInput.value);
+                if (o.ValueChange != undefined)
+                    o.ValueChange(myThis._color);
+                if (o.binding?.value != undefined)
+                    o.binding.value.Value = myThis._color;
+            });
         }
         else {
             let enumTemp: any;
