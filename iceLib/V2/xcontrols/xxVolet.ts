@@ -1,9 +1,12 @@
+// @ts-nocheck
 ﻿import { iXElement } from '../xBase';
-import { IconeCs3i, IconeMiniCs3i, enumIconeCs3i } from '../xIcones';
+import { IconeP12, IconeMiniP12, enumIconeP12, Icone } from '../xIcones';
 import { xxBouton, enumTailleBouton } from './xxBouton';
 import { xxToolTipBouton } from './xxToolTip';
+import { xxWrapPanel } from './xxWrapPanel';
+import { enumPosition } from '../xBase';
 
-enum enumPositionVolet {
+export enum enumPositionVolet {
     haut,
     bas,
     gauche,
@@ -18,7 +21,7 @@ interface OptionVolet {
     fermerParDefaut?:boolean
 }
 
-class xxVolet implements iXElement {
+export class xxVolet implements iXElement {
 
     private volet: xDiv;
     private content: xDiv;
@@ -45,7 +48,7 @@ class xxVolet implements iXElement {
             optionsAffichage: {
                 tailleBouton: enumTailleBouton.Fit
             },
-            icone: new IconeCs3i(enumIconeCs3i.action_annuler),
+            icone: new IconeP12(enumIconeP12.action_annuler),
             titleLocalise: "Fermer",
             click: function (cb: any) {
                 myThis.fermer();
@@ -55,7 +58,7 @@ class xxVolet implements iXElement {
 
         myThis.BoutonPosition = new xxToolTipBouton({
             class:"btnPosition",
-            icone: new IconeCs3i(enumIconeCs3i.xxVolet_droite),
+            icone: new IconeP12(enumIconeP12.xxVolet_droite),
             tailleBouton: enumTailleBouton.Fit,
             titleLocalise: "Changer la position du volet",
             WithOutBackGround: true,
@@ -69,10 +72,10 @@ class xxVolet implements iXElement {
                         click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.gauche);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
-                            myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_gauche));
+                            myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_gauche));
                             cb();
                         },
-                        icone: new IconeMiniCs3i(enumIconeCs3i.xxVolet_gauche),
+                        icone: new IconeMiniP12(enumIconeP12.xxVolet_gauche),
                         titleLocalise: "Positionner à gauche"
                     }),
                     new xxBouton({
@@ -82,10 +85,10 @@ class xxVolet implements iXElement {
                         click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.haut);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
-                            myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_haut));
+                            myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_haut));
                             cb();
                         },
-                        icone: new IconeMiniCs3i(enumIconeCs3i.xxVolet_haut),
+                        icone: new IconeMiniP12(enumIconeP12.xxVolet_haut),
                         titleLocalise: "Positionner en haut"
                     }),
                     new xxBouton({
@@ -95,10 +98,10 @@ class xxVolet implements iXElement {
                         click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.droite);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
-                            myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_droite));
+                            myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_droite));
                             cb();
                         },
-                        icone: new IconeMiniCs3i(enumIconeCs3i.xxVolet_droite),
+                        icone: new IconeMiniP12(enumIconeP12.xxVolet_droite),
                         titleLocalise: "Positionner à droite"
                     }),
                     new xxBouton({
@@ -108,10 +111,10 @@ class xxVolet implements iXElement {
                         click: function (cb: any) {
                             myThis.switchPosition(enumPositionVolet.bas);
                             myThis.BoutonPosition.GetTooltip.ToggleToolTip();
-                            myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_bas));
+                            myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_bas));
                             cb();
                         },
-                        icone: new IconeMiniCs3i(enumIconeCs3i.xxVolet_bas),
+                        icone: new IconeMiniP12(enumIconeP12.xxVolet_bas),
                         titleLocalise: "Positionner en bas"
                     })
                 ]
@@ -158,16 +161,16 @@ class xxVolet implements iXElement {
 
         switch (pos) {
             case enumPositionVolet.gauche:
-                myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_gauche))                
+                myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_gauche))                
                 break;
             case enumPositionVolet.droite:
-                myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_droite))
+                myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_droite))
                 break;
             case enumPositionVolet.bas:
-                myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_bas))
+                myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_bas))
                 break;
             case enumPositionVolet.haut:
-                myThis.BoutonPosition.setIcone(new IconeMiniCs3i(enumIconeCs3i.xxVolet_haut))
+                myThis.BoutonPosition.setIcone(new IconeMiniP12(enumIconeP12.xxVolet_haut))
                 break;
         }
     }

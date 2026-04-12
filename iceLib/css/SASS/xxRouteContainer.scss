@@ -322,7 +322,7 @@ $LMenu: 220px;
             outline: none;
             background-color: transparent;
 
-            span.iconeCs3i_aucun {
+            span.iconeP12_aucun {
                 text-align: left;
                 padding: 10px 10px 10px 30px;
                 font-size: 16px;
@@ -568,7 +568,7 @@ $LMenu: 220px;
             color: $coul-t20-user;
         }
 
-        &.lienActif .xxLabel, &.xxbouton span.iconeCs3i_aucun:after {
+        &.lienActif .xxLabel, &.xxbouton span.iconeP12_aucun:after {
             background: $coul-t20-user;
         }
 

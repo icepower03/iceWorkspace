@@ -1,3 +1,8 @@
+// @ts-nocheck
+import { iXElement, iXElementHolder, iXElementHolderEnable, optionsAffichage, iTestable, Container } from '../xBase';
+import { afficherxElements, cacherxElements } from '../../xStaticFunctions';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
 ﻿interface OptionsStackPanel extends iTestable {
     id?: string;
     class?: string;
@@ -11,7 +16,7 @@
     }
 }
 
-class xxStackPanel implements iXElement {
+export class xxStackPanel implements iXElement {
     private elemPrincipal: xDiv;
 
     private espaceMinimaliste: boolean;

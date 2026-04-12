@@ -1,4 +1,8 @@
-﻿enum enumEpaisseurSeparation{
+// @ts-nocheck
+import { iXElement, enumTypeOrientation } from '../xBase';
+import { xDiv } from './xDiv';
+
+export enum enumEpaisseurSeparation{
     fin = "xsep-epais_f",
     large = "xsep-epais_l"
 }
@@ -12,7 +16,7 @@ interface optionXSeparateur
     tailleCustom?: number;
 }
 
-class xSeparateur implements iXElement
+export class xSeparateur implements iXElement
 {
    
     public get y() {

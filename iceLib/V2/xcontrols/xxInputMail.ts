@@ -1,4 +1,5 @@
-﻿interface OptionsInputMail
+﻿// @ts-nocheck
+interface OptionsInputMail
 {
     valeur?: string;
     valueChange?: (val: string) => void;

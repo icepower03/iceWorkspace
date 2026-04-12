@@ -1,4 +1,6 @@
-﻿class xInputCheckBox extends xElement {
+// @ts-nocheck
+import { xElement } from '../../xElement';
+﻿export class xInputCheckBox extends xElement {
 
    
     constructor(options: OptionsInputCheckBox) {

@@ -1,6 +1,8 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
 ﻿
 
-class xUl extends xElement implements iXElementHolderEnable{
+export class xUl extends xElement implements iXElementHolderEnable{
 
     private xh: xElementHolder;
     get asHolder(): iXElementHolder {

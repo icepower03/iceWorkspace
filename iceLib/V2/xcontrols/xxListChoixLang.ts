@@ -1,4 +1,11 @@
-﻿interface OptionsListeChoixLang {
+// @ts-nocheck
+import { iXElement, enumPosition } from '../xBase';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxLabelContainer, enumPositionDuContenu } from './xxLabelContainer';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { IconeMiniP12, Icone } from '../xIcones';
+
+interface OptionsListeChoixLang {
     defaultValue: string;
     //liste des données à afficher
     donnees?: string[];
@@ -7,7 +14,7 @@
 }
 
 
-class xxListeChoixLang implements iXElement  {
+export class xxListeChoixLang implements iXElement  {
     private monListeChoixDeroulante: xxListeDeroulante<string>;
 
    
@@ -39,7 +46,7 @@ class xxListeChoixLang implements iXElement  {
                             openSelect(inLang);
                             cb();
                         },
-                        icone: IconeMiniCs3i.getIconeLang(inLang)
+                        icone: IconeMiniP12.getIconeLang(inLang)
                     })
                 });
 
@@ -56,7 +63,7 @@ class xxListeChoixLang implements iXElement  {
                             onSelect(item);
 
                         },
-                        icone: IconeMiniCs3i.getIconeLang(item)
+                        icone: IconeMiniP12.getIconeLang(item)
                     })
                 });
 
@@ -70,4 +77,3 @@ class xxListeChoixLang implements iXElement  {
     }
 
 }
-

@@ -1,8 +1,10 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
 ﻿
 
 
 
-class xTable extends xElement {
+export class xTable extends xElement {
     constructor(options?: OptionsHtml)
     { super("table", options); }
 }

@@ -1,11 +1,20 @@
-﻿
-enum enumTypeDispo {
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from '../xcontrols/xDiv';
+import { xxGrid, xxGridItem } from '../xcontrols/xxGrid';
+import { xxToolTip } from '../xcontrols/xxToolTip';
+import { xxLabel } from '../xcontrols/xxLabel';
+import { xxWrapPanel } from '../xcontrols/xxWrapPanel';
+import { xxStackPanel } from '../xcontrols/xxStackPanel';
+
+export enum enumTypeDispo {
     Planning,
     Barre,
     Bloc,
 }
 
-class PlanningRdv {
+export class PlanningRdv {
 
     public Id: number;
     public IdExterne: number;
@@ -76,7 +85,7 @@ class PlanningRdv {
     }
 }
 
-class PlanningRessource {
+export class PlanningRessource {
 
     public Libelle: string;
     public Id: number;
@@ -89,7 +98,7 @@ class PlanningRessource {
     }
 }
 
-class PlanningDisponibilite {
+export class PlanningDisponibilite {
 
     public Id: string;
     public Libelle: string;

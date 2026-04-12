@@ -1,11 +1,16 @@
-﻿interface optionsTexteEnrichi extends OptionsInput
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xDiv } from './xDiv';
+import { xInputText } from './xInput';
+
+interface optionsTexteEnrichi extends OptionsInput
 {
     /** dans emed utiliser la méthode générique: OutilsJSEmed.insertListeMotsInCkEditor; */
     insertListeMotsInCkEditor?: (htmlVal: string, listeMot: boolean) => void;
 }
 var gestion_editor: any;
 
-class xxTexteEnrichi implements iXElement{
+export class xxTexteEnrichi implements iXElement{
  
     public get y() { return this.elementPrincipal.y; }
 

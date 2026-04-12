@@ -1,4 +1,13 @@
-﻿interface OptionListeDeroulanteAutomatique {
+// @ts-nocheck
+import { iXElement, enumCouleur, enumPosition } from '../xBase';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxRadioButton } from './xxRadioButton';
+import { xxBouton, enumTailleBouton, enumStyleBouton, enumCouleurBouton } from './xxBouton';
+import { xxLabel } from './xxLabel';
+import { enumIconeSvg, IconeSvg, Icone } from '../xIcones';
+
+interface OptionListeDeroulanteAutomatique {
     data: string[],
     libelle: string,
     renderSelected: () => void, //Déclenchée quand click sur la liste pour l'ouvrir ou sur un bouton radio
@@ -7,7 +16,7 @@
     nbElemMaxBouttonsRadio?: number;
 }
 
-class xxListeDeroulanteAutomatique implements iXElement {
+export class xxListeDeroulanteAutomatique implements iXElement {
 
     private data: string[];
     private libelle: string;

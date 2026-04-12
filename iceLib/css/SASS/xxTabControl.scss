@@ -3,7 +3,7 @@
 /*********************************/
 
 .xxTabControlContainer {
-    .withDecorator span.iconeCs3i.orientation_verticale.iconeCs3i_aucun:after {
+    .withDecorator span.iconeP12.orientation_verticale.iconeP12_aucun:after {
         content: '\002022';
         font-weight: normal;
         position: relative;
@@ -82,13 +82,13 @@
                 margin-left: 10px;
             }
 
-            .xxbouton.sensInverse.espaceMinimaliste span.iconeCs3i {
+            .xxbouton.sensInverse.espaceMinimaliste span.iconeP12 {
                 padding-right: 24px;
                 padding-top: 3px;
             }
 
             .xxTabControl_saveGroupe {
-                span.iconeCs3i {
+                span.iconeP12 {
                     margin-bottom: 5px;
                 }
             }
@@ -170,7 +170,7 @@
                         margin-left: 0px;
                         box-shadow: none;
 
-                        span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                        span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
                             padding-top: 6px;
                             background: transparent;
 
@@ -225,7 +225,7 @@
 
                     .xxTabControlOngletFermable {
                         .xxbouton {
-                            span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                            span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
                                 padding-right: 0;
                             }
                         }
@@ -262,7 +262,7 @@
             .xxRadioButton .xxRadioButtonItem .xxbouton {
                 border-bottom: none;
 
-                span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
                     padding: 4px 10px 7px;
                 }
             }
@@ -270,7 +270,7 @@
             .xxRadioButton .xxRadioButtonItem.xxTabItemColor, .xxRadioButton .xxRadioButtonItem.xxTabItemNoColor {
                 .xxbouton {
 
-                    span.iconeCs3i.iconeCs3i_aucun, span.iconeCs3i.iconeCs3i_aucun.orientation_verticale {
+                    span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
                         padding: 4px 10px;
                         white-space: nowrap;
                     }

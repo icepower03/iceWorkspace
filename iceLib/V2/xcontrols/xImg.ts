@@ -1,10 +1,13 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
+import { OptionsHtml } from '../xBase';
 ﻿
 
-interface OptionsImg extends OptionsHtml{
-        src?: string;
+export interface OptionsImg extends OptionsHtml {
+    src?: string;
 }
 
-class xImg extends xElement {
+export class xImg extends xElement {
     
     constructor(options: OptionsImg) {
         super("img", options);

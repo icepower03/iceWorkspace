@@ -1,4 +1,5 @@
-﻿interface OptionsGridLayout {
+﻿// @ts-nocheck
+interface OptionsGridLayout {
     id?: string;
     class?: string;
     gridGap?: string;

@@ -1,5 +1,11 @@
-﻿
-class xxListChoix implements iXElement {
+// @ts-nocheck
+import { iXElement, OptionsHtml, enumCouleur } from '../xBase';
+import { xDiv } from './xDiv';
+import { xxBouton } from './xxBouton';
+import { xIconeAvecAction } from './xIconeAvecAction';
+import { Icone, enumIconeP12, enumIconeSvg, IconeP12, IconeSvg, tailleIcone } from '../xIcones';
+
+export class xxListChoix implements iXElement {
     private element: xDiv;
     private optionsSelect: OptionsSelect;
     private classElementList: string;
@@ -98,7 +104,7 @@ class xxListChoix implements iXElement {
 
         // si on a mis un chois toux en option, on le met en premier
         if (options.optionTous) {
-            let iconeTous: IconeCs3i = new IconeCs3i(enumIconeCs3i.xxListChoix_tous);
+            let iconeTous: IconeP12 = new IconeP12(enumIconeP12.xxListChoix_tous);
             myThis.buttonDefault = new xxBouton({
                 class: myThis.classElementList + " " + (options.valueDefault == "" ? myThis.classIsSelected : ''),
                 icone: iconeTous,

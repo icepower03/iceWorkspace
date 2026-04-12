@@ -1,4 +1,11 @@
-﻿interface OptionsInputTextAvecIcone extends OptionsInput
+// @ts-nocheck
+import { iXElement, enumCouleur, enumCurseur } from '../xBase';
+import { xxGrid, xxGridItem, enumAlignementContenu } from './xxGrid';
+import { xInputText } from './xInput';
+import { IconeSvg, tailleIcone, enumIconeSvg, Icone } from '../xIcones';
+import { xxContainerEvent } from './xxContainerEvent';
+
+interface OptionsInputTextAvecIcone extends OptionsInput
 {
     icone: enumIconeSvg;
     positionIcone?: "Debut" | "Fin";
@@ -7,7 +14,7 @@
     largeurEnPixels?: number;
 }
 
-class xInputTextAvecIcone implements iXElement {
+export class xInputTextAvecIcone implements iXElement {
 
     private grid: xxGrid;
     private input: xInputText;

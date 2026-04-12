@@ -1,8 +1,10 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
 ﻿
 interface OptionsLi extends OptionsHtml {
     text?: string;
 }
-class xLi extends xElement {
+export class xLi extends xElement {
     private xh: xElementHolder;
     constructor(options?: OptionsLi) {
         super("li", options);

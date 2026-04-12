@@ -1,3 +1,12 @@
+// @ts-nocheck
+import { iXElement, iXElementHolder, optionsAffichage, iTestable, enumPosition, enumCouleur } from '../xBase';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xxContainerEvent } from './xxContainerEvent';
+import { xxLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton, optionsAffichageBouton } from './xxBouton';
+import { Icone } from '../xIcones';
+import { xxStackPanel } from './xxStackPanel';
 ﻿interface OptionsToolTip
 {
     id?: string;
@@ -123,13 +132,13 @@ interface OptionToolTipBoutonSansTexte extends OptionToolTipBouton
 
 type OptionsTooltipBouton = OptionToolTipBoutonSansTexte | OptionToolTipBoutonTexteLocalise | OptionToolTipBoutonTexteVariable;
 
-enum enumXxToolTipMode { OnHover, Manuel, Manuel_WithOut_BackGround}
+export enum enumXxToolTipMode { OnHover, Manuel, Manuel_WithOut_BackGround}
 
-enum enumXxToolTipPositionHeight { haut, center, bas }
+export enum enumXxToolTipPositionHeight { haut, center, bas }
 
-enum enumXxToolTipPositionWidth { extremiteGauche, gauche, center, droite, extremiteDroite }
+export enum enumXxToolTipPositionWidth { extremiteGauche, gauche, center, droite, extremiteDroite }
 
-class xxToolTip implements iXElement 
+export class xxToolTip implements iXElement
 {
     // ----------------------- //
     // Static tooltip gestion  //
@@ -1021,7 +1030,7 @@ class xxToolTip implements iXElement
     }
 }
 
-class xxToolTipBouton implements iXElement
+export class xxToolTipBouton implements iXElement
 {
     // --------- //
     // Attributs //

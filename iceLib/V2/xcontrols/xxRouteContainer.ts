@@ -1,4 +1,25 @@
-﻿interface optionsxxRouteContainer {
+// @ts-nocheck
+import { iXElement, iXElementHolder, Dictionnaire } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xDiv } from './xDiv';
+import { xxWrapPanel, enumAlignementVerticalWrapPanel, enumAlignementHorizontalWrapPanel } from './xxWrapPanel';
+import { enumAlignementContenu } from './xxGrid';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton, enumStyleBouton } from './xxBouton';
+import { xxInputNumerique } from './xxInputNumerique';
+import { xxAutoComplete } from './xxAutoComplete';
+import { xxToolTip } from './xxToolTip';
+import { Icone, IconeP12, enumIconeP12, enumIconeSvg, IconeSvg, tailleIcone } from '../xIcones';
+import { xxContainerEvent } from './xxContainerEvent';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xInputText } from './xInput';
+import { xxCheckBox, enumTypeCheckbox } from './xxCheckBox';
+import { xxDialog, enumTypeAlerte, enumDialogTypeBouton } from './xxDialog';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xxListWrapper } from './xxListWrapper';
+
+interface optionsxxRouteContainer {
     
     desktopMenuEnabled?: boolean;
 
@@ -31,7 +52,7 @@ interface EndPointFn {
 
 };
 
-class xxRouteContainer implements iXElement
+export class xxRouteContainer implements iXElement
 {
     public static ROOTBASE = '';
 
@@ -277,7 +298,7 @@ class xxRouteContainer implements iXElement
             mythis.elemMenuTools.append(new xxBouton({
                 textLocalise: '',
                 titleLocalise: 'Page précédente',
-                icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Retour),
+                icone: new IconeP12(enumIconeP12.xxRouteContainer_Retour),
                 click: (cb) => {
                     mythis.navigationBack();
                     cb();
@@ -291,7 +312,7 @@ class xxRouteContainer implements iXElement
                 },
 
             titleLocalise: 'Rafraichir',
-            icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Refresh),
+            icone: new IconeP12(enumIconeP12.xxRouteContainer_Refresh),
             click: (cb) => {
                 mythis.refreshCurrent();
                 cb();
@@ -299,7 +320,7 @@ class xxRouteContainer implements iXElement
         }), "BoutonRefresh")
             .append(new xxBouton({
                 titleLocalise: 'copier un lien exportable',
-                icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Partager),
+                icone: new IconeP12(enumIconeP12.xxRouteContainer_Partager),
                 click: (cb) => {
                     cb();
                     xOutils.copyToClipboard(mythis.createExternalUrl(encodeURIComponent(mythis.routeActivePhysique)));
@@ -699,7 +720,7 @@ class xxRouteContainer implements iXElement
                 .append(new xxBouton({
                     class: 'xxRouteContainerHomeContainerEvent',
                     click: () => { myThis.afficherAccueil(); },
-                    icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Home),
+                    icone: new IconeP12(enumIconeP12.xxRouteContainer_Home),
                     optionsAffichage: {
                         tailleBouton: enumTailleBouton.Fit
                     },
@@ -769,7 +790,7 @@ class xxRouteContainer implements iXElement
                 .append(new xxBouton({
                     class: 'xxRouteContainerHomeContainerEvent',
                     click: () => { myThis.afficherAccueil(); },
-                    icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Home),
+                    icone: new IconeP12(enumIconeP12.xxRouteContainer_Home),
                     optionsAffichage: {
                         tailleBouton: enumTailleBouton.Fit
                     },
@@ -791,8 +812,8 @@ class xxRouteContainer implements iXElement
         myThis.elemFilAriane.append(new xxCheckBox({
             value: await myThis.isFavori(myThis.routeActivePhysique),
             titleLocalise: 'Ajouter/Retirer le favori',
-            imageEnable: new IconeCs3i(enumIconeCs3i.xxRouteContainer_FavoriOn),
-            imageDisable: new IconeCs3i(enumIconeCs3i.xxRouteContainer_FavoriOff),
+            imageEnable: new IconeP12(enumIconeP12.xxRouteContainer_FavoriOn),
+            imageDisable: new IconeP12(enumIconeP12.xxRouteContainer_FavoriOff),
             typeCheckbox: enumTypeCheckbox.image,
             ValueChange: (newVal) => { myThis.toggleFavori(myThis.routeActivePhysique, newVal); }
         }));
@@ -1107,7 +1128,7 @@ class xxRouteContainer implements iXElement
                     dockBouton.append(new xxBouton({
                         textLocalise: '',
                         titleLocalise: 'Niveau supérieur',
-                        icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Remonter),
+                        icone: new IconeP12(enumIconeP12.xxRouteContainer_Remonter),
                         click: (cb) => {
                             if (niveau.length > 1) {
                                 niveau.pop();
@@ -1142,7 +1163,7 @@ class xxRouteContainer implements iXElement
                 dockBouton.append(new xxBouton({
                     textLocalise: '',
                     titleLocalise: 'fermer',                    
-                    icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Fermer),
+                    icone: new IconeP12(enumIconeP12.xxRouteContainer_Fermer),
                     click: (cb) => {
                         mythis.navigationCancel(false);
                         cb();

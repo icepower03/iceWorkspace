@@ -1,4 +1,15 @@
-﻿enum ETypeBouton
+// @ts-nocheck
+import { iXElement, iXElementHolder, optionsAffichage, enumVisibility, iTestable, enumTypeOrientation, enumCouleur, enumCote } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { afficherxElements, cacherxElements } from '../../xStaticFunctions';
+import { xDiv } from './xDiv';
+import { xxBouton, enumTailleBouton, enumTypeBouton, enumCouleurBouton, optionsAffichageBouton, enumStyleBouton } from './xxBouton';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel } from './xxLabel';
+import { Icone } from '../xIcones';
+import { xxListWrapper } from './xxListWrapper';
+﻿export enum ETypeBouton
 {
     boutonClassique, //Bouton avec rond à cocher
     boutonWrapper2 //Utilisation du xxBouton
@@ -77,7 +88,7 @@ interface itemRadioButtonOptions<T> extends iTestable
     couleurBorder?: string;
 }
 
-class itemRadioButton<T>
+export class itemRadioButton<T>
 {
     //---- Constant Static ----//
     public static readonly classInactif: string = "xrbti-inactif";
@@ -227,7 +238,7 @@ class itemRadioButton<T>
 
 }
 
-class xxRadioButton<T> implements iXElement
+export class xxRadioButton<T> implements iXElement
 {
 
     //---- propertie ----//

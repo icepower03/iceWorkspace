@@ -1,3 +1,10 @@
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xDiv } from './xDiv';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel } from './xxLabel';
+import { xxPageWrapper } from './xxPageWrapper';
 ﻿interface OptionsProgressBar
 {
     class?: string;
@@ -12,7 +19,7 @@
 }
 
 
-class xxProgressBar implements iXElement
+export class xxProgressBar implements iXElement
 {
     private lectureSeule: boolean;
     private class: string;

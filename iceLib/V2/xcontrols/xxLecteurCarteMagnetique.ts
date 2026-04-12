@@ -1,10 +1,20 @@
-﻿
+// @ts-nocheck
+import { iXElement, enumPosition } from '../xBase';
+import { xInputText } from './xInput';
+import { xxBouton } from './xxBouton';
+import { xxBoxer, enumBoxerTaille, enumBoxerMode } from './xxBoxer';
+import { xxPageWrapper } from './xxPageWrapper';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { IconeP12, enumIconeP12, Icone } from '../xIcones';
+import { xxGrid, xxGridItem, enumAlignementContenu } from './xxGrid';
+import { xxImageTabByte, enumTypeImage } from './xxImageTabByte';
+
 interface OptionsLecteurCarteMagnetique
 {
     callbackScan: (idCarte: string) => void;
 }
 
-class xxLecteurCarteMagnetique implements iXElement
+export class xxLecteurCarteMagnetique implements iXElement
 {
     private btnLectureCarte: xxBouton;
     private inputScan: xInputText;
@@ -22,7 +32,7 @@ class xxLecteurCarteMagnetique implements iXElement
         });
 
         myThis.btnLectureCarte = new xxBouton({
-            icone: new IconeCs3i(enumIconeCs3i.carte_cartemagnetique),
+            icone: new IconeP12(enumIconeP12.carte_cartemagnetique),
             textLocalise: "Lire carte",
             titleLocalise: "Lire carte",
             class: "btnLectureCarte",

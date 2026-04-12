@@ -1,4 +1,27 @@
-﻿interface OptionsTabControl {
+// @ts-nocheck
+import { iXElement, iXElementHolder, enumTypeOrientation, enumCouleur, enumPosition } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xOutils } from '../../xOutils';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xxBouton, enumTailleBouton, enumTypeBouton, enumCouleurBouton, optionsAffichageBouton, enumStyleBouton } from './xxBouton';
+import { xxLabel } from './xxLabel';
+import { xxStackPanel } from './xxStackPanel';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxGrid, xxGridItem, enumAlignementContenu } from './xxGrid';
+import { xxDialog, enumTypeAlerte } from './xxDialog';
+import { xxRadioButton, ETypeBouton } from './xxRadioButton';
+import { xxInputNumerique } from './xxInputNumerique';
+import { Icone, enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, tailleIcone } from '../xIcones';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxLabelContainer, enumPositionDuContenu } from './xxLabelContainer';
+import { xxPageWrapper } from './xxPageWrapper';
+import { xxLabelModifiable } from './xxLabelModifiable';
+import { xxListeSelection } from './xxListeSelection';
+import { xxBoxer, enumBoxerTaille } from './xxBoxer';
+
+interface OptionsTabControl {
     id?: string;
     class?: string;
     tabChange?: (tabSelectionne: xxTabItem) => void;
@@ -85,7 +108,7 @@ enum EActionGroupeTab {
     Supprimer
 }
 
-class xxTabItem {
+export class xxTabItem {
 
     public jqHost: iXElementHolder;
 
@@ -223,7 +246,7 @@ class xxTabItem {
 }
 
 
-class xxTabControl implements iXElement {
+export class xxTabControl implements iXElement {
     private zoneAvantOnglet: xxStackPanel | xxWrapPanel;
     private zoneApresOnglet: xxStackPanel | xxWrapPanel;
     private ongletAjout: xxStackPanel | xxWrapPanel;
@@ -658,7 +681,7 @@ class xxTabControl implements iXElement {
                                 },
                                 textLocalise: a.valeur.TextFermerOngletLocalise ? a.valeur.TextFermerOngletLocalise : "",
                                 titleLocalise: a.valeur.TitleFermerOngletLocalise ? a.valeur.TitleFermerOngletLocalise : "Fermer l'onglet",
-                                icone: a.valeur.TextFermerOngletLocalise ? new IconeCs3i(enumIconeCs3i.action_annuler, { taille: tailleIcone.XS }) : new IconeSvg(enumIconeSvg.croix),
+                                icone: a.valeur.TextFermerOngletLocalise ? new IconeP12(enumIconeP12.action_annuler, { taille: tailleIcone.XS }) : new IconeSvg(enumIconeSvg.croix),
                                 optionsAffichage: a.valeur.OptionBoutonWrapper2.optionsAffichage,
 
                             });
@@ -845,7 +868,7 @@ class xxTabControl implements iXElement {
                                 textLocalise: myThis.optionsAjout.textAjoutLocalise,
                                 class: 'xxBoutonListeAddTab',
                                 optionsAffichage: { tailleBouton: enumTailleBouton.XS },
-                                icone: new IconeMiniCs3i(enumIconeCs3i.action_ajouter)
+                                icone: new IconeMiniP12(enumIconeP12.action_ajouter)
                             }));
 
 
@@ -882,7 +905,7 @@ class xxTabControl implements iXElement {
                                 textLocalise: myThis.optionsAjout.textAjoutLocalise,
                                 class: 'xxBoutonListeAddTab',
                                 optionsAffichage: { tailleBouton: enumTailleBouton.XS },
-                                icone: new IconeMiniCs3i(enumIconeCs3i.action_ajouter)
+                                icone: new IconeMiniP12(enumIconeP12.action_ajouter)
                             }));
                         }
                     },
@@ -953,7 +976,7 @@ class xxTabControl implements iXElement {
                             myThis.listeGroupes.ouvrirSelection();
                             cb();
                         },
-                        icone: new IconeMiniCs3i(enumIconeCs3i.fleche_noire_bas),
+                        icone: new IconeMiniP12(enumIconeP12.fleche_noire_bas),
                         optionsAffichage: { tailleBouton: enumTailleBouton.XS, positionIconeBouton: enumPosition.Right },
                     }));
 
@@ -993,7 +1016,7 @@ class xxTabControl implements iXElement {
                                     myThis.openBoxer(myThis.optionsGroupe.groupesKey, EActionGroupeTab.Modifier, valeur);
                                     cb();
                                 },
-                                icone: new IconeMiniCs3i(enumIconeCs3i.action_modifier),
+                                icone: new IconeMiniP12(enumIconeP12.action_modifier),
                                 optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
                             })
                         });
@@ -1009,7 +1032,7 @@ class xxTabControl implements iXElement {
                                     myThis.openBoxer(myThis.optionsGroupe.groupesKey, EActionGroupeTab.Supprimer, valeur);
                                     cb();
                                 },
-                                icone: new IconeMiniCs3i(enumIconeCs3i.action_supprimer),
+                                icone: new IconeMiniP12(enumIconeP12.action_supprimer),
                                 optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
 
                             })
@@ -1045,7 +1068,7 @@ class xxTabControl implements iXElement {
                         textLocalise: myThis.optionsGroupe.textAjoutGroupeLocalise,
                         titleLocalise: myThis.optionsGroupe.textAjoutGroupeLocalise,
                         optionsAffichage: { tailleBouton: enumTailleBouton.XS },
-                        icone: new IconeMiniCs3i(enumIconeCs3i.action_ajouter)
+                        icone: new IconeMiniP12(enumIconeP12.action_ajouter)
                     }));
 
                     iciFin.append(boutonLigne);
@@ -1221,7 +1244,7 @@ class xxTabControl implements iXElement {
             pageEnregistrer.appendZoneFooter(new xxBouton({
                 titleLocalise: "Enregistrer",
                 textLocalise: "Enregistrer",
-                icone: new IconeCs3i(enumIconeCs3i.action_enregistrer),
+                icone: new IconeP12(enumIconeP12.action_enregistrer),
                 optionsAffichage: { styleBouton: enumStyleBouton.Simple },
                 click: cb =>
                 {

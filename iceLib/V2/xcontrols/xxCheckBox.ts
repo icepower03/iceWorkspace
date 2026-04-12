@@ -1,4 +1,16 @@
-﻿enum enumTypeCheckbox {
+// @ts-nocheck
+import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, Container, enumPosition } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { afficherxElements, cacherxElements } from '../../xStaticFunctions';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xxBouton, optionsAffichageBouton, enumTailleBouton, enumTypeBouton } from './xxBouton';
+import { xxLabelContainer, enumPositionDuContenu } from './xxLabelContainer';
+import { xIconeAvecAction } from './xIconeAvecAction';
+import { Icone, IconeExterne } from '../xIcones';
+import { xInputCheckBox } from './xInputCheckBox';
+import { xxContainerEvent } from './xxContainerEvent';
+﻿export enum enumTypeCheckbox {
     standard,
     slide,
     texte,
@@ -65,7 +77,7 @@ interface OptionsInputCheckBoxAvecPartiel extends OptionsHtml {
 type OptionsInputCheckBox = OptionsInputCheckBoxStandard | OptionsInputCheckBoxAvecPartiel;
 
 
-class xxCheckBox implements iXElement {
+export class xxCheckBox implements iXElement {
 
     // --------- //
     // Attributs //
@@ -611,5 +623,3 @@ class xxCheckBox implements iXElement {
 
     }
 }
-
-

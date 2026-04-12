@@ -1,6 +1,17 @@
+// @ts-nocheck
+import { iXElement, iXElementHolder, enumVisibility, Container } from '../xBase';
+import { xDiv } from './xDiv';
+import { BindableObject } from './BindableObject';
+import { ObservableCollection } from './ObservableCollection';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { HelperGeneric } from '../utils/HelperGeneric';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxStackPanel } from './xxStackPanel';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxLabel, enumTypeLabel } from './xxLabel';
 ﻿
 
-enum enumTypeTri { asc, desc, aucun }
+export enum enumTypeTri { asc, desc, aucun }
 
 interface OptionsList<T> {
     donnees: T[];
@@ -40,7 +51,7 @@ interface OptionsList<T> {
 }
 
 ///liste graphique se rafraichissant en fonction des données ajoutées ou supprimées
-class xxListWrapper<T> implements iXElement {
+export class xxListWrapper<T> implements iXElement {
     private LIMITE_NUMBER: number = 500;
 
     private espaceMinimaliste: boolean;

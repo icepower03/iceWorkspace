@@ -1,4 +1,14 @@
-﻿interface OptionsIMC
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xLString } from '../xLString';
+import { xxToolTip } from './xxToolTip';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabelContainer } from './xxLabelContainer';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { enumIconeP12, IconeP12, tailleIcone, Icone } from '../xIcones';
+
+interface OptionsIMC
 {
     id?: string;
     class?: string;
@@ -6,7 +16,7 @@
     disabledTooltip?:boolean
 }
 
-class xxIMC implements iXElement
+export class xxIMC implements iXElement
 {
     private tooltip: xxToolTip;
  
@@ -94,7 +104,7 @@ class xxIMC implements iXElement
             class: "gridIMC"
         });
 
-        let icon = new IconeCs3i(enumIconeCs3i.fleche_noire_droite, {
+        let icon = new IconeP12(enumIconeP12.fleche_noire_droite, {
             taille: tailleIcone.XS,
           
         });

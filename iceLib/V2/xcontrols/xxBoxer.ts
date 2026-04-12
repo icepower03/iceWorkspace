@@ -1,9 +1,19 @@
-﻿
-enum enumBoxerMode { standard = 1, maximize = 2, pleinePage = 3 }
+// @ts-nocheck
+import { iXElement, iXElementHolder, optionsAffichage, iTestable, enumPosition } from '../xBase';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxLabel } from './xxLabel';
+import { Icone, enumIconeP12, IconeP12, IconeMiniP12 } from '../xIcones';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxPageWrapper } from './xxPageWrapper';
+import { DockPosition } from './xxDockPanel';
 
-enum enumBoxerTaille { s = 1, m = 2, l = 3, xl = 4, fit = 5 }
+export enum enumBoxerMode { standard = 1, maximize = 2, pleinePage = 3 }
 
-enum enumPositionOrigine
+export enum enumBoxerTaille { s = 1, m = 2, l = 3, xl = 4, fit = 5 }
+
+export enum enumPositionOrigine
 {
     top_left,
     top_right,
@@ -35,7 +45,7 @@ interface OptionsBoxer extends iTestable {
 }
 
 
-class xxBoxer implements iXElement {
+export class xxBoxer implements iXElement {
   
     public get y(): HTMLElement { return this.divPrincipal.y; }
 
@@ -349,12 +359,12 @@ class xxBoxer implements iXElement {
                 click: function (cb) {
                     myThis.toggleAgrandir();
                     if (myThis.modeAffichage == enumBoxerMode.maximize)
-                        boutonToggleAgrandir.setIcone(new IconeCs3i(enumIconeCs3i.action_reduire));
+                        boutonToggleAgrandir.setIcone(new IconeP12(enumIconeP12.action_reduire));
                     if (myThis.modeAffichage == enumBoxerMode.standard)
-                        boutonToggleAgrandir.setIcone(new IconeCs3i(enumIconeCs3i.action_agrandir));
+                        boutonToggleAgrandir.setIcone(new IconeP12(enumIconeP12.action_agrandir));
                    cb();
                 },
-                icone: new IconeMiniCs3i(myThis.modeAffichage == enumBoxerMode.maximize ? enumIconeCs3i.action_reduire : enumIconeCs3i.action_agrandir),
+                icone: new IconeMiniP12(myThis.modeAffichage == enumBoxerMode.maximize ? enumIconeP12.action_reduire : enumIconeP12.action_agrandir),
                 optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
             });
             myWrapBouton.append(boutonToggleAgrandir);
@@ -364,7 +374,7 @@ class xxBoxer implements iXElement {
                     myThis.fermer();
                     cb();
                 },
-                icone: new IconeMiniCs3i(enumIconeCs3i.action_annuler),
+                icone: new IconeMiniP12(enumIconeP12.action_annuler),
                 optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
             }));
 

@@ -1,4 +1,20 @@
-﻿
+// @ts-nocheck
+import { iXElement, enumPosition } from '../xBase';
+import { xTime } from '../xTime';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xxBoxer, enumBoxerTaille } from './xxBoxer';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxBouton } from './xxBouton';
+import { xxCheckBox, enumTypeCheckbox } from './xxCheckBox';
+import { xInputTime } from './xInputDate';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxStackPanel } from './xxStackPanel';
+import { xxPageWrapper } from './xxPageWrapper';
+import { xxLabelContainer, enumPositionDuContenu } from './xxLabelContainer';
+import { xInputDate } from './xInputDate';
+import { enumIconeP12, IconeP12, Icone } from '../xIcones';
+import { enumTypeOuvertureHref } from './xHref';
+
 interface OptionsInfosCreneaux
 {
     dateDebut: DateSerialisable,
@@ -18,7 +34,7 @@ enum EJoursSemaine
     Saturday
 }
 
-class xxSpecificationCreneaux implements iXElement
+export class xxSpecificationCreneaux implements iXElement
 {
     // --------- //
     // Attributs //
@@ -162,7 +178,7 @@ class xxSpecificationCreneaux implements iXElement
             id: "xxSpecificationCreneaux_recherche_manuelle",
             class: "btnAnnulerFooter",
             titleLocalise: "Rechercher un créneau manuellement",
-            icone: new IconeCs3i(enumIconeCs3i.action_apercu),
+            icone: new IconeP12(enumIconeP12.action_apercu),
             click: async (cb) =>
             {
                 myThis.monBoxer.fermer();
@@ -175,7 +191,7 @@ class xxSpecificationCreneaux implements iXElement
             id: "xxSpecificationCreneaux_automatique",
             class: "btnValiderFooter",
             titleLocalise: "Rechercher un créneau via l'assistant de planification",
-            icone: new IconeCs3i(enumIconeCs3i.action_baguette_auto),
+            icone: new IconeP12(enumIconeP12.action_baguette_auto),
             click: async (cb) =>
             {
                 myThis.callbackValider({

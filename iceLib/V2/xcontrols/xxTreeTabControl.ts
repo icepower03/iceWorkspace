@@ -1,4 +1,7 @@
-﻿
+// @ts-nocheck
+import { iXElement, iXElementHolder, enumTypeOrientation } from '../xBase';
+import { xxTabControl, xxTabItem } from './xxTabControl';
+
 interface OptionsTreeTabControl {
     id?: string;
     class?: string;
@@ -19,7 +22,7 @@ interface OptionsTreeTabControl {
 
 }
 
-class xxTreeTabControl implements iXElement  {
+export class xxTreeTabControl implements iXElement  {
    
     public get y() { return this.TabControlPrincipal.y; }
     private favoriteGlobalKey?: string;

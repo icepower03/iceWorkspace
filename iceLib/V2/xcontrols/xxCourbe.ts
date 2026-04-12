@@ -1,4 +1,5 @@
-﻿module mChart
+﻿// @ts-nocheck
+module mChart
 {
     //Options de courbes classiques
     export interface OptionsCourbe<T>

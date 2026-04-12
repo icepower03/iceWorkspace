@@ -1,4 +1,12 @@
-﻿interface IOptionsxxArbre<T>
+// @ts-nocheck
+import { iXElement, iXElementHolder } from '../xBase';
+import { ObservableCollection } from './ObservableCollection';
+import { xDiv } from './xDiv';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxZoneRepliable, enumXxZoneRepliablePosition } from './xxZoneRepliable';
+import { xxLabel } from './xxLabel';
+
+interface IOptionsxxArbre<T>
 {
     donnees: ObservableCollection<T>;
     getEnfants: (t: T) => T[];
@@ -11,7 +19,7 @@
     renderEndList: (place: iXElementHolder, liste: xxListeDeroulante<T>) => void;
 }
 
-class xxArbre<T> implements iXElement
+export class xxArbre<T> implements iXElement
 {
     private div: xDiv;
     private donnees: ObservableCollection<T>;

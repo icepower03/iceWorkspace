@@ -1,9 +1,21 @@
-﻿interface OptionsAssistantUser {
+// @ts-nocheck
+import { iXElement, Dictionnaire } from '../xBase';
+import { xDiv } from './xDiv';
+import { xxStackPanel } from './xxStackPanel';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxBouton, enumTypeBouton, enumStyleBouton } from './xxBouton';
+import { xxRadioButton } from './xxRadioButton';
+import { xxPageWrapper } from './xxPageWrapper';
+import { xInputText } from './xInput';
+import { enumIconeSvg, IconeSvg, Icone } from '../xIcones';
+
+interface OptionsAssistantUser {
     page: xxPageWrapper;
     affichageSimpleSansRecap?: boolean;
 }
 
-class xxAssistantSaisieUtilisateur implements iXElement {
+export class xxAssistantSaisieUtilisateur implements iXElement {
     private cettePage: xxPageWrapper;
     private elementPrincipal: xxStackPanel;
     private affichageSimpleSansRecap: boolean = false;

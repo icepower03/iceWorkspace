@@ -1,4 +1,7 @@
-﻿class __DateSerialisable {
+﻿import './DateExtend';
+import { xLString } from '../xLString';
+import { xTime } from '../xTime';
+class __DateSerialisable {
     // MaDateLong
     public MaDateLong: number = 0;
 }
@@ -6,7 +9,7 @@ class __Dictionnaire {
 
 }
 
-class DateSerialisable extends __DateSerialisable {
+export class DateSerialisable extends __DateSerialisable {
     /**
     * Permet de recuperer la date actuelle en DateSerialisable
     */
@@ -689,4 +692,8 @@ class DateSerialisable extends __DateSerialisable {
 
 
 
+}
+
+if (typeof globalThis !== "undefined") {
+    (globalThis as any).DateSerialisable = DateSerialisable;
 }

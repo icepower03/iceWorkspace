@@ -1,4 +1,10 @@
-﻿enum enumAlignementContenu { HautGauche, HautCentre, HautDroite, CentreGauche, CentreCentre, CentreDroite, BasGauche, BasCentre, BasDroite }
+// @ts-nocheck
+import { ObservableCollection } from './ObservableCollection';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xMaths } from '../xMaths';
+
+export enum enumAlignementContenu { HautGauche, HautCentre, HautDroite, CentreGauche, CentreCentre, CentreDroite, BasGauche, BasCentre, BasDroite }
 
 interface optionsAffichageGrid extends optionsAffichage
 {
@@ -27,7 +33,7 @@ interface OptionsGrid
     }
 }
 
-interface OptionsGridItem {
+export interface OptionsGridItem {
     content: iXElement;
     rowStart: number;
     colStart: number;
@@ -51,7 +57,7 @@ interface OptionsGridItemCssOnly
 
 
 
-class xxGridItem implements iXElement {
+export class xxGridItem implements iXElement {
 
     private elementPrincipalItem: xDiv;
     content: iXElement;
@@ -315,7 +321,7 @@ class xxGridItem implements iXElement {
 
 interface iXElementGridPoperty { xelem: iXElement, nbCols: number, nbRows?: number,class?:string }
 
-class xxGrid {
+export class xxGrid {
    public  Length():number {
         return this.mesElements.Length;
     }

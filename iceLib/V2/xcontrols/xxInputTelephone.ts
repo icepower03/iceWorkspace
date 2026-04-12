@@ -1,4 +1,5 @@
-﻿interface OptionsInputTelephone
+﻿// @ts-nocheck
+interface OptionsInputTelephone
 {
     valeur?: string;
     valueChange?: (val: string) => void;

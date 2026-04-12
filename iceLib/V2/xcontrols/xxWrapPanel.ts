@@ -1,10 +1,11 @@
+// @ts-nocheck
 ﻿
 import { iXElement, optionsAffichage, Container } from '../xBase';
 import { xDiv } from './xDiv';
 import { xStyle } from './xStyle';
 
-enum enumAlignementVerticalWrapPanel { haut, centre, bas }
-enum enumAlignementHorizontalWrapPanel { Gauche, Centre, Droite }
+export enum enumAlignementVerticalWrapPanel { haut, centre, bas }
+export enum enumAlignementHorizontalWrapPanel { Gauche, Centre, Droite }
 
 
 interface OptionsWrapPanel {
@@ -28,9 +29,9 @@ interface OptionsWrapPanel {
     }
     //  drag?: { drop?: (ev: DragEvent) => void; }
 }
-class xxWrapPanel implements iXElement {
+export class xxWrapPanel implements iXElement {
     public toggleClass(c: string, force: boolean) {
-        return this.elemPrincipal.toggleClass(c, force);
+        return this.elemPrincipal.toggleClass(c, force);  
     }
     private elemPrincipal: xDiv;
     private espaceMinimaliste: boolean;
@@ -63,15 +64,16 @@ class xxWrapPanel implements iXElement {
             xStyle.AppliquerOptionsAffichage(newDiv, optionsAffichage);
         }
 
-        this.conteneurDitems.content.asHolder.append(newDiv);
+      
+        this.conteneurDitems.content?.asHolder.append(newDiv);
         newDiv.asHolder.append(element);
         return this;
 
-    }
-
+    } 
+   
     constructor(o: OptionsWrapPanel) {
         let myThis: xxWrapPanel = this;
-        myThis.conteneurDitems = new Container<xDiv>();
+        myThis.conteneurDitems = new Container<xDiv>(); 
         if (o.class == undefined) { o.class = ""; }
 
         if (o.retourALaLigne != undefined && o.retourALaLigne === false)
@@ -118,10 +120,10 @@ class xxWrapPanel implements iXElement {
             drag:o.drag
         });
         if (o.class != "") {
-            myThis.elemPrincipal.asHolder.xdiv({ class: "xxWrapPanel " + "WP" + o.class }, myThis.conteneurDitems);
-        }
+            myThis.elemPrincipal.asHolder.append(new xDiv({ class: "xxWrapPanel " + "WP" + o.class }, myThis.conteneurDitems));
+        } 
         else {
-            myThis.elemPrincipal.asHolder.xdiv({ class: "xxWrapPanel " }, myThis.conteneurDitems);
+            myThis.elemPrincipal.asHolder.append(new xDiv({ class: "xxWrapPanel " }, myThis.conteneurDitems));
         }
         if (o.initContent != undefined) {
             o.initContent.forEach(function (j: iXElement) {

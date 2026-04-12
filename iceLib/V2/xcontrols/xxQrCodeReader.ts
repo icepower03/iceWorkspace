@@ -1,4 +1,9 @@
-﻿interface optionsQrCodeBasics {
+// @ts-nocheck
+import { iXElement, enumVisibility } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xCanvas } from './xCanvas';
+
+interface optionsQrCodeBasics {
     autosize?: boolean;
     id?: string;
     class?: string;
@@ -18,7 +23,7 @@ interface optionsQrCodeReaderBinding extends optionsQrCodeBasics{
 
 
 declare function jsQR(data: Uint8ClampedArray, width: number, height: number, providedOptions?: any): any | null;
-class xxQrCodeReader implements iXElement {
+export class xxQrCodeReader implements iXElement {
     myCanvas: xCanvas;
     canvasElement: HTMLCanvasElement;
     canvas2D: CanvasRenderingContext2D;

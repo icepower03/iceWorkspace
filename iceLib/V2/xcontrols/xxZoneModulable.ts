@@ -1,5 +1,10 @@
+// @ts-nocheck
 ﻿import { enumTypeOrientation, iXElement, iXElementHolder } from '../xBase';
 import { xDiv } from './xDiv';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xxBouton, enumTailleBouton, enumStyleBouton } from './xxBouton';
+import { enumIconeP12, IconeP12, Icone } from '../xIcones';
 
 interface OptionZoneModulable {
     id?: string,
@@ -21,14 +26,14 @@ interface OptionZoneModulable {
 
 }
 
-enum EEtatZoneModulable {
+export enum EEtatZoneModulable {
 
     repliePremiereZone = "replie_premiere_zone",
     replieDeuxiemeZone = "replie_deuxieme_zone",
     deplie = "deplie"
 }
 
-class xxZoneModulable implements iXElement {
+export class xxZoneModulable implements iXElement {
 
     private currentMouseUpListener: (e: MouseEvent) => void;
     private currentMouseLeaveListener: (e: MouseEvent) => void;
@@ -251,7 +256,7 @@ class xxZoneModulable implements iXElement {
                     tailleBouton: enumTailleBouton.XL,
                     styleBouton: enumStyleBouton.AvecFondBlancAvecContour
                 }, 
-                icone: new IconeCs3i(enumIconeCs3i.action_rotation),
+                icone: new IconeP12(enumIconeP12.action_rotation),
                 textLocalise: "changer l'orientation",
                 titleLocalise: "changer l'orientation",
                 click: function (cb) {

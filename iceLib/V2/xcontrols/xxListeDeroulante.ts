@@ -1,3 +1,15 @@
+// @ts-nocheck
+import { iXElement, iXElementHolder, OptionsHtml, enumVisibility } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xElement } from '../../xElement';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { ObservableCollection } from './ObservableCollection';
+import { xDiv } from './xDiv';
+import { xxToolTip, enumXxToolTipMode, enumXxToolTipPositionWidth } from './xxToolTip';
+import { xxListWrapper } from './xxListWrapper';
+import { Icone, enumIconeSvg, IconeSvg, tailleIcone } from '../xIcones';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxLabelContainer } from './xxLabelContainer';
 ﻿interface OptionsOption {
     value?: string;
     selected?: any; // permet de definir si l'option est selectionnées  ( il suffit de lui affecter une valeur, '' par exemple )
@@ -60,7 +72,7 @@ interface OptionsListeDeroulante<T> {
     }
 }
 
-class xxListeDeroulante<T> implements iXElement {
+export class xxListeDeroulante<T> implements iXElement {
     // ********* //
     // Attributs //
     // ********* //

@@ -1,3 +1,8 @@
+// @ts-nocheck
+import { enumCouleur } from '../xBase';
+import { xxToolTip } from './xxToolTip';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel } from './xxLabel';
 ﻿interface optionXxIndicateur
 {
     indicateur: iXElement;
@@ -53,7 +58,7 @@ interface optionXxIndicateurNotifCaractere
 
 type optionXxIndicateurNotif = optionXxIndicateurNotifNoBind | optionXxIndicateurNotifBind | optionXxIndicateurNotifCaractere;
 
-enum EnumXxIndicateurNotifColor
+export enum EnumXxIndicateurNotifColor
 {
     Noir = enumCouleur.emed_noir,
     GrisFonce = enumCouleur.emed_grisfonce,
@@ -73,7 +78,7 @@ enum EnumXxIndicateurNotifColor
     Rose = enumCouleur.emed_rose
 }
 
-class xxIndicateur implements iXElement
+export class xxIndicateur implements iXElement
 {
     // --------- //
     // Attributs //

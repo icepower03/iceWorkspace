@@ -1,4 +1,18 @@
-﻿interface OptionListeSelectionStandardSync<T> {
+// @ts-nocheck
+import { iXElement, iXElementHolder, enumCouleur, enumPosition } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { ObservableCollection } from './ObservableCollection';
+import { xDiv } from './xDiv';
+import { xxListWrapper } from './xxListWrapper';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxWrapPanel, enumAlignementVerticalWrapPanel } from './xxWrapPanel';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { enumIconeP12, enumIconeSvg, IconeP12, IconeSvg, tailleIcone, Icone } from '../xIcones';
+
+interface OptionListeSelectionStandardSync<T> {
     ValueChange: (specialite: T[]) => void;
     DonneeSelectionnees: T[];
     DonneeComplete: T[];
@@ -60,7 +74,7 @@ type OptionListeSelectionContext<T> = OptionListeSelectionContextSync<T> | Optio
 
 type OptionListeSelection<T> = OptionListeSelectionStandard<T> | OptionListeSelectionContext<T>;
 
-class xxListeSelection<T> implements iXElement {
+export class xxListeSelection<T> implements iXElement {
 
  
     get y() {
@@ -193,7 +207,7 @@ class xxListeSelection<T> implements iXElement {
 
                     myThis.bouton_ajout_specialite = new xxBouton({
                         optionsAffichage: { tailleBouton:enumTailleBouton.Fit},
-                        icone: new IconeCs3i(enumIconeCs3i.fleche_bleue_droite, {taille: tailleIcone.XS}),
+                        icone: new IconeP12(enumIconeP12.fleche_bleue_droite, {taille: tailleIcone.XS}),
                         titleLocalise: "Ajouter",
                         id: (myThis.getId != null ? "xxListeSelection_item_add_" + myThis.getId(item) : null),
                         class: "btn_ajout",
@@ -267,7 +281,7 @@ class xxListeSelection<T> implements iXElement {
 
                     let bouton_retirer_specialite: xxBouton = new xxBouton({
                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                        icone: new IconeCs3i(enumIconeCs3i.fleche_bleue_gauche, { taille: tailleIcone.XS }),
+                        icone: new IconeP12(enumIconeP12.fleche_bleue_gauche, { taille: tailleIcone.XS }),
                         titleLocalise: "Retirer",
                         id: (myThis.getId != null ? "xxListeSelection_item_Remove_" + myThis.getId(item) : null),
                         class: "btn_supp",
@@ -325,7 +339,7 @@ class xxListeSelection<T> implements iXElement {
                         let btnOrdreSup = new xxBouton({
                             optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
                             titleLocalise: "Définir une position supérieure",
-                            icone: new IconeCs3i(enumIconeCs3i.fleche_noire_haut, { taille:tailleIcone.XS }),
+                            icone: new IconeP12(enumIconeP12.fleche_noire_haut, { taille:tailleIcone.XS }),
                             click: () => {
                                 let indexItem: number = myThis.DonneeSelectionnee.All().indexOf(item);
 
@@ -340,7 +354,7 @@ class xxListeSelection<T> implements iXElement {
                         let btnOrdreInf = new xxBouton({
                             optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
                             titleLocalise: "Définir une position inférieure",
-                            icone: new IconeCs3i(enumIconeCs3i.fleche_noire_bas, { taille: tailleIcone.XS }),
+                            icone: new IconeP12(enumIconeP12.fleche_noire_bas, { taille: tailleIcone.XS }),
                             click: () => {
                                 let indexItem: number = myThis.DonneeSelectionnee.All().indexOf(item);
 

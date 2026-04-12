@@ -1,4 +1,25 @@
-﻿interface OptionsColonnes<T> {
+// @ts-nocheck
+import { iXElement, iXElementHolder, enumCouleur, enumPosition } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xOutils } from '../../xOutils';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { ObservableCollection } from './ObservableCollection';
+import { xDiv } from './xDiv';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel, enumTypeLabel, enumHabillageLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton, enumCouleurBouton } from './xxBouton';
+import { xxToolTip, enumXxToolTipPositionHeight } from './xxToolTip';
+import { xxListWrapper, enumTypeTri } from './xxListWrapper';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxDialog, enumTypeAlerte } from './xxDialog';
+import { xInputText } from './xInput';
+import { xxInputNumerique } from './xxInputNumerique';
+import { Icone, enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, tailleIcone } from '../xIcones';
+import { xxLabelContainer, enumPositionDuContenu } from './xxLabelContainer';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xInputTextAvecIcone } from './xInputTextAvecIcone';
+
+interface OptionsColonnes<T> {
 
     titleLocalise?: string;
     titleVariable?: string;
@@ -124,14 +145,14 @@ class xxColonne<T>
     public getTypeTri(): number { return this.triCourantEtOrdreBinding.Value.triCourant; }
     public getIconeTri(): Icone {
         let mythis: xxColonne<T> = this;
-        let toSender: Icone = new IconeCs3i(enumIconeCs3i.action_tri_defaut);
+        let toSender: Icone = new IconeP12(enumIconeP12.action_tri_defaut);
 
         if (mythis.triCourantEtOrdreBinding.Value.ordreTri > 0 && mythis.triCourantEtOrdreBinding.Value.ordreTri != null) {
             if (mythis.triCourantEtOrdreBinding.Value.triCourant == enumTypeTri.asc) {
-                toSender = new IconeCs3i(mythis.triCourantEtOrdreBinding.Value.ordreTri > 1 ? enumIconeCs3i.action_tri_asc : enumIconeCs3i.action_tri_principal_asc);
+                toSender = new IconeP12(mythis.triCourantEtOrdreBinding.Value.ordreTri > 1 ? enumIconeP12.action_tri_asc : enumIconeP12.action_tri_principal_asc);
             }
             else if (mythis.triCourantEtOrdreBinding.Value.triCourant == enumTypeTri.desc) {
-                toSender = new IconeCs3i(mythis.triCourantEtOrdreBinding.Value.ordreTri > 1 ? enumIconeCs3i.action_tri_desc : enumIconeCs3i.action_tri_principal_desc);
+                toSender = new IconeP12(mythis.triCourantEtOrdreBinding.Value.ordreTri > 1 ? enumIconeP12.action_tri_desc : enumIconeP12.action_tri_principal_desc);
             }
         }
         return toSender;
@@ -339,7 +360,7 @@ class xxTableauLigneWrapper<T> implements ITableauLigneWrapperBase<T> {
         return this.item.ligne.classList.contains(classeCss);
     }
 }
-class xxTableauWrapper<T> implements iXElement {
+export class xxTableauWrapper<T> implements iXElement {
     private renderNoData: (ici: iXElementHolder) => void;
     private getImagesPdf: () => Promise<dicoImagesXElement>;
     private getCartouchePdf: () => Promise<pdfMake.DocDefinition>;
@@ -645,7 +666,7 @@ class xxTableauWrapper<T> implements iXElement {
             myThis.ajouterElement(
                 new xxBouton({
                     titleLocalise: 'Export PDF',
-                    icone: new IconeCs3i(enumIconeCs3i.action_pdf, { taille: tailleIcone.S }),
+                    icone: new IconeP12(enumIconeP12.action_pdf, { taille: tailleIcone.S }),
                     optionsAffichage: {
                         margin: { HautEtBas: 0, GaucheEtDroite: 5 }, tailleBouton: enumTailleBouton.Fit
                     },
@@ -656,7 +677,7 @@ class xxTableauWrapper<T> implements iXElement {
 
             myThis.ajouterElement(new xxBouton({
                 titleLocalise: 'Export EXCEL',
-                icone: new IconeCs3i(enumIconeCs3i.action_xls, { taille: tailleIcone.S }),
+                icone: new IconeP12(enumIconeP12.action_xls, { taille: tailleIcone.S }),
                 optionsAffichage: { margin: { HautEtBas: 0, GaucheEtDroite: 5 }, tailleBouton: enumTailleBouton.Fit },
                 click: function (cb) { myThis.exporterExcel(); cb(); }
             }), DockPosition.droite);
@@ -730,11 +751,11 @@ class xxTableauWrapper<T> implements iXElement {
 
             myThis.compteurComplet = new xxLabel({ textVariable: '' });
             myThis.footerTableau.asHolder
-                .append(new xxBouton({ icone: new IconeMiniCs3i(enumIconeCs3i.action_fleche_double_gauche), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'première page', click: function (cb) { myThis.setPagination(0); cb(); } }))
-                .append(new xxBouton({ icone: new IconeMiniCs3i(enumIconeCs3i.action_fleche_simple_gauche), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'page précédente', click: function (cb) { myThis.setPagePrecedente(); cb() } }))
+                .append(new xxBouton({ icone: new IconeMiniP12(enumIconeP12.action_fleche_double_gauche), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'première page', click: function (cb) { myThis.setPagination(0); cb(); } }))
+                .append(new xxBouton({ icone: new IconeMiniP12(enumIconeP12.action_fleche_simple_gauche), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'page précédente', click: function (cb) { myThis.setPagePrecedente(); cb() } }))
                 .xdiv({ class: 'infosPagination' }, infosPagination)
-                .append(new xxBouton({ icone: new IconeMiniCs3i(enumIconeCs3i.action_fleche_simple_droite), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'page suivante', click: function (cb) { myThis.setPageSuivante(); cb(); } }))
-                .append(new xxBouton({ icone: new IconeMiniCs3i(enumIconeCs3i.action_fleche_double_droite), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'dernière page', click: function (cb) { myThis.setPaginationMax(); cb(); } }));
+                .append(new xxBouton({ icone: new IconeMiniP12(enumIconeP12.action_fleche_simple_droite), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'page suivante', click: function (cb) { myThis.setPageSuivante(); cb(); } }))
+                .append(new xxBouton({ icone: new IconeMiniP12(enumIconeP12.action_fleche_double_droite), optionsAffichage: { tailleBouton: enumTailleBouton.Fit }, titleLocalise: 'dernière page', click: function (cb) { myThis.setPaginationMax(); cb(); } }));
             infosPagination.content.asHolder
                 .append(myThis.compteurComplet);
             /*
@@ -1875,7 +1896,7 @@ class xxTableauWrapper<T> implements iXElement {
                     colonne.wrapInEntete.append(new xxLabel({ textVariable: textTri }));
                 }
             }
-            colonne.changerIcone = function (ic: IconeCs3i) {
+            colonne.changerIcone = function (ic: IconeP12) {
                 btnTri.setIcone(ic);
             };
         }
@@ -1886,7 +1907,7 @@ class xxTableauWrapper<T> implements iXElement {
                 titleLocalise: 'Supprimer cette colonne',
                 class: "btnSupprimerColonne",
                 optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                icone: new IconeMiniCs3i(enumIconeCs3i.action_annuler_blanc, { taille: tailleIcone.XS }),
+                icone: new IconeMiniP12(enumIconeP12.action_annuler_blanc, { taille: tailleIcone.XS }),
                 click: function (cb) { myThis.supprimerColonne(colonne); cb(); }
             }
             ), "noFlexWrapItem");
@@ -2263,7 +2284,7 @@ class xxTableauWrapper<T> implements iXElement {
     //                    let enfant: string = "";
     //                    for (let i = 0; i < niv; i++) {
     //                        enfant += "=";
-    //                        //place.append(new IconeCs3i(enumIconeCs3i.action_fleche_angle_bas_droite));
+    //                        //place.append(new IconeP12(enumIconeP12.action_fleche_angle_bas_droite));
     //                    }
 
     //                    place.append(new xxLabel({

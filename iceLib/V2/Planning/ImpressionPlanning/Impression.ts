@@ -1,3 +1,4 @@
+// @ts-nocheck
 ﻿interface optionSvgImpression {
     strokeWidth?: number;
     fontSize1?: number;

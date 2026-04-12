@@ -1,4 +1,20 @@
-﻿interface optionPlanningBase {
+// @ts-nocheck
+import { iXElement, iXElementHolder } from '../xBase';
+import { xOutils } from '../../xOutils';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from '../xcontrols/xDiv';
+import { xxGrid, xxGridItem } from '../xcontrols/xxGrid';
+import { xxLabel } from '../xcontrols/xxLabel';
+import { xxBouton, enumTailleBouton } from '../xcontrols/xxBouton';
+import { xxWrapPanel } from '../xcontrols/xxWrapPanel';
+import { xxStackPanel } from '../xcontrols/xxStackPanel';
+import { xxToolTip } from '../xcontrols/xxToolTip';
+import { xxZoom } from '../xcontrols/xxZoom';
+import { xxContainerEvent } from '../xcontrols/xxContainerEvent';
+import { PlanningColonne } from './PlanningColonne';
+import { PlanningRdv, PlanningDisponibilite } from './PlanningElements';
+
+interface optionPlanningBase {
     Rdv?: PlanningRdv[];
     DateDebut?: DateSerialisable;
     HeureDebut?: number;
@@ -30,14 +46,14 @@ interface optionZoomPlanning {
     ZoomChoisi?: number;
 }
 
-interface optionAgrandirRdv {
+export interface optionAgrandirRdv {
     ApresAgrandissement?: (rdv: PlanningRdv) => void;
     RdvsADeplacer?: (rdv: PlanningRdv, dateDebut: boolean) => PlanningRdv[]; // Sert quand des rdv "Secondaires" sont associés à un rdv "principal" (ex : Planning des blocs: temps de préap / opération / temps de nettoyage)
     AvantAgrandissement?: (rdv: PlanningRdv) => void;
 
 }
 
-interface optionAddRdvOnClick {
+export interface optionAddRdvOnClick {
     Id?: number;
     IdExterne?: number;
     LibelleRdv?: string;
@@ -51,7 +67,7 @@ interface optionAddRdvOnClick {
     PrevisualisationSouris?: optionPrevisualisationSouris;
 }
 
-interface optionDragAndDropRdv {
+export interface optionDragAndDropRdv {
     AvantDeplacement?: (rdv: PlanningRdv) => void;
     ApresDeplacement?: (rdv: PlanningRdv) => void;
     RenderDivCurseur?: (rdv: PlanningRdv) => iXElement;
@@ -82,12 +98,12 @@ type optionPlanning = optionPlanningResDate
 
 const KeyLocalStorageParamUser = "xxPlanningUserParam";
 
-enum EPlanningTypeAffichage {
+export enum EPlanningTypeAffichage {
     Standard,
     Mois
 }
 
-class xxPlanning implements iXElement {
+export class xxPlanning implements iXElement {
 
     private contenuePrincipal: xxWrapPanel;
     private gridZoomEtHeure: xxGrid;
@@ -520,7 +536,7 @@ class xxPlanning implements iXElement {
                         tailleBouton: enumTailleBouton.Fit,
                         margin: { Tous: 0 }
                     },
-                    icone: new IconeCs3i(enumIconeCs3i.admin_parametres, { taille: tailleIcone.S }),
+                    icone: new IconeP12(enumIconeP12.admin_parametres, { taille: tailleIcone.S }),
                     class: "btnBoxerEcranParametrage",
                     click: cb => {
                         boxerParametrage.afficher();
@@ -556,7 +572,7 @@ class xxPlanning implements iXElement {
                         place.append(new xxBouton({
                             class: "boutonSelectTrancheHoraire",
                             textLocalise: item != null ? item.toString() + "mins" : "",
-                            icone: new IconeCs3i(enumIconeCs3i.fleche_select, { taille: tailleIcone.XS }),
+                            icone: new IconeP12(enumIconeP12.fleche_select, { taille: tailleIcone.XS }),
                             titleLocalise: "Changer de tranche horaire",
                             optionsAffichage: {
                                 tailleBouton: enumTailleBouton.XS,
@@ -1372,7 +1388,7 @@ class xxPlanning implements iXElement {
 
             let bouhTon = new xxBouton({
                 textVariable: "Coller",
-                icone: new IconeCs3i(enumIconeCs3i.action_coller),
+                icone: new IconeP12(enumIconeP12.action_coller),
                 optionsAffichage: {
                     tailleBouton: enumTailleBouton.Fit
                 },

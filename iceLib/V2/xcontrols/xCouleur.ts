@@ -1,3 +1,8 @@
+// @ts-nocheck
+import { iXElement, enumVisibility } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xDiv } from './xDiv';
+import { xxContainerEvent } from './xxContainerEvent';
 ﻿
 
 interface OptionsCouleur 
@@ -18,7 +23,7 @@ interface OptionsCouleur
 
 
 
-class xCouleur implements iXElement
+export class xCouleur implements iXElement
 {
     private elementPrincipal: xxContainerEvent;
     private monDiv: xDiv;

@@ -1,4 +1,11 @@
-﻿
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel } from './xxLabel';
+import { xxContainerEvent } from './xxContainerEvent';
+import { xxRouteContainer } from './xxRouteContainer';
+import { IconeP12, enumIconeP12, Icone } from '../xIcones';
+
      interface OptionsxxLinker {
         renderLienTheorique: () => Promise<{ lien: string, params: string[] }>;
         routeur: xxRouteContainer;
@@ -8,7 +15,7 @@
 
     }
 
-     class xxLinker implements iXElement {
+export class xxLinker implements iXElement {
         private elementPrincipal: xxContainerEvent;
         private monRouteur: xxRouteContainer;
         private renderLienTheorique: () => Promise<{ lien: string, params: string[] }>;
@@ -28,7 +35,7 @@
             if (o.icone != 'none') {
                 let icone: Icone;
                 if (o.icone == undefined) {
-                    icone = new IconeCs3i(enumIconeCs3i.xxRouteContainer_Partager);
+                    icone = new IconeP12(enumIconeP12.xxRouteContainer_Partager);
                 }
                 else { icone = o.icone; }
                 st.append(icone);

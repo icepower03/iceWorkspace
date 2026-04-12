@@ -1,4 +1,13 @@
-﻿interface OptionsInputNumerir extends OptionsInputNumericGenerique {
+// @ts-nocheck
+import { iXElement, enumVisibility } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xInputText, enumStyleInput, enumBackgroundInput } from './xInput';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxStackPanel } from './xxStackPanel';
+import { xxBouton, optionBouton, enumTailleBouton, enumTypeBouton } from './xxBouton';
+import { enumIconeP12, IconeP12, IconeMiniP12, Icone } from '../xIcones';
+
+interface OptionsInputNumerir extends OptionsInputNumericGenerique {
     class?: string;
     value?: number;
     rounded?: boolean;
@@ -24,7 +33,7 @@ interface optionBtnPlusMoin {
     nbASoustrare?: number
 }
 
-class xxInputNumerique implements iXElement {
+export class xxInputNumerique implements iXElement {
 
     private elementPrincipal: xInputText|xxWrapPanel|xxStackPanel;
     private inputNumeric: xInputText;
@@ -79,7 +88,7 @@ class xxInputNumerique implements iXElement {
             {
                 let boutonPlus: xxBouton = new xxBouton({
                     disabled: option.disabled,
-                    icone: new IconeMiniCs3i(enumIconeCs3i.fleche_noire_haut),
+                    icone: new IconeMiniP12(enumIconeP12.fleche_noire_haut),
                     class: "btnFlecheInputNumeric",
                     titleLocalise: "Plus",
                     click: cb =>
@@ -111,7 +120,7 @@ class xxInputNumerique implements iXElement {
                 });
 
                 let boutonMoins: xxBouton = new xxBouton({
-                    icone: new IconeMiniCs3i(enumIconeCs3i.fleche_noire_bas),
+                    icone: new IconeMiniP12(enumIconeP12.fleche_noire_bas),
                     disabled: option.disabled,
                     class: "btnFlecheInputNumeric",
                     titleLocalise: "Moins",

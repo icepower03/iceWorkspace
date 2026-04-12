@@ -1,4 +1,8 @@
-﻿enum enumTypeImage
+// @ts-nocheck
+import { xDiv } from './xDiv';
+import { xImg } from './xImg';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+﻿export enum enumTypeImage
 {
     backgroundImage,
     domImage
@@ -10,7 +14,7 @@ interface OptionsImageTabByte
     tabByte: string;    //Un tableau de byte sous forme d'une string doit être passé
     typeAffichage: enumTypeImage;       
 }
-class xxImageTabByte
+export class xxImageTabByte
 {
     private container: xxDockPanelDeprecated;
 

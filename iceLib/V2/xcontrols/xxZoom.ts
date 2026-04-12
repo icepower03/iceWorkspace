@@ -1,4 +1,15 @@
-﻿enum enumAffichageZoom {
+// @ts-nocheck
+import { iXElement, iXElementHolder, iTestable, enumPosition } from '../xBase';
+import { xDiv } from './xDiv';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxRadioButton } from './xxRadioButton';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { enumIconeP12, IconeP12, tailleIcone, Icone } from '../xIcones';
+
+export enum enumAffichageZoom {
     modeSlider,
     modeListeHorizontale,
     modeListeVerticale,
@@ -14,7 +25,7 @@ interface OptionsZoom extends iTestable {
 
 let ecartPx: number = 25;
 
-class xxZoom implements iXElement {
+export class xxZoom implements iXElement {
     
     private rangNiveauZoom: number;
     private listeNiveauxZoom: number[];
@@ -74,7 +85,7 @@ class xxZoom implements iXElement {
                     tailleBouton: enumTailleBouton.Fit
                 },
                 titleLocalise: "Zoomer",
-                icone: new IconeCs3i(enumIconeCs3i.action_zoom_plus),
+                icone: new IconeP12(enumIconeP12.action_zoom_plus),
                 click: function (cb) {
                     myThis.zoom();
                     cb();
@@ -87,7 +98,7 @@ class xxZoom implements iXElement {
                     tailleBouton: enumTailleBouton.Fit
                 },
                 titleLocalise: "Dézoomer",
-                icone: new IconeCs3i(enumIconeCs3i.action_zoom_moins),
+                icone: new IconeP12(enumIconeP12.action_zoom_moins),
                 click: function (cb) {
                     myThis.dezoom();
                     cb();
@@ -153,7 +164,7 @@ class xxZoom implements iXElement {
                     place.append(new xxBouton({
                         class: "boutonSelectPourcentage",
                         textLocalise: item != null ? item.toString() + "%" : "",
-                        icone: new IconeCs3i(enumIconeCs3i.fleche_select, { taille: tailleIcone.XS }),
+                        icone: new IconeP12(enumIconeP12.fleche_select, { taille: tailleIcone.XS }),
                         titleLocalise: "Changer de zoom",
                         optionsAffichage: {
                             tailleBouton: enumTailleBouton.Fit,
@@ -178,7 +189,7 @@ class xxZoom implements iXElement {
                     tailleBouton: enumTailleBouton.Fit,
                     margin: { Tous: 0 }
                 },
-                icone: new IconeCs3i(enumIconeCs3i.action_zoom_moins, { taille: tailleIcone.S }),
+                icone: new IconeP12(enumIconeP12.action_zoom_moins, { taille: tailleIcone.S }),
                 class: "zoomMoins",
                 click: cb => {
                     if (myThis.rangNiveauZoom > 0) {
@@ -195,7 +206,7 @@ class xxZoom implements iXElement {
                     tailleBouton: enumTailleBouton.Fit,
                     margin: { Tous: 0 }
                 },
-                icone: new IconeCs3i(enumIconeCs3i.action_zoom_plus, { taille: tailleIcone.S }),
+                icone: new IconeP12(enumIconeP12.action_zoom_plus, { taille: tailleIcone.S }),
                 class: "zoomPlus",
                 click: cb => {
                     if (myThis.rangNiveauZoom + 1 < myThis.listeNiveauxZoom.length) {
@@ -218,7 +229,7 @@ class xxZoom implements iXElement {
                     tailleBouton: enumTailleBouton.Fit,
                     margin: { Tous: 0 }
                 },
-                icone: new IconeCs3i(enumIconeCs3i.action_zoom_moins, { taille: tailleIcone.S }),
+                icone: new IconeP12(enumIconeP12.action_zoom_moins, { taille: tailleIcone.S }),
                 class: "zoomMoins",
                 click: cb => {
                     if (myThis.rangNiveauZoom > 0) {
@@ -236,7 +247,7 @@ class xxZoom implements iXElement {
                     tailleBouton: enumTailleBouton.Fit,
                     margin: { Tous: 0 }
                 },
-                icone: new IconeCs3i(enumIconeCs3i.action_zoom_plus, { taille: tailleIcone.S }),
+                icone: new IconeP12(enumIconeP12.action_zoom_plus, { taille: tailleIcone.S }),
                 class: "zoomPlus",
                 click: cb => {
                     if (myThis.rangNiveauZoom + 1 < myThis.listeNiveauxZoom.length) {

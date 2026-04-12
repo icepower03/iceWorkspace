@@ -1,4 +1,15 @@
-﻿interface OptionsPlanneur {
+// @ts-nocheck
+import { iXElement, iXElementHolder } from '../xBase';
+import { xElement } from '../../xElement';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from './xDiv';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxLabel } from './xxLabel';
+import { xxBouton } from './xxBouton';
+import { xxStackPanel } from './xxStackPanel';
+import { xxWrapPanel } from './xxWrapPanel';
+
+interface OptionsPlanneur {
     listeRessources: PlanneurRessource[];
     dateDebut: DateSerialisable;
     nbJours: number;
@@ -15,7 +26,7 @@
     surchargeFondGrille?: (div: xDiv, ress: PlanneurRessource, dateCell: DateSerialisable) => void
 }
 
-class PlanneurRDV {
+export class PlanneurRDV {
     public DateDebut: DateSerialisable = null; 
     public DateFin: DateSerialisable = null;
     public Libelle: string = null;
@@ -56,7 +67,7 @@ class PlanneurRDV {
     }
 }
 
-class PlanneurRessource {
+export class PlanneurRessource {
     public Libelle: string = null;
     public Id: string = null
     public IdExterne: number|string = null;
@@ -70,7 +81,7 @@ class PlanneurRessource {
     }
 }
 
-class xxPlanneurColonne implements iXElement, iXElementHolderEnable {
+export class xxPlanneurColonne implements iXElement, iXElementHolderEnable {
     public Span6h: xSpan;
     public Span12h: xSpan;
     public Span18h: xSpan;
@@ -129,7 +140,7 @@ class xxPlanneurColonne implements iXElement, iXElementHolderEnable {
 }
 
 
-class xxPlanneurLigne implements iXElement,iXElementHolderEnable {
+export class xxPlanneurLigne implements iXElement,iXElementHolderEnable {
     public Colonnes: xxPlanneurColonne[] = [];
 
     public Libelle: string = null;
@@ -183,7 +194,7 @@ class xxPlanneurLigne implements iXElement,iXElementHolderEnable {
     }
 }
 
-class xxPlanneur implements iXElement {
+export class xxPlanneur implements iXElement {
     private container: xDiv = null;
     private listeLignes: xxPlanneurLigne[] = [];
     public renderClassBloc: (d: DateSerialisable) => string;

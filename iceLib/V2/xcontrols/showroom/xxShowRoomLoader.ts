@@ -1,7 +1,12 @@
 ﻿// @ts-nocheck
-import { xxShowRoomContainer } from './xxShowRoomContainer';
-import { xxLabel } from '../xxLabel';
-import { xxBouton } from '../xxBouton';
+import { xxShowRoomContainer, ExxShowRoomContainerTypeOption, ExxShowRoomContaineGoupeElement, ExxShowRoomContaineDataType } from './xxShowRoomContainer';
+import { enumCouleur } from '../../xBase';
+import { xxLabel, enumTypeLabel, enumHabillageLabel, enumMiseEnFormeLabel } from '../xxLabel';
+import { xxLabelContainer, enumJustificationDuContenu, enumPositionDuContenu } from '../xxLabelContainer';
+import { xxLabelModifiable } from '../xxLabelModifiable';
+import { xxLabelDateModifiable } from '../xxLabelDateModifiable';
+import { xxLabelTimeModifiable } from '../xxLabelTimeModifiable';
+import { xxBouton, enumTailleBouton, enumTypeBouton, enumStyleBouton, enumCouleurBouton, enumPositionnementResponsiveBouton } from '../xxBouton';
 import { xBr } from '../xBr';
 import { xDiv } from '../xDiv';
 import { xSpan } from '../xSpan';
@@ -9,6 +14,80 @@ import { xLString } from '../../xLString';
 import { xxShowRoomSample } from './xxShowRoomSample';
 import { xxShowRoomImageTooltipPreview } from './xxShowRoomImageTooltipPreview';
 import { xxShowRoomOptionRecurrente } from './xxShowRoomOptionRecurrente';
+import { ObservableCollection } from '../ObservableCollection';
+import { IconeP12, IconeSvg, IconeTuile, enumIconeP12, enumIconeSvg, enumIconeTuile, enumIconeEmedSvg } from '../../xIcones';
+import { xInputText, enumStyleInput, enumBackgroundInput } from '../xInput';
+import { xInputDate, xInputTime, xInputDateAndTime, enumTypeAffichePicker } from '../xInputDate';
+import { xDatePicker } from '../xDatePicker';
+import { xTimePicker } from '../xTimePicker';
+import { xCanvas } from '../xCanvas';
+import { xCouleur } from '../xCouleur';
+import { xHref, enumTypeOuvertureHref } from '../xHref';
+import { xIFrame } from '../xIFrame';
+import { xImg } from '../xImg';
+import { xInputCheckBox } from '../xInputCheckBox';
+import { xInputFile } from '../xInputFile';
+import { xLi } from '../xLi';
+import { xSeparateur, enumEpaisseurSeparation } from '../xSeparateur';
+import { xTable } from '../xTable';
+import { xUl } from '../xUl';
+import { xInputTextAvecIcone } from '../xInputTextAvecIcone';
+import { xxArbre } from '../xxArbre';
+import { xxAssistantSaisieUtilisateur } from '../xxAssistantSaisieUser';
+import { xxAutoComplete, enumAutoCompleteTaille } from '../xxAutoComplete';
+import { xxBloqueEcran } from '../xxBloqueEcran';
+import { xxBoxer, enumBoxerMode, enumBoxerTaille, enumPositionOrigine } from '../xxBoxer';
+import { xxCarrousel } from '../xxCarrousel';
+import { xxCheckBox, enumTypeCheckbox } from '../xxCheckBox';
+import { xxChoixCouleur, enumNuancierCouleurs } from '../xxChoixCouleur';
+import { xxChoixOuiNon } from '../xxChoixOuiNon';
+import { xxContainerEvent } from '../xxContainerEvent';
+import { xxDialog, enumDialogTypeBouton, enumTypeAlerte } from '../xxDialog';
+import { xxDockPanelDeprecated } from '../xxDockPanel';
+import { xxGrid, xxGridItem } from '../xxGrid';
+import { xxIMC } from '../xxIMC';
+import { xxImageTabByte, enumTypeImage } from '../xxImageTabByte';
+import { xxIndicateur, EnumXxIndicateurNotifColor } from '../xxIndicateur';
+import { xxInputIntellisense } from '../xxInputIntellisense';
+import { xxInputNumerique } from '../xxInputNumerique';
+import { xxInputSpeech } from '../xxInputSpeech';
+import { xxInputUploadImage } from '../xxInputUploadImage';
+import { xxLecteurAudio } from '../xxLecteurAudio';
+import { xxLecteurCarteMagnetique } from '../xxLecteurCarteMagnetique';
+import { xxLinker } from '../xxLinker';
+import { xxListCheckBox } from '../xxListCheckBox';
+import { xxListChoix } from '../xxListChoix';
+import { xxListWrapper, enumTypeTri } from '../xxListWrapper';
+import { xxListeDeroulante } from '../xxListeDeroulante';
+import { xxListeDeroulanteAutomatique } from '../xxListeDeroulanteAutomatique';
+import { xxListeDeroulanteSimpleNePlusUtiliser } from '../xxListeDeroulanteSimple';
+import { xxListeSelection } from '../xxListeSelection';
+import { xxListeChoixLang } from '../xxListChoixLang';
+import { xxMenu } from '../xxMenu';
+import { xxNavOngletControl, xxNavOngletItem } from '../xxNavOngletControl';
+import { xxPageWrapper, enumAlignementZone } from '../xxPageWrapper';
+import { xxPlanneur } from '../xxPlanneur';
+import { xxProgressBar } from '../xxProgressBar';
+import { xxQrCodeReader } from '../xxQrCodeReader';
+import { xxRadioButton, ETypeBouton } from '../xxRadioButton';
+import { xxRecorder } from '../xxRecorder';
+import { xxRouteContainer } from '../xxRouteContainer';
+import { xxSpecificationCreneaux } from '../xxSpecificationCreneaux';
+import { xxStackPanel } from '../xxStackPanel';
+import { xxTabControl, xxTabItem } from '../xxTabControl';
+import { xxTableauWrapper } from '../xxTableau';
+import { xxTexteEnrichi } from '../xxTexteEnrichi';
+import { xxToolTip, enumXxToolTipMode, enumXxToolTipPositionHeight, enumXxToolTipPositionWidth } from '../xxToolTip';
+import { xxTreeTabControl } from '../xxTreeTabControl';
+import { xxViewerPDF } from '../xxViewerPDF';
+import { xxVolet, enumPositionVolet } from '../xxVolet';
+import { xxWrapPanel, enumAlignementVerticalWrapPanel, enumAlignementHorizontalWrapPanel } from '../xxWrapPanel';
+import { xxZoneModulable, EEtatZoneModulable } from '../xxZoneModulable';
+import { xxZoneRepliable, enumXxZoneRepliableCouleurFleche, enumXxZoneRepliablePosition } from '../xxZoneRepliable';
+import { xxZoom, enumAffichageZoom } from '../xxZoom';
+import { enumTypeOrientation, enumPosition } from '../../xBase';
+import { xxPlanning, EPlanningTypeAffichage } from '../../Planning/xxPlanning';
+import { PlanningRdv, PlanningDisponibilite, enumTypeDispo } from '../../Planning/PlanningElements';
 
 export class xxShowRoomLoader
 {
@@ -349,7 +428,7 @@ export class xxShowRoomLoader
             RenderTooltip: async () =>
             {
                 return new xImg({
-                    src: "https://www.nexus-france.fr/files/nexus-france/Downloads/logo_nexus_france.png",
+                    src: "https://api.unil.ch/newsunil/v1/api-newsunil/resources/image/1767781587378.M",
                     class: "sampleImg",
                 });
             },
@@ -362,7 +441,7 @@ export class xxShowRoomLoader
                     TypeOption: ExxShowRoomContainerTypeOption.Texte,
                     NameOption: "src",
                     Facultatif: true,
-                    ValeurDefaut: "https://www.nexus-france.fr/files/nexus-france/Downloads/logo_nexus_france.png"
+                    ValeurDefaut: "https://api.unil.ch/newsunil/v1/api-newsunil/resources/image/1767781587378.M"
                 },
             ])
         });
@@ -1932,7 +2011,7 @@ export class xxShowRoomLoader
                     titleLocalise: "Valider",
                     click: (cb) =>{cb();},
                     textLocalise: "Valider",
-                    icone: new IconeCs3i(enumIconeCs3i.action_valider),
+                    icone: new IconeP12(enumIconeP12.action_valider),
                 });
             },
             listOption: [
@@ -2020,7 +2099,7 @@ export class xxShowRoomLoader
                         },
                         textLocalise: "Valider",
                         titleLocalise: "Valider",
-                        icone: new IconeCs3i(enumIconeCs3i.action_valider),
+                        icone: new IconeP12(enumIconeP12.action_valider),
                     }
                 },
                 {
@@ -2035,7 +2114,7 @@ export class xxShowRoomLoader
                             cb();
                         },
                         textLocalise: "Supprimer",
-                        icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                        icone: new IconeP12(enumIconeP12.action_supprimer),
                     }
                 },
                 {
@@ -2048,7 +2127,7 @@ export class xxShowRoomLoader
                             cb();
                         },
                         textLocalise: "Annuler",
-                        icone: new IconeCs3i(enumIconeCs3i.action_annuler),
+                        icone: new IconeP12(enumIconeP12.action_annuler),
                     }
                 },
                 {
@@ -2061,7 +2140,7 @@ export class xxShowRoomLoader
                             cb();
                         },
                         textLocalise: "Supprimer",
-                        icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                        icone: new IconeP12(enumIconeP12.action_supprimer),
                         optionsAffichage: {
                             positionIconeBouton: enumPosition.Top,
                         },
@@ -2076,7 +2155,7 @@ export class xxShowRoomLoader
                             /*Complète-moi*/
                             cb();
                         },
-                        icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                        icone: new IconeP12(enumIconeP12.action_supprimer),
                         optionsAffichage: {
                             positionIconeBouton: enumPosition.Top,
                             tailleBouton: enumTailleBouton.Fit,
@@ -2092,7 +2171,7 @@ export class xxShowRoomLoader
                             /*Complète-moi*/
                             cb();
                         },
-                        icone: new IconeCs3i(enumIconeCs3i.action_annuler),
+                        icone: new IconeP12(enumIconeP12.action_annuler),
                         optionsAffichage: {
                             positionIconeBouton: enumPosition.Top,
                             tailleBouton: enumTailleBouton.Fit,
@@ -2806,7 +2885,7 @@ export class xxShowRoomLoader
             RenderTooltip: async () =>
             {
                 return new xxIndicateur({
-                    indicateur: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                    indicateur: new IconeP12(enumIconeP12.action_envoi_message),
 
                     Notif: [
                         {
@@ -3688,7 +3767,7 @@ export class xxShowRoomLoader
             RenderTooltip: async () =>
             {
                 return new xxLabelContainer({
-                    initContent: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                    initContent: new IconeP12(enumIconeP12.action_envoi_message),
                     textVariable: "Sample Label Container"
                 })
             },
@@ -4988,7 +5067,7 @@ export class xxShowRoomLoader
             RenderTooltip: async () =>
             {
                 return new xxMenu({
-                    contenu: [{ icone: new IconeCs3i(enumIconeCs3i.action_agrandir_horizontal), libelle: "test", items: null }],
+                    contenu: [{ icone: new IconeP12(enumIconeP12.action_agrandir_horizontal), libelle: "test", items: null }],
                 });
             },
             renderElement: (option) =>
@@ -6143,7 +6222,7 @@ export class xxShowRoomLoader
                                         tailleBouton: enumTailleBouton.Fit
                                     },
                                     titleLocalise:"",
-                                    icone: new IconeCs3i(enumIconeCs3i.action_agrandir),
+                                    icone: new IconeP12(enumIconeP12.action_agrandir),
                                     click: () => { }
                                 }));
                             },
@@ -6822,7 +6901,7 @@ export class xxShowRoomLoader
                 return new xxWrapPanel({
                     initContent: [
                         new xxLabel({ textLocalise: "sample" }),
-                        new IconeCs3i(enumIconeCs3i.action_copier_gauche),
+                        new IconeP12(enumIconeP12.action_copier_gauche),
                         new xxLabel({ textLocalise: "SAMPLE", type: enumTypeLabel.important }),
                         new xxBouton({ click: () => { }, textVariable: "Sample Bouton", titleVariable: "Sample Bouton" })
                     ], padding: true,
@@ -7142,13 +7221,13 @@ export class xxShowRoomLoader
                 let toSender: IxxShowRoomContainerIconeDef = null;
                 switch (dico)
                 {
-                    case "IconeCs3i":
+                    case "IconeP12":
                         toSender = {
-                            groupe: "iconeCs3i",
-                            icone: () => new IconeCs3i(<enumIconeCs3i>numberEnum),
-                            iconeName: enumIconeCs3i[numberEnum],
+                            groupe: "iconeP12",
+                            icone: () => new IconeP12(<enumIconeP12>numberEnum),
+                            iconeName: enumIconeP12[numberEnum],
                             iconeValue: numberEnum,
-                            iconeString: "new IconeCs3i(enumIconeCs3i." + enumIconeCs3i[numberEnum] + ")"
+                            iconeString: "new IconeP12(enumIconeP12." + enumIconeP12[numberEnum] + ")"
                         };
                         break;
                     case "IconeSvg":
@@ -7191,8 +7270,8 @@ export class xxShowRoomLoader
                 return toSender;
             };
 
-        // enumIconeCs3i
-        xxShowRoomContainer.AjouterIconeShowroom(Object.keys(enumIconeCs3i).filter(key => !isNaN(parseInt(key))).map(key => getIcone("IconeCs3i", parseInt(key))));
+        // enumIconeP12
+        xxShowRoomContainer.AjouterIconeShowroom(Object.keys(enumIconeP12).filter(key => !isNaN(parseInt(key))).map(key => getIcone("IconeP12", parseInt(key))));
 
         // enumIconeSvg
         xxShowRoomContainer.AjouterIconeShowroom(Object.keys(enumIconeSvg).filter(key => !isNaN(parseInt(key))).map(key => getIcone("IconeSvg", parseInt(key))));

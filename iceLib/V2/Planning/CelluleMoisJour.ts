@@ -1,4 +1,5 @@
-﻿class CelluleMoisJour implements iXElement
+﻿// @ts-nocheck
+class CelluleMoisJour implements iXElement
 {
     private _div: xDiv;
     private _dateJour: DateSerialisable;

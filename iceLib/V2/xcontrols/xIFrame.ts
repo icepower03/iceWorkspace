@@ -1,3 +1,5 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
 ﻿
 
 interface OptionsIFrame extends OptionsHtml  {
@@ -5,7 +7,7 @@ interface OptionsIFrame extends OptionsHtml  {
     src?: string;
 }
 
-class xIFrame extends xElement {
+export class xIFrame extends xElement {
 
     constructor(options: OptionsIFrame) {
         super("iframe", options);

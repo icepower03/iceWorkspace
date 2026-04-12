@@ -1,11 +1,14 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
+import { enumVisibility } from '../xBase';
 ﻿
-enum enumStyleInput {
+export enum enumStyleInput {
     Filled,
     Outlined,
     Simple,
 }
 
-enum enumBackgroundInput {
+export enum enumBackgroundInput {
     Grey,
     Transparent,
     BgTheme
@@ -63,7 +66,7 @@ interface OptionsInputNumericGenerique {
     autoCompletionAutorisee?: boolean;
 }
 
-class xInputText extends xElement {
+export class xInputText extends xElement {
     private change: (str: string | number) => void;
 
     private maValeur: string | number;

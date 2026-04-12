@@ -1,10 +1,14 @@
+// @ts-nocheck
 ﻿import { xDiv } from './xDiv';
 import { xxStackPanel } from './xxStackPanel';
 import { xxLabel, enumTypeLabel } from './xxLabel';
 import { xOutils } from '../../xOutils';
 import { xClass } from '../xBase';
-import { xxBouton, enumTailleBouton } from './xxBouton';
-import { IconeCs3i, enumIconeCs3i } from '../xIcones';
+import { xxBouton, enumTailleBouton, enumTypeBouton, enumStyleBouton } from './xxBouton';
+import { IconeP12, enumIconeP12, enumIconeSvg, IconeSvg, Icone } from '../xIcones';
+import { xxPageWrapper } from './xxPageWrapper';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xxBoxer, enumBoxerMode } from './xxBoxer';
 
 interface OptionViewerPDF
 {
@@ -13,7 +17,7 @@ interface OptionViewerPDF
     WithoutTitlePDF?: boolean;
 }
 
-class xxViewerPDF implements iXElement
+export class xxViewerPDF implements iXElement
 {
     private _Conteneur: xDiv = new xDiv();
     private _Page: xxPageWrapper;
@@ -103,7 +107,7 @@ class xxViewerPDF implements iXElement
             optionsAffichage: {
                 tailleBouton: enumTailleBouton.Header
             },
-            icone: new IconeCs3i(enumIconeCs3i.action_telecharger_documents),
+            icone: new IconeP12(enumIconeP12.action_telecharger_documents),
             textLocalise: "Télécharger",
             titleLocalise: "Télécharger l'aperçu en pdf",
             click: (cb) =>

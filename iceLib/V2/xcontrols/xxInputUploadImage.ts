@@ -1,3 +1,5 @@
+// @ts-nocheck
+import { xInputFile } from './xInputFile';
 ﻿
 
 interface OptionsUploadImage extends OptionsHtml {
@@ -9,7 +11,7 @@ interface OptionsUploadImage extends OptionsHtml {
     widthMax?: number;
 }
 
-class xxInputUploadImage extends xInputFile {
+export class xxInputUploadImage extends xInputFile {
     constructor(o: OptionsUploadImage) {
         let capture: 'user' | 'environment' | '' = null;
         if (o.appareilPhoto != null) {

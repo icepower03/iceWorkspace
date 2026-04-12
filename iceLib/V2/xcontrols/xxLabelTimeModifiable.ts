@@ -1,4 +1,13 @@
-﻿
+// @ts-nocheck
+import { iXElement, optionsAffichage, enumCurseur } from '../xBase';
+import { xLString } from '../xLString';
+import { xTime } from '../xTime';
+import { xDiv } from './xDiv';
+import { xxLabelContainer } from './xxLabelContainer';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xInputTime } from './xInputDate';
+import { IconeSvg, enumIconeSvg, tailleIcone, Icone } from '../xIcones';
+
 interface OptionsLabelTimeModifiable {
     id?: string;
     class?: string;
@@ -10,7 +19,7 @@ interface OptionsLabelTimeModifiable {
 }
 
 
-class xxLabelTimeModifiable implements iXElement {
+export class xxLabelTimeModifiable implements iXElement {
     private elementPrincipal: xDiv;
     private label: xxLabelContainer;
     private libelleLabelSiVide: xLString;

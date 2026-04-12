@@ -10,7 +10,7 @@
     filter: saturate(0);
 }
 
-.iconeCs3i, .iconeExterne {
+.iconeP12, .iconeExterne {
     background-image: url("images/undefined.svg?embed");
 
     &.icone_XXS {
@@ -38,7 +38,7 @@
     }
 }
 
-.iconeSeuleExterne, .iconeSeuleCs3i {
+.iconeSeuleExterne, .iconeSeuleP12 {
     display: inline-block;
     background-repeat: no-repeat;
     background-position: center center;
@@ -80,15 +80,15 @@
     }
 }
 
-.iconeCs3i_undefined{background-image: url('images/undefined.svg?embed');}
-.iconeCs3i_fleche_select {background-image: url('images/fleche_select.svg?embed');background-size:11px !important;}
-.iconeCs3i_bdd {background-image: url('images/action/bdd.svg?embed');}
-.iconeCs3i_pharmacien_delai_depasse {background-image: url('images/action/pharmacien_delai_depasse.svg?embed');}
-.iconeCs3i_surveillance_surveillance {background-image: url('images/surveillance/surveillance.svg?embed');}
-.iconeCs3i_dmp_notransmission{background-image: url('images/action/dmp_notransmission.svg?embed');}
-.iconeCs3i_dmp_transmission{background-image: url('images/action/dmp_transmission.svg?embed');}
-.iconeCs3i_dmp_envoyer{background-image: url('images/action/dmp_envoyer.svg?embed');}
-.iconeCs3i_xxListChoix_tous {background-image: url('images/xxListChoix/xxListChoix.svg?embed');}
+.iconeP12_undefined{background-image: url('images/undefined.svg?embed');}
+.iconeP12_fleche_select {background-image: url('images/fleche_select.svg?embed');background-size:11px !important;}
+.iconeP12_bdd {background-image: url('images/action/bdd.svg?embed');}
+.iconeP12_pharmacien_delai_depasse {background-image: url('images/action/pharmacien_delai_depasse.svg?embed');}
+.iconeP12_surveillance_surveillance {background-image: url('images/surveillance/surveillance.svg?embed');}
+.iconeP12_dmp_notransmission{background-image: url('images/action/dmp_notransmission.svg?embed');}
+.iconeP12_dmp_transmission{background-image: url('images/action/dmp_transmission.svg?embed');}
+.iconeP12_dmp_envoyer{background-image: url('images/action/dmp_envoyer.svg?embed');}
+.iconeP12_xxListChoix_tous {background-image: url('images/xxListChoix/xxListChoix.svg?embed');}
 
 
 /*-----------------Action-----------------*/

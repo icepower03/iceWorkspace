@@ -1,11 +1,19 @@
-﻿interface OptionCarrousel {
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xxGrid, xxGridItem, enumAlignementContenu } from './xxGrid';
+import { xxBouton, enumTailleBouton, enumTypeBouton } from './xxBouton';
+import { xxImageTabByte, enumTypeImage } from './xxImageTabByte';
+import { xxLabel } from './xxLabel';
+import { enumIconeSvg, IconeSvg, tailleIcone, Icone } from '../xIcones';
+
+interface OptionCarrousel {
     photos64: string[],
     indice_depart: number,
     class?: string,
     valueChange: (index: number) => void,
 }
 
-class xxCarrousel implements iXElement {
+export class xxCarrousel implements iXElement {
 
     private photos64: string[];
     private indexListe: number;

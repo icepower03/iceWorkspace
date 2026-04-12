@@ -1,6 +1,24 @@
+// @ts-nocheck
+import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, optionsAffichage, enumPosition } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xTime } from '../xTime';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from './xDiv';
+import { xInputText } from './xInput';
+import { xInputTextAvecIcone } from './xInputTextAvecIcone';
+import { xDatePicker } from './xDatePicker';
+import { xTimePicker } from './xTimePicker';
+import { xxToolTip, enumXxToolTipMode } from './xxToolTip';
+import { xxLabelContainer, enumPositionDuContenu } from './xxLabelContainer';
+import { xStyle } from './xStyle';
+import { IconeSvg, enumIconeSvg, tailleIcone, enumIconeP12, IconeP12, Icone } from '../xIcones';
+import { xxStackPanel } from './xxStackPanel';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel, enumTypeLabel } from './xxLabel';
 ﻿
 
-enum enumTypeAffichePicker { InLine, AvecPicker, SansPicker }
+export enum enumTypeAffichePicker { InLine, AvecPicker, SansPicker }
 
 interface OptionsInputTime extends OptionsHtml {
     id?: string;
@@ -60,7 +78,7 @@ interface OptionsInputDate extends OptionsHtml {
     disabled?: boolean;
 }
 
-class xInputDate implements iXElement {
+export class xInputDate implements iXElement {
 
     private contenuePrincipal: xxToolTip | xInputText | xDatePicker | xInputTextAvecIcone
     private toolTipContenue: xxToolTip;
@@ -431,7 +449,7 @@ class xInputDate implements iXElement {
 
 }
 
-class xInputTime implements iXElement {
+export class xInputTime implements iXElement {
     private value: xTime;
     private valueChange: (val: xTime) => void;
     private class: string;
@@ -578,7 +596,7 @@ class xInputTime implements iXElement {
             stack_timePicker_boutonClosse.append(new xxBouton({
                 titleLocalise: "Valider",
                 textLocalise: "Valider",
-                icone: new IconeCs3i(enumIconeCs3i.action_valider),
+                icone: new IconeP12(enumIconeP12.action_valider),
                 optionsAffichage: {
                     tailleBouton: enumTailleBouton.XS
                 },
@@ -692,7 +710,7 @@ class xInputTime implements iXElement {
     }
 }
 
-class xInputDateAndTime implements iXElement {
+export class xInputDateAndTime implements iXElement {
 
     private wrapPrincipal: xxWrapPanel;
     private value: DateSerialisable;

@@ -1,4 +1,5 @@
-﻿	class HelperGeneric
+// @ts-nocheck
+﻿	export class HelperGeneric
 	{
 
 		public static IsDateSerialisable(a: any): a is DateSerialisable

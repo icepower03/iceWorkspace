@@ -1,10 +1,14 @@
-﻿interface optionMenuContextuel {
+﻿import { cacherxElements, afficherxElements } from '../../xStaticFunctions';
+import { iXElementHolder, iXElement } from '../xBase';
+import { xDiv } from './xDiv';
+
+export interface optionMenuContextuel {
     renderMenuContextuel: (place: iXElementHolder, ouvrir?: () => void, fermer?: () => void) => void;
     class?: string;
 
 }
 
-class xxMenuContextuel implements iXElement {
+export class xxMenuContextuel implements iXElement {
 
     private elementPrincipal: xDiv;
 

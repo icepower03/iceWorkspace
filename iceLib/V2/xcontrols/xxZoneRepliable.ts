@@ -1,6 +1,13 @@
-﻿
-enum enumXxZoneRepliablePosition { droite, gauche }
-enum enumXxZoneRepliableCouleurFleche {Bleu,Blanc,Noir,Perso}
+// @ts-nocheck
+import { iXElement, iXElementHolder } from '../xBase';
+import { xDiv } from './xDiv';
+import { xxStackPanel } from './xxStackPanel';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { Icone, enumIconeP12, IconeP12 } from '../xIcones';
+
+export enum enumXxZoneRepliablePosition { droite, gauche }
+export enum enumXxZoneRepliableCouleurFleche {Bleu,Blanc,Noir,Perso}
 
 interface OptionsZoneRepliable {
     renderTitre: (ici: iXElementHolder, plier?: (b: boolean) => void, refreshTitre?: () => void, plie?: boolean) => void;
@@ -16,7 +23,7 @@ interface OptionsZoneRepliable {
     onToggle?: (plie?: boolean, refreshTitre?: () => void) => void;
 }
 
-class xxZoneRepliable implements iXElement {
+export class xxZoneRepliable implements iXElement {
 
     private renderTitre: (ici: iXElementHolder, plier: (b: boolean) => void, refreshTitre: () => void,plie:boolean) => void;
     private renderDetail: (ici: iXElementHolder, plier: (b: boolean) => void, refreshTitre: () => void) => void
@@ -91,42 +98,42 @@ class xxZoneRepliable implements iXElement {
             case enumXxZoneRepliableCouleurFleche.Bleu:
                 if (myThis.etatPlie) {
                     if (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) {
-                        return new IconeCs3i(enumIconeCs3i.action_fleche_simple_gauche);
+                        return new IconeP12(enumIconeP12.action_fleche_simple_gauche);
                     }
                     else {
-                        return new IconeCs3i(enumIconeCs3i.action_plier_bleu);
+                        return new IconeP12(enumIconeP12.action_plier_bleu);
                     }
                 }
                 else {
-                    return new IconeCs3i(enumIconeCs3i.action_deplier_bleu);
+                    return new IconeP12(enumIconeP12.action_deplier_bleu);
                 }
                 break;
 
             case enumXxZoneRepliableCouleurFleche.Blanc:
                 if (myThis.etatPlie) {
                     if (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) {
-                        return new IconeCs3i(enumIconeCs3i.fleche_blanche_gauche);
+                        return new IconeP12(enumIconeP12.fleche_blanche_gauche);
                     }
                     else {
-                        return new IconeCs3i(enumIconeCs3i.action_plier_blanc);
+                        return new IconeP12(enumIconeP12.action_plier_blanc);
                     }
                 }
                 else {
-                    return new IconeCs3i(enumIconeCs3i.action_deplier_blanc);
+                    return new IconeP12(enumIconeP12.action_deplier_blanc);
                 }
                 break;
 
             case enumXxZoneRepliableCouleurFleche.Noir:
                 if (myThis.etatPlie) {
                     if (myThis.PositionFleche == enumXxZoneRepliablePosition.droite) {
-                        return new IconeCs3i(enumIconeCs3i.fleche_noire_gauche);
+                        return new IconeP12(enumIconeP12.fleche_noire_gauche);
                     }
                     else {
-                        return new IconeCs3i(enumIconeCs3i.fleche_noire_droite);
+                        return new IconeP12(enumIconeP12.fleche_noire_droite);
                     }
                 }
                 else {
-                    return new IconeCs3i(enumIconeCs3i.fleche_noire_bas);
+                    return new IconeP12(enumIconeP12.fleche_noire_bas);
                 }
                 break;
 

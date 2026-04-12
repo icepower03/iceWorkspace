@@ -1,3 +1,11 @@
+// @ts-nocheck
+import { iXElement, iXElementHolder, Container } from '../xBase';
+import { xDiv } from './xDiv';
+import { xInputText } from './xInput';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxLabel } from './xxLabel';
+import { xxStackPanel } from './xxStackPanel';
+import { IconeP12, enumIconeP12, Icone } from '../xIcones';
 ﻿
 
 
@@ -26,7 +34,7 @@ interface iGroupeMenuItem {
     classeSelected?: string,
 }
 
-class xxMenu implements iXElement {
+export class xxMenu implements iXElement {
    
    
     get y() {
@@ -68,7 +76,7 @@ class xxMenu implements iXElement {
                     textLocalise: 'Filtrer',
                     class:"boutonFiltre",
                     optionsAffichage: { tailleBouton: enumTailleBouton.S },
-                    icone: new IconeCs3i(enumIconeCs3i.action_rechercher),
+                    icone: new IconeP12(enumIconeP12.action_rechercher),
                     click: function (cb) { cb(); myThis.filtrer(); }
 
                 }))
@@ -76,7 +84,7 @@ class xxMenu implements iXElement {
                     titleLocalise: 'Annuler le filtre',
                     class: "boutonAnnulerFiltre",
                     optionsAffichage: { tailleBouton: enumTailleBouton.S },
-                    icone: new IconeCs3i(enumIconeCs3i.action_annuler),
+                    icone: new IconeP12(enumIconeP12.action_annuler),
                     click: function (cb) { cb(); myThis.annulerFiltre(); }
 
                 }));
@@ -256,4 +264,3 @@ class GroupeMenuItem implements iXElement {
         myThis.isAfficher = false;
     }    
 }
-

@@ -42,9 +42,11 @@ export class xElementHolder implements iXElementHolder {
 
         return this;
     }
-    append(ajout: iXElement): xElementHolder {
-
-        this.y?.append(ajout?.y);
+    append(ajout: iXElement, out?: { content: any }): xElementHolder {
+        if (out != null) out.content = ajout;
+        if (this.y && ajout && ajout.y) {
+            this.y.append(ajout.y);
+        }
         return this;
     }
 
@@ -55,10 +57,13 @@ export class xElementHolder implements iXElementHolder {
     vider(): xElementHolder {
         if (this.y != null) {
             while (this.y.hasChildNodes()) {
-                this.y.removeChild(this.y.lastChild);
+                if (this.y.lastChild) {
+                    this.y.removeChild(this.y.lastChild);
+                } else {
+                    break;
+                }
             }
         }
-
         return this;
     }
     addClass(s: string): xElementHolder {
@@ -80,7 +85,7 @@ export class xElementHolder implements iXElementHolder {
     }
     getAttribute(nom: string): string {
         let myThis: xElementHolder = this;
-        return myThis.y.getAttribute(nom);
+        return myThis.y.getAttribute(nom) || "";
     }
     /*
     css(prop: string, val?: string): xElementHolder | string {
@@ -125,7 +130,7 @@ export class xElementHolder implements iXElementHolder {
 }
 export class xElement implements iXElement {
     //  private jq: xQuery;
-    private elem: HTMLElement;
+    private elem!: HTMLElement;
 
 
 
@@ -136,21 +141,27 @@ export class xElement implements iXElement {
 
     public width(parame?: string | number): void | number {
         let myThis: xElement = this;
+        if (typeof $ === "undefined") {
+            throw new Error("jQuery ($) is not defined. Please install @types/jquery and ensure jQuery is loaded.");
+        }
         if (parame != undefined) {
-            $(myThis.y).width(parame);
+            ($ as any)(myThis.y).width(parame);
         }
         else {
-            return $(myThis.y).width();
+            return ($ as any)(myThis.y).width();
         }
     }
 
     public height(parame?: string | number): void | number {
         let myThis: xElement = this;
+        if (typeof $ === "undefined") {
+            throw new Error("jQuery ($) is not defined. Please install @types/jquery and ensure jQuery is loaded.");
+        }
         if (parame != undefined) {
-            $(myThis.y).height(parame);
+            ($ as any)(myThis.y).height(parame);
         }
         else {
-            return $(myThis.y).height();
+            return ($ as any)(myThis.y).height();
         }
     }
 
@@ -253,66 +264,49 @@ export class xElement implements iXElement {
             //pas affectation direct pour éviter de polluer la dom avec draggable=false sur tous les éléments
             if (options?.drag?.dragKey) { myThis.elem.draggable = true; }
 
-            if (options?.drag?.dragKey != null && options?.drag?.dragKey != undefined)
-            { myThis.elem.addEventListener('dragstart', (ev) => {  ev.dataTransfer.setData('text', options.drag.dragKey()); });}
+            if (options?.drag?.dragKey != null && options?.drag?.dragKey != undefined) {
+                myThis.elem.addEventListener('dragstart', (ev) => {
+                    if (ev.dataTransfer && options.drag && options.drag.dragKey) {
+                        ev.dataTransfer.setData('text', options.drag.dragKey());
+                    }
+                });
+            }
 
             if (options?.drag?.drop != null && options?.drag?.drop != undefined) {
                 myThis.elem.addEventListener('drop', (e) => {
-                   
                     console.log('drop');
-                    options.drag.drop(e.dataTransfer.getData('text'));
+                    if (e.dataTransfer && options.drag && options.drag.drop) {
+                        options.drag.drop(e.dataTransfer.getData('text'));
+                    }
                     myThis.removeClass('isCibleDrop');
                 });
-                
+
                 myThis.elem.addEventListener('dragenter', (e) => {
                     console.log('dragenter');
                     if (!myThis._dropActive) {
                         myThis.addClass('isCibleDrop');
                         myThis._dropActive = true;
-                      
                     }
-                 //   myThis.addClass('isCibleDrop');
-                    // est ce l'element target est un enfant de currentTarget'
-                    //if (e.target == e.currentTarget || xElement.isChildOf(<HTMLElement>e.currentTarget, <HTMLElement>e.target)) {
-                    //    console.log('dragenter current');
-                    //    myThis.addClass('isCibleDrop');
-                    //    e.stopImmediatePropagation();
-                    //}
-                    //else {
-                    //    console.log('dragenter not current');
-                    //}
                 });
                 myThis.elem.addEventListener('dragleave', (e) => {
                     myThis.removeClass('isCibleDrop');
                     myThis._dropActive = false;
                     console.log('dragleave');
-                    //if (e.target == e.currentTarget) {
-                    //    console.log('dragleave current');
-                    ////    myThis.removeClass('isCibleDrop');
-                    //    e.stopImmediatePropagation();
-                    //}
-                    //else {
-                    //    console.log('dragleave not current');
-                    //    }
-                   
-                   
-                  
                 });
                 myThis.elem.addEventListener('dragover', (e) => {
                     e.preventDefault();
-                    e.dataTransfer.dropEffect = dropActionHtml;
+                    if (e.dataTransfer) {
+                        e.dataTransfer.dropEffect = dropActionHtml;
+                    }
                     console.log('dragover');
                     if (!myThis._dropActive) {
                         myThis.addClass('isCibleDrop');
                         myThis._dropActive = true;
                     }
-
-                    
                 });
                 myThis.elem.addEventListener('dragend', (e) => {
                     console.log('dragend');
                     myThis.removeClass('isCibleDrop');
-                   
                 });
             }
 

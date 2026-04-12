@@ -1,5 +1,6 @@
 ﻿// @ts-nocheck
-import { iXElement } from '../../xBase';
+import { iXElement, enumPosition, enumTypeOrientation } from '../../xBase';
+import { cacherxElements, afficherxElements } from '../../../xStaticFunctions';
 import { xStyle } from '../xStyle';
 import { xClass, enumThemes } from '../../xBase';
 import { BindableObject } from '../BindableObject';
@@ -9,17 +10,40 @@ import { xSpan } from '../xSpan';
 import { xLString } from '../../xLString';
 import { xxPageWrapper } from '../xxPageWrapper';
 import { xxContainerEvent } from '../xxContainerEvent';
-import { xxLabel } from '../xxLabel';
-import { xxBouton } from '../xxBouton';
-import { Icone } from '../../xIcones';
+import { xxGrid, xxGridItem, enumAlignementContenu } from '../xxGrid';
+import { xxLabel, enumMiseEnFormeLabel, enumHabillageLabel, enumTypeLabel } from '../xxLabel';
+import { xxLabelContainer, enumJustificationDuContenu, enumPositionDuContenu } from '../xxLabelContainer';
+import { xInputTextAvecIcone } from '../xInputTextAvecIcone';
+import { xxBouton, enumTailleBouton, enumStyleBouton, enumTypeBouton, enumCouleurBouton, enumPositionnementResponsiveBouton } from '../xxBouton';
+import { xxRadioButton } from '../xxRadioButton';
+import { Icone, enumIconeSvg, enumIconeP12, IconeP12, IconeMiniP12, tailleIcone, IconeSvg } from '../../xIcones';
 import { xxShowRoomSample } from './xxShowRoomSample';
+import { xSeparateur, enumEpaisseurSeparation } from '../xSeparateur';
+import { xxVolet, enumPositionVolet } from '../xxVolet';
+import { xxCheckBox, enumTypeCheckbox } from '../xxCheckBox';
+import { xxImageTabByte, enumTypeImage } from '../xxImageTabByte';
+import { xxListWrapper, enumTypeTri } from '../xxListWrapper';
+import { xxToolTip, enumXxToolTipPositionWidth } from '../xxToolTip';
+import { xInputText } from '../xInput';
+import { xInputDate, xInputTime } from '../xInputDate';
+import { xTime } from '../../xTime';
+import { xxAutoComplete } from '../xxAutoComplete';
+import { xxBoxer } from '../xxBoxer';
+import { xxChoixCouleur } from '../xxChoixCouleur';
+import { xxInputNumerique } from '../xxInputNumerique';
+import { xxListeDeroulante } from '../xxListeDeroulante';
+import { xxNavOngletBar, xxNavOngletItem } from '../xxNavOngletControl';
+import { xxStackPanel } from '../xxStackPanel';
+import { xxWrapPanel } from '../xxWrapPanel';
+import { DateSerialisable } from '../../utils/DateSerialisableExtend';
+import { xOutils } from '../../../xOutils';
 
 export interface optionsxxShowRoomContainer
 {
     CallOldShowRoom_Temporaire?: (cb: () => void)=>void
 }
 
-enum ExxShowRoomContainerTypeOption
+export enum ExxShowRoomContainerTypeOption
 {
     SousInterface, // Permet de definir une autre liste de IxxShowRoomDefineOption
     ListeSousInterface,
@@ -42,7 +66,7 @@ enum ExxShowRoomContainerTypeOption
     Custom // A voir en tant que type four tous ou le dev pour définir dans une function comme genere l’element de saisie de l’option si c’est trop specific
 }
 
-enum ExxShowRoomContaineGoupeElement
+export enum ExxShowRoomContaineGoupeElement
 {
     xElement="x",
     xxElement="xx",
@@ -50,7 +74,7 @@ enum ExxShowRoomContaineGoupeElement
     deprecated_DontUse="xxxx"
 }
 
-enum ExxShowRoomContaineDataType
+export enum ExxShowRoomContaineDataType
 {
     number="number",
     string="string",
@@ -885,7 +909,7 @@ export class xxShowRoomContainer implements iXElement
                             optionsAffichage: {
                                 alignementContenu: enumAlignementContenu.CentreCentre
                             },
-                            content: new IconeCs3i(enumIconeCs3i.action_copier, { taille: tailleIcone.XS })
+                            content: new IconeP12(enumIconeP12.action_copier, { taille: tailleIcone.XS })
                         })
                     ]);
 
@@ -1021,7 +1045,7 @@ export class xxShowRoomContainer implements iXElement
                         optionsAffichage: {
                             alignementContenu: enumAlignementContenu.CentreCentre
                         },
-                        content: new IconeCs3i(enumIconeCs3i.action_copier, { taille: tailleIcone.XS })
+                        content: new IconeP12(enumIconeP12.action_copier, { taille: tailleIcone.XS })
                     })
                 ]);
 
@@ -1148,7 +1172,7 @@ export class xxShowRoomContainer implements iXElement
                     new xxLabelContainer({
                         textLocalise: mythis.htmlEntities(item.NomElement), type: enumTypeLabel.titre, labelLargeurLibre: true, initContent:
                             new xxBouton({
-                                icone: new IconeMiniCs3i(enumIconeCs3i.admin_parametres_simple),
+                                icone: new IconeMiniP12(enumIconeP12.admin_parametres_simple),
                                 optionsAffichage: { tailleBouton: enumTailleBouton.Fit, },
                                 click: function (cb)
                                 {
@@ -1401,7 +1425,7 @@ export class xxShowRoomContainer implements iXElement
             optionsAffichage: {
                 tailleBouton: enumTailleBouton.Fit,
             },
-            icone: new IconeCs3i(enumIconeCs3i.action_copier),
+            icone: new IconeP12(enumIconeP12.action_copier),
         });
 
         let voletCode: xxVolet = new xxVolet({
@@ -1433,7 +1457,7 @@ export class xxShowRoomContainer implements iXElement
                 nbRows: 1,
                 content: new xxBouton({
                     id: "boutonVolet",
-                    icone: new IconeCs3i(enumIconeCs3i.fleche_bleue_haut),
+                    icone: new IconeP12(enumIconeP12.fleche_bleue_haut),
                     click: function (cb) { voletCode.afficher(); cb(); },
                     textLocalise: "Voir le code",
                     titleVariable: "Cliquer pour ouvrir le code",
@@ -1591,7 +1615,7 @@ export class xxShowRoomContainer implements iXElement
                                 if (item != null && bindListeOption.Length > 0 && bindListeOption.All().indexOf(item) >= 0)
                                     ici.append(new xxBouton({
                                         titleVariable: "Change d'option",
-                                        icone: new IconeCs3i(enumIconeCs3i.fleche_select, { taille: tailleIcone.XS }),
+                                        icone: new IconeP12(enumIconeP12.fleche_select, { taille: tailleIcone.XS }),
                                         optionsAffichage: {
                                             positionIconeBouton: enumPosition.Right,
                                             tailleBouton: enumTailleBouton.S,
@@ -1606,7 +1630,7 @@ export class xxShowRoomContainer implements iXElement
                                 else
                                     ici.append(new xxBouton({
                                         titleVariable: "Change d'option",
-                                        icone: new IconeCs3i(enumIconeCs3i.fleche_select, { taille: tailleIcone.XS }),
+                                        icone: new IconeP12(enumIconeP12.fleche_select, { taille: tailleIcone.XS }),
                                         disabled: true,
                                         optionsAffichage: {
                                             positionIconeBouton: enumPosition.Right,
@@ -2588,7 +2612,7 @@ export class xxShowRoomContainer implements iXElement
                                 optionsAffichage: { positionDuContenu: enumPositionDuContenu.droite },
                                 type: enumTypeLabel.important,
                                 labelLargeurLibre: true,
-                                initContent: new IconeCs3i(enumIconeCs3i.action_erreur)
+                                initContent: new IconeP12(enumIconeP12.action_erreur)
                             }));
                     }
                     break;
@@ -3163,7 +3187,7 @@ export class xxShowRoomContainer implements iXElement
                                 Bas: 5
                             }
                         },
-                        content: new IconeCs3i(enumIconeCs3i.action_copier, { taille: tailleIcone.XS })
+                        content: new IconeP12(enumIconeP12.action_copier, { taille: tailleIcone.XS })
                     })
                 ]);
 

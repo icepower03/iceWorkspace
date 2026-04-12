@@ -1,4 +1,16 @@
-﻿
+// @ts-nocheck
+import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, enumCouleur } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from './xDiv';
+import { xInputText, enumStyleInput } from './xInput';
+import { xInputTextAvecIcone } from './xInputTextAvecIcone';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxToolTip } from './xxToolTip';
+import { xxLabel } from './xxLabel';
+import { enumIconeSvg, IconeSvg, Icone } from '../xIcones';
+
 interface OptionsAutoCompleteValueCode<T> extends OptionsHtml
 {
     listeValeurs: T[];
@@ -81,9 +93,9 @@ interface ShownItem<T>
 
 type OptionsAutoComplete<T> = OptionsAutoCompleteValueCode<T> | OptionsAutoCompleteValueObject<T>;
 //s = 100px;m=200px;etc.
-enum enumAutoCompleteTaille { s = "s", m = "m", l = "l", xl = "xl" }
+export enum enumAutoCompleteTaille { s = "s", m = "m", l = "l", xl = "xl" }
 
-class xxAutoComplete<T> implements iXElement
+export class xxAutoComplete<T> implements iXElement
 {
 
     private listDeroulante: xxListeDeroulante<ShownItem<T>>;

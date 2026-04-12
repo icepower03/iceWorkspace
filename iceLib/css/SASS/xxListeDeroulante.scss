@@ -80,7 +80,7 @@
         text-align: left;
     }
 
-    .xxbouton.sensInverse.espaceMinimaliste span.iconeCs3i {
+    .xxbouton.sensInverse.espaceMinimaliste span.iconeP12 {
         padding-right: 22px;
         background-position: calc(100% - 5px) 50%;
     }
@@ -140,7 +140,7 @@
                     border: none;
                     margin: 0;
 
-                    span.iconeCs3i {
+                    span.iconeP12 {
                         white-space: nowrap;
                         font-weight: normal;
                         color: black;
@@ -226,7 +226,7 @@
     }
 
     &.retourALaLigne {
-        .xxListeDeroulanteStdListeHoster .xxStackPanelItem .xxbouton span.iconeCs3i {
+        .xxListeDeroulanteStdListeHoster .xxStackPanelItem .xxbouton span.iconeP12 {
             white-space: normal;
         }
     }
@@ -317,7 +317,7 @@
                             padding: 0;
                             border-radius: 5px;
 
-                            span, span.iconeCs3i {
+                            span, span.iconeP12 {
                                 white-space: normal;
                                 padding: 15px;
                                 font-size: 15px;

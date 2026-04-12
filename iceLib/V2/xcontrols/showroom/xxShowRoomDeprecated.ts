@@ -1,4 +1,5 @@
-﻿interface optionsShowRoom {
+﻿// @ts-nocheck
+interface optionsShowRoom {
     page: xxPageWrapper
 }
 
@@ -82,7 +83,7 @@ class ElementSR {
         this.classe = inCl;
     }
 }
-class xxShowRoom implements iXElement {
+export class xxShowRoom implements iXElement {
     pageShowRoom: xxPageWrapper;
 
 
@@ -370,19 +371,19 @@ class xxShowRoom implements iXElement {
         o = {
             typeOrientation: enumTypeOrientation.horizontal,
             valueChange: function (val: string) {
-                xOutils.afficherMessageAlertifyLog(val); ct.ajouterItems([new itemRadioButton<string>({ icone: new IconeCs3i(enumIconeCs3i.action_admission), valeur: "ajout", libelleVariable: "ajout" }),
+                xOutils.afficherMessageAlertifyLog(val); ct.ajouterItems([new itemRadioButton<string>({ icone: new IconeP12(enumIconeP12.action_admission), valeur: "ajout", libelleVariable: "ajout" }),
                 ]);
             },
             initElements: [
 
-                { icone: new IconeCs3i(enumIconeCs3i.action_ajouter), espaceMinimaliste: true,  valeur: "vanille" },
-                { icone: new IconeCs3i(enumIconeCs3i.action_admission), valeur: "noix de coco", libelleVariable: "choix coco" },
+                { icone: new IconeP12(enumIconeP12.action_ajouter), espaceMinimaliste: true,  valeur: "vanille" },
+                { icone: new IconeP12(enumIconeP12.action_admission), valeur: "noix de coco", libelleVariable: "choix coco" },
 
-                { icone: new IconeCs3i(enumIconeCs3i.action_admission), valeur: "chocolat noir", libelleVariable: "choix chocolat noir" },
+                { icone: new IconeP12(enumIconeP12.action_admission), valeur: "chocolat noir", libelleVariable: "choix chocolat noir" },
                 { valeur: "chocolat au lait", libelleVariable: "choix chocolat au lait" },
 
-                { icone: new IconeCs3i(enumIconeCs3i.action_ajouter), valeur: "banane", libelleVariable: "choix chocolat" },
-                { icone: new IconeCs3i(enumIconeCs3i.action_annuler), valeur: "fraise" },
+                { icone: new IconeP12(enumIconeP12.action_ajouter), valeur: "banane", libelleVariable: "choix chocolat" },
+                { icone: new IconeP12(enumIconeP12.action_annuler), valeur: "fraise" },
                 { valeur: '', binding: { texteVariable: bindText } }]
 
         };
@@ -957,7 +958,7 @@ class xxShowRoom implements iXElement {
 
         ajouter('xxRadioButton', 'Boutons radio en mode vertical avec présélection', function (ici: xElementHolder) {
             o.typeOrientation = enumTypeOrientation.vertical;
-            o.initElements.push({ icone: new IconeCs3i(enumIconeCs3i.action_apercu), preselectionne: true, libelleVariable: 'test', valeur: 'homard' })
+            o.initElements.push({ icone: new IconeP12(enumIconeP12.action_apercu), preselectionne: true, libelleVariable: 'test', valeur: 'homard' })
             ici.xxRadioButton(o);
 
         }, 2, xxRadioButton);
@@ -1090,7 +1091,7 @@ class xxShowRoom implements iXElement {
             optionsTab.styleArrondi = true;
             optionsTab.typeOrientation = enumTypeOrientation.horizontal;
             optionsTab.initElements.push({
-                icone: new IconeCs3i(enumIconeCs3i.action_desepingler),
+                icone: new IconeP12(enumIconeP12.action_desepingler),
                 textVariable: 'test onglet 3', addContent: function (ici: xElementHolder) {
                     ici.xxLabel({ textVariable: 'ceci est le 3eme onglet' });
                 }
@@ -1463,8 +1464,8 @@ class xxShowRoom implements iXElement {
                 ValueChange: function (valeur: boolean) {
                     i.y.textContent = '' + valeur;
                 },
-                imageEnable: new IconeCs3i(enumIconeCs3i.xxRouteContainer_FavoriOn),
-                imageDisable: new IconeCs3i(enumIconeCs3i.xxRouteContainer_FavoriOff),
+                imageEnable: new IconeP12(enumIconeP12.xxRouteContainer_FavoriOn),
+                imageDisable: new IconeP12(enumIconeP12.xxRouteContainer_FavoriOff),
                 titleVariable: "Afficher / masquer"
             }).append(i);
 
@@ -1629,7 +1630,7 @@ class xxShowRoom implements iXElement {
         ajouter('xxBouton', 'xxBouton avec old icone', ici => {
             ici.append(new xxBouton({
                 titleVariable: "Ah oui oui ",
-                icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Home),
+                icone: new IconeP12(enumIconeP12.xxRouteContainer_Home),
                 textVariable: "Home",
                 click: cb => {
                     xOutils.afficherMessageAlertifyLog("Bouton home type old icone cliqué");
@@ -1642,7 +1643,7 @@ class xxShowRoom implements iXElement {
         ajouter('xxBouton', 'xxBouton disabled', ici => {
             ici.append(new xxBouton({
                 titleVariable: "Bouton désactivé",
-                icone: new IconeCs3i(enumIconeCs3i.xxRouteContainer_Home),
+                icone: new IconeP12(enumIconeP12.xxRouteContainer_Home),
                 textVariable: "Désactivé",
                 disabled: true,
                 click: cb => {
@@ -1800,7 +1801,7 @@ class xxShowRoom implements iXElement {
             let optionsMenu: OptionsMenu = {
                 contenu:
                     [{
-                        icone: new IconeCs3i(enumIconeCs3i.admin_agendas),
+                        icone: new IconeP12(enumIconeP12.admin_agendas),
                         libelle: "test groupe 1",
                         items: [{
                             Click: function () { actionMenu('google.fr') },
@@ -1812,7 +1813,7 @@ class xxShowRoom implements iXElement {
                         }
                         ]
                     }, {
-                        icone: new IconeCs3i(enumIconeCs3i.admin_user),
+                        icone: new IconeP12(enumIconeP12.admin_user),
                         libelle: "test groupe 2",
                         items: [{
                             Click: function () { actionMenu('chocolat.com') },
@@ -1834,7 +1835,7 @@ class xxShowRoom implements iXElement {
             let optionsMenu: OptionsMenu = {
                 contenu:
                     [{
-                        icone: new IconeCs3i(enumIconeCs3i.admin_agendas),
+                        icone: new IconeP12(enumIconeP12.admin_agendas),
                         libelle: "test groupe 1",
                         items: [{
                             Click: function () { actionMenu('google.fr') },
@@ -1846,7 +1847,7 @@ class xxShowRoom implements iXElement {
                         }
                         ]
                     }, {
-                        icone: new IconeCs3i(enumIconeCs3i.admin_user),
+                        icone: new IconeP12(enumIconeP12.admin_user),
                         libelle: "test groupe 2",
                         items: [{
                             Click: function () { actionMenu('chocolat.com') },
@@ -1947,7 +1948,7 @@ class xxShowRoom implements iXElement {
 
                         .append(new xxBouton({
                             titleVariable: "supprimer l'élément",
-                            icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                            icone: new IconeP12(enumIconeP12.action_supprimer),
                            
                             click: function (cb) {
                                 monxxListWrapper.supprimerItem(item);
@@ -1974,7 +1975,7 @@ class xxShowRoom implements iXElement {
                 //j'ajoute aussi un bouton pour ajouter des éléments
                 .append(new xxBouton({
                     titleVariable: "ajouter des éléments",
-                    icone: new IconeCs3i(enumIconeCs3i.action_ajouter),
+                    icone: new IconeP12(enumIconeP12.action_ajouter),
                     textVariable: "ajouter des éléments",
                     click: function (cb: () => void) {
                         monxxListWrapper.ajouterItems(mesDesserts.slice(10, 20));
@@ -1983,7 +1984,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     titleVariable: "changer l'ordre",
-                    icone: new IconeCs3i(enumIconeCs3i.action_rafraichir),
+                    icone: new IconeP12(enumIconeP12.action_rafraichir),
                     textVariable: "tri descendant",
                     click: function (cb) {
                         monxxListWrapper.changerTri();
@@ -2033,7 +2034,7 @@ class xxShowRoom implements iXElement {
                         click: function (cb) { cbChoisir(monDessert); },
                         titleVariable: 'choisir ce dessert',
                         textVariable: 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                        icone: new IconeP12(enumIconeP12.action_epingler),
 
                     }));
                 },
@@ -2070,7 +2071,7 @@ class xxShowRoom implements iXElement {
                     ici.xxWrapPanel({
                         retourALaLigne: false,
                         initContent: [
-                            new IconeCs3i(enumIconeCs3i.action_epingler),
+                            new IconeP12(enumIconeP12.action_epingler),
                             new xxLabel({
                                 textVariable: monDessert.typeFarine,
                             })
@@ -2097,7 +2098,7 @@ class xxShowRoom implements iXElement {
                         click: function (cb) { cbChoisir(monDessert); },
                         titleVariable: 'choisir ce dessert',
                         textVariable: 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                        icone: new IconeP12(enumIconeP12.action_epingler),
                     }));
                 },
                 selected: function (maSelection) {
@@ -2138,7 +2139,7 @@ class xxShowRoom implements iXElement {
                         click: function (cb) { cbChoisir(monDessert); },
                         titleVariable: 'choisir ce dessert',
                         textVariable: 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                        icone: new IconeP12(enumIconeP12.action_epingler),
 
                     }));
                 },
@@ -2187,7 +2188,7 @@ class xxShowRoom implements iXElement {
                         click: function (cb) { cbChoisir(monDessert); },
                         titleVariable: 'choisir ce dessert',
                         textVariable: 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                        icone: new IconeP12(enumIconeP12.action_epingler),
 
                     }));
                 },
@@ -2379,7 +2380,7 @@ class xxShowRoom implements iXElement {
                             ).append(
                                 new xxBouton({
                                   
-                                    icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                                    icone: new IconeP12(enumIconeP12.action_supprimer),
                                     titleVariable: 'supprimer',
                                     click: function (cb) {
                                         w.supprimerDatas([valeur]); cb();
@@ -2404,7 +2405,7 @@ class xxShowRoom implements iXElement {
                             place.append(new xDiv({ textVariable: valeur.modeCuisson }))
                                 .append(new xxBouton({
                                     optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                    icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                                    icone: new IconeP12(enumIconeP12.action_epingler),
                                     titleVariable: 'select',
                                     click: function (cb) { lw.toggleClass("selected"); cb(); }
                                 }));
@@ -2425,7 +2426,7 @@ class xxShowRoom implements iXElement {
                             place.xdiv({ textVariable: valeur.typeFarine })
                                 .append(new xxBouton({
                                     
-                                    icone: new IconeCs3i(enumIconeCs3i.action_rafraichir),
+                                    icone: new IconeP12(enumIconeP12.action_rafraichir),
                                     titleVariable: 'select',
                                     click: function (cb) {
                                         valeur.typeFarine = 'SUPER STYLE FARINE';
@@ -2447,7 +2448,7 @@ class xxShowRoom implements iXElement {
             ici.append(w)
                 .append(new xxBouton({
                     textVariable: 'supprimer 5 1ers desserts',
-                    icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                    icone: new IconeP12(enumIconeP12.action_supprimer),
                     click: function (cb) {
 
                         w.supprimerDatas(
@@ -2463,7 +2464,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     textVariable: 'Tout supprimer',
-                    icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                    icone: new IconeP12(enumIconeP12.action_supprimer),
                     click: function (cb) {
 
                         w.supprimerDatasAll();
@@ -2473,7 +2474,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     textVariable: 'ajouter colonne oeufs',
-                    icone: new IconeCs3i(enumIconeCs3i.action_ajouter),
+                    icone: new IconeP12(enumIconeP12.action_ajouter),
                     click: function (cb) {
                         w.ajouterColonne(new xxColonne<Dessert>({
                             titleVariable: 'oeufs',
@@ -2491,7 +2492,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     textVariable: 'ajouter 1000 Desserts',
-                    icone: new IconeCs3i(enumIconeCs3i.action_ajouter),
+                    icone: new IconeP12(enumIconeP12.action_ajouter),
                     titleVariable: 'ajouter',
                     click: function (cb) {
                         let ajoutDesserts: Dessert[] = [];
@@ -2610,7 +2611,7 @@ class xxShowRoom implements iXElement {
                                 place.xdiv({ textVariable: valeur.farine + ' g' })
                                     .append(new xxBouton({
                                       
-                                        icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                                        icone: new IconeP12(enumIconeP12.action_supprimer),
                                         titleVariable: 'supprimer',
                                         click: function (cb) {
                                             w.supprimerDatas([valeur]); cb();
@@ -2632,7 +2633,7 @@ class xxShowRoom implements iXElement {
                                 place.xdiv({ textVariable: valeur.modeCuisson })
                                     .append(new xxBouton({
                                      
-                                        icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                                        icone: new IconeP12(enumIconeP12.action_epingler),
                                         titleVariable: 'select',
                                         click: function (cb) { lw.toggleClass("selected"); cb(); }
                                     }));
@@ -2651,7 +2652,7 @@ class xxShowRoom implements iXElement {
                                 place.xdiv({ textVariable: valeur.typeFarine })
                                     .append(new xxBouton({
                                        
-                                        icone: new IconeCs3i(enumIconeCs3i.action_rafraichir),
+                                        icone: new IconeP12(enumIconeP12.action_rafraichir),
                                         titleVariable: 'select',
                                         click: function (cb) {
                                             valeur.typeFarine = 'SUPER STYLE FARINE';
@@ -2674,7 +2675,7 @@ class xxShowRoom implements iXElement {
             ici.append(w)
                 .append(new xxBouton({
                     textVariable: 'supprimer 5 1ers desserts',
-                    icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                    icone: new IconeP12(enumIconeP12.action_supprimer),
                     click: function (cb) {
 
                         w.supprimerDatas(
@@ -2690,7 +2691,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     textVariable: 'Tout supprimer',
-                    icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                    icone: new IconeP12(enumIconeP12.action_supprimer),
                     click: function (cb) {
 
                         w.supprimerDatasAll();
@@ -2700,7 +2701,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     textVariable: 'ajouter colonne oeufs',
-                    icone: new IconeCs3i(enumIconeCs3i.action_ajouter),
+                    icone: new IconeP12(enumIconeP12.action_ajouter),
                     click: function (cb) {
                         w.ajouterColonne(new xxColonne<Dessert>({
                             titleVariable: 'oeufs',
@@ -2718,7 +2719,7 @@ class xxShowRoom implements iXElement {
                 }))
                 .append(new xxBouton({
                     textVariable: 'ajouter 1000 Desserts',
-                    icone: new IconeCs3i(enumIconeCs3i.action_ajouter),
+                    icone: new IconeP12(enumIconeP12.action_ajouter),
                     titleVariable: 'ajouter',
                     click: function (cb) {
                         let ajoutDesserts: Dessert[] = [];
@@ -2785,7 +2786,7 @@ class xxShowRoom implements iXElement {
                             place.xdiv({ textVariable: valeur.modeCuisson })
                                 .append(new xxBouton({
                                    
-                                    icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                                    icone: new IconeP12(enumIconeP12.action_epingler),
                                     titleVariable: 'select',
                                     click: function (cb) { cb(); }
                                 }));
@@ -2815,7 +2816,7 @@ class xxShowRoom implements iXElement {
                             place.xdiv({ textVariable: valeur.farine + ' g' })
                                 .append(new xxBouton({
                                    
-                                    icone: new IconeCs3i(enumIconeCs3i.action_supprimer),
+                                    icone: new IconeP12(enumIconeP12.action_supprimer),
                                     titleVariable: 'supprimer',
                                     click: function (cb) {
                                         w.supprimerDatas([valeur]); cb();
@@ -2840,7 +2841,7 @@ class xxShowRoom implements iXElement {
                             place.append(new xDiv({ textVariable: valeur.modeCuisson }))
                                 .append(new xxBouton({
                                  
-                                    icone: new IconeCs3i(enumIconeCs3i.action_epingler),
+                                    icone: new IconeP12(enumIconeP12.action_epingler),
                                     titleVariable: 'select',
                                     click: function (cb) { lw.toggleClass("selected"); cb(); }
                                 }));
@@ -2861,7 +2862,7 @@ class xxShowRoom implements iXElement {
                             place.xdiv({ textVariable: valeur.typeFarine })
                                 .append(new xxBouton({
                                   
-                                    icone: new IconeCs3i(enumIconeCs3i.action_rafraichir),
+                                    icone: new IconeP12(enumIconeP12.action_rafraichir),
                                     titleVariable: 'select',
                                     click: function (cb) {
                                         valeur.typeFarine = 'SUPER STYLE FARINE';
@@ -2879,7 +2880,7 @@ class xxShowRoom implements iXElement {
                         renderMethod: function (place: xElementHolder, valeur: Dessert, lw: xxTableauLigneWrapper<Dessert>) {
                             place.append(new xxBouton({
                               
-                                icone: new IconeCs3i(enumIconeCs3i.fleche_bleue_droite),
+                                icone: new IconeP12(enumIconeP12.fleche_bleue_droite),
                                 titleVariable: 'Ouvrir detail',
                                 click: function (cb) {
                                     lw.afficherDetail();
@@ -2897,7 +2898,7 @@ class xxShowRoom implements iXElement {
                             textVariable: "detail de la ligne : " + valeur.farine + "/" + valeur.modeCuisson + "/" + valeur.oeufs + "/" + valeur.sucre,
                             initContent: new xxBouton({
                                 
-                                icone: new IconeCs3i(enumIconeCs3i.fleche_bleue_haut),
+                                icone: new IconeP12(enumIconeP12.fleche_bleue_haut),
                                 titleVariable: 'Fermer detail',
                                 click: function (cb) {
                                     lw.masquerDetail();
@@ -2969,7 +2970,7 @@ class xxShowRoom implements iXElement {
             w.ajouterDatas(mesDesserts);
         }, 2, xxTableauWrapper);
 
-        //ajouter('xxLabel', 'Permet d\'afficher du texte', function (ici: xElementHolder) { ici.xxLabel({ textVariable: 'bonjour', icone: new IconeCs3i(enumIconeCs3i.action_urgent) }); }, 2, xxLabel);
+        //ajouter('xxLabel', 'Permet d\'afficher du texte', function (ici: xElementHolder) { ici.xxLabel({ textVariable: 'bonjour', icone: new IconeP12(enumIconeP12.action_urgent) }); }, 2, xxLabel);
         ajouter('xxLabel', 'Permet d\'afficher du texte en mode bloc (type:bloc)', (ici => {
             ici.append(new xxLabel({
                 type: enumTypeLabel.bloc,
@@ -3283,7 +3284,7 @@ lignes `
                         new xxBouton({
                             titleVariable: "bouton contenu dans le tooltip",
                           
-                            icone: new IconeCs3i(enumIconeCs3i.action_enregistrer),
+                            icone: new IconeP12(enumIconeP12.action_enregistrer),
                             click: function (cb) {
                                 cb();
                             }
@@ -3305,7 +3306,7 @@ lignes `
         ajouter('xxToolTip', 'xxTooltip Mode Hover with Header', function (ici: xElementHolder) {
             ici.xxToolTip({
                 titreHeaderLocalise: "Enregistrement :",
-                contenuFooter: new xxBouton({ textLocalise: "Marquer comme lu", titleLocalise: "Bouton de test", icone: new IconeCs3i(enumIconeCs3i.etat_vu), optionsAffichage: { margin: { Tous: 0 } }, click: function (cb) { cb(); } }),
+                contenuFooter: new xxBouton({ textLocalise: "Marquer comme lu", titleLocalise: "Bouton de test", icone: new IconeP12(enumIconeP12.etat_vu), optionsAffichage: { margin: { Tous: 0 } }, click: function (cb) { cb(); } }),
                 initContent: new xxLabel({ textVariable: "test tooltip" }),
                 toolTipContent: new xxStackPanel({
                     initContent: [
@@ -3313,7 +3314,7 @@ lignes `
                         new xxBouton({
                             textVariable: "bouton contenu dans le tooltip",
                             titleLocalise:'c',
-                            icone: new IconeCs3i(enumIconeCs3i.action_enregistrer),
+                            icone: new IconeP12(enumIconeP12.action_enregistrer),
                             click: function (cb) {
                                 cb();
                             }
@@ -3334,7 +3335,7 @@ lignes `
                         new xxBouton({
                             titleVariable: "bouton contenu dans le tooltip",
                           
-                            icone: new IconeCs3i(enumIconeCs3i.action_enregistrer),
+                            icone: new IconeP12(enumIconeP12.action_enregistrer),
                             click: function (cb) {
                                 cb();
                             }
@@ -3356,7 +3357,7 @@ lignes `
                         new xxBouton({
                             titleVariable: "bouton contenu dans le tooltip",
                            
-                            icone: new IconeCs3i(enumIconeCs3i.action_enregistrer),
+                            icone: new IconeP12(enumIconeP12.action_enregistrer),
                             click: function (cb) {
                                 cb();
                             }
@@ -3377,7 +3378,7 @@ lignes `
                         new xxBouton({
                             titleVariable: "bouton contenu dans le tooltip",
                            
-                            icone: new IconeCs3i(enumIconeCs3i.action_enregistrer),
+                            icone: new IconeP12(enumIconeP12.action_enregistrer),
                             click: function (cb) {
                                 cb();
                             }
@@ -3645,7 +3646,7 @@ lignes `
         // ************ //
         ajouter("xxIndicateur", "xxIndicateur Title simple", function (ici: xElementHolder) {
             ici.append(new xxIndicateur({
-                indicateur: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
                 titleVariable: "Prescription prolongées"
             }));
 
@@ -3656,7 +3657,7 @@ lignes `
 
             let notifbind: BindableObject<number> = new BindableObject<number>(8);
             let indica: xxIndicateur = new xxIndicateur({
-                indicateur: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
                 titleVariable: "Nombre de prescription prolongées",
                 Notif: [{
                     nbNotifBindable: notifbind,
@@ -3720,7 +3721,7 @@ lignes `
 
         ajouter("xxIndicateur", "xxIndicateur Tooltip simple", function (ici: xElementHolder) {
             ici.append(new xxIndicateur({
-                indicateur: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
                 toolTipContent: new xxStackPanel({
                     initContent: [
                         new xxLabel({ textVariable: "------------------1------------------" }),
@@ -3739,7 +3740,7 @@ lignes `
 
             let notifbind: BindableObject<number> = new BindableObject<number>(8);
             let indica: xxIndicateur = new xxIndicateur({
-                indicateur: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
                 toolTipContent: new xxStackPanel({
                     initContent: [
                         new xxLabel({ textVariable: "------------------1------------------" }),
@@ -3818,7 +3819,7 @@ lignes `
                     indica = new xxIndicateur({
                         NotifAlwaysShow: AlwaysNotif,
                         NotifHideAlwaysTakePlace: AlwaysTakePlace,
-                        indicateur: new IconeCs3i(enumIconeCs3i.action_envoi_message),
+                        indicateur: new IconeP12(enumIconeP12.action_envoi_message),
                         titleVariable: "Nombre de prescriptions prolongées",
                         Notif: [{
                             nbNotif: 0,
@@ -4012,11 +4013,11 @@ lignes `
             let a = new xxWrapPanel({ class: "wrapIconesShowroom" });
             ici.append(a);
 
-            let listeIcones: string[] = xOutils.enumNamesToStringArray(enumIconeCs3i);
+            let listeIcones: string[] = xOutils.enumNamesToStringArray(enumIconeP12);
 
             listeIcones.forEach((val: string) => {
 
-                let iconeTemp = new IconeCs3i(xOutils.stringToEnum<enumIconeCs3i>(val, enumIconeCs3i));
+                let iconeTemp = new IconeP12(xOutils.stringToEnum<enumIconeP12>(val, enumIconeP12));
                 a.append(new xxBouton({
                     icone: iconeTemp, click: function () { }, titleVariable: '', optionsAffichage: {positionIconeBouton:enumPosition.Top} , textVariable: val
                 }))
@@ -4033,11 +4034,11 @@ lignes `
             let div: xDiv = new xDiv();
             ici.append(a);
 
-            let listeIcones: string[] = xOutils.enumNamesToStringArray(enumIconeCs3i);
+            let listeIcones: string[] = xOutils.enumNamesToStringArray(enumIconeP12);
 
             listeIcones.forEach((val: string) => {
 
-                let iconeTemp = new IconeMiniCs3i(xOutils.stringToEnum<enumIconeCs3i>(val, enumIconeCs3i));
+                let iconeTemp = new IconeMiniP12(xOutils.stringToEnum<enumIconeP12>(val, enumIconeP12));
                 a.append(new xxIndicateur({
                     indicateur: iconeTemp,
                     toolTipContent: new xxLabel({ textVariable: val })
@@ -4513,7 +4514,7 @@ lignes `
 
                     // icon - C 3 > 5 - L++
                     let dicoIcon: any = {
-                        IconeCs3i: Object.keys(enumIconeCs3i).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
+                        IconeP12: Object.keys(enumIconeP12).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                         IconeSvg: Object.keys(enumIconeSvg).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                         IconeEmedSvg: Object.keys(enumIconeEmedSvg).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                         IconeTuileSvg: Object.keys(enumIconeTuile).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
@@ -4528,11 +4529,11 @@ lignes `
                     function getIcone(dico: string, numberEnum: number): { icone: Icone, iconeName: string, iconeString: string } {
                         let toSender: { icone: Icone, iconeName: string, iconeString: string } = null;
                         switch (dico) {
-                            case "IconeCs3i":
+                            case "IconeP12":
                                 toSender = {
-                                    icone: new IconeCs3i(<enumIconeCs3i>numberEnum),
-                                    iconeName: enumIconeCs3i[numberEnum],
-                                    iconeString: "new IconeCs3i(enumIconeCs3i." + enumIconeCs3i[numberEnum] + ")"
+                                    icone: new IconeP12(<enumIconeP12>numberEnum),
+                                    iconeName: enumIconeP12[numberEnum],
+                                    iconeString: "new IconeP12(enumIconeP12." + enumIconeP12[numberEnum] + ")"
                                 };
                                 break;
                             case "IconeSvg":

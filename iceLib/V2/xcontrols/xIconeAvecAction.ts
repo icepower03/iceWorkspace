@@ -1,7 +1,6 @@
 ﻿import { iXElement, optionsAffichage } from '../xBase';
-import { enumIconeCs3i, enumIconeAction, Icone, IconeV2, IconeSvg, IconeCs3i, tailleIcone } from '../xIcones';
-declare const xxGrid: any;
-declare const xxGridItem: any;
+import { enumIconeP12, enumIconeAction, Icone, IconeV2, IconeSvg, IconeP12, tailleIcone } from '../xIcones';
+import { xxGrid, xxGridItem } from './xxGrid';
 
 export enum enumPositionIconeAction {HautDroite, BasDroite}
 
@@ -20,7 +19,7 @@ export class xIconeAvecAction implements iXElement
 {
     private grid: any;
     private iconePrincipale: IconeV2 | IconeSvg;
-    private iconeSecondaire: IconeCs3i;
+    private iconeSecondaire: IconeP12;
 
 
     constructor(options: OptionsIconeAvecAction)
@@ -44,7 +43,7 @@ export class xIconeAvecAction implements iXElement
         });
 
         myThis.iconePrincipale = options.iconePrincipale;
-        myThis.iconeSecondaire = new IconeCs3i(options.iconeSecondaire);
+        myThis.iconeSecondaire = new IconeP12(options.iconeSecondaire);
 
         myThis.grid.append([
             new xxGridItem({

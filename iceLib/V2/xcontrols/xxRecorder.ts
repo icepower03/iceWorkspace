@@ -1,4 +1,12 @@
-﻿interface OptionsRecorder
+// @ts-nocheck
+import { iXElement, enumCouleur } from '../xBase';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxLecteurAudio } from './xxLecteurAudio';
+import { enumIconeP12, enumIconeSvg, IconeP12, IconeSvg, tailleIcone, Icone } from '../xIcones';
+
+interface OptionsRecorder
 {
     id?: string;
     class?: string;
@@ -9,7 +17,7 @@ interface Window
     webkitAudioContext: typeof AudioContext
 }
 
-class xxRecorder implements iXElement
+export class xxRecorder implements iXElement
 {
     private wrap: xxWrapPanel;
  
@@ -126,7 +134,7 @@ class xxRecorder implements iXElement
             },
             titleLocalise: "Enregistrer",
             textLocalise: "Enregistrer",
-            icone: new IconeCs3i(enumIconeCs3i.action_enregistrer_periode)
+            icone: new IconeP12(enumIconeP12.action_enregistrer_periode)
         })
 
         myThis.btnPause = new xxBouton({
@@ -186,7 +194,7 @@ class xxRecorder implements iXElement
             },
             titleLocalise: "Arrêter",
             textLocalise: "Arrêter",
-            icone: new IconeCs3i(enumIconeCs3i.etat_arrete)
+            icone: new IconeP12(enumIconeP12.etat_arrete)
         });
 
         let btnTelecharger: xxBouton = new xxBouton({
@@ -286,4 +294,3 @@ class xxRecorder implements iXElement
         myThis.timerLabel.removeClass("pause");
     }
 }
-

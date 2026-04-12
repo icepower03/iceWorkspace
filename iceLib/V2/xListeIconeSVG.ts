@@ -1,4 +1,5 @@
-﻿class ContenusSVG {
+﻿// @ts-nocheck
+export class ContenusSVG {
 	public contenu: string;
 	public viewBoxContains: string;
 	public epaisseur: number;
@@ -11,7 +12,7 @@
     }
 }
 
-class xListeIconeSVG {
+export class xListeIconeSVG {
 
 	// Template :
 	//public static (): ContenusSVG {

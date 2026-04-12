@@ -1,10 +1,18 @@
-﻿interface optionTimePicker {
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xTime } from '../xTime';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+
+interface optionTimePicker {
     value?: xTime;
     valueChange?: (val: xTime) => void;
     class?: string;
 }
 
-class xTimePicker implements iXElement {
+export class xTimePicker implements iXElement {
     public gridPrincipal: xxGrid;
     public wrapPrincipal: xxWrapPanel;
 

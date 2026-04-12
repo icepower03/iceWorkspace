@@ -1,3 +1,9 @@
+// @ts-nocheck
+import { iXElement, enumVisibility } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xInputText } from './xInput';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xCouleur } from './xCouleur';
 ﻿enum enumNuancierCouleursDefaut
 {
     RougeFonce = "990000",
@@ -40,7 +46,7 @@ enum enumNuancierCouleursUtilisateur
     GrisFonce = "666666",
 }
 
-enum enumNuancierCouleurs
+export enum enumNuancierCouleurs
 {
     defaut,
     utilisateur
@@ -59,7 +65,7 @@ interface OptionsChoixCouleur {
 }
 
 
-class xxChoixCouleur implements iXElement {
+export class xxChoixCouleur implements iXElement {
     private elementPrincipal: xInputText;
     private _color: string;
 

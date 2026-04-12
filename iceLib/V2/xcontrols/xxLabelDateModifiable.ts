@@ -1,3 +1,14 @@
+// @ts-nocheck
+import { iXElement, optionsAffichage, enumVisibility, enumCurseur } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xLString } from '../xLString';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xxLabelContainer } from './xxLabelContainer';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xInputDate } from './xInputDate';
+import { enumIconeSvg, IconeSvg, tailleIcone, Icone } from '../xIcones';
 ﻿interface OptionsLabelDateModifiable {
     id?: string;
     class?: string;
@@ -16,7 +27,7 @@
     optionsAffichage?: optionsAffichage;
 }
 
-class xxLabelDateModifiable implements iXElement {
+export class xxLabelDateModifiable implements iXElement {
     private elementPrincipal: xDiv;
     private label: xxLabelContainer;
     private libelleLabelSiVide: string;

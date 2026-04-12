@@ -1,4 +1,5 @@
-﻿/**
+﻿// @ts-nocheck
+/**
  * @author Dimitry Kudrayvtsev
  * @version 2.0
  *

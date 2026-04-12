@@ -1,3 +1,13 @@
+// @ts-nocheck
+import { iXElement, enumCouleur, enumPosition } from '../xBase';
+import { xDiv } from './xDiv';
+import { xxGrid, xxGridItem, enumAlignementContenu } from './xxGrid';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton, enumStyleBouton, enumCouleurBouton } from './xxBouton';
+import { IconeSvg, enumIconeSvg, tailleIcone, Icone } from '../xIcones';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxProgressBar } from './xxProgressBar';
 ﻿enum enumPositionAlerte {
     bas,
     bas_droite,
@@ -5,7 +15,7 @@
     haut_droite
 }
 
-enum enumTypeAlerte {
+export enum enumTypeAlerte {
     info,
     debug,
     reussite,
@@ -13,7 +23,7 @@ enum enumTypeAlerte {
     alerte
 }
 
-enum enumDialogTypeBouton {
+export enum enumDialogTypeBouton {
     pasDeBouton,
     validerAnnuler,
     QuitterAnnuler,
@@ -40,7 +50,7 @@ interface xxDialogOption {
     position?: enumPositionAlerte
 }
 
-class xxDialog implements iXElement {
+export class xxDialog implements iXElement {
 
     public get y(): HTMLElement {
         return null;

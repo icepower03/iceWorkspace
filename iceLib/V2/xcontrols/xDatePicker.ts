@@ -1,4 +1,19 @@
-﻿interface OptionDatePicker {
+// @ts-nocheck
+import { iXElement, enumTypeOrientation, enumCouleur, enumPosition } from '../xBase';
+import { xOutils } from '../../xOutils';
+import { xMaths } from '../../xMaths';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { xDiv } from './xDiv';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxIndicateur } from './xxIndicateur';
+import { xSeparateur } from './xSeparateur';
+import { enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, tailleIcone, Icone } from '../xIcones';
+
+interface OptionDatePicker {
     value?: DateSerialisable;
     valueChange?: (val: DateSerialisable) => void;
     choixAnnee?: boolean;
@@ -8,7 +23,7 @@
     class?: string;
 }
 
-class xDatePicker implements iXElement {
+export class xDatePicker implements iXElement {
     // Attributs class
     private Value: DateSerialisable;
     private premiereValeur: DateSerialisable;
@@ -236,7 +251,7 @@ class xDatePicker implements iXElement {
                 optionsAffichage: {
                     tailleBouton: enumTailleBouton.Fit, margin: { Tous: 2 }
                 },
-                icone: new IconeMiniCs3i(enumIconeCs3i.fleche_blanche_gauche, { taille: tailleIcone.XS }),
+                icone: new IconeMiniP12(enumIconeP12.fleche_blanche_gauche, { taille: tailleIcone.XS }),
                 click: cb => {
                     let olddate = myThis.ValuePourChangement;
                     myThis.ValuePourChangement = DateSerialisable.FactoryByNumber(DateSerialisable.getAnnees(olddate), DateSerialisable.getMois(olddate) - 1, DateSerialisable.getJours(olddate)); // new Date(olddate.getFullYear(), olddate.getMonth() - 1, olddate.getDate())
@@ -249,7 +264,7 @@ class xDatePicker implements iXElement {
                 optionsAffichage: {
                     tailleBouton: enumTailleBouton.Fit, margin: { Tous: 2 }
                 },
-                icone: new IconeMiniCs3i(enumIconeCs3i.fleche_blanche_droite, { taille: tailleIcone.XS }),
+                icone: new IconeMiniP12(enumIconeP12.fleche_blanche_droite, { taille: tailleIcone.XS }),
                 click: cb => {
                     let olddate = myThis.ValuePourChangement;
                     myThis.ValuePourChangement = DateSerialisable.FactoryByNumber(DateSerialisable.getAnnees(olddate), DateSerialisable.getMois(olddate) + 1, DateSerialisable.getJours(olddate));//new Date(olddate.getFullYear(), olddate.getMonth() + 1, olddate.getDate())

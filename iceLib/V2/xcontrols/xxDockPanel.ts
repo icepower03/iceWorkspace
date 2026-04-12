@@ -1,12 +1,15 @@
-﻿
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xDiv } from './xDiv';
+
 interface OptionsxxDockPanel {
     id?: string;
     centrerDernier?: boolean;
     class?: string;
 }
 
-enum DockPosition { haut, bas, gauche, droite }
-class xxDockPanelDeprecated implements iXElement {
+export enum DockPosition { haut, bas, gauche, droite }
+export class xxDockPanelDeprecated implements iXElement {
     
     private divPrincipal: xDiv;
     private lastElement: xDiv;

@@ -1,3 +1,17 @@
+// @ts-nocheck
+import { xLString } from '../xLString';
+import { iXElement, iXElementHolder, enumVisibility, enumPosition, enumCote } from '../xBase';
+import { assignerObjet, afficherxElements, cacherxElements } from '../../xStaticFunctions';
+import { xStyle } from './xStyle';
+import { BindableObject } from './BindableObject';
+import { xDiv } from './xDiv';
+import { xxContainerEvent } from './xxContainerEvent';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { xxToolTip, enumXxToolTipPositionWidth } from './xxToolTip';
+import { xxGrid, xxGridItem, enumAlignementContenu } from './xxGrid';
+import { xxCheckBox, enumTypeCheckbox } from './xxCheckBox';
+import { Icone, enumIconeSvg, IconeSvg, tailleIcone } from '../xIcones';
+import { enumTailleBouton } from './xxBouton';
 ﻿interface OptionsxxNavOngletControl
 {
     id?: string;
@@ -75,7 +89,7 @@ interface OptionsxxNavOngletBar
     OnOngletChange?: (OngletSelect: xxNavOngletItem) => void;// Ganon
 }
 
-class xxNavOngletItem
+export class xxNavOngletItem
 {
     // --------- //
     // Constante //
@@ -804,7 +818,7 @@ class xxNavOngletItem
     }
 }
 
-class xxNavOngletBar implements iXElement
+export class xxNavOngletBar implements iXElement
 {
     // --------- //
     // Propertie //
@@ -1200,7 +1214,7 @@ class xxNavOngletBar implements iXElement
     }
 }
 
-class xxNavOngletControl implements iXElement
+export class xxNavOngletControl implements iXElement
 {
     // --------- //
     // Propertie //
@@ -1330,4 +1344,3 @@ class xxNavOngletControl implements iXElement
     }
   
 }
-

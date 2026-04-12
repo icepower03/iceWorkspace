@@ -1,9 +1,18 @@
-﻿interface OptionsInputIntellisense extends OptionsInput {
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xLString } from '../xLString';
+import { xDiv } from './xDiv';
+import { xxToolTip } from './xxToolTip';
+import { xxListWrapper } from './xxListWrapper';
+import { xxContainerEvent } from './xxContainerEvent';
+import { xxLabel } from './xxLabel';
+
+interface OptionsInputIntellisense extends OptionsInput {
     listeAutoComplete: string[];
     nbLigneAfficher: number;
 }
 
-class xxInputIntellisense implements iXElement {
+export class xxInputIntellisense implements iXElement {
     private divContent: xDiv;
     private divContentEditable: xDiv;
     private tooltipAutoComplete: xxToolTip;

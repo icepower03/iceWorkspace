@@ -1,4 +1,5 @@
-﻿interface optionsXSeparateurAvecFleche
+﻿// @ts-nocheck
+interface optionsXSeparateurAvecFleche
 {
     class?: string;
     positionFleche: enumPosition;

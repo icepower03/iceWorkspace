@@ -1,6 +1,11 @@
 // iceLib — ESM entry point
 // Phase 2: exports what has been migrated to ESM
 
+// Méthodes builder sur xElementHolder.prototype (doit être importé en premier)
+import './xElementHolderBuilders';
+// Globals pour compatibilité fichiers @ts-nocheck (pattern global-scripts)
+import './xGlobals';
+
 // Initialisation
 export { xLib } from './xInit';
 
@@ -41,3 +46,4 @@ export * from './V2/xcontrols/showroom/xxShowRoomImageTooltipPreview';
 export * from './V2/xcontrols/showroom/xxShowRoomOptionRecurrente';
 export * from './V2/xcontrols/showroom/xxShowRoomContainer';
 export * from './V2/xcontrols/showroom/xxShowRoomLoader';
+export { xxShowRoom as xxShowRoomDeprecated } from './V2/xcontrols/showroom/xxShowRoomDeprecated';

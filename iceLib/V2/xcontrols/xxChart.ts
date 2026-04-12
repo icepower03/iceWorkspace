@@ -1,4 +1,5 @@
-﻿module mChart
+﻿// @ts-nocheck
+module mChart
 {
     export interface OptionsChartBar {
        

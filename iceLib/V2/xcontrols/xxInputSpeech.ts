@@ -1,3 +1,9 @@
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xDiv } from './xDiv';
+import { xInputText } from './xInput';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { xxLabel } from './xxLabel';
 ﻿
 
 interface SpeechRecognition extends EventTarget {
@@ -49,7 +55,7 @@ interface SpeechGrammarListStatic {
 //declare var SpeechGrammarList: any;
 declare var webkitSpeechGrammarList: SpeechGrammarListStatic;
 
-class xxInputSpeech implements iXElement 
+export class xxInputSpeech implements iXElement
 {
     private elementPrincipal: xDiv;
 

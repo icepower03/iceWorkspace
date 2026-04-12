@@ -1,5 +1,12 @@
-﻿enum enumPositionDuContenu { haut, bas, gauche, droite }
-enum enumJustificationDuContenu { debut, centre, fin }
+// @ts-nocheck
+import { iXElement, iXElementHolder, iXElementHolderEnable, optionsAffichage, enumVisibility, Container, enumPosition } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { afficherxElements, cacherxElements } from '../../xStaticFunctions';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xxLabel, enumTypeLabel, enumHabillageLabel, optionsAffichageLabel } from './xxLabel';
+﻿export enum enumPositionDuContenu { haut, bas, gauche, droite }
+export enum enumJustificationDuContenu { debut, centre, fin }
 
 interface optionsAffichageLabelContainer extends optionsAffichageLabel
 {
@@ -32,7 +39,7 @@ interface OptionsLabelContainer
     drag?: { drop?: (ev: DragEvent) => void; }
 }
 
-class xxLabelContainer implements iXElement, iXElementHolderEnable {
+export class xxLabelContainer implements iXElement, iXElementHolderEnable {
 
     private elementPrincipal: xDiv;
     private conteneurDuContenu: xDiv;

@@ -1,3 +1,13 @@
+// @ts-nocheck
+import { iXElement, optionsAffichage, enumVisibility, enumCurseur } from '../xBase';
+import { BindableObject } from './BindableObject';
+import { xLString } from '../xLString';
+import { xDiv } from './xDiv';
+import { xStyle } from './xStyle';
+import { xInputText } from './xInput';
+import { xxLabelContainer } from './xxLabelContainer';
+import { xxLabel, enumTypeLabel } from './xxLabel';
+import { enumIconeSvg, IconeSvg, tailleIcone, Icone } from '../xIcones';
 ﻿interface OptionsLabelModifiable {
     id?: string;
     class?: string;
@@ -18,7 +28,7 @@
 }
 
 
-class xxLabelModifiable implements iXElement  {
+export class xxLabelModifiable implements iXElement  {
     private elementPrincipal: xDiv;
     private label: xxLabelContainer;
     private libelleLabelSiVide: xLString;

@@ -2,8 +2,8 @@
 import { OptionsHtml, optionsAffichage, enumCouleur } from '../xBase';
 import { xLString } from '../xLString';
 import { xStyle } from './xStyle';
-declare const xxBoxer: any;
-declare const xIFrame: any;
+import { xxBoxer } from './xxBoxer';
+import { xIFrame } from './xIFrame';
 
 export enum enumTypeOuvertureHref
 {

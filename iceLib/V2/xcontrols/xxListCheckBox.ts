@@ -1,4 +1,13 @@
-﻿interface OptionsListCheckBox<T> {
+// @ts-nocheck
+import { iXElement, iXElementHolder, enumTypeOrientation } from '../xBase';
+import { xxWrapPanel } from './xxWrapPanel';
+import { xxDockPanelDeprecated, DockPosition } from './xxDockPanel';
+import { xxListWrapper } from './xxListWrapper';
+import { xxCheckBox } from './xxCheckBox';
+import { xxGrid, xxGridItem } from './xxGrid';
+import { xxLabel } from './xxLabel';
+
+interface OptionsListCheckBox<T> {
     data: T[];
     asyncLoading?: Promise<T[]>;
     renderItem: (ici: iXElementHolder, item: T) => void;
@@ -23,7 +32,7 @@
     };
 }
 
-class xxListCheckBox<T> implements iXElement {
+export class xxListCheckBox<T> implements iXElement {
     private myList: xxListWrapper<T>;
     private datas: T[];
     private container: xxDockPanelDeprecated;

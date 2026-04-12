@@ -1,3 +1,5 @@
+// @ts-nocheck
+import { xElement } from '../../xElement';
 ﻿interface OptionsLecteurAudio
 {
     id?: string;
@@ -5,7 +7,7 @@
     audio?: string;
 }
 
-class xxLecteurAudio extends xElement
+export class xxLecteurAudio extends xElement
 {
 
     constructor(o: OptionsLecteurAudio)

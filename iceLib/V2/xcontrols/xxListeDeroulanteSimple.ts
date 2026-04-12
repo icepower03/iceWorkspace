@@ -1,3 +1,8 @@
+// @ts-nocheck
+import { xxListeDeroulante } from './xxListeDeroulante';
+import { xxBouton, enumTailleBouton } from './xxBouton';
+import { enumCouleur, enumPosition } from '../xBase';
+import { enumIconeSvg, IconeSvg, Icone } from '../xIcones';
 ﻿interface OptionsListeDeroulanteSimpleNePlusUtiliser<T> {
     defaultKeyValue: string;
     //liste des données à afficher
@@ -19,7 +24,7 @@
 
 }
  /** @deprecated Ne sert que pour rétrocompatibilité, ne pas utiliser*/
-class xxListeDeroulanteSimpleNePlusUtiliser<T> extends xxListeDeroulante<T>
+export class xxListeDeroulanteSimpleNePlusUtiliser<T> extends xxListeDeroulante<T>
 {/** @deprecated Ne sert que pour rétrocompatibilité, ne pas utiliser*/
     constructor(inOpt: OptionsListeDeroulanteSimpleNePlusUtiliser<T>) {
         if (inOpt.getIcone == undefined) {

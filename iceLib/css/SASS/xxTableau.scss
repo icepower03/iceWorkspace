@@ -63,7 +63,7 @@
         .habillage_modeMiniSansTexte {
             margin: 0px;
 
-            .iconeCs3i {
+            .iconeP12 {
                 width: 20px;
                 height: 20px;
             }
@@ -120,7 +120,7 @@
                 transition: background-color 0s $easingAnimationZinzin;
             }
 
-            .iconeCs3i {
+            .iconeP12 {
                 font-weight: bold;
                 color: #fff;
                 font-size: 12px;
@@ -131,7 +131,7 @@
                 }
             }
 
-            &.habillage_modeSansTexte .iconeCs3i {
+            &.habillage_modeSansTexte .iconeP12 {
                 background-size: 14px;
             }
         }
@@ -182,7 +182,7 @@
                     background-color: rgba(255,255,255,0.3);
                 }
 
-                &.iconeCs3i {
+                &.iconeP12 {
                     padding: 9px 10px 9px 38px;
                     font-weight: bold;
                     color: #fff;
@@ -192,7 +192,7 @@
                     }
                 }
 
-                &.iconeCs3i_aucun {
+                &.iconeP12_aucun {
                     padding: 8px;
 
                     &:hover {
@@ -201,11 +201,11 @@
                 }
             }
 
-            &.habillage_modeSansTexte .iconeCs3i {
+            &.habillage_modeSansTexte .iconeP12 {
                 padding: 18px;
             }
 
-            &.habillage_modeMiniSansTexte .iconeCs3i {
+            &.habillage_modeMiniSansTexte .iconeP12 {
                 padding: inherit;
             }
         }
@@ -295,7 +295,7 @@
                 & > .xxStackPanelItem {
                     & > div {
                         & > .xxbouton {
-                            span.iconeCs3i_aucun {
+                            span.iconeP12_aucun {
                                 padding: 4px 20px 4px 8px;
                                 margin: 0;
                                 position: relative;
@@ -622,14 +622,14 @@
                     transition: all 0.05s ease-in;
                     transform: translate(5px,-5px);
 
-                span.iconeCs3i {
+                span.iconeP12 {
                     background-color: $EmedBleu !important;
                     transition: all $vitesseAnimationRapide $easingAnimationZinzin;
                     color: white;
                 }
             }
 
-            span.iconeCs3i {
+            span.iconeP12 {
                 padding: 14px 14px 14px 47px;
                 background-position: 14px center;
                 transition: all $vitesseAnimationRapide $easingAnimationZinzin;
@@ -641,7 +641,7 @@
 /* STYLE LIGHT ==> CE STYLE EST OBSOLETE */
 .TableauLight.xxTableauDivPrincipal .xxTableau {
     border-bottom: 0;
-    font-family: "nexus_like";
+    font-family: "firen_like";
     font-size: 13px;
     border: 1px solid #D5D5D5;
 
@@ -668,7 +668,7 @@
                 line-height: 1rem;
             }
 
-            .xxbouton span.iconeCs3i {
+            .xxbouton span.iconeP12 {
                 @include MainCouleur(color,1,50,50);
                 font-weight: normal;
                 text-decoration: underline;

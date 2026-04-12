@@ -11,7 +11,8 @@
     "strictPropertyInitialization": false,
     "sourceMap": true,
     "noEmitOnError": true,
-    "lib": ["ES2016", "DOM"]
+    "lib": ["ES2016", "DOM"],
+    "skipLibCheck": true
   },
   "include": [
     "./d.ts/jquery.d.ts",

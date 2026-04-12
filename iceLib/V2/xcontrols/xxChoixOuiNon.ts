@@ -1,10 +1,14 @@
-﻿interface OptionsChoixOuiNon {
+// @ts-nocheck
+import { iXElement, enumTypeOrientation } from '../xBase';
+import { xxRadioButton } from './xxRadioButton';
+
+interface OptionsChoixOuiNon {
     valeurParDefaut: boolean;
     valueChange: (val: boolean) => void;
     inactif?: boolean;
 }
 
-class xxChoixOuiNon implements iXElement {
+export class xxChoixOuiNon implements iXElement {
     private radioOuiNon: xxRadioButton<boolean>;
 
    

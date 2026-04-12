@@ -1,4 +1,8 @@
 ﻿// @ts-nocheck
+import { ExxShowRoomContainerTypeOption } from './xxShowRoomContainer';
+import { xxRadioButton } from '../xxRadioButton';
+import { enumCurseur, enumPosition } from '../../xBase';
+import { enumStyleBouton, enumPositionnementResponsiveBouton, enumTailleBouton, enumCouleurBouton } from '../xxBouton';
 export class xxShowRoomOptionRecurrente
 {
     public static get_OptionsHtml(addon?: IxxShowRoomContainerDefineOption[], ValeurDefaut?: OptionsHtml): IxxShowRoomContainerDefineOption[]

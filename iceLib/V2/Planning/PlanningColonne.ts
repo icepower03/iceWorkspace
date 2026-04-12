@@ -1,5 +1,31 @@
-﻿interface optionPlanningColonne {
-    listeRDV: PlanningRdv[];
+﻿import { cacherxElements, afficherxElements, assignerObjet } from '../../xStaticFunctions';
+import { xOutils } from '../xOutils';
+import { xxLabelContainer } from '../xcontrols/xxLabelContainer';
+import { PlanningRdv, PlanningDisponibilite } from './PlanningElements';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { iXElement, iXElementHolder } from '../xBase';
+
+import { PlanningRessource, enumTypeDispo } from './PlanningElements';
+import { optionAgrandirRdv, optionAddRdvOnClick, optionDragAndDropRdv } from './xxPlanning';
+import { xxGrid, xxGridItem, OptionsGridItem } from '../xcontrols/xxGrid';
+import { xDiv } from '../xcontrols/xDiv';
+import { xxLabel, enumTypeLabel } from '../xcontrols/xxLabel';
+import { enumPositionDuContenu } from '../xcontrols/xxLabelContainer';
+
+import { xxIndicateur } from '../xcontrols/xxIndicateur';
+import { xxStackPanel } from '../xcontrols/xxStackPanel';
+import { xxWrapPanel, enumAlignementHorizontalWrapPanel, enumAlignementVerticalWrapPanel } from '../xcontrols/xxWrapPanel';
+import { xxBouton } from '../xcontrols/xxBouton';
+import { IconeP12, enumIconeP12, tailleIcone } from '../xIcones';
+import { xMaths } from '../xMaths';
+import { xLString } from '../xLString';
+
+import { xxMenuContextuel } from '../xcontrols/xxMenuContextuel';
+import { xxPlanning } from './xxPlanning';
+import { BindableObject } from '../xcontrols/BindableObject';
+
+interface optionPlanningColonne {
+    listeRDV: PlanningRdv[]; 
     Date: DateSerialisable;
     HeureDebut?: number;
     HeureFin?: number;
@@ -23,7 +49,7 @@
     AddRdvOnClick?: optionAddRdvOnClick;
 }
 
-class PlanningColonne implements iXElement {
+export class PlanningColonne implements iXElement {
     private Planning: xxPlanning;
     private GridPrincipale: xxGrid;
 
@@ -820,8 +846,8 @@ class PlanningColonne implements iXElement {
         let agrandirBas = new xDiv({ class: "agrandirRdvBas  agrandirRdv" });
 
         if (myThis.AgrandirRDV && rdv.isAggrandisable) {
-            let flecheHaut = new IconeCs3i(enumIconeCs3i.fleche_noire_haut, { taille: tailleIcone.XS });
-            let flecheBas = new IconeCs3i(enumIconeCs3i.fleche_noire_bas, { taille: tailleIcone.XS });
+            let flecheHaut = new IconeP12(enumIconeP12.fleche_noire_haut, { taille: tailleIcone.XS });
+            let flecheBas = new IconeP12(enumIconeP12.fleche_noire_bas, { taille: tailleIcone.XS });
 
             agrandirHaut.y.onmousedown = () => {
                 myThis.GridPrincipale.addClass(PlanningColonne.CLASS_CSS_AGRANDISSEMENT_EN_COUR);

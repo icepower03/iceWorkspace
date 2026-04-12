@@ -1,4 +1,10 @@
-﻿
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xxBoxer, enumBoxerTaille } from './xxBoxer';
+import { xxStackPanel } from './xxStackPanel';
+import { xxLabel } from './xxLabel';
+import { IconeP12, enumIconeP12, Icone } from '../xIcones';
+
 interface OptionsBloqueEcran
 {
     id?: string;
@@ -8,7 +14,7 @@ interface OptionsBloqueEcran
     fondVisible?: boolean;
 }
 
-class xxBloqueEcran implements iXElement
+export class xxBloqueEcran implements iXElement
 {
  
     public get y() { return this.boxerPrincipal.y; }
@@ -23,7 +29,7 @@ class xxBloqueEcran implements iXElement
             initContent:
                 new xxStackPanel({
                     initContent: [
-                        new IconeCs3i(enumIconeCs3i.action_verrouiller),
+                        new IconeP12(enumIconeP12.action_verrouiller),
                         new xxLabel({ textLocalise: o.textLocalise, textVariable: o.textVariable })
                     ]
                 }),

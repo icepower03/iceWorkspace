@@ -6,8 +6,7 @@ import { xElementHolder } from '../../xElement';
 import { Icone, IconeSvg, enumIconeSvg, tailleIcone } from '../xIcones';
 import { xxLabel, enumHabillageLabel } from './xxLabel';
 import { xxBouton, enumTailleBouton, enumCouleurBouton } from './xxBouton';
-declare const xxWrapPanel: any;
-declare const enumAlignementVerticalWrapPanel: any;
+import { xxWrapPanel, enumAlignementVerticalWrapPanel } from './xxWrapPanel';
 
 export enum enumAlignementZone {
     gauche = "xpag-align_gauche",

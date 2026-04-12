@@ -47,7 +47,7 @@
     }
 
     .xxbouton.espaceMinimaliste {
-        span.iconeCs3i.iconeCs3i_aucun {
+        span.iconeP12.iconeP12_aucun {
             padding: 2px 4px;
         }
     }
@@ -162,14 +162,14 @@
                         grid-auto-columns: 1fr;
                         box-sizing: border-box;
                         /*Boutons jours*/
-                        .xxbouton.espaceMinimaliste span.iconeCs3i.iconeCs3i_aucun {
+                        .xxbouton.espaceMinimaliste span.iconeP12.iconeP12_aucun {
                             height: 46px;
                             align-items: center;
                             display: flex;
                             justify-content: center;
                         }
                         /*Boutons switch mois*/
-                        .xxbouton.espaceMinimaliste.habillage_modeMiniSansTexte span.iconeCs3i {
+                        .xxbouton.espaceMinimaliste.habillage_modeMiniSansTexte span.iconeP12 {
                             height: 40px;
                             width: 40px;
                         }
@@ -184,7 +184,7 @@
                                 border-bottom: 2px solid white;
                                 border-radius: 3px;
 
-                                span.iconeCs3i {
+                                span.iconeP12 {
                                     padding: 15px 35px 15px 10px;
                                     display: flex;
                                     align-items: center;

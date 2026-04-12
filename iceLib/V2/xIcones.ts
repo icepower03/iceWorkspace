@@ -1,15 +1,12 @@
-﻿//const prefixeIconeCs3i: string = "iconeCs3i_";
-//const prefixeIconeMiniCs3i: string = "iconeMiniCs3i_";
-//const prefixeIconeExterne: string = "iconeExterne_";
+﻿
 
 import { iXElement, enumCouleur } from './xBase';
 import { xDiv } from './xcontrols/xDiv';
 import { xSVG } from './xcontrols/xSVG';
-declare const xImg: any;
-declare const ContenusSVG: any;
-declare const xListeIconeSVG: any;
+import { xImg } from './xcontrols/xImg';
+import { ContenusSVG, xListeIconeSVG } from './xListeIconeSVG';
 
-export enum enumIconeCs3i
+export enum enumIconeP12
 {
     //
     aucun, //undefined
@@ -411,34 +408,34 @@ export enum enumIconeCs3i
 
 export enum enumIconeAction
 {
-    ajouter = enumIconeCs3i.action_ajouter,
-    valider = enumIconeCs3i.action_valider,
-    valider_cercle = enumIconeCs3i.action_valider_cercle,
-    annuler = enumIconeCs3i.action_annuler,
-    annuler_cercle = enumIconeCs3i.action_annuler_cercle,
-    supprimer = enumIconeCs3i.action_supprimer,
-    enregistrer = enumIconeCs3i.action_enregistrer,
-    imprimer = enumIconeCs3i.action_imprimer,
-    visualiser = enumIconeCs3i.action_apercu,
-    verrouiller = enumIconeCs3i.action_verrouiller,
-    deverouiller = enumIconeCs3i.action_deverrouiller,
-    modifier = enumIconeCs3i.action_modifier,
-    historique = enumIconeCs3i.action_historique,
-    rechercher = enumIconeCs3i.action_rechercher,
-    erreur = enumIconeCs3i.action_erreur,
-    suspendre = enumIconeCs3i.etat_suspendu,
-    importer = enumIconeCs3i.action_importer,
-    alerte = enumIconeCs3i.alerte_rouge,
-    rafraichir = enumIconeCs3i.action_rafraichir,
-    parametres = enumIconeCs3i.admin_parametres_simple,
-    masquer = enumIconeCs3i.action_masquer,
-    info = enumIconeCs3i.action_info,
-    calendrier = enumIconeCs3i.action_planifier,
-    lister = enumIconeCs3i.liste_simple,
-    inconnu = enumIconeCs3i.aide_aide,
-    arreter = enumIconeCs3i.action_arret,
-    sablier = enumIconeCs3i.horloge_attente,
-    sablier_blanc = enumIconeCs3i.horloge_attente_blanc,
+    ajouter = enumIconeP12.action_ajouter,
+    valider = enumIconeP12.action_valider,
+    valider_cercle = enumIconeP12.action_valider_cercle,
+    annuler = enumIconeP12.action_annuler,
+    annuler_cercle = enumIconeP12.action_annuler_cercle,
+    supprimer = enumIconeP12.action_supprimer,
+    enregistrer = enumIconeP12.action_enregistrer,
+    imprimer = enumIconeP12.action_imprimer,
+    visualiser = enumIconeP12.action_apercu,
+    verrouiller = enumIconeP12.action_verrouiller,
+    deverouiller = enumIconeP12.action_deverrouiller,
+    modifier = enumIconeP12.action_modifier,
+    historique = enumIconeP12.action_historique,
+    rechercher = enumIconeP12.action_rechercher,
+    erreur = enumIconeP12.action_erreur,
+    suspendre = enumIconeP12.etat_suspendu,
+    importer = enumIconeP12.action_importer,
+    alerte = enumIconeP12.alerte_rouge,
+    rafraichir = enumIconeP12.action_rafraichir,
+    parametres = enumIconeP12.admin_parametres_simple,
+    masquer = enumIconeP12.action_masquer,
+    info = enumIconeP12.action_info,
+    calendrier = enumIconeP12.action_planifier,
+    lister = enumIconeP12.liste_simple,
+    inconnu = enumIconeP12.aide_aide,
+    arreter = enumIconeP12.action_arret,
+    sablier = enumIconeP12.horloge_attente,
+    sablier_blanc = enumIconeP12.horloge_attente_blanc,
 }
 
 export abstract class Icone implements iXElement
@@ -453,14 +450,14 @@ export abstract class Icone implements iXElement
 }
 
 export class IconeV2 extends Icone {
-    private catalogue: string;
-    private nomIcone: string;
-    private classeComplete: string;
-    private elem: xDiv;
+    private catalogue!: string;
+    private nomIcone!: string;
+    private classeComplete!: string;
+    private elem!: xDiv;
 
 
     constructor(def: {
-        catalogue: 'cs3i' | 'miniCs3i' | 'externe',
+        catalogue: 'p12' | 'miniP12' | 'externe',
         nomIcone:string
     }, o?: OptionsIconeExterne) {
         super();
@@ -483,14 +480,15 @@ export class IconeV2 extends Icone {
 
         switch (myThis.catalogue)
         {
-            case 'cs3i':
-                myThis.elem = new xDiv({ class: "iconeSeuleCs3i " + myThis.getClasse() });
-
-            case 'miniCs3i':
-                myThis.elem = new xDiv({ class: "iconeSeuleMiniCs3i " + myThis.getClasse() });
-
+            case 'p12':
+                myThis.elem = new xDiv({ class: "iconeSeuleP12 " + myThis.getClasse() });
+                break;
+            case 'miniP12':
+                myThis.elem = new xDiv({ class: "iconeSeuleMiniP12 " + myThis.getClasse() });
+                break;
             case 'externe':
                 myThis.elem = new xDiv({ class: "iconeSeuleExterne " + myThis.getClasse() });
+                break;
         }
     }
 
@@ -498,12 +496,14 @@ export class IconeV2 extends Icone {
         let myThis: IconeV2 = this;
         switch (myThis.catalogue)
         {
-            case 'cs3i':
-                return "iconeCs3i_" + myThis.classeComplete;
-            case 'miniCs3i':
-                return "iconeMiniCs3i_" + myThis.classeComplete;
+            case 'p12':
+                return "iconeP12_" + myThis.classeComplete;
+            case 'miniP12':
+                return "iconeMiniP12_" + myThis.classeComplete;
             case 'externe':
                 return "iconeExterne_" + myThis.classeComplete + ' iconeExterne ';
+            default:
+                return "";
         }
     }
 
@@ -518,12 +518,14 @@ export class IconeV2 extends Icone {
         let myThis: IconeV2 = this;
         switch (myThis.catalogue)
         {
-            case 'cs3i':
-                return "iconeCs3i";
-            case 'miniCs3i':
-                return "iconeCs3i";
+            case 'p12':
+                return "iconeP12";
+            case 'miniP12':
+                return "iconeP12";
             case 'externe':
                 return "iconeExterne";
+            default:
+                return "";
         }
     }
 
@@ -541,69 +543,69 @@ export class IconeV2 extends Icone {
     }
 }
 
-export class IconeCs3i extends IconeV2
+export class IconeP12 extends IconeV2
 {
-    private inType: enumIconeCs3i | enumIconeAction;
-    constructor(inType: enumIconeCs3i | enumIconeAction, o?: OptionsIconeExterne)
+    private inType: enumIconeP12 | enumIconeAction;
+    constructor(inType: enumIconeP12 | enumIconeAction, o?: OptionsIconeExterne)
     {
-        super({ catalogue: 'cs3i', nomIcone: enumIconeCs3i[inType] }, o ?? { modeGrise: false, taille: tailleIcone.M });
+        super({ catalogue: 'p12', nomIcone: enumIconeP12[inType] }, o ?? { modeGrise: false, taille: tailleIcone.M });
         this.inType = inType;
     }
 
     getValeurIcone()
     {
-        let myThis: IconeCs3i = this;
+        let myThis: IconeP12 = this;
         return myThis.inType;
     }
 
     getTypeIcone()
     {
-        return "iconeCs3i";
+        return "iconeP12";
     }
 }
 
 
-export class IconeMiniCs3i extends IconeV2
+export class IconeMiniP12 extends IconeV2
 {
     public static getIconeLang(lang: string) {
-        let enumIcone: enumIconeCs3i;
+        let enumIcone: enumIconeP12;
         switch (lang) {
-            case 'fr': enumIcone = enumIconeCs3i.lang_fr;
+            case 'fr': enumIcone = enumIconeP12.lang_fr;
                 break;
-            case 'en': enumIcone = enumIconeCs3i.lang_en;
+            case 'en': enumIcone = enumIconeP12.lang_en;
                 break;
-            case 'de': enumIcone = enumIconeCs3i.lang_de;
+            case 'de': enumIcone = enumIconeP12.lang_de;
                 break;
-            case 'es': enumIcone = enumIconeCs3i.lang_es;
+            case 'es': enumIcone = enumIconeP12.lang_es;
                 break;
-            case 'ca': enumIcone = enumIconeCs3i.lang_ca;
+            case 'ca': enumIcone = enumIconeP12.lang_ca;
                 break;
-            default: enumIcone = enumIconeCs3i.lang_fr;
+            default: enumIcone = enumIconeP12.lang_fr;
                 break;
 
         }
-        return new IconeMiniCs3i(enumIcone);
+        return new IconeMiniP12(enumIcone);
     }
 
-    private inType: enumIconeCs3i;
+    private inType: enumIconeP12;
     /**
-     * @deprecated A ne plus utiliser : préférer new IconeCs3i.
+     * @deprecated A ne plus utiliser : préférer new IconeP12.
      */
-    constructor(inType: enumIconeCs3i,o?:OptionsIconeExterne)
+    constructor(inType: enumIconeP12,o?:OptionsIconeExterne)
     {
-        super({ catalogue: 'cs3i', nomIcone: enumIconeCs3i[inType] }, o ?? { modeGrise: false, taille: tailleIcone.S });
+        super({ catalogue: 'p12', nomIcone: enumIconeP12[inType] }, o ?? { modeGrise: false, taille: tailleIcone.S });
         this.inType = inType;
     }
 
     getValeurIcone()
     {
-        let myThis: IconeMiniCs3i = this;
+        let myThis: IconeMiniP12 = this;
         return myThis.inType;
     }
 
     getTypeIcone()
     {
-        return "iconeCs3i";
+        return "iconeP12";
     }
 }
 
@@ -692,7 +694,7 @@ export class IconeTypeExamen extends Icone {
     }
 
     getClasse(): string {
-        return null;
+        return "";
     }
    
     get y():HTMLElement  {
@@ -888,8 +890,8 @@ export interface OptionsIconeSVG extends OptionsIconeExterne
 
 export class IconeSvg extends Icone {
 
-    private inType: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile;
-    private couleurSvg: enumCouleur;
+    private inType!: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile;
+    private couleurSvg!: enumCouleur;
 
     public addClass(s: string) {
         let myThis: IconeSvg = this;
@@ -903,7 +905,7 @@ export class IconeSvg extends Icone {
             myThis.svg.y.classList.remove(s);
         });
     }
-    public svg: xSVG;
+    public svg!: xSVG;
     //constructor(inType: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile, taille?: enumSVGTaille, widthCust?: number, heightCust?: number) {
     constructor(inType: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile, o?: OptionsIconeSVG) {
         super();

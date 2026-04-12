@@ -1,3 +1,4 @@
+import "./utils/DateSerialisableExtend";
 
 export enum enumTypeOrientation {
     horizontal = "orientation_horizontale",
@@ -229,8 +230,10 @@ export class DictionnaireUtils {
 }
 
 export class Container<T> {
-    public content: T;
-    constructor() { }
+    public content: T=undefined as any;
+    constructor() {
+      
+     }
 }
 
 export class Arbre<T> {

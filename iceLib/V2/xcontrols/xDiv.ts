@@ -18,7 +18,7 @@ export interface OptionsDiv extends OptionsHtml {
 
 export class xDiv extends xElement implements iXElementHolderEnable {
     
-    private xh: xElementHolder;
+    private xh!: xElementHolder;
 
   /*  public get y(): HTMLDivElement {
         return <HTMLDivElement>super.y();
@@ -31,31 +31,31 @@ export class xDiv extends xElement implements iXElementHolderEnable {
         return this.xh;
     }
  
-    constructor(options?: OptionsDiv) {
-        let forceElement: HTMLDivElement = options?.privateForceElement;
-        let texteFinal: string;
+    constructor(options?: OptionsDiv, out?: { content: any }) {
+        let forceElement: HTMLDivElement | undefined = options?.privateForceElement;
+        let texteFinal: string | undefined = undefined;
 
         if (options != undefined) {
-            if (options.textVariable != undefined)
-            { texteFinal = options.textVariable; }
-            
-            if (options.textLocalise != undefined)
-            { texteFinal = new xLString(options.textLocalise).text; }
-
+            if (options.textVariable != undefined) {
+                texteFinal = options.textVariable;
+            }
+            if (options.textLocalise != undefined) {
+                texteFinal = new xLString(options.textLocalise).text;
+            }
             delete options.textLocalise;
             delete options.textVariable;
-            
         }
 
-        super("div", options);
-        if (texteFinal != undefined)
-        { this.y.innerHTML = texteFinal; }
+        super("div", options as any);
+        if (texteFinal !== undefined) {
+            this.y.innerHTML = texteFinal;
+        }
 
         if (options != undefined && options.title != undefined) {
             this.y.title = options.title;
         }
 
-       
+        if (out != null) out.content = this;
 
     }
 

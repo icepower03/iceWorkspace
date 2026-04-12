@@ -1,4 +1,12 @@
-﻿interface OptionsInputFile {
+// @ts-nocheck
+import { iXElement } from '../xBase';
+import { xElement } from '../../xElement';
+import { xDiv } from './xDiv';
+import { xSpan } from './xSpan';
+import { xxBouton } from './xxBouton';
+import { Icone, IconeP12, enumIconeP12, enumIconeSvg, IconeSvg } from '../xIcones';
+
+interface OptionsInputFile {
     accept?: string;
     capture?: 'user' | 'environment' | '';
     class?: string;
@@ -14,7 +22,7 @@
     iconeAppareilPhoto?: boolean;
 }
 
-class xInputFile implements iXElement {
+export class xInputFile implements iXElement {
 
     private element: xDiv;
     private monFile: xElement;
