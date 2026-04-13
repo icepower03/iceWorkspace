@@ -13770,11 +13770,13 @@ var xr = { init(e, t) {
 		this.page = new ice2PageWrapper({
 			titleLocalise: "",
 			withFooter: !0
-		}), this.page.TitreVariable = e.toString().split("function ")[1].split("(")[0];
-		let n = Object.getOwnPropertyNames(e.prototype), r = [];
-		for (let t of n) r.push(new Tr(t, Object.getOwnPropertyDescriptor(e.prototype, t)));
+		});
+		let n = /(?:class|function)\s+(\w+)/.exec(e.toString());
+		this.page.TitreVariable = n ? n[1] : e.name ?? "";
+		let r = Object.getOwnPropertyNames(e.prototype), i = [];
+		for (let t of r) i.push(new Tr(t, Object.getOwnPropertyDescriptor(e.prototype, t)));
 		this.page.zonePrincipale.ice2Tableau({
-			data: r,
+			data: i,
 			columns: [{
 				titleVariable: "Nom",
 				renderMethod: function(e, t) {
