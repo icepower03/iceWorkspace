@@ -154,8 +154,8 @@ class ColonneImpresssion {
 
         let ppcmRdv = 1;
         if (listeRdvEnMemetemps.length > 0)
-            ppcmRdv = xMaths.PPCMListe(listeRdvEnMemetemps);
-        myThis.nbColonnes = xMaths.PPCM(ppcmRdv, positionMax);
+            ppcmRdv = iceMaths.PPCMListe(listeRdvEnMemetemps);
+        myThis.nbColonnes = iceMaths.PPCM(ppcmRdv, positionMax);
         return myThis.nbColonnes;
     }
 
@@ -230,7 +230,7 @@ class ColonneImpresssion {
 
             let date = DateSerialisable.getDate(myThis.date)
 
-            svgCol += '< text x="2" y="25" font-size="10">' + new xLString(myThis.GetNameDay(date.getDay())).text + ' ' + DateSerialisable.tolocalStringOnlyDate(myThis.date).substring(0, 5) + '< /text> </g>';
+            svgCol += '< text x="2" y="25" font-size="10">' + new iceLString(myThis.GetNameDay(date.getDay())).text + ' ' + DateSerialisable.tolocalStringOnlyDate(myThis.date).substring(0, 5) + '< /text> </g>';
         }
         else
             svgCol += '< text x="2" y="25" font-size="10">' + myThis.ressource.Libelle + '< /text> </g>';
@@ -324,7 +324,7 @@ class PageImpression {
 
         svgPlanning += '</svg>';
         let svgNumeroPage = '<svg><text x="2" y="15" font-size="10">' + myThis.numeroPage + '</text> </svg>';
-        let svgDateEditionImpression = '<svg><text x="2" y="15" font-size="10"> ' + new xLString("édité le {0} à {1}").format([xOutils.DateToFrenchDateString(DateSerialisable.Now(), false, false), xOutils.DateToFrenchTimeString(DateSerialisable.Now(), false)]) + '</text> </svg>';
+        let svgDateEditionImpression = '<svg><text x="2" y="15" font-size="10"> ' + new iceLString("édité le {0} à {1}").format([iceOutils.DateToFrenchDateString(DateSerialisable.Now(), false, false), iceOutils.DateToFrenchTimeString(DateSerialisable.Now(), false)]) + '</text> </svg>';
         svgDateEditionImpression
         let elementPdfEntete: pdfMake.pdfMakeElement = myThis.numeroPage != 1 ? { svg: myThis.svgEntete, pageBreak: "before" } : {
             svg: myThis.svgEntete, absolutePosition: {x:0,y:10} }

@@ -1,0 +1,50 @@
+﻿/***************************************/
+/***** ice2AutoComplete Zeus - SCSS *****/
+/***************************************/
+
+.ice2AutoComplete {
+
+
+    &.ice2Tooltip_Box .ice2Tooltip_Box_Event{
+        z-index: 30000;
+    }
+    
+    .ice2AutoComplete_input {
+        cursor: text;
+        width: 200px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 104;
+
+        &.ice2GridMaster.iceInputTextAvecIcone{
+            svg{
+                z-index: 105;
+                position: relative;
+            }
+        }
+    }
+
+    .ice2AutoComplete_input.taille_s {
+        width: 100px;
+    }
+
+    .ice2AutoComplete_input.taille_m {
+        width: 200px;
+    }
+
+    .ice2AutoComplete_input.taille_l {
+        width: 300px;
+    }
+
+    .ice2AutoComplete_input.taille_xl {
+        width: 400px;
+    }
+
+    .ice2AutoComplete_input::-ms-clear {
+        display: none;
+    }
+
+    .ice2bouton.ice2AutoComplete_bouton.selected {
+        background-color: $ZeusSelected;
+    }
+}

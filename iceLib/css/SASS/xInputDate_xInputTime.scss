@@ -1,10 +1,10 @@
 ﻿/*********************************************/
-/***** xInputDate xInputTime Zeus - SCSS *****/
+/***** iceInputDate xInputTime Zeus - SCSS *****/
 /*********************************************/
 
 @import "couleurs.scss";
 
-.xInputDate {
+.iceInputDate {
     width: 100px;
     text-align: center;
 
@@ -20,7 +20,7 @@
     &.avecAbreviationJour {
         width: auto;
 
-        .xxLabelContainerTitre.xxLabel {
+        .ice2LabelContainerTitre.ice2Label {
             height: 20px;
             width: 27px;
             border: 1px solid $ZeusBorder;
@@ -60,7 +60,7 @@
         text-align: center;
     }
 }
-.xInputDateAndTime .xInputDate{margin:0 5px 0 0;}
+.xInputDateAndTime .iceInputDate{margin:0 5px 0 0;}
 
 .ui-datepicker{
     z-index: 10000000000000 !important;
@@ -75,7 +75,7 @@
 
 .ui-datepicker-prev {
     cursor: pointer;
-    @include picto("xInput/btn_flecheprec_date.svg", 20px);
+    @include picto("iceInput/btn_flecheprec_date.svg", 20px);
 
     &:hover {
         background-color: transparent !important;
@@ -85,7 +85,7 @@
 
 .ui-datepicker-next {
     cursor: pointer;
-    @include picto("xInput/btn_flechesuiv_date.svg", 20px);
+    @include picto("iceInput/btn_flechesuiv_date.svg", 20px);
 
     &:hover {
         background-color: transparent !important;
@@ -308,13 +308,13 @@
 
 /* FIXES TLEG upgrade charte */
 
-.xDatePicker, .BtnJours {
-    .xxbouton.tleg.xDeprecated.notRounded {
+.iceDatePicker, .BtnJours {
+    .ice2bouton.tleg.xDeprecated.notRounded {
         border-radius: 0;
     }
 }
 
-.xDatePicker .tleg .xxbouton.habillage_modeStd{
+.iceDatePicker .tleg .ice2bouton.habillage_modeStd{
     border-radius: 0;
 
 }

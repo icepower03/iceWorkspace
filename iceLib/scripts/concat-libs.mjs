@@ -1,6 +1,6 @@
 /**
  * concat-libs.mjs
- * Concatène les librairies externes → dist/libxElements.js
+ * Concatène les librairies externes → dist/libiceElements.js
  * Équivalent de la tâche Gulp "jsLib"
  */
 
@@ -34,7 +34,7 @@ const content = LIBS.map((lib, i) => {
   return src;
 }).join('\n\n');
 
-writeFileSync(resolve(root, 'dist/libxElements.js'), content, 'utf8');
+writeFileSync(resolve(root, 'dist/libiceElements.js'), content, 'utf8');
 
 console.timeEnd('  done');
-console.log('→ dist/libxElements.js');
+console.log('→ dist/libiceElements.js');

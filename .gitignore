@@ -4,7 +4,7 @@ node_modules/
 # Artefacts de build iceLib (gros fichiers, reconstruits via npm run build)
 iceLib/jsBin/x.js
 iceLib/jsBin/x.css
-iceLib/jsBin/libxElements.js
+iceLib/jsBin/libiceElements.js
 iceLib/jsBin/*.tsbuildinfo
 
 # x.d.ts est commité volontairement :

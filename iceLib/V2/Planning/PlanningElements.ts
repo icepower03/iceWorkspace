@@ -1,12 +1,12 @@
 // @ts-nocheck
-import { iXElement } from '../xBase';
+import { iXElement } from '../iceBase';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
-import { xDiv } from '../xcontrols/xDiv';
-import { xxGrid, xxGridItem } from '../xcontrols/xxGrid';
-import { xxToolTip } from '../xcontrols/xxToolTip';
-import { xxLabel } from '../xcontrols/xxLabel';
-import { xxWrapPanel } from '../xcontrols/xxWrapPanel';
-import { xxStackPanel } from '../xcontrols/xxStackPanel';
+import { iceDiv } from '../xcontrols/iceDiv';
+import { ice2Grid, ice2GridItem } from '../xcontrols/ice2Grid';
+import { ice2ToolTip } from '../xcontrols/ice2ToolTip';
+import { ice2Label } from '../xcontrols/ice2Label';
+import { ice2WrapPanel } from '../xcontrols/ice2WrapPanel';
+import { ice2StackPanel } from '../xcontrols/ice2StackPanel';
 
 export enum enumTypeDispo {
     Planning,
@@ -26,7 +26,7 @@ export class PlanningRdv {
     public IsRdvCompared: boolean;
     public Ressource: number;
     public Class: string;
-    public Item: xxGrid | xxToolTip | xxLabel | xxWrapPanel | xxStackPanel|xxGridItem|xDiv;
+    public Item: ice2Grid | ice2ToolTip | ice2Label | ice2WrapPanel | ice2StackPanel|ice2GridItem|iceDiv;
     public DureeMin: number;
     public isAggrandisable: boolean;
     public isDeplacable: boolean;
@@ -54,7 +54,7 @@ export class PlanningRdv {
     public renderRdv(): iXElement {
         let myThis: PlanningRdv = this;
 
-        let divDefaut = new xDiv({
+        let divDefaut = new iceDiv({
             class: "rdv",
             textVariable: myThis.Libelle
         });
@@ -106,7 +106,7 @@ export class PlanningDisponibilite {
     public DateDebut: DateSerialisable;
     public DateFin: DateSerialisable;
     public Couleur: string;
-    public Item: xxGridItem;
+    public Item: ice2GridItem;
     public Type: enumTypeDispo;
     public Position: number;
 
@@ -127,7 +127,7 @@ export class PlanningDisponibilite {
     public renderDispo(): iXElement {
         let myThis: PlanningDisponibilite = this;
 
-        let divDefaut = new xDiv({
+        let divDefaut = new iceDiv({
             class: "dispo",
             textVariable: myThis.Libelle
         })

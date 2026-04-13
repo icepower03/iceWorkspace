@@ -17,29 +17,29 @@
     xli(options: OptionsLi, outElement?: Container<JQuery>): JQuery;
     xtable(options: OptionsHtml, outElement?: Container<JQuery>): JQuery;
 
-    //xx: objects graphiques complexes avec du comportement 
-    xxList<T>(options: OptionsList<T>, outElement?: Container<xxListWrapper<T>>): JQuery;
-    xxListeDeroulante<T>(options: OptionsListeDeroulante<T>, outElement?: Container<xxListeDeroulante<T>>): JQuery;
-    xxListeChoixLang(options: OptionsListeChoixLang, outElement?: Container<xxListeChoixLang>): JQuery;
-    xxAutoComplete<T>(options: OptionsAutoComplete<T>): JQuery;
-    xxBoutonDeprecated(options: OptionsBoutons, outElement?: Container<xxBoutonDeprecated>): JQuery;
-    xxListChoix(options: OptionsSelect): JQuery;
-    xxMenu(options: OptionsMenu, outElement?: Container<JQuery>): JQuery;
-    xxTableau<T>(options: OptionsTableau<T>, outElement?: Container<xxTableauWrapper<T>>): JQuery;
-    xxDockPanelDeprecated(options: OptionsxxDockPanel, outElement?: Container<xxDockPanelDeprecated>): JQuery;
-    xxWrapPanel(o: OptionsWrapPanel, outElement?: Container<xxWrapPanel>): JQuery;
-    xxGrid(o: OptionsGrid, outElement?: Container<xxGrid>): JQuery;
-    xxStackPanel(o: OptionsStackPanel, outElement?: Container<xxStackPanel>): JQuery;
-    xxLabel(o: OptionsLabel, outElement?: Container<xxLabel>): JQuery;
-    xxLabelModifiable(o: OptionsLabelModifiable, outElement?: Container<xxLabel>): JQuery;
-    xxLabelTimeModifiable(o: OptionsLabelTimeModifiable, outElement?: Container<xxLabel>): JQuery;
-    xxLabelContainer(o: OptionsLabelContainer, outElement?: Container<xxLabelContainer>): JQuery;
-    xxCheckBox(o: OptionsInputCheckBox, outElement?: Container<xxCheckBox>): JQuery;
-    xxRadioButton<T>(o: OptionsRadioButton<T>, outElement?: Container<xxRadioButton<T>>): JQuery;
-    xxTabControl(options: OptionsTabControl, outElement?: Container<xxTabControl>): JQuery;    
-    xxTreeTabControl(options: OptionsTreeTabControl, outElement?: Container<xxTreeTabControl>): JQuery;
-    xxToolTip(options: OptionsToolTip, outElement?: Container<xxToolTip>): JQuery;
-    xxZoneModulable(options: OptionZoneModulable, outElement?: Container<xxZoneModulable>): JQuery;    
-    xxPage(options: OptionsPage, outPageWrapper: Container<xxPageWrapper>): JQuery;
+    //ice2: objects graphiques complexes avec du comportement 
+    ice2List<T>(options: OptionsList<T>, outElement?: Container<ice2ListWrapper<T>>): JQuery;
+    ice2ListeDeroulante<T>(options: OptionsListeDeroulante<T>, outElement?: Container<ice2ListeDeroulante<T>>): JQuery;
+    ice2ListeChoixLang(options: OptionsListeChoixLang, outElement?: Container<ice2ListeChoixLang>): JQuery;
+    ice2AutoComplete<T>(options: OptionsAutoComplete<T>): JQuery;
+    ice2BoutonDeprecated(options: OptionsBoutons, outElement?: Container<ice2BoutonDeprecated>): JQuery;
+    ice2ListChoix(options: OptionsSelect): JQuery;
+    ice2Menu(options: OptionsMenu, outElement?: Container<JQuery>): JQuery;
+    ice2Tableau<T>(options: OptionsTableau<T>, outElement?: Container<ice2TableauWrapper<T>>): JQuery;
+    ice2DockPanelDeprecated(options: Optionsice2DockPanel, outElement?: Container<ice2DockPanelDeprecated>): JQuery;
+    ice2WrapPanel(o: OptionsWrapPanel, outElement?: Container<ice2WrapPanel>): JQuery;
+    ice2Grid(o: OptionsGrid, outElement?: Container<ice2Grid>): JQuery;
+    ice2StackPanel(o: OptionsStackPanel, outElement?: Container<ice2StackPanel>): JQuery;
+    ice2Label(o: OptionsLabel, outElement?: Container<ice2Label>): JQuery;
+    ice2LabelModifiable(o: OptionsLabelModifiable, outElement?: Container<ice2Label>): JQuery;
+    ice2LabelTimeModifiable(o: OptionsLabelTimeModifiable, outElement?: Container<ice2Label>): JQuery;
+    ice2LabelContainer(o: OptionsLabelContainer, outElement?: Container<ice2LabelContainer>): JQuery;
+    ice2CheckBox(o: OptionsInputCheckBox, outElement?: Container<ice2CheckBox>): JQuery;
+    ice2RadioButton<T>(o: OptionsRadioButton<T>, outElement?: Container<ice2RadioButton<T>>): JQuery;
+    ice2TabControl(options: OptionsTabControl, outElement?: Container<ice2TabControl>): JQuery;    
+    ice2TreeTabControl(options: OptionsTreeTabControl, outElement?: Container<ice2TreeTabControl>): JQuery;
+    ice2ToolTip(options: OptionsToolTip, outElement?: Container<ice2ToolTip>): JQuery;
+    ice2ZoneModulable(options: OptionZoneModulable, outElement?: Container<ice2ZoneModulable>): JQuery;    
+    ice2Page(options: OptionsPage, outPageWrapper: Container<ice2PageWrapper>): JQuery;
     }
     */

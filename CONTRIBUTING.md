@@ -7,7 +7,7 @@ iceLib a été migré d'un bundle global (SystemJS, tout dans un seul scope) ver
 | Monde | Fichiers | Pattern |
 |---|---|---|
 | **ESM typé** | Fichiers sans `@ts-nocheck`, nouveaux fichiers | `import { X } from './...'` |
-| **Legacy global** | Fichiers avec `// @ts-nocheck` | Références directes aux globaux (`new xxLabel(...)`) |
+| **Legacy global** | Fichiers avec `// @ts-nocheck` | Références directes aux globaux (`new ice2Label(...)`) |
 
 ---
 
@@ -17,7 +17,7 @@ Tout nouveau fichier **sans** `// @ts-nocheck` doit importer explicitement ce do
 
 ```typescript
 // ✅ Correct
-import { xxLabel } from '../xxLabel';
+import { ice2Label } from '../ice2Label';
 import { enumCouleur } from '../../xBase';
 
 export class MaNouvelleClasse {
@@ -38,7 +38,7 @@ Les fichiers marqués `// @ts-nocheck` peuvent utiliser les globaux directement 
 // Pas d'import — les symboles viennent de globalThis via xGlobals.ts
 export class MonComposantLegacy {
     constructor() {
-        this.label = new xxLabel({ textVariable: 'Hello' }); // ✅ fonctionne
+        this.label = new ice2Label({ textVariable: 'Hello' }); // ✅ fonctionne
     }
 }
 ```
@@ -61,7 +61,7 @@ export class MonComposantLegacy {
 **Étape 1** — S'assurer que la classe/enum est exportée depuis son fichier source :
 
 ```typescript
-// xxMonComposant.ts
+// ice2MonComposant.ts
 // @ts-nocheck
 export class MonComposant { ... }      // ✅ export obligatoire
 export enum MonEnum { A, B, C }        // ✅ export obligatoire
@@ -71,7 +71,7 @@ export enum MonEnum { A, B, C }        // ✅ export obligatoire
 
 ```typescript
 // xGlobals.ts
-import { MonComposant, MonEnum } from './V2/xcontrols/xxMonComposant';
+import { MonComposant, MonEnum } from './V2/xcontrols/ice2MonComposant';
 ```
 
 **Étape 3** — Ajouter l'assignment globalThis dans `xGlobals.ts` :
@@ -87,13 +87,13 @@ import { MonComposant, MonEnum } from './V2/xcontrols/xxMonComposant';
 
 ## Règle 4 — Nouveau builder sur `xElementHolder` → `xElementHolderBuilders.ts`
 
-Les méthodes fluentes (`asHolder.xxLabel(...)`, `asHolder.xdiv(...)`) sont définies dans `xElementHolderBuilders.ts` via extension de prototype.
+Les méthodes fluentes (`asHolder.ice2Label(...)`, `asHolder.xdiv(...)`) sont définies dans `xElementHolderBuilders.ts` via extension de prototype.
 
 Pour ajouter un builder pour un nouveau composant :
 
 ```typescript
 // xElementHolderBuilders.ts
-import { MonComposant } from './V2/xcontrols/xxMonComposant';
+import { MonComposant } from './V2/xcontrols/ice2MonComposant';
 
 // En bas du fichier, avec les autres :
 xElementHolder.prototype.monComposant = function(o, out) {
@@ -140,9 +140,9 @@ export class Container<T> {
 
 ```typescript
 // index.ts — ajouter en bas de la section appropriée
-export * from './V2/xcontrols/xxMonComposant';
+export * from './V2/xcontrols/ice2MonComposant';
 // ou pour un export avec alias :
-export { MaClasse as MaClassePublique } from './V2/xcontrols/xxMonFichier';
+export { MaClasse as MaClassePublique } from './V2/xcontrols/ice2MonFichier';
 ```
 
 Ne pas oublier de rebuilder (`npm run build`) après toute modification.
@@ -152,7 +152,7 @@ Ne pas oublier de rebuilder (`npm run build`) après toute modification.
 ## Checklist — Ajouter un nouveau composant
 
 ```
-[ ] Créer le fichier dans V2/xcontrols/xxMonComposant.ts
+[ ] Créer le fichier dans V2/xcontrols/ice2MonComposant.ts
 [ ] Ajouter // @ts-nocheck si le fichier référence des globaux legacy
 [ ] Exporter la classe et les enums (export class / export enum)
 [ ] Ajouter l'import + globalThis dans xGlobals.ts

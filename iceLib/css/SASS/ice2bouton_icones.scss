@@ -1,0 +1,547 @@
+﻿/****************************************/
+/***** Icones ice2bouton Zeus  - SCSS *****/
+/****************************************/
+
+@import "fonts.scss";
+@import "icones.scss";
+
+.iconeGrise {
+    opacity: 0.5;
+    filter: saturate(0);
+}
+
+.iconeP12, .iconeExterne {
+    background-image: url("images/undefined.svg?embed");
+
+    &.icone_XXS {
+        background-size: 12px;
+    }
+
+    &.icone_XS {
+        background-size: 15px;
+    }
+
+    &.icone_S {
+        background-size: 20px;
+    }
+
+    &.icone_M {
+        background-size: 24px;
+    }
+
+    &.icone_L {
+        background-size: 48px;
+    }
+
+    &.icone_XL {
+        background-size: 72px;
+    }
+}
+
+.iconeSeuleExterne, .iconeSeuleP12 {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.icone_XXS {
+        height: 12px;
+        width: 12px;
+        background-size: 12px;
+    }
+
+    &.icone_XS {
+        height: 15px;
+        width: 15px;
+        background-size: 15px;
+    }
+
+    &.icone_S {
+        height: 20px;
+        width: 20px;
+        background-size: 20px;
+    }
+
+    &.icone_M {
+        height: 24px;
+        width: 24px;
+        background-size: 24px;
+    }
+
+    &.icone_L {
+        height: 48px;
+        width: 48px;
+        background-size: 48px;
+    }
+
+    &.icone_XL {
+        height: 72px;
+        width: 72px;
+        background-size: 72px;
+    }
+}
+
+.iconeP12_undefined{background-image: url('images/undefined.svg?embed');}
+.iconeP12_fleche_select {background-image: url('images/fleche_select.svg?embed');background-size:11px !important;}
+.iconeP12_bdd {background-image: url('images/action/bdd.svg?embed');}
+.iconeP12_pharmacien_delai_depasse {background-image: url('images/action/pharmacien_delai_depasse.svg?embed');}
+.iconeP12_surveillance_surveillance {background-image: url('images/surveillance/surveillance.svg?embed');}
+.iconeP12_dmp_notransmission{background-image: url('images/action/dmp_notransmission.svg?embed');}
+.iconeP12_dmp_transmission{background-image: url('images/action/dmp_transmission.svg?embed');}
+.iconeP12_dmp_envoyer{background-image: url('images/action/dmp_envoyer.svg?embed');}
+.iconeP12_ice2ListChoix_tous {background-image: url('images/ice2ListChoix/ice2ListChoix.svg?embed');}
+
+
+/*-----------------Action-----------------*/
+@include SetIcones(action,
+    admission
+    agrandir
+    agrandir_horizontal
+    ajout_destinataire
+    ajouter
+    ajouter_blanc
+    ajouter_valider
+    annuler
+    annuler_blanc
+    annuler_cercle
+    apercu
+    apercu_doc
+    apercu_historique
+    apercu_live
+    arret
+    associer
+    baguette_auto
+    bouton_play
+    carte_praticien
+    carte_visite_med
+    changement_lit
+    checkbox_active
+    checkbox_inactive
+    coller
+    commentaire
+    copie_destinataire
+    copier
+    copier_droite
+    copier_gauche
+    couper
+    csv
+    cv_creation_patient
+    deplier_blanc
+    deplier_bleu
+    desepingler
+    deverrouiller
+    dmp
+    dossierpatient
+    dupliquer
+    enregistrer
+    enregistrer_imprimer
+    enregistrer_periode
+    envoi_message
+    envoyer
+    epingler
+    erreur
+    espace_pro
+    etat_dossier
+    filtres
+    filtres_inactif
+    filtres_options_actif
+    filtres_options_inactif
+    flag_gris
+    flag_rouge
+    fleche_angle_bas_droite
+    fleche_double_droite
+    fleche_double_gauche
+    fleche_simple_droite
+    fleche_simple_gauche
+    fractionner_ligne
+    gomme
+    graphique
+    historique
+    horaire
+    import
+    import_ajout
+    importer
+    impression_cerfa
+    imprimer
+    imprimer_blanc
+    imprimer_noir
+    inconnu
+    info
+    interdit
+    lecture
+    log
+    masquer
+    medecin_adresseur
+    medecin_traitant
+    mise_en_page
+    modifier
+    mssante
+    ouvrir_boxer
+    partage
+    pdf
+    periode_heures
+    personne
+    personne_copie
+    planifier
+    plier_blanc
+    plier_bleu
+    raccourci
+    rafraichir
+    rafraichir_valider
+    rechercher
+    rechercher_dossier
+    rechercher_patient
+    recycler
+    reduire
+    reduire_horizontal
+    reglage
+    reset
+    retour
+    rotation
+    saisie_facture
+    securiser_factures
+    sortie
+    statistiques
+    supprimer
+    supprimer_blanc
+    telecharger_documents
+    telecharger_package
+    teletransmission
+    transferer
+    tri_asc
+    tri_defaut
+    tri_desc
+    tri_principal_asc
+    tri_principal_desc
+    trois_colonnes
+    urgent
+    valider
+    valider_cercle
+    verification
+    verification_arl
+    verification_noemie
+    verrouiller
+    xls
+    zoom_ajuster_ecran
+    zoom_ajuster_largeur
+    zoom_moins
+    zoom_plus
+, svg);
+
+/*-----------------Admin-----------------*/
+@include SetIcones(admin,
+    agendas
+    dossier_patient
+    elsan
+    etablissement
+    examens
+    hemo
+    impression
+    maj
+    medicaments
+    outil
+    parametres
+    parametres_simple
+    patient
+    pmsi
+    smartdoc
+    soins
+    UF
+    urgences
+    US
+    user
+, svg);
+
+/*-----------------Agenda-----------------*/
+@include SetIcones(agenda,
+    ajouter
+    comparer
+    importer
+    supprimer
+    synchroniser
+, svg);
+
+/*-----------------Aide-----------------*/
+@include SetIcones(aide,
+    aide
+, svg);
+
+/*-----------------Alerte-----------------*/
+@include SetIcones(alerte,
+    grise
+    orange
+    rouge
+    verte
+, svg);
+
+/*-----------------Basics-----------------*/
+@include SetIcones(basics,
+    LinkBlanc
+    liste_a_points_blanc
+    liste_a_points_noir
+    UX_Mobile
+    UX_Pc
+, svg);
+
+/*-----------------Carte-----------------*/
+@include SetIcones(carte,
+    cartemagnetique
+, svg);
+
+/*-----------------Courrier-----------------*/
+@include SetIcones(courrier,
+    modele
+    modele_ajouter
+, svg);
+
+/*-----------------DDS-----------------*/
+@include SetIcones(dds,
+    bon_livraison_efs
+    codes_barres
+    destruction
+    destruction_etablissement
+    poches_attentes_reception
+    poches_retour_efs
+    poches_sorties_transfusion
+    quarantaine
+    reappro_stock_urgence
+    reattribution
+    reception
+    retour
+    sortie
+    stats_detaillees
+    stats_globales
+    stock_en_cours
+    transfusion_ajouter
+, svg);
+
+/*--------------Document--------------*/
+@include SetIcones(document,
+    document
+    invalide
+    valide
+, svg);
+
+/*-----------------Dossier-----------------*/
+@include SetIcones(dossier,
+    ajouter
+    lier
+, svg);
+
+/*-----------------Droits-----------------*/
+@include SetIcones(droits,
+    ajouter_profil
+    charger_profil
+    enregistrer_user
+, svg);
+
+/*-----------------Entrepot-----------------*/
+@include SetIcones(entrepot,
+    entrepot
+, svg);
+
+/*-----------------Etat-----------------*/
+@include SetIcones(etat,
+    administre
+    arrete
+    arrete_modification
+    arrete_urgent
+    encours
+    lock
+    non_vu
+    prevu
+    suspendu
+    termine
+    vu
+, svg);
+
+/*-----------------Examen-----------------*/
+@include SetIcones(examen,
+    anormal
+    reaffecter_resultat
+, svg);
+
+/*-----------------Facture-----------------*/
+@include SetIcones(facture,
+    ajouter
+    liste
+, svg);
+
+/*-----------------Favori-----------------*/
+@include SetIcones(favori,
+    favoriOff
+    favoriOn
+, svg);
+
+/*-----------------Fleches-----------------*/
+@include SetIcones(fleche,
+bleue_bas
+bleue_droite
+bleue_gauche
+bleue_haut
+blanche_bas
+blanche_droite
+blanche_gauche
+blanche_haut
+noire_bas
+noire_droite
+noire_gauche
+noire_haut,
+    svg);
+
+/*-----------------Graphiste-----------------*/
+@include SetIcones(graphiste,
+    icone_a_creer
+, svg);
+
+/*-----------------Horloge-----------------*/
+@include SetIcones(horloge,
+    alerte
+    attente
+    attente_blanc
+    attente_orange
+    chrono
+    duree
+, svg);
+
+/*-----------------Langues-----------------*/
+@include SetIcones(lang,
+    ca
+    de
+    fr
+    en
+    es
+, svg);
+
+/*-----------------Liste-----------------*/
+@include SetIcones(liste,
+    a_points
+    a_points_noir
+    annuler
+    coches
+    enregistrer
+    importer
+    simple
+, svg);
+
+/*-----------------Logo-----------------*/
+@include SetIcones(logo,
+    elive
+    guacamole_francisco_de_mexico
+, svg);
+
+/*-----------------Médicament-----------------*/
+@include SetIcones(medicament,
+    pharmacie
+, svg);
+
+/*-----------------Menu-----------------*/
+@include SetIcones(menu,
+    calendrier
+    informations
+    intervention
+    troispoints
+    tuile_retour
+    tuile_vuedeservice
+, svg);
+
+/*-----------------Nettoyer-----------------*/
+@include SetIcones(nettoyer,
+    balai
+, svg);
+
+/*-----------------Niveau-----------------*/
+@include SetIcones(niveau,
+    niveau1
+    niveau2
+    niveau3
+    niveau4
+, svg);
+
+/*-----------------Periodicite-----------------*/
+@include SetIcones(periodicite,
+    casse
+    jour
+    mois
+    semaine
+, svg);
+
+/*-----------------Phonétique-----------------*/
+@include SetIcones(phonetique,
+    off
+    on
+, svg);
+
+/*-----------------Phonétique-----------------*/
+@include SetIcones(surveillance,
+    surveillance
+, svg);
+
+/*-----------------Tableau-----------------*/
+@include SetIcones(tableau,
+    version_1_tableau
+    version_2_tableau
+    version_3_tableau
+, svg);
+
+/*-----------------User-----------------*/
+@include SetIcones(user,
+    dossier
+    ensemble
+    seul
+    sexe_feminin
+    sexe_feminin_blanc
+    sexe_indetermine
+    sexe_indetermine_blanc
+    sexe_masculin
+    sexe_masculin_blanc
+    user
+, svg);
+
+/*-----------------Vide-----------------*/
+@include SetIcones(vide,
+    vide
+, svg);
+
+/*-----------------WebSuite-----------------*/
+@include SetIcones(websuite,
+logo
+, svg);
+
+/*-----------------ice2CheckBox-----------------*/
+@include SetIcones(ice2CheckBox, 
+    checked_defaut
+    checked_defaut_disabled
+, svg);
+
+/*-----------------ice2Route Container-----------------*/
+@include SetIcones(ice2RouteContainer, 
+    FavoriOff
+    FavoriOn
+    Fermer
+    Filariane
+    Home
+    MenuPerso
+    Partager
+    Refresh
+    Remonter
+    Retour
+    SwitchMenuOff
+    SwitchMenuOn
+, svg);
+
+/*-----------------ice2Tableau-----------------*/
+@include SetIcones(ice2Tableau,
+    config_colonnes
+    FlecheBas
+    FlecheBottom
+    FlecheHaut
+    FlecheTop
+, svg);
+
+/*-----------------ice2Volet-----------------*/
+@include SetIcones(ice2Volet,
+    bas
+    droite
+    gauche
+    haut
+, svg);

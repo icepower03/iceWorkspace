@@ -1,0 +1,255 @@
+﻿/*******************************/
+/***** ice2Boxer Zeus - SCSS *****/
+/*******************************/
+
+@import "fonts.scss";
+@import "medias.scss";
+@import "couleurs.scss";
+
+@mixin tailleboxer($lettre,$taille) {
+    &.Boxer_#{$lettre} {
+        .ice2Boxer {
+            width: #{$taille};
+
+            @media screen and (max-width : #{$taille}) {
+                width: calc(100% - 10px);
+            }
+        }
+    }
+}
+
+.ice2BoxerContainer {
+    &.ice2BoxerOff {
+        display: none;
+    }
+    //Commun aux boxers
+    &.ice2BoxerOn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9000;
+
+        .ice2Boxer {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .ice2BoxerContent {
+                display: flex;
+                flex: 1 1 auto;
+                background-color: #fff;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+        }
+
+        .ice2BoxerBackground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    //Les boxers standards = hors localisés
+    &:not(.BoxerLocal) {
+
+        .ice2Boxer {
+            animation-name: fadeIn;
+            animation-duration: 0.1s;
+            animation-timing-function: ease;
+
+            .ice2BoxerHeader {
+                height: 28px;
+
+                .ice2BoxerWrapBouton {
+                    .ice2WrapPanel {
+                        padding: 0;
+
+                        .ice2bouton:focus {
+                            outline: none;
+                        }
+                    }
+                }
+
+                .ice2DockPanelItem {
+                    padding: 0;
+                }
+            }
+
+            .ice2BoxerContent {
+                height: calc(100% - 28px);
+                -moz-box-shadow: 0px 5px 20px 0px #333333;
+                -webkit-box-shadow: 0px 5px 20px 0px #333333;
+                -o-box-shadow: 0px 5px 20px 0px #333333;
+                box-shadow: 0px 5px 20px 0px #333333;
+                filter: progid:DXImageTransform.Microsoft.Shadow(color=#333333, Direction=180, Strength=20);
+            }
+        }
+
+        &.ice2BoxerDisplayStandard {
+            .ice2Boxer {
+                width: 60%;
+                height: 70%;
+            }
+
+            @include tailleboxer(S,400px);
+            @include tailleboxer(M,800px);
+            @include tailleboxer(L,1000px);
+            @include tailleboxer(XL,1200px);
+
+            &.Boxer_Fit {
+                .ice2Boxer {
+                    width: auto;
+                    height: auto;
+                    max-height: calc(100% - 50px);
+                    max-width: calc(100% - 50px);
+
+                    .ice2BoxerContent {
+                        overflow: auto;
+                    }
+
+                    .ice2page {
+                        height: auto;
+                    }
+
+                    .ice2page_body {
+                        padding: 10px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+
+        &.ice2BoxerDisplayMaximize {
+            .ice2Boxer {
+                width: calc(100% - 50px);
+                height: calc(100% - 50px);
+
+                .ice2page_body {
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        &.ice2BoxerDisplayPleinePage {
+            .ice2Boxer {
+                width: 100%;
+                height: 100%;
+            }
+
+            .ice2BoxerHeader {
+                display: none;
+            }
+        }
+
+        .ice2LabelTitreBoxer {
+            display: block;
+            font-size: 14px;
+            padding: 6px 14px;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px 5px 0 0;
+        }
+
+        .ice2BoxerBackground {
+            background-color: rgba(86, 146, 174, 0.5);
+            background-position: calc(100% - 20px) calc(100% - 30px);
+            background-repeat: no-repeat;
+        }
+
+        &.ice2BoxerBackgroundIncassable {
+            .ice2BoxerBackground {
+                background-color: rgba(86, 146, 174, 0.8);
+            }
+
+            .ice2BoxerWrapBouton {
+                background-color: #fff;
+            }
+        }
+
+        .ice2BoxerWrapBouton {
+            height: 32px;
+            position: relative;
+            z-index: 9001;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 5px 5px 0 0;
+            align-items: flex-start;
+        }
+    }
+    //Boxers localisés
+    &.BoxerLocal {
+
+        .ice2Boxer {
+            animation-name: fadeIn;
+            animation-duration: 0.1s;
+            animation-timing-function: ease-in;
+            width: 400px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+
+            .ice2BoxerHeader {
+                display: none;
+            }
+
+            .ice2BoxerContent {
+                padding: 10px;
+            }
+        }
+
+        &[class*="Origine"] {
+            &[class*="Top"] {
+                align-items: flex-start;
+            }
+
+            &[class*="Bottom"] {
+                align-items: flex-end;
+            }
+
+            &[class*="Left"] {
+                justify-content: flex-start;
+            }
+
+            &[class*="Right"] {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &.t20 {
+        font-family: #{$FontT20};
+        color: $coul-t20-texte;
+
+        &:not(.BoxerLocal) {
+            .ice2Boxer {
+                animation: fadeIn $vitesseAnimationRapide cubic-bezier(0.35, 0.01, 0.28, 1.11);
+            }
+
+            .ice2BoxerBackground {
+                background-image: none;
+                background-color: rgba(0,0,0,0.4);
+            }
+
+            .ice2BoxerContent {
+                border-radius: 10px;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+        }
+
+        .dm & {
+            .ice2BoxerContent {
+                background-color: $coul-t20-bgtheme;
+            }
+
+            .ice2BoxerBackground {
+                background-color: rgba(0,0,0,0.75);
+            }
+        }
+    }
+}

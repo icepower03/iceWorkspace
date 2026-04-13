@@ -13,7 +13,7 @@ export default defineConfig({
             formats: ['es'],
         },
         rollupOptions: {
-            // jQuery reste externe (chargé séparément via libxElements.js)
+            // jQuery reste externe (chargé séparément via libiceElements.js)
             external: ['jquery'],
             output: {
                 globals: { jquery: '$' },

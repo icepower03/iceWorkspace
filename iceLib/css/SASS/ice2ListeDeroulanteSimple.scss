@@ -1,0 +1,94 @@
+﻿/**********************************************/
+/***** ice2ListDeroulanteSimple Zeus - SCSS *****/
+/**********************************************/
+
+
+.itemice2ListeDeroulanteSimple {
+    display: flex;
+    background-color: #fff;
+
+    &.t20 {
+
+        &.xlsd-valeurSelected > .ice2bouton {
+            border-radius: 5px 0 0 5px;
+
+            &.espaceMinimaliste span.iconeP12.iconeP12_aucun {
+                /*padding: 4px;*/
+            }
+
+            &.btnFlecheInListeSimple {
+                border-radius: 0 5px 5px 0;
+            }
+        }
+
+        &:hover {
+            border-radius: 5px;
+        }
+    }
+
+    &:hover {
+        background-color: $ZeusFondGris;
+    }
+
+    &.withIcone {
+        .ice2bouton.btnFlecheInListeSimple {
+            span {
+                padding: 10px 10px 11px 10px !important;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .ice2bouton {
+        margin: 0;
+        border-right: none;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+
+        S &.btnFlecheInListeSimple.habillage_modeSansTexte {
+            margin: 0;
+            height: 20px;
+            box-sizing: border-box;
+        }
+
+        span:hover {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+    }
+}
+
+.ice2bouton.btnFlecheInListeSimple {
+    border: 1px solid #aaa;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+
+    span {
+        padding: 10px 10px 11px 10px !important;
+    }
+}
+
+.LectureSeule, .ice2xListe .itemInListe.LectureSeule, .ice2xListe .itemInListe.LectureSeule:hover {
+    background-color: transparent;
+}
+
+.LectureSeule:hover {
+    background-color: transparent;
+}
+.ice2ListeDeroulante .itemice2ListeDeroulanteSimple {
+    > .ice2bouton.xDeprecated {
+        border-color: #aaaaaa;
+        &:not(.btnFlecheInListeSimple) {
+            border-radius: 5px 0 0 5px;
+        }
+
+        &.btnFlecheInListeSimple {
+            border-radius: 0 5px 5px 0;
+        }
+    }
+}

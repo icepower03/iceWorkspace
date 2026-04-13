@@ -1,0 +1,20 @@
+﻿/********************************/
+/***** ice2BloqueEcran - SCSS *****/
+/********************************/
+
+.ice2BoxerContainer.ice2BoxerOn.ice2BoxerDisplayStandard.ice2BloqueEcran {
+
+    .ice2BoxerContent {
+        padding: 10px;
+        justify-content: center;
+        max-width:500px;
+
+        .ice2StackPanelMaster {
+            text-align: center;
+        }
+
+        .ice2Label {
+            font-size: 14px;
+        }
+    }
+}

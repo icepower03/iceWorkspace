@@ -1,0 +1,35 @@
+﻿.ice2ListPrincipal {
+    &.ice2StackPanelMaster.IsVide {
+        height: 100%;
+
+        .ice2StackPanel.SPice2ListPrincipal {
+            height: 100%;
+
+            .ice2StackPanelItem {
+                height: 100%;
+                display: flex;
+
+                .ice2Label.typeLabel_information {
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .ice2ListGroupeHeader {
+        background: #eeee;
+        padding: 3px;
+        font-weight: bold;
+    }
+
+    .ice2ListGroupGlobal {
+        font-weight: bold;
+        text-align: left;
+        background-color: #d2d2d2;
+        color: #000;
+
+        &.t20 {
+            background-color: $coul-t20-fondgris;
+        }
+    }
+}

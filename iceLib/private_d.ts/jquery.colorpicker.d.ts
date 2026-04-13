@@ -1,1 +1,1 @@
-// jquery.colorpicker.d.ts — supprimé : xxChoixCouleur utilise désormais <input type="color"> natif
+// jquery.colorpicker.d.ts — supprimé : ice2ChoixCouleur utilise désormais <input type="color"> natif

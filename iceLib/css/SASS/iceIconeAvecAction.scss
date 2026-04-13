@@ -1,0 +1,40 @@
+﻿/*********************************************/
+/******************* iceInput ******************/
+/*********************************************/
+
+.iceIconeAvecAction {
+
+    &.taille_XS {
+        width: 15px;
+        height: 15px;
+    }
+
+    &.taille_S {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.taille_M {
+        width: 24px;
+        height: 24px;
+    }
+
+    &.taille_L {
+        width: 48px;
+        height: 48px;
+    }
+
+    &.taille_XL {
+        width: 72px;
+        height: 72px;
+    }
+
+    .ice2GridItem {
+        > .iconeSeuleExterne, > .iceSVG {
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+            min-width: unset;
+        }
+    }
+}

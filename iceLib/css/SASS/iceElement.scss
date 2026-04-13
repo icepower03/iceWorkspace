@@ -1,0 +1,108 @@
+﻿/*--------------------*/
+/*----- iceElement -----*/
+/*--------------------*/
+
+
+.couleurFondDynamique {
+    > * {
+        background-color: inherit !important;
+    }
+}
+
+.couleurTexteDynamique {
+    > * {
+        color: inherit !important;
+    }
+}
+
+.couleurBorderDynamique {
+    > * {
+        border-color: inherit !important;
+    }
+}
+
+.couleurAutoBlanc {
+    color: #FFF !important;
+
+    > * {
+        color: #FFF !important;
+    }
+
+    .xsvg-elem_stroked {
+        stroke: #FFF;
+    }
+
+    .xsvg-elem_filled {
+        fill: #FFF;
+    }
+}
+
+.couleurAutoNoir {
+    color: #000 !important;
+
+    > * {
+        color: #000 !important;
+    }
+
+    .xsvg-elem_stroked {
+        stroke: #000;
+    }
+
+    .xsvg-elem_filled {
+        fill: #000;
+    }
+}
+
+/******* CURSEURS *******/
+.curseur- {
+    &default { cursor: default; }
+    &pointer { cursor: pointer; }
+    &help { cursor: help; }
+    &wait { cursor: wait; }
+    &text { cursor: text; }
+    &move { cursor: move; }
+    &not-allowed { cursor: not-allowed; }
+    &grab { cursor: grab; }
+    &grabbing { cursor: grabbing; }
+    &col-resize { cursor: col-resize; }
+    &row-resize { cursor: row-resize; }
+    &zoom-in { cursor: zoom-in; }
+    &zoom-out { cursor: zoom-out; }
+}
+
+/* Drag and Drop */
+.isCibleDrop {
+    background-color: rgba($ZeusBleu,.2) !important;
+    color: #000 !important;
+    position: relative;
+
+    &:before, &:after {
+        content: " ";
+        position: absolute;
+        top: -7px;
+        width: 5px;
+        height: calc(100% + 14px);
+        border: 3px solid rgba($ZeusBleu,.6);
+        box-sizing: border-box;
+    }
+
+    &:before {
+        left: -7px;
+        border-radius: 5px 0 0 5px;
+        border-right: none;
+    }
+
+    &:after {
+        right: -7px;
+        border-radius: 0 5px 5px 0;
+        border-left: none;
+    }
+
+    &.t20 {
+        background-color: rgba($coul-t20-bleu,.2) !important;
+
+        &:before, &:after {
+            border-color: rgba($coul-t20-bleu,.6);
+        }
+    }
+}

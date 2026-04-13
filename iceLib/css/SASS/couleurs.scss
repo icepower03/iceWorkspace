@@ -43,7 +43,7 @@ $coul-t20-bgtheme: var(--coul-t20-bgtheme); // en darkmode : #292F48;
 }
 
 // Mixin de customization des monochromes svg
-@mixin xSVG-Color($couleur) {
+@mixin iceSVG-Color($couleur) {
     .xsvg-elem_filled {
         fill: $couleur;
     }

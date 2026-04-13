@@ -1,0 +1,121 @@
+﻿/***********************************/
+/***** ice2ListChoix Zeus - SCSS *****/
+/***********************************/
+
+.ice2ListChoix {
+    .ice2ListChoix_list_Container {
+        position: relative;
+    }
+
+    .ice2ListChoix_list_items {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        max-height: 300px;
+        flex-direction: column;
+        border: 1px solid $ZeusBorder;
+        margin: -1px 0 0 0;
+        box-sizing: border-box;
+        overflow: auto;
+        z-index: 1000;
+    }
+
+    .ice2ListChoix_item {
+        border: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        border-bottom: 1px solid #dedede;
+
+        .ice2BoutonContent {
+            border: none;
+            margin: 0;
+            width: 100%;
+            border-radius: 0;
+        }
+
+
+        &:last-child {
+            border: none;
+        }
+
+        &.ice2ListChoix_selected .ice2BoutonContent {
+            background-color: $ZeusSelected;
+        }
+    }
+
+    .ice2ListChoix_zone_bouton {
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.ice2BoutonContent {
+            min-width: 120px;
+        }
+
+        &.ice2bouton span:hover {
+            background-color: transparent;
+        }
+
+        &:hover .ice2bouton {
+            background-color: $ZeusSelected;
+            animation-duration: 0.5s;
+            animation-name: fadeIn;
+        }
+    }
+
+    .ice2ListChoix_cache {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: black;
+        z-index: 999;
+    }
+
+    .ice2bouton span.iconeP12 {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .ice2ListChoix_zone_bouton.ice2bouton span.iconeP12_ice2ListChoix_defaut,
+    .ice2ListChoix_item.ice2bouton span.iconeP12_ice2ListChoix_defaut {
+        background-size: 14px;
+    }
+
+    .ice2ListChoix_bouton {
+        box-sizing: border-box;
+        padding: 10px 12px 10px 30px;
+        border-right: none;
+    }
+
+    .ice2ListChoix_bouton_image {
+        background-image: url('images/ice2ListChoix/ice2ListChoix.svg?embed');
+        background-repeat: no-repeat;
+        background-position: 8px 50%;
+    }
+
+    .ice2ListChoix_item_image {
+        background-image: url('images/ice2ListChoix/ice2ListChoix_item.svg?embed');
+        background-repeat: no-repeat;
+        background-position: 8px 50%;
+    }
+
+    .ice2ListChoix_item_image_surveillance {
+        background-image: url('images/surveillance/surveillance.svg?embed');
+        background-repeat: no-repeat;
+        background-position: 8px 50%;
+    }
+}
+
+.ice2ListItem {
+
+    &.item_hoverable:hover {
+        background-color: #8be1b4;
+    }
+}

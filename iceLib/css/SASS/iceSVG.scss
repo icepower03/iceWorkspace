@@ -1,0 +1,161 @@
+﻿// -----------------------------------------------------
+// ---------------------- iceSVG -------------------------
+// -----------------------------------------------------
+
+@import "couleurs.scss";
+
+$sizesSvg: ( "ice2s" 12px, "xs" 15px, "s" 20px, "m" 24px, "l" 48px, "xl" 56px);
+
+@each $svg, $size in $sizesSvg {
+    .svg_#{$svg} {
+        height: $size;
+        width: $size;
+    }
+}
+/*
+.ice2ContainerEvent .iceSVG {
+    cursor:pointer;
+}*/
+
+
+/*---- Elements des svg Icones ----*/
+.xsvg-elem {
+    fill:none;
+
+    &.xsvg-transparent{
+        opacity:0;
+        fill:#FFF;
+    }
+}
+.xsvg-elem_filled {
+    fill:$coul-t20-texte;
+}
+.xsvg-elem_stroked {
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke: $coul-t20-texte;
+}
+
+.xsvg-formeFond_carre {
+    border-radius: 0;
+}
+
+.xsvg-formeFond_rond {
+    border-radius: 50%;
+}
+
+.xsvg-formeFond_bordsArrondis {
+    border-radius: 5px;
+}
+
+
+
+/* Epaisseurs Traits */
+@for $i from 0 through 10 {
+    .xsvg-stroke_#{$i} .xsvg-elem_stroked {
+        stroke-width: #{$i}px;
+    }
+}
+
+
+/* Logos SVG */
+.iconeSvg_logo_elive {
+    .coul-logo1 {
+        fill: $coul-t20-rouge;
+    }
+
+    .coul-logo2 {
+        fill: $coul-t20-bleufonce;
+    }
+
+    &.sur-fond-bleu, &.sur-fond-rouge {
+        .coul-logo2 {
+            fill: white;
+        }
+    }
+
+    &.sur-fond-rouge {
+        .coul-logo1 {
+            fill: $coul-t20-bleufonce;
+        }
+    }
+}
+
+$couleurSvg: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $icone-grisclair, "blanc" $icone-blanc, "marronfonce" $icone-marronfonce, "marronclair" $icone-marronclair, "rougefonce" $icone-rougefonce, "rouge" $icone-rouge, "orange" $icone-orange, "jaune" $icone-jaune, "vert" $icone-vert, "turquoise" $icone-turquoise, "bleu" $icone-bleu, "violet" $icone-violet, "peau" $icone-peau, "rose" $icone-rose);
+
+@each $couleur, $codecouleur in $couleurSvg {
+
+    .xsvg-couleur_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-couleur_zeus_#{$couleur} {
+        .xsvg-elem_filled {
+            fill: $codecouleur;
+        }
+
+        .xsvg-elem_stroked {
+            stroke: $codecouleur;
+        }
+    }
+
+    .xsvg-multicolore-couleurPrincipale_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurPrincipale_zeus_#{$couleur} {
+        .xsvg-elem_filled, .xsvg-elem_transparent {
+            &.xsvg-elem_couleurPrincipale {
+                fill: $codecouleur;
+            }
+        }
+
+        .xsvg-elem_stroked.xsvg-elem_couleurPrincipale {
+            stroke: $codecouleur;
+        }
+    }
+
+    .xsvg-multicolore-couleurSecondaire_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurSecondaire_zeus_#{$couleur} {
+        .xsvg-elem_filled, .xsvg-elem_transparent {
+            &.xsvg-elem_Secondaire {
+                fill: $codecouleur;
+            }
+        }
+
+        .xsvg-elem_stroked.xsvg-elem_couleurSecondaire {
+            stroke: $codecouleur;
+        }
+    }
+
+    .xsvg-multicolore-couleurTertiaire_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurTertiaire_zeus_#{$couleur} {
+        .xsvg-elem_filled, .xsvg-elem_transparent {
+            &.xsvg-elem_couleurTertiaire {
+                fill: $codecouleur;
+            }
+        }
+
+        .xsvg-elem_stroked.xsvg-elem_couleurTertiaire {
+            stroke: $codecouleur;
+        }
+    }
+
+    .xsvg-couleurFond_zeus_#{$couleur} {
+        background-color: $codecouleur;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+}
+
+.xsvg-couleur_t20_user {
+    .xsvg-elem_filled {
+        fill: $coul-t20-user;
+    }
+
+    .xsvg-elem_stroked {
+        stroke: $coul-t20-user;
+    }
+}
+
+.xsvg-couleur_t20_alt {
+    .xsvg-elem_filled {
+        fill: $coul-t20-alt;
+    }
+
+    .xsvg-elem_stroked {
+        stroke: $coul-t20-alt;
+    }
+}

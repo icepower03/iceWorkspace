@@ -1,0 +1,79 @@
+﻿
+/***********************************/
+/***** ice2WrapPanel Zeus - SCSS *****/
+/***********************************/
+
+.ice2WrapPanelMaster {
+    display: flex;
+
+    .ice2WrapPanel {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: inherit;
+
+        .ice2WrapPanelItem {
+            display: flex;
+            justify-content: center;
+        }
+
+        &.position_verticale_bas {
+            & > .ice2WrapPanelItem {
+                align-items: flex-end;
+            }
+        }
+
+        &.position_verticale_centre {
+            & > .ice2WrapPanelItem {
+                align-items: center;
+            }
+        }
+
+        &.position_verticale_haut {
+            & > .ice2WrapPanelItem {
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &.alignementDroite {
+        justify-content: flex-end;
+    }
+
+    &.alignementGauche {
+        justify-content: flex-start;
+    }
+
+    &.alignementCentre {
+        justify-content: center;
+    }
+
+    &.no_retour {
+        & > .ice2WrapPanel {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &.no_padding {
+        & > .ice2WrapPanel {
+            padding: 0;
+        }
+    }
+
+    &.espaceMinimaliste {
+        & > .ice2WrapPanel {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &.itemsLargeurEgale {
+        & > .ice2WrapPanel .ice2WrapPanelItem {
+            flex: 1 0 auto;
+        }
+    }
+
+    &.pleineLargeur{
+        width: 100%;
+    }
+}

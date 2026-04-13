@@ -1,0 +1,82 @@
+﻿/********************/
+/****** iceHref  ******/
+/********************/
+
+.iceHref {
+
+    &.couleurzeus_noir {
+        color: $icone-noir;
+    }
+
+    &.couleurzeus_grisfonce {
+        color: $icone-grisfonce;
+    }
+
+    &.couleurzeus_grisclair {
+        color: $icone-grisclair;
+    }
+
+    &.couleurzeus_blanc {
+        color: $icone-blanc;
+    }
+
+    &.couleurzeus_marronfonce {
+        color: $icone-marronfonce;
+    }
+
+    &.couleurzeus_marronclair {
+        color: $icone-marronclair;
+    }
+
+    &.couleurzeus_rougefonce {
+        color: $icone-rougefonce;
+    }
+
+    &.couleurzeus_rouge {
+        color: $icone-rouge;
+    }
+
+    &.couleurzeus_orange {
+        color: $icone-orange;
+    }
+
+    &.couleurzeus_jaune {
+        color: $icone-jaune;
+    }
+
+    &.couleurzeus_vert {
+        color: $icone-vert;
+    }
+
+    &.couleurzeus_bleu {
+        color: $icone-bleu;
+    }
+
+    &.couleurzeus_violet {
+        color: $icone-violet;
+    }
+
+    &.couleurzeus_peau {
+        color: $icone-peau;
+    }
+
+    &.couleurzeus_rose {
+        color: $icone-rose;
+    }
+
+    &:hover {
+        color: $icone-grisfonce;
+    }
+
+    &.couleurzeus_grisfonce:hover {
+        color: $icone-grisclair;
+    }
+
+    &.couleurzeus_blanc:hover {
+        color: #{$icone-blanc} + b3;
+    }
+
+    &.xHref_noWrap{
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,74 @@
+﻿/***********************************/
+/******** ice2Zoom - SCSS ********/
+/***********************************/
+
+.ice2Zoom {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .Glissiere {
+        background-color: $ZeusFondGris;
+        border: 1px solid $ZeusBorder;
+        border-width: 1px 0px;
+        height: 30px;
+        box-sizing: border-box;
+        display: flex;
+
+        .boutonGlissiere {
+            background-color: #ffffff;
+            border: 1px solid $ZeusBorder;
+            border-width: 0px 1px;
+            position: relative;
+            padding: 0px;
+
+            &:after {
+                position: absolute;
+                bottom: 4px;
+                left: calc(50% - 6px);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0 6px;
+                border-color: #5692ae transparent transparent transparent;
+                content: "";
+            }
+
+            &.ice2Label {
+                margin: 0px;
+                color: $ZeusBleu;
+                display: flex;
+                justify-content: center;
+                padding-top: 3px;
+            }
+            //Penser à rajouter une flèche EN AFTER et non pas en icône
+            /*.ice2LabelContainerItem {
+                width: 7px;
+                height: 7px;
+
+                .iconeExterne_fleche {
+                    background-image: url("images/ice2Zoom/icone_fleche-bas_bleu_7x7.png?");
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    height: 100%
+                }
+            }*/
+            &:hover {
+                background-color: $ZeusSelected;
+                cursor: grab;
+            }
+        }
+    }
+
+    .boutonSelectPourcentage {
+        span{
+            font-size: 10px;
+        }
+
+        div.iconeSeuleExterne {
+            margin-left: 2px;
+        }
+
+    }
+}

@@ -1,0 +1,224 @@
+﻿/*************************************/
+/***** ice2RadioBouton Zeus - SCSS *****/
+/*************************************/
+
+.ice2RadioButton {
+    &.ice2WrapPanelMaster .ice2WrapPanel {
+        padding: 0;
+    }
+
+
+    .ice2RadioButtonItem {
+        &.xrbti-inactif {
+            opacity: 0.6;
+
+            .ice2BoutonContainer {
+                cursor: not-allowed;
+            }
+
+            .ice2bouton {
+                span:hover {
+                    background-color: transparent;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .ice2bouton {
+            border-radius: 0;
+
+            span:hover {
+                background-color: transparent;
+            }
+
+            &:hover {
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+
+            margin: 0 0 0 -1px;
+        }
+    }
+
+    &.ice2WrapPanel .ice2WrapPanelItem:first-child > .ice2ListItem .ice2RadioButtonItem .ice2bouton {
+        margin: 0;
+        border-radius: 5px 0 0 5px;
+    }
+
+    &.ice2WrapPanel .ice2WrapPanelItem:last-child > .ice2ListItem .ice2RadioButtonItem .ice2bouton {
+        margin: 0;
+        border-radius: 0 5px 5px 0;
+    }
+
+    &.ice2StackPanelMaster .ice2StackPanelItem:first-child > .ice2ListItem .ice2RadioButtonItem .ice2bouton {
+        margin: 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &.ice2StackPanelMaster .ice2StackPanelItem:last-child > .ice2ListItem .ice2RadioButtonItem .ice2bouton {
+        margin: 0;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .ice2StackPanel {
+        .ice2bouton {
+            margin: -1px 0 0 0;
+        }
+    }
+
+    &.displayStandard {
+        .ice2RadioButtonItemSelected {
+            & > .ice2bouton {
+                position: relative;
+                font-weight: bold;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                background-color: $ZeusSelected;
+            }
+
+            & > .ice2BoutonContainer .ice2BoutonContent {
+                position: relative;
+                background-color: $ZeusSelected;
+
+                &.t20 {
+                    border-color: rgb(0,0,0,0.2);
+                }
+
+                span.t20 {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    &.displayOnlySelected {
+
+
+        .ice2RadioButtonItem {
+            .ice2bouton {
+                span:hover {
+                    background-color: transparent;
+                }
+            }
+
+            &:hover, &.ice2RadioButtonItemSelected {
+                & > .ice2bouton {
+                    //   border: 2px solid black;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                    transition: $vitesseAnimationRapide $easingAnimationZinzin;
+                }
+            }
+
+            &.ice2RadioButtonItemSelected {
+                .ice2bouton {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &.hasValue {
+            .ice2WrapPanelItem .ice2RadioButtonItem:not(.ice2RadioButtonItemSelected) {
+                width: 0 !important;
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+
+            .ice2StackPanelItem .ice2RadioButtonItem:not(.ice2RadioButtonItemSelected) {
+                height: 0 !important;
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+        }
+
+        &.NothasValue {
+            .ice2WrapPanelItem .ice2RadioButtonItem:not(.ice2RadioButtonItemSelected) {
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+
+            .ice2StackPanelItem .ice2RadioButtonItem:not(.ice2RadioButtonItemSelected) {
+                overflow: hidden;
+                transition: $vitesseAnimationRapide $easingAnimationZinzin;
+            }
+        }
+    }
+}
+
+.ice2RadioButtonClassique {
+
+    & > .ice2BoutonContent {
+        border: none;
+        background: none;
+        color: $coul-t20-texte;
+
+        &:hover {
+            background: none;
+        }
+
+        &:before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        &.tleg {
+            padding-left: 32px;
+
+            &:before {
+                border: 1px solid $ZeusBorder;
+                top: 4px;
+                left: 10px;
+            }
+        }
+
+        &.t20 {
+            padding-left: 36px;
+
+            &:before {
+                border: 1px solid $coul-t20-textelight;
+                top: 9px;
+                left: 14px;
+            }
+        }
+    }
+}
+
+.ice2RadioButtonItemSelected .ice2RadioButtonClassique .ice2BoutonContent {
+
+    &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    &.tleg {
+
+        &:before {
+            border-color: $ZeusBorder;
+        }
+
+        &:after {
+            background: $icone-vert;
+            top: 7px;
+            left: 13px;
+        }
+    }
+
+    &.t20 {
+
+        &:before {
+            border-color: $coul-t20-vert;
+        }
+
+        &:after {
+            background: $coul-t20-vert;
+            top: 12px;
+            left: 17px;
+        }
+    }
+}
+
+

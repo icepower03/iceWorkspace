@@ -1,6 +1,6 @@
 /**
  * build-css.mjs
- * Compile css/x.scss → dist/x.css
+ * Compile css/iceLib.scss → dist/iceLib.css
  * Remplace les url("...?embed") par des data URI base64
  */
 
@@ -51,13 +51,13 @@ function inlineEmbedAssets(css) {
 console.log('Building CSS...');
 console.time('  done');
 
-const compiled = sass.compile(resolve(root, 'css/x.scss'), {
+const compiled = sass.compile(resolve(root, 'css/iceLib.scss'), {
   loadPaths: [root],
   silenceDeprecations: ['import'],  // @import deprecated dans sass >= 1.80
 });
 
 const finalCss = inlineEmbedAssets(compiled.css);
-writeFileSync(resolve(root, 'dist/x.css'), finalCss, 'utf8');
+writeFileSync(resolve(root, 'dist/iceLib.css'), finalCss, 'utf8');
 
 console.timeEnd('  done');
-console.log('→ dist/x.css');
+console.log('→ dist/iceLib.css');

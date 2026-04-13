@@ -1,0 +1,32 @@
+﻿/***********************************/
+/***** ice2DockPanel Zeus - SCSS *****/
+/***********************************/
+
+.ice2DockPanelPrincipal {
+    display: flex;
+    height:100%;
+    width:100%;
+
+    .ice2DockPanel {
+        display: flex;
+        flex: 1 1 auto;
+        height:100%;
+
+        .ice2DockPanelItem{
+            padding:6px;
+        }
+
+        &.ice2DockPanelDernierItem {
+            justify-content: center;
+            align-items: center;
+        }
+        &.ice2DockPanelDernierItem .ice2DockPanelItem {}
+    }
+
+    .Direction_haut {flex-direction: column;}
+    .Direction_bas {flex-direction: column-reverse;}
+    .Direction_gauche {flex-direction: row;}
+    .Direction_droite {flex-direction: row-reverse;}
+}
+
+

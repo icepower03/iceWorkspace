@@ -1,0 +1,18 @@
+﻿/*************************************/
+/***** ice2ListCheckBox Zeus - SCSS *****/
+/*************************************/
+@import "couleurs.scss";
+
+.ice2ListCheckBox {
+
+    .Direction_haut .tous {
+
+        &.tleg {
+            border-bottom: 1px solid $ZeusBorder;
+        }
+
+        &.t20 {
+            border-bottom: 1px solid $coul-t20-border;
+        }
+    }
+}

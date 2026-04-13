@@ -1,0 +1,384 @@
+﻿/*************************************/
+/***** ice2Planning Zeus - SCSS *****/
+/*************************************/
+
+@import "couleurs.scss";
+
+.FollowMouse {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.ice2Planning {
+    .PlanningDispoPlage {
+        z-index: 1;
+    }
+
+    .LibelleLigne {
+        z-index: 2;
+    }
+
+    .PlanningDispoBarre, .PlanningDispoBloc {
+        z-index: 3;
+    }
+
+    .TimeLineNow {
+        z-index: 4;
+    }
+
+    .PlanningRdv {
+        z-index: 5;
+    }
+
+    .ZoomEtHeure .premierItem, .Entete {
+        z-index: 6;
+    }
+
+    .PrevisualisationRdv {
+        z-index: 4;
+        opacity: 0.33;
+        border-radius: 5px;
+        text-decoration-color: black;
+        padding:2px 0 0 2px;
+    }
+}
+
+.BoxerParametrage {
+    z-index: 9999;
+
+    .wpTrancheHoraire {
+        .boutonSelectTrancheHoraire {
+            .ice2BoutonContent {
+                border-radius: 3px 0 0 3px;
+            }
+        }
+
+        .trancheHorraireMoins {
+            .ice2BoutonContent {
+                border-radius: 0;
+                border-left: none;
+            }
+        }
+
+        .trancheHorrairePlus {
+            .ice2BoutonContent {
+                border-radius: 0 3px 3px 0;
+                border-left: none;
+            }
+        }
+    }
+}
+
+.ice2Planning {
+    display: flex;
+    margin: 0 auto;
+    border-top: 0;
+    height: 560px;
+    border-bottom: none;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    /*--------------Structure---------------*/
+    /*STRUCTURE GLOBALE*/
+    .WPice2Planning {
+        width: 100%;
+        /*Container Colonnes*/
+        & > .ice2WrapPanelItem {
+            align-items: stretch !important;
+            flex: 1 0 0;
+            /*Premier container colonne*/
+            &:first-child {
+                flex: 0 0 auto;
+            }
+            /*Colonnes*/
+            .ice2GridMaster {
+
+                $pourcentages: 100,150,200,250,300,350,400;
+
+                @each $p in $pourcentages { //Pour chaque pourcentage on change la hauteur des colonnes
+                    &.p#{$p} {
+                        height: #{$p}%;
+                        min-height: 600px;
+                    }
+                }
+            }
+        }
+    }
+    /*Colonnes*/
+    .PlanningColonne {
+        background: $ZeusFondGris;
+        min-width: 170px;
+    }
+    /*Première colonne*/
+    .ZoomEtHeure {
+        min-width: unset;
+        width: 50px;
+
+        .premierItem {
+            width: 50px;
+            background: white;
+            width: 100%;
+            height: 100%;
+            position: sticky;
+            border-bottom: 1px solid $ZeusBorder;
+            top: 0;
+            box-sizing: border-box;
+
+            .ice2WrapPanelMaster, .ice2StackPanelItem > div {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .LibelleLigne {
+            border-left: 0;
+
+            div {
+                width: 50px;
+                background: white;
+                height: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+                box-sizing: border-box;
+                padding: 2px 4px;
+
+                .heure {
+                    font-size: 13px;
+                    display: block;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    /*Entêtes*/
+    .Entete {
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background: white;
+        position: sticky;
+        top: 0;
+    }
+    /*Lignes*/
+    .LibelleLigne {
+        border-left: 1px solid #ddd;
+        border-top: 1px solid #ccc;
+    }
+    /*-------------Elements---------------*/
+    .TimeLineNow {
+        border-top: 2px dashed $ZeusBleu;
+    }
+
+    .PlanningDispoPlage {
+        width: 100%;
+        height: 100%;
+        background: white;
+    }
+
+    .PlanningDispoBarre, .PlanningDispoBloc {
+        .ice2Indicateur, .ice2Tooltip_Contenu, .ice2IndicateurContenu, .dispo {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .DispoBarreMultiple {
+        .dispo {
+            background: repeating-linear-gradient(-45deg, transparent 0%, transparent 15px, rgba(255,255,255,0.3) 15px, rgba(255,255,255,0.3) 30px)
+        }
+    }
+
+    .PlanningDispoBloc {
+        width: calc(100% - 10px);
+        border-radius: 5px;
+        overflow: hidden;
+
+        .infoDispoBloc {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .ice2Label.libelleRessourceBloc {
+            color: white;
+            background: rgb(96, 125, 139);
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            padding: 2px 4px;
+        }
+
+        .hachureDispoBloc {
+            opacity: 0.25;
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            &:before {
+                background: repeating-linear-gradient(45deg, transparent, transparent 5px, white 5px, white 10px);
+                opacity: 0.1;
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+    }
+
+    .gridTexteDispoBloc {
+        width: calc(100% - 10px);
+        z-index: 999;
+
+        span.libelleRessourceBloc {
+            background: rgba(102,102,102,.66); // $ZeusFondGris:€666666 mais en opacité .66 (\m/)
+            padding: 5px;
+            color: white;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            display: block;
+        }
+    }
+
+    .PlanningRdv {
+        width: calc(100% - 2px);
+        margin: 0 1px;
+        background-color: white;
+        opacity: 0.8;
+        overflow: auto;
+        border-radius: 2px;
+        border: 1px solid $ZeusBorder;
+        box-sizing: border-box;
+        position: relative;
+        user-select: none;
+        overflow: visible;
+
+        &:hover {
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .ice2ContainerEvent, .ContenuRdv, .tempsTotal {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ContenuRdv {
+            padding: 5px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    .PrevisualisationRdv {
+        background-color: red;
+    }
+
+    .rdv {
+        overflow: hidden;
+    }
+
+    &.ModeRdvTransparent .ice2GridItem.PlanningRdv {
+        pointer-events: none;
+        opacity: 0.5 !important;
+    }
+}
+
+.agrandirRdv {
+    display: none;
+    position: absolute;
+    right: 0px;
+    background: rgba(255,255,255,0.75);
+    padding: 1px 3px;
+
+    .PlanningRdv:hover & {
+        display: block;
+    }
+
+    &.agrandirRdvHaut {
+        top: -16px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &.agrandirRdvBas {
+        bottom: -16px;
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+.divMois, .contenuMois {
+    height: 100%;
+}
+
+.contenuMois > .ice2WrapPanel {
+    &, & > .ice2WrapPanelItem {
+        width: 100%;
+    }
+}
+
+.gridMois {
+    height: 100%;
+
+
+
+    .ice2Label.typeLabel_important {
+        margin-top: 0;
+    }
+
+
+    .ice2GridItem {
+        border: 1px solid #eee;
+        padding: 10px;
+        overflow: hidden;
+
+        &.premiereLigne {
+            padding: 0 10px;
+            align-items: center;
+            display: flex;
+        }
+
+
+        #divToDay {
+            height: 100%;
+
+            .ice2LabelContainer .ice2Label.orientation_verticale {
+                width: auto;
+                margin: 0 0 4px 0;
+            }
+
+            .labelContainerAujourdhui {
+                height: 100%;
+
+                .ice2LabelContainerItem {
+                    height: 100%;
+                    overflow: hidden;
+
+                    .ice2StackPanelMaster {
+                        overflow: auto;
+                        @include scrollbarFine;
+
+                        .ice2StackPanelItem {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+
+            .ice2StackPanelMaster {
+                width: 100%;
+
+                .ice2StackPanelItem {
+                    margin-bottom: 2px;
+
+                    & > div {
+                        padding: 3px;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

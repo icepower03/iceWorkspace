@@ -1,0 +1,430 @@
+﻿/*********************************/
+/***** ice2TabControl Zeus - SCSS *****/
+/*********************************/
+
+.ice2TabControlContainer {
+    .withDecorator span.iconeP12.orientation_verticale.iconeP12_aucun:after {
+        content: '\002022';
+        font-weight: normal;
+        position: relative;
+        font-size: 11px;
+        top: 6px;
+        left: 8px;
+    }
+
+    & > .ice2DockPanel {
+        width: 100%;
+
+        .ice2DockPanelItem {
+            padding: 0;
+
+            &.ice2TabControlMenu {
+                padding: 6px 0 0 0;
+            }
+        }
+    }
+
+    .WPice2TabMenu {
+        width: 100%;
+    }
+
+    .ice2TabMenu .ice2WrapPanel {
+        padding: 0;
+    }
+
+    .ice2TabControlContentHolder {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .ice2TabControlItemContent {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .ice2TabMenu .ice2RadioButton .ice2bouton {
+        background-color: $ZeusFondGris;
+    }
+
+    .ice2TabMenu {
+        .ice2ListItem {
+            &.Tabfavori {
+                .ice2BoutonContainer {
+                    font-style: italic;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+
+            &.ongletAvecContenu {
+                position: relative;
+
+                &::after {
+                    content: " ";
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border-top: 10px solid $icone-orange;
+                    border-left: 10px solid transparent;
+                }
+            }
+        }
+
+
+
+        .ice2TabMenu_groupTab {
+            .ice2Label.labelGroupe {
+                padding-bottom: 7px;
+                margin-left: 10px;
+            }
+
+            .ice2bouton.sensInverse.espaceMinimaliste span.iconeP12 {
+                padding-right: 24px;
+                padding-top: 3px;
+            }
+
+            .ice2TabControl_saveGroupe {
+                span.iconeP12 {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .ice2TabContent {
+        height: 100%;
+    }
+
+    &.orientation_horizontale {
+        .ice2RadioButtonItem.ice2TabControl {
+            border-image: linear-gradient(-90deg, #aaa, white) 1;
+            border-bottom-color: #aaa;
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+            border-right-color: #aaa;
+            border-right-width: 1px;
+            border-right-style: solid;
+        }
+
+        .ice2TabMenu {
+            border-bottom: 1px solid #aaa;
+
+            &.t20 {
+                padding: 0 6px;
+            }
+
+            div.ice2GridItem.zoneOnglets {
+                overflow-x: auto;
+                overflow-y: hidden;
+                display: flex;
+                @include scrollbarFine;
+
+                .ice2WrapPanel.ice2RadioButton {
+
+                    .ice2BoutonContainer .ice2BoutonContent {
+                        border-radius: 5px 5px 0 0;
+                        margin: 0;
+
+                        &.t20 {
+                            border-left-width: 0;
+                        }
+                    }
+
+                    .ice2WrapPanelItem:first-child .ice2BoutonContainer .ice2BoutonContent.t20 {
+                        border-left-width: 1px;
+                    }
+                }
+            }
+
+            .zoneApresOnglets {
+
+                .ice2bouton {
+                    margin: 0;
+                }
+            }
+
+
+            .ice2WrapPanelMaster.ice2RadioButton {
+                display: flex;
+                width: 100%;
+
+                .ice2WrapPanel.ice2RadioButton {
+                    width: 100%;
+                    flex-wrap: nowrap;
+                }
+
+                &.ice2tabcontrol_styleArrondi {
+                    border-left: 0;
+
+                    .ice2WrapPanelItem {
+                        overflow: visible;
+                    }
+
+                    .ice2bouton {
+                        background: transparent;
+                        border: none;
+                        margin-left: 0px;
+                        box-shadow: none;
+
+                        span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
+                            padding-top: 6px;
+                            background: transparent;
+
+                            &:hover {
+                                background: transparent;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+
+                    .ice2RadioButtonItem {
+                        border-radius: 5px 5px 0 0;
+                        display: flex;
+                        border: 1px solid $ZeusBorder;
+                        border-bottom: none;
+
+                        &:after {
+                            content: "";
+                            height: 14px;
+                            width: 1px;
+                            background: $ZeusBorder;
+                            align-self: center;
+                        }
+
+                        &:hover {
+                            background: $ZeusSelected;
+                            border-bottom: 3px solid $ZeusSelected;
+                        }
+
+                        .ice2BoutonContent {
+                            background: transparent;
+                            border: none;
+                        }
+                    }
+
+
+                    .ice2RadioButtonItemSelected {
+                        background: $ZeusBorder;
+                        margin-left: -1px;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+                    .ice2WrapPanelItem:last-child {
+
+                        .ice2RadioButtonItem:after {
+                            display: none;
+                        }
+                    }
+
+                    .ice2TabControlOngletFermable {
+                        .ice2bouton {
+                            span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+
+
+                    .closeTab:not(.avecTexte) {
+
+                        .ice2BoutonContent {
+                            border: none;
+                            background: transparent;
+                            margin: 0 4px;
+                        }
+
+                        .iceSVG {
+                            width: 10px;
+                            height: 10px;
+
+                            .xsvg-elem_stroked {
+                                stroke-width: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ice2RadioButton .ice2RadioButtonItem.ice2RadioButtonItemSelected .ice2bouton {
+                border-left: 1px solid $ZeusBorder;
+                border-top: 1px solid $ZeusBorder;
+                border-right: 1px solid $ZeusBorder;
+                border-bottom: none;
+            }
+
+            .ice2RadioButton .ice2RadioButtonItem .ice2bouton {
+                border-bottom: none;
+
+                span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
+                    padding: 4px 10px 7px;
+                }
+            }
+
+            .ice2RadioButton .ice2RadioButtonItem.ice2TabItemColor, .ice2RadioButton .ice2RadioButtonItem.ice2TabItemNoColor {
+                .ice2bouton {
+
+                    span.iconeP12.iconeP12_aucun, span.iconeP12.iconeP12_aucun.orientation_verticale {
+                        padding: 4px 10px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            .ice2RadioButton .ice2RadioButtonItem.ice2TabItemNoColor {
+                /*border-bottom: 3px solid #EAEAEA;*/
+            }
+
+            .ice2bouton.closeTab {
+                margin: 0 0 0 -1px;
+            }
+
+            .ice2WrapPanelItem {
+                overflow-x: visible;
+                overflow-y: unset;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .ice2ListItem {
+                margin: 0 0 -1px 0;
+            }
+
+            .ice2ListeDeroulante .ice2ListItem { /* Debug listes deroulantes à l'intérieur des tabcontrol */
+                margin: 0;
+            }
+
+            .ice2RadioButton .ice2RadioButtonItem.ice2RadioButtonItemSelected .ice2bouton {
+                font-weight: bold;
+                background-color: #fff;
+            }
+        }
+    }
+
+    &.orientation_verticale {
+        .ice2TabControlMenu {
+            border-right: 1px solid $ZeusBorder;
+            padding: 10px 0;
+            width: 200px;
+
+
+            .ice2TabMenu {
+                height: 100%;
+
+                .ice2TabMenu_zoneOnglets .ice2RadioButtonItem {
+                    width: 100%;
+                    box-sizing: border-box;
+                    margin-bottom: 10px;
+
+                    > .ice2BoutonContainer {
+                        width: 100%;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+
+                        > .ice2BoutonContent {
+                            width: 100%;
+                            justify-content: flex-start;
+                            margin: 0;
+                            border: 1px solid $ZeusBorder;
+                        }
+                    }
+
+                    &.ice2RadioButtonItemSelected {
+                        > .ice2BoutonContainer {
+                            padding: 0 0 0 10px;
+
+                            &:after {
+                                content: " ";
+                                width: 1px;
+                                height: calc(100% - 2px);
+                                display: block;
+                                background-color: $ZeusSelected;
+                                position: absolute;
+                                top: 1px;
+                                right: -1px;
+                            }
+
+                            > .ice2BoutonContent {
+                                border-right: unset;
+                                border-radius: 5px 0 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > .DP_ice2TabControlMenu .ice2DockPanel.Direction_gauche {
+            > .ice2DockPanelItem:not(.ice2TabControlMenu) {
+                width: 100%;
+            }
+        }
+    }
+
+    .ice2RadioButtonItem {
+        /*border-bottom: 3px solid $ZeusFondGris;*/
+    }
+
+    .ice2RadioButtonItem.ice2TabControlOngletFermable {
+        display: flex;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        border: 1px solid #aaa;
+        padding-right: 7px;
+
+        > .ice2BoutonContainer .ice2BoutonContent {
+            border: none;
+            border-radius: 0;
+
+            &:hover{
+                box-shadow: none;
+                background-color: inherit;
+            }
+        }
+
+        &.ice2RadioButtonItemSelected {
+            background: $ZeusSelected;
+        }
+    }
+
+    .ice2TabContentParent, .ice2TabControlContentHolder {
+        overflow: auto;
+    }
+
+    &.t20 {
+        .ice2RadioButtonItemSelected {
+            .ice2BoutonContent {
+                color: white;
+                background-color: $coul-t20-user;
+            }
+        }
+    }
+}
+
+.listeGroupes {
+    .ice2Tooltip_Box_Event {
+        min-width: 125px;
+
+        .ice2ListeDeroulanteStdListeHoster {
+            width: 100%;
+        }
+
+        .gridNomGroupes {
+            padding: 2px 5px;
+        }
+    }
+}
+
+.boxerNomGRoupe {
+    .libelleGroupe {
+        padding-top: 10px;
+    }
+}

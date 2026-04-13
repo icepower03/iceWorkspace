@@ -1,0 +1,16 @@
+﻿/*******************************/
+/***** ice2LecteurCarteMagnetique *****/
+/*******************************/
+
+.boxerLecteurCarteMagnetique {
+    .inputScan {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        // Moche, mais obligatoire pour avoir un champ qui peut recevoir le focus tout en étant caché
+    }
+}
+
+.btnLectureCarte {
+    white-space: nowrap;
+}

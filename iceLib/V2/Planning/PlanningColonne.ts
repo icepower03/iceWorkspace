@@ -1,26 +1,26 @@
-﻿import { cacherxElements, afficherxElements, assignerObjet } from '../../xStaticFunctions';
-import { xOutils } from '../xOutils';
-import { xxLabelContainer } from '../xcontrols/xxLabelContainer';
+﻿import { cachericeElements, affichericeElements, assignerObjet } from '../../iceStaticFunctions';
+import { iceOutils } from '../iceOutils';
+import { ice2LabelContainer } from '../xcontrols/ice2LabelContainer';
 import { PlanningRdv, PlanningDisponibilite } from './PlanningElements';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
-import { iXElement, iXElementHolder } from '../xBase';
+import { iXElement, iXElementHolder } from '../iceBase';
 
 import { PlanningRessource, enumTypeDispo } from './PlanningElements';
-import { optionAgrandirRdv, optionAddRdvOnClick, optionDragAndDropRdv } from './xxPlanning';
-import { xxGrid, xxGridItem, OptionsGridItem } from '../xcontrols/xxGrid';
-import { xDiv } from '../xcontrols/xDiv';
-import { xxLabel, enumTypeLabel } from '../xcontrols/xxLabel';
-import { enumPositionDuContenu } from '../xcontrols/xxLabelContainer';
+import { optionAgrandirRdv, optionAddRdvOnClick, optionDragAndDropRdv } from './ice2Planning';
+import { ice2Grid, ice2GridItem, OptionsGridItem } from '../xcontrols/ice2Grid';
+import { iceDiv } from '../xcontrols/iceDiv';
+import { ice2Label, enumTypeLabel } from '../xcontrols/ice2Label';
+import { enumPositionDuContenu } from '../xcontrols/ice2LabelContainer';
 
-import { xxStackPanel } from '../xcontrols/xxStackPanel';
-import { xxWrapPanel, enumAlignementHorizontalWrapPanel, enumAlignementVerticalWrapPanel } from '../xcontrols/xxWrapPanel';
-import { xxBouton } from '../xcontrols/xxBouton';
-import { IconeP12, enumIconeP12, tailleIcone } from '../xIcones';
-import { xMaths } from '../xMaths';
-import { xLString } from '../xLString';
+import { ice2StackPanel } from '../xcontrols/ice2StackPanel';
+import { ice2WrapPanel, enumAlignementHorizontalWrapPanel, enumAlignementVerticalWrapPanel } from '../xcontrols/ice2WrapPanel';
+import { ice2Bouton } from '../xcontrols/ice2Bouton';
+import { IconeP12, enumIconeP12, tailleIcone } from '../iceIcones';
+import { iceMaths } from '../iceMaths';
+import { iceLString } from '../iceLString';
 
-import { xxMenuContextuel } from '../xcontrols/xxMenuContextuel';
-import { xxPlanning } from './xxPlanning';
+import { ice2MenuContextuel } from '../xcontrols/ice2MenuContextuel';
+import { ice2Planning } from './ice2Planning';
 import { BindableObject } from '../xcontrols/BindableObject';
 
 interface optionPlanningColonne {
@@ -32,8 +32,8 @@ interface optionPlanningColonne {
     ClickSurRdv?: (data: PlanningRdv) => void;
     RightClickOnRdv?: (data: PlanningRdv) => void;
     RightClickOnGrid?: (data: PlanningRdv) => void;
-    RenderRightClickRdv?: (data: PlanningRdv, place: iXElementHolder, tooltip: xxMenuContextuel) => void;
-    RenderRightClickGrid?: (data: PlanningRdv, place: iXElementHolder, tooltip: xxMenuContextuel) => void;
+    RenderRightClickRdv?: (data: PlanningRdv, place: iXElementHolder, tooltip: ice2MenuContextuel) => void;
+    RenderRightClickGrid?: (data: PlanningRdv, place: iXElementHolder, tooltip: ice2MenuContextuel) => void;
     ClickSurEnteteColonne?: (div: iXElement, rdv: PlanningColonne) => void;
     ClickSurDispoBarre?: (dispo: PlanningDisponibilite) => void;
     RenderRdv?: (rdv: PlanningRdv) => iXElement;
@@ -42,15 +42,15 @@ interface optionPlanningColonne {
     RdvEnCours?: (heureTimeLine: DateSerialisable, rdvEnCours: PlanningRdv, rdvsSuivants: PlanningRdv[], refreshColonne: () => void) => void;
     ZoomChoisi: BindableObject<number>;
     Ressource?: PlanningRessource;
-    Planning: xxPlanning,
+    Planning: ice2Planning,
     AgrandirRdv?: optionAgrandirRdv;
     DragAndDropRdv?: optionDragAndDropRdv;
     AddRdvOnClick?: optionAddRdvOnClick;
 }
 
 export class PlanningColonne implements iXElement {
-    private Planning: xxPlanning;
-    private GridPrincipale: xxGrid;
+    private Planning: ice2Planning;
+    private GridPrincipale: ice2Grid;
 
     private HeureDebut: number;
     private HeureFin: number;
@@ -62,7 +62,7 @@ export class PlanningColonne implements iXElement {
     public NbColonnes: number;
     private NbLignes: number;
 
-    private GridItemTime: xxGridItem;
+    private GridItemTime: ice2GridItem;
 
     private RdvsColonne: PlanningRdv[];
     private DisposColonne: PlanningDisponibilite[];
@@ -76,8 +76,8 @@ export class PlanningColonne implements iXElement {
     private RightClickSurRdv: (data: PlanningRdv) => void = null;
     private RightClickOnGrid: (data: PlanningRdv) => void = null;
 
-    private RenderRightClickRdv: (data: PlanningRdv, place: iXElementHolder, tooltip: xxMenuContextuel) => void = null;
-    private RenderRightCLickGrid: (data: PlanningRdv, place: iXElementHolder, tooltip: xxMenuContextuel) => void = null;
+    private RenderRightClickRdv: (data: PlanningRdv, place: iXElementHolder, tooltip: ice2MenuContextuel) => void = null;
+    private RenderRightCLickGrid: (data: PlanningRdv, place: iXElementHolder, tooltip: ice2MenuContextuel) => void = null;
 
     private ClickSurDispoBarre: (dispo: PlanningDisponibilite) => void;
     private AvecDispoBarre: boolean;
@@ -101,7 +101,7 @@ export class PlanningColonne implements iXElement {
     private rdvAvantAgrandissement: PlanningRdv = null;
     private diffEnCours: number = 0;
 
-    private GridItemLibelle: xxGridItem;
+    private GridItemLibelle: ice2GridItem;
 
 
     public ON_MOUSE_MOUVE_AGRANDISSEMENT: (e: MouseEvent) => void;
@@ -275,7 +275,7 @@ export class PlanningColonne implements iXElement {
         }
 
         if (myThis.GridPrincipale == null) {
-            myThis.GridPrincipale = new xxGrid({
+            myThis.GridPrincipale = new ice2Grid({
                 colonnes: listeColonnes,
                 lignes: listeLignes,
                 gridGap: '0px',
@@ -326,13 +326,13 @@ export class PlanningColonne implements iXElement {
                 colStart: 1,
                 nbRows: 12,
                 nbCols: myThis.NbColonnes + 1, // +1 pour les heures et +1 parce que le dernier n'est pas pris en compte !
-                content: new xDiv({})
+                content: new iceDiv({})
             });
 
             let zoneMenu: iXElementHolder = null
 
             if (myThis.RenderRightCLickGrid != null) {
-                let menu = new xxMenuContextuel({
+                let menu = new ice2MenuContextuel({
                     renderMenuContextuel: (place) => {
                         zoneMenu = place;
                     },
@@ -377,11 +377,11 @@ export class PlanningColonne implements iXElement {
         if (myThis.TimeLine && (DateSerialisable.CompareDate(debutJ, dateComparaison) == 0 || myThis.Ressource == null))
             myThis.creerTimeLine();
     }
-    private listegriditem: xxGridItem[] = [];
+    private listegriditem: ice2GridItem[] = [];
     private static nbId: number = 0;
-    private creerGridItem(opts: OptionsGridItem): xxGridItem {
+    private creerGridItem(opts: OptionsGridItem): ice2GridItem {
         let myThis: PlanningColonne = this;
-        let retour = new xxGridItem(opts);
+        let retour = new ice2GridItem(opts);
         retour.id = (PlanningColonne.nbId++).toString();
         myThis.listegriditem.push(retour);
         return retour;
@@ -390,20 +390,20 @@ export class PlanningColonne implements iXElement {
     private createLibelleColonne() {
         let myThis: PlanningColonne = this;
 
-        let libelle = new xDiv({});
+        let libelle = new iceDiv({});
 
         if (myThis.Ressource == undefined) {
-            libelle.asHolder.append(new xxLabelContainer({
+            libelle.asHolder.append(new ice2LabelContainer({
                 class: "libellejour",
                 textVariable: myThis.getStringJour(myThis.DateColonne),
                 optionsAffichage: { positionDuContenu: enumPositionDuContenu.bas },
-                initContent: new xxLabel({
-                    textVariable: xOutils.DateToFrenchDateString(myThis.DateColonne, false, false)
+                initContent: new ice2Label({
+                    textVariable: iceOutils.DateToFrenchDateString(myThis.DateColonne, false, false)
                 })
             }))
 
         } else {
-            libelle.asHolder.append(new xxLabelContainer({
+            libelle.asHolder.append(new ice2LabelContainer({
                 class: "libelleRessource",
                 textVariable: myThis.Ressource.Libelle,
                 optionsAffichage: { positionDuContenu: enumPositionDuContenu.bas },
@@ -455,7 +455,7 @@ export class PlanningColonne implements iXElement {
             rowStart: getPosition[0],
             nbCols: nbCols,
             nbRows: getPosition[1] - getPosition[0],
-            content: new xDiv({
+            content: new iceDiv({
                 class: "AVoirAvecMaxime"
             })
 
@@ -517,7 +517,7 @@ export class PlanningColonne implements iXElement {
     private refreshRdv(rdvs: PlanningRdv[]): void {
         let myThis: PlanningColonne = this;
         rdvs.forEach(item => {
-            myThis.GridPrincipale.supprimer([item.Item as xxGridItem]);
+            myThis.GridPrincipale.supprimer([item.Item as ice2GridItem]);
             let positionRow = myThis.calculerPosition(item.DateDebut, item.DateFin);
             let positionCol = myThis.calculerColonneRdv(item);
 
@@ -555,7 +555,7 @@ export class PlanningColonne implements iXElement {
                                 if (myThis.AvantDeplacement != undefined) {
                                     myThis.AvantDeplacement(myThis.Planning.RdvSelect);
                                     myThis.Planning.y.onmousemove = myThis.Planning.ON_MOUSE_MOUVE_DEPLACEMENT;
-                                    cacherxElements(myThis.Planning.RdvSelect.Item, true);
+                                    cachericeElements(myThis.Planning.RdvSelect.Item, true);
                                     myThis.Planning.addClass(PlanningColonne.CLASS_CSS_DRAG_EN_COUR);
                                 }
                             }, 300);
@@ -589,7 +589,7 @@ export class PlanningColonne implements iXElement {
                     colStart: positionCol[0],
                     nbCols: positionCol[1],
                     class: "PlanningDispoPlage",
-                    content: new xDiv({ class: "dispo" })
+                    content: new iceDiv({ class: "dispo" })
                 });
 
                 item.Item = gridItem;
@@ -598,13 +598,13 @@ export class PlanningColonne implements iXElement {
             } else if (item.Type == enumTypeDispo.Barre) {
 
                 let dispoEnUneBarre = myThis.checkDispoBarre(item);
-                let gridItemClickablee: xxGridItem;
-                let indicateur: xDiv;
+                let gridItemClickablee: ice2GridItem;
+                let indicateur: iceDiv;
                 if (dispoEnUneBarre.length > 1) {
                     let dateDebut: DateSerialisable = dispoEnUneBarre[0].DateDebut;
                     let dateFin: DateSerialisable = dispoEnUneBarre[0].DateFin;
 
-                    let stackpanelDispo: xxStackPanel = new xxStackPanel({
+                    let stackpanelDispo: ice2StackPanel = new ice2StackPanel({
                         class: "",
                         espaceMinimaliste: true,
                         initContent: []
@@ -619,7 +619,7 @@ export class PlanningColonne implements iXElement {
                         if (dispBarre.DateFin.MaDateLong > dateFin.MaDateLong)
                             dateFin = dispBarre.DateFin;
 
-                        let wrappanelCouleurDispo = new xxWrapPanel({
+                        let wrappanelCouleurDispo = new ice2WrapPanel({
                             class: "DispoCouleur",
                             espaceMinimaliste: true,
                             alignementHorizontal: enumAlignementHorizontalWrapPanel.Centre,
@@ -636,13 +636,13 @@ export class PlanningColonne implements iXElement {
                         else
                             codeCouleur = item.Couleur;
 
-                        let divCouleur = new xDiv({ class: "carreCouleur" });
+                        let divCouleur = new iceDiv({ class: "carreCouleur" });
                         divCouleur.y.style.backgroundColor = codeCouleur;
 
                         wrappanelCouleurDispo.append(divCouleur);
 
                         if (myThis.ClickSurDispoBarre != undefined) {
-                            wrappanelCouleurDispo.append(new xxBouton({
+                            wrappanelCouleurDispo.append(new ice2Bouton({
                                 textVariable: dispBarre.Libelle,
                                 titleLocalise: "",
                                 click: cb => {
@@ -651,7 +651,7 @@ export class PlanningColonne implements iXElement {
                                 }
                             }))
                         } else {
-                            wrappanelCouleurDispo.append(new xxLabel({
+                            wrappanelCouleurDispo.append(new ice2Label({
                                 textVariable: dispBarre.Libelle,
                             }))
                         }
@@ -659,7 +659,7 @@ export class PlanningColonne implements iXElement {
 
                     positionRow = myThis.calculerPosition(dateDebut, dateFin);
 
-                    indicateur = new xDiv({ class: "dispo" });
+                    indicateur = new iceDiv({ class: "dispo" });
 
                     gridItemClickablee = myThis.creerGridItem({
                         rowStart: positionRow[0],
@@ -671,7 +671,7 @@ export class PlanningColonne implements iXElement {
                     });
 
                 } else {
-                    indicateur = new xDiv({ class: "dispo" });
+                    indicateur = new iceDiv({ class: "dispo" });
 
                     gridItemClickablee = myThis.creerGridItem({
                         rowStart: positionRow[0],
@@ -696,19 +696,19 @@ export class PlanningColonne implements iXElement {
             } else if (item.Type == enumTypeDispo.Bloc) {
                 let positionCol = myThis.calculerColonneDispo(item);
 
-                let divContent: xDiv = new xDiv({
+                let divContent: iceDiv = new iceDiv({
                     class: "infoDispoBloc",
                     title: item.Libelle
                 });
 
-                let labelDispo = new xxLabel({
+                let labelDispo = new ice2Label({
                     type: enumTypeLabel.description,
                     textVariable: item.Libelle,
                     class: "libelleRessourceBloc",
                 });
                 divContent.asHolder.append(labelDispo);
 
-                let divDipoBloc = new xDiv({ class: "hachureDispoBloc" });
+                let divDipoBloc = new iceDiv({ class: "hachureDispoBloc" });
                 divContent.asHolder.append(divDipoBloc);
 
                 let gridItem = myThis.creerGridItem({
@@ -796,7 +796,7 @@ export class PlanningColonne implements iXElement {
                             if (myThis.AvantDeplacement != undefined) {
                                 myThis.AvantDeplacement(myThis.Planning.RdvSelect);
                                 myThis.Planning.y.onmousemove = myThis.Planning.ON_MOUSE_MOUVE_DEPLACEMENT;
-                                cacherxElements(myThis.Planning.RdvSelect.Item, true);
+                                cachericeElements(myThis.Planning.RdvSelect.Item, true);
                                 myThis.Planning.addClass(PlanningColonne.CLASS_CSS_DRAG_EN_COUR);
                             }
                         }, 300);
@@ -815,8 +815,8 @@ export class PlanningColonne implements iXElement {
 
         let contenueItem: iXElement;
 
-        let agrandirHaut = new xDiv({ class: "agrandirRdvHaut agrandirRdv" });
-        let agrandirBas = new xDiv({ class: "agrandirRdvBas  agrandirRdv" });
+        let agrandirHaut = new iceDiv({ class: "agrandirRdvHaut agrandirRdv" });
+        let agrandirBas = new iceDiv({ class: "agrandirRdvBas  agrandirRdv" });
 
         if (myThis.AgrandirRDV && rdv.isAggrandisable) {
             let flecheHaut = new IconeP12(enumIconeP12.fleche_noire_haut, { taille: tailleIcone.XS });
@@ -858,13 +858,13 @@ export class PlanningColonne implements iXElement {
             contenueItem = rdv.renderRdv();
 
 
-        let contenuRdv = new xDiv({ class: "ContenuRdv" });
+        let contenuRdv = new iceDiv({ class: "ContenuRdv" });
 
         if (myThis.RenderRightClickRdv != null) {
 
             let zoneMenu: iXElementHolder = null;
 
-            let menu = new xxMenuContextuel({
+            let menu = new ice2MenuContextuel({
                 renderMenuContextuel: (place) => {
                     zoneMenu = place;
                 }
@@ -944,9 +944,9 @@ export class PlanningColonne implements iXElement {
 
         let ppcmRdv = 1;
         if (listeRdvEnMemetemps.length > 0) {
-            ppcmRdv = xMaths.PPCMListe(listeRdvEnMemetemps);
+            ppcmRdv = iceMaths.PPCMListe(listeRdvEnMemetemps);
         }
-        return xMaths.PPCM(ppcmRdv, positionMax);
+        return iceMaths.PPCM(ppcmRdv, positionMax);
     }
 
     private calculerPosition(DateDebutS: DateSerialisable, DateFinS: DateSerialisable): number[] {
@@ -1006,7 +1006,7 @@ export class PlanningColonne implements iXElement {
         // Sinon on le met avant
         rdvEnMemeTemps.forEach(item => {
             if (item.Id != rdv.Id) {
-                let gridItemAsso: xxGridItem = myThis.getRendezVous().filter(c => c.Id == item.Id)[0].Item as xxGridItem;
+                let gridItemAsso: ice2GridItem = myThis.getRendezVous().filter(c => c.Id == item.Id)[0].Item as ice2GridItem;
 
                 if (gridItemAsso != null) {
                     if ((gridItemAsso.colStart + gridItemAsso.nbCols) <= myThis.NbColonnes) { //(myThis.AvecDispoBarre ? myThis.NbColonnes - 1 : myThis.NbColonnes)
@@ -1060,13 +1060,13 @@ export class PlanningColonne implements iXElement {
         // let day: number = d.getDay();
 
         let weekday = [
-            new xLString('xxCodeJourCompletDimanche').text,
-            new xLString('xxCodeJourCompletLundi').text,
-            new xLString('xxCodeJourCompletMardi').text,
-            new xLString('xxCodeJourCompletMercredi').text,
-            new xLString('xxCodeJourCompletJeudi').text,
-            new xLString('xxCodeJourCompletVendredi').text,
-            new xLString('xxCodeJourCompletSamedi').text
+            new iceLString('ice2CodeJourCompletDimanche').text,
+            new iceLString('ice2CodeJourCompletLundi').text,
+            new iceLString('ice2CodeJourCompletMardi').text,
+            new iceLString('ice2CodeJourCompletMercredi').text,
+            new iceLString('ice2CodeJourCompletJeudi').text,
+            new iceLString('ice2CodeJourCompletVendredi').text,
+            new iceLString('ice2CodeJourCompletSamedi').text
         ];
 
         return weekday[day];
@@ -1208,7 +1208,7 @@ export class PlanningColonne implements iXElement {
                 item.DateDebut = DateSerialisable.addMinutesDateSerialisable(item.DateDebut, myThis.diffEnCours);
                 item.DateFin = DateSerialisable.addMinutesDateSerialisable(item.DateFin, myThis.diffEnCours);
                 item.DureeMin = Math.round((item.DateFin.MaDateLong - item.DateDebut.MaDateLong) / 60000);
-                (item.Item as xxGridItem).ChangeContent(myThis.renderContenuRdv(item));
+                (item.Item as ice2GridItem).ChangeContent(myThis.renderContenuRdv(item));
             });
         }
     }
@@ -1217,7 +1217,7 @@ export class PlanningColonne implements iXElement {
         let myThis: PlanningColonne = this;
         let positionH: number[] = myThis.getPositionAgrandissementByEvent(event, isDateDebut);
         let rowDiff: number = 0;
-        let gridItemRdvSelect: xxGridItem = myThis.Planning.RdvSelect.Item as xxGridItem;
+        let gridItemRdvSelect: ice2GridItem = myThis.Planning.RdvSelect.Item as ice2GridItem;
 
         if (isDateDebut)
             rowDiff = positionH[0] - gridItemRdvSelect.rowStart;
@@ -1231,7 +1231,7 @@ export class PlanningColonne implements iXElement {
 
 
         rdvsADeplacer.forEach(item => {
-            let itemGrid: xxGridItem = item.Item as xxGridItem;
+            let itemGrid: ice2GridItem = item.Item as ice2GridItem;
             itemGrid.changeRowsProperties(itemGrid.rowStart + rowDiff, itemGrid.nbRows);
         });
     }
@@ -1290,11 +1290,11 @@ export class PlanningColonne implements iXElement {
             myThis.GridPrincipale.y.onmousemove = null;
 
             if (isDateDebut) {
-                xOutils.afficherMessageAlertifyLocaliseError("La date de début ne peut pas précéder la date de fin");
+                iceOutils.afficherMessageAlertifyLocaliseError("La date de début ne peut pas précéder la date de fin");
 
                 myThis.Planning.RdvSelect.DateDebut = DateSerialisable.addMinutesDateSerialisable(myThis.Planning.RdvSelect.DateDebut, -15);
             } else {
-                xOutils.afficherMessageAlertifyLocaliseError("La date de fin ne peut pas être antérieure à la date de début");
+                iceOutils.afficherMessageAlertifyLocaliseError("La date de fin ne peut pas être antérieure à la date de début");
                 myThis.Planning.RdvSelect.DateFin = DateSerialisable.addMinutesDateSerialisable(myThis.Planning.RdvSelect.DateFin, 15);
 
             }
@@ -1340,7 +1340,7 @@ export class PlanningColonne implements iXElement {
                 else
                 {
                     min += (Math.round(positionInCellule / 15) * 15);
-                    console.log(new xLString("La durée du pas n'est pas compatible: {0} minutes").format([arrondirAuPas]));
+                    console.log(new iceLString("La durée du pas n'est pas compatible: {0} minutes").format([arrondirAuPas]));
                 }
             }
             else
@@ -1462,13 +1462,13 @@ export class PlanningColonne implements iXElement {
         return myThis.DisposColonne;
     }
 
-    public ajouterRdvPrevisualisation(item: xxGridItem): void {
+    public ajouterRdvPrevisualisation(item: ice2GridItem): void {
         let myThis: PlanningColonne = this;
 
         myThis.GridPrincipale.append([item]);
     }
 
-    public supprimerRdvPrevisualisation(item: xxGridItem): void {
+    public supprimerRdvPrevisualisation(item: ice2GridItem): void {
         let myThis: PlanningColonne = this;
         myThis.GridPrincipale.supprimer([item]);
     }

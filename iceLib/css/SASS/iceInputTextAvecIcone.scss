@@ -1,0 +1,25 @@
+﻿/**********************************************************/
+/******************* iceInputTextAvecIcone ******************/
+/*********************************************************/
+
+.iceInputTextAvecIcone {
+    &.positionIconeDebut {
+        > .ice2GridItem .iceInput {
+            padding-left: 18px;
+
+            &.xinp-champLarge {
+                padding-left: 26px;
+            }
+        }
+    }
+
+    &.positionIconeFin {
+        > .ice2GridItem .iceInput {
+            padding-right: 18px;
+
+            &.xinp-champLarge {
+                padding-right: 26px;
+            }
+        }
+    }
+}

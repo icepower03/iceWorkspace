@@ -3,11 +3,11 @@ import {
     
     xLib,
     enumThemes,
-    xxPageWrapper,
-    xxLabel,
-    xxBouton,
+    ice2PageWrapper,
+    ice2Label,
+    ice2Bouton,
     enumTypeBouton,
-    xxShowRoom
+    ice2ShowRoom
 } from 'icelib';
 
 xLib.init(
@@ -29,24 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ── Page principale ────────────────────────────────────────────────────
     // withFooter: true est obligatoire pour pouvoir appeler appendZoneFooter()
-    let xPage = new xxPageWrapper({
+    let xPage = new ice2PageWrapper({
         titleLocalise: 'test',
         withFooter: true,         // ← sans ça, appendZoneFooter() crashe
     });
 
     // ── Contenu principal ─────────────────────────────────────────────────
-    xPage.append(new xxLabel({ textLocalise: 'Hello' }));
+    xPage.append(new ice2Label({ textLocalise: 'Hello' }));
 
-    xPage.append(new xxBouton({
+    xPage.append(new ice2Bouton({
         textLocalise: 'Click Me',
         titleLocalise: 'Click Me',
         typeBouton: enumTypeBouton.Standard,
         click: (cb?: () => void) => { cb?.(); },
     }));
 
-new xxShowRoom({ page: xPage });
+new ice2ShowRoom({ page: xPage });
     // ── Footer ────────────────────────────────────────────────────────────
-    xPage.appendZoneFooter(new xxLabel({ textLocalise: 'Footer' }));
+    xPage.appendZoneFooter(new ice2Label({ textLocalise: 'Footer' }));
 
     xPage.attachToBody();
 });

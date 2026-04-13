@@ -1,0 +1,53 @@
+﻿/******************************/
+/******* ice2ChoixCouleur *******/
+/******************************/
+
+$largeurxCouleur: 24px;
+
+.ice2ChoixCouleur {
+
+    &.ice2ListeDeroulante {
+
+        .iceCouleur {
+            width: $largeurxCouleur;
+            height: $largeurxCouleur;
+            border: none;
+            border-radius: 5px;
+            display: block;
+
+            &.fondClair {
+                border: 1px solid $BorderLight;
+                width: calc($largeurxCouleur - 2px);
+                height: calc($largeurxCouleur - 2px);
+            }
+        }
+
+        .ice2StackPanel.SPice2ListPrincipal {
+            flex-direction: row;
+            gap: 5px;
+            flex-wrap: wrap;
+            padding: 5px;
+
+            .ice2StackPanelItem {
+                border: none;
+
+                .ice2ListItem:hover {
+                    background-color: unset;
+                }
+            }
+        }
+    }
+
+
+    &.quatreColonnes {
+        .ice2StackPanel.SPice2ListPrincipal {
+            width: calc(4 * $largeurxCouleur + 3 * 5px);
+        }
+    }
+
+    &.sixColonnes {
+        .ice2StackPanel.SPice2ListPrincipal {
+            width: calc(6 * $largeurxCouleur + 5 * 5px);
+        }
+    }
+}

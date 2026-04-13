@@ -1,0 +1,43 @@
+﻿
+/***********************************/
+/***** ice2StackPanel Zeus - SCSS *****/
+/***********************************/
+
+.ice2StackPanelMaster {
+    &.espaceMinimaliste {
+        padding: 0;
+        margin: 0;
+    }
+
+    &.t20, &.tdef, &.tleg {
+        &, & .ice2StackPanel {
+            display: flex;
+            flex-direction: column;
+            gap: inherit;
+        }
+    }
+
+    &.fullLargeur {
+        &, .ice2StackPanel {
+            width: 100%;
+        }
+    }
+}
+
+/* A faire plus tard (car impact important)
+.t20 {
+    &.ice2StackPanelMaster,
+    &.ice2StackPanel {
+        display: flex;
+    }
+
+    &.ice2StackPanelMaster,
+    &.ice2StackPanel {
+        flex-direction: column;
+    }
+
+    &.ice2StackPanel,
+    &.ice2StackPanelItem {
+        width: 100%;
+    }
+}*/

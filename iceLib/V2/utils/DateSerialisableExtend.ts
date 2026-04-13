@@ -1,6 +1,6 @@
 ﻿import './DateExtend';
-import { xLString } from '../xLString';
-import { xTime } from '../xTime';
+import { iceLString } from '../iceLString';
+import { iceTime } from '../iceTime';
 class __DateSerialisable {
     // MaDateLong
     public MaDateLong: number = 0;
@@ -13,10 +13,10 @@ export class DateSerialisable extends __DateSerialisable {
     /**
     * Permet de recuperer la date actuelle en DateSerialisable
     */
-    public static getXTime(date: DateSerialisable): xTime {
+    public static getXTime(date: DateSerialisable): iceTime {
         let maDate: Date = DateSerialisable.getDate(date);
 
-        return new xTime(maDate.getHours(), maDate.getMinutes());
+        return new iceTime(maDate.getHours(), maDate.getMinutes());
     }
 
     /**
@@ -287,9 +287,9 @@ export class DateSerialisable extends __DateSerialisable {
         let heure: number = laDate.getHours();
         let timestring: string = (heure < 10 ? "0" + heure : heure) + ":" + (minute < 10 ? "0" + minute.toString() : minute.toString());
         if (AvecTiret == true)
-            return new xLString("{0} - {1}").format([Datestring, timestring]);
+            return new iceLString("{0} - {1}").format([Datestring, timestring]);
         else
-            return new xLString("{0} {1}").format([Datestring, timestring]);
+            return new iceLString("{0} {1}").format([Datestring, timestring]);
     }
     /**
    *   Cette méthode permet de retourner une DateSerialisabe sous forme de string localisée sans les secondes.
@@ -316,7 +316,7 @@ export class DateSerialisable extends __DateSerialisable {
         let heure: number = laDate.getHours();
         let minute: number = laDate.getMinutes();
         let timestring: string = (heure < 10 ? "0" + heure : heure) + "h" + (minute < 10 ? "0" + minute.toString() : minute.toString());
-        let HeuresMinutes: string = new xLString("{0}").format([timestring]);
+        let HeuresMinutes: string = new iceLString("{0}").format([timestring]);
         return HeuresMinutes;
     }
 

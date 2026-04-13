@@ -1,0 +1,85 @@
+﻿
+/***********************************/
+/******** ice2Grid Zeus - SCSS *******/
+/***********************************/
+
+.ice2GridMaster {
+    display: grid;
+    display: -ms-grid;
+    box-sizing: border-box;
+    width: max-content;
+    max-width: 100%;
+
+    &.xgrd-fullwidth {
+        width: 100%;
+
+        &.t20{
+            max-width:100vw;
+        }
+    }
+
+    &.xgrd-fullheight {
+        height: 100%;
+    }
+
+    .ice2GridItem {
+
+        &.align-HautGauche {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &.align-HautCentre {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        &.align-HautDroite {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+
+        &.align-CentreGauche {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &.align-CentreCentre {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &.align-CentreDroite {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        &.align-BasGauche {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+
+        &.align-BasCentre {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        &.align-BasDroite {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+    }
+
+    &.xgrd-padding {
+        padding: 10px;
+    }
+}

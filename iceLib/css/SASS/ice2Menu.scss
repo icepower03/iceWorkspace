@@ -1,0 +1,85 @@
+﻿/******************************/
+/***** ice2Menu Zeus - SCSS *****/
+/******************************/
+
+.ice2Menu_global {
+    .ice2Menu_recherche {
+        display: flex;
+        padding: 10px;
+
+        input {
+            flex: 1 1 auto;
+            height: 30px;
+        }
+
+        #txtRecherche {
+            border-radius: 3px 0 0 0;
+        }
+
+        .boutonFiltre {
+            .ice2BoutonContent {
+                margin: 0 0 1px;
+                padding: 5px 7px;
+                border-left: none;
+                border-radius: 0;
+            }
+        }
+
+        .boutonAnnulerFiltre {
+            .ice2BoutonContent {
+                margin: 0 0 1px;
+                padding: 5px 7px;
+                border-left: none;
+                border-radius: 0 3px 3px 0;
+            }
+        }
+    }
+
+    .ice2Menu_itemGroupe {
+        border-top: 1px solid $ZeusBorder;
+        border-bottom: 1px solid $ZeusBorder;
+        margin: -1px 0 0 0;
+        width: 100%;
+
+        &.ice2BoutonContainer {
+            display: block;
+            padding: 0;
+            font-weight: bold;
+            text-align: left;
+            margin: -1px 0 0 0;
+
+            .ice2BoutonContent {
+                width: 100%;
+                border: none;
+                background-color: $ZeusFondGris;
+                margin: 0;
+                justify-content: left;
+            }
+        }
+    }
+
+    .ice2Menu_itemListElement {
+        &.ice2BoutonContainer {
+            text-align: left;
+            padding: 0;
+            display: block;
+            margin: 0;
+            border: none;
+
+            .ice2BoutonContent {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $BorderLight;
+                margin: 0;
+                justify-content: left;
+            }
+        }
+
+        &:last-child {
+            .ice2BoutonContent {
+                border: none;
+            }
+        }
+    }
+}
+

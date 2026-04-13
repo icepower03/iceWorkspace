@@ -1,0 +1,142 @@
+﻿/**********************************/
+/***** xlibrairie Zeus - SCSS *****/
+/**********************************/
+/*******************************************/
+/***** Couleurs génériques Zeus - SCSS *****/
+/*******************************************/
+
+ 
+/***** Import - SCSS *****/
+@import "SASS/couleurs";
+@import "SASS/icones";
+@import "SASS/medias"; 
+@import "SASS/divers";
+@import "SASS/fonts.scss";
+@import "SASS/wsLine";
+@import "SASS/iceInput";
+@import "SASS/xInputDate_xInputTime";
+@import "SASS/iceInputFile.scss";
+@import "SASS/xInputUploadImage.scss";
+@import "SASS/iceSeparateur";
+@import "SASS/iceSVG.scss";
+@import "SASS/ice2AutoComplete";
+@import "SASS/ice2BloqueEcran";
+@import "SASS/ice2bouton_icones";
+@import "SASS/ice2bouton_icones_minis";
+@import "SASS/ice2Bouton.scss";
+@import "SASS/ice2Boxer";
+@import "SASS/ice2Chart";
+@import "SASS/ice2Checkbox";
+@import "SASS/ice2ContainerEvent.scss";
+@import "SASS/ice2DockPanel";
+@import "SASS/ice2Gantt";
+@import "SASS/ice2Grid";
+@import "SASS/ice2GridLayout.scss";
+@import "SASS/ice2ImageTabByte";
+// @import "SASS//ice2Indicateur";
+@import "SASS/ice2Label";
+@import "SASS/ice2LabelContainer";
+@import "SASS/ice2LabelModifiable";
+@import "SASS/ice2LecteurCarteMagnetique.scss";
+// @import "SASS/ice2LecteurAudio.scss";
+@import "SASS/ice2List";
+@import "SASS/ice2ListCheckBox";
+@import "SASS/ice2ListChoix";
+@import "SASS/ice2ListeDeroulante";
+@import "SASS/ice2ListeDeroulanteSimple";
+@import "SASS/ice2Menu";
+@import "SASS/ice2NavOngletControl";
+@import "SASS/ice2PageWrapper";
+@import "SASS/ice2Planneur";
+@import "SASS/ice2Planning";
+@import "SASS/ice2ProgressBar.scss";
+@import "SASS/ice2RadioBouton";
+// @import "SASS/ice2Recorder.scss";
+@import "SASS/ice2RouteContainer";
+@import "SASS/ice2Showroom.scss";
+// @import "SASS/ice2SpecificationCreneaux.scss";
+@import "SASS/ice2TabControl";
+@import "SASS/ice2Tableau.scss";
+@import "SASS/ice2ToolTip";
+@import "SASS/ice2StackPanel";
+@import "SASS/ice2WrapPanel";
+@import "SASS/ice2ZoneModulable";
+@import "SASS/ice2ZoneRepliable";
+@import "SASS/ice2Volet";
+@import "SASS/ice2Zoom";
+@import "SASS/iceCouleur";
+@import "SASS/ice2InputIntellisense.scss";
+@import "SASS/ice2InputNumeric.scss";
+@import "SASS/ice2InputSpeech";
+@import "SASS/iceDatePicker.scss";
+@import "SASS/iceTimePicker.scss";
+@import "SASS/ice2ListeSelection.scss";
+@import "SASS/ice2AssistantSaisieUtilisateur.scss";
+@import "SASS/ice2Carrousel.scss";
+@import "SASS/ice2Href.scss";
+@import "SASS/iceElement.scss";
+// @import "SASS/ice2IMC.scss";
+@import "SASS/ice2ChoixCouleur.scss";
+@import "SASS/ice2ViewerPdf.scss";
+@import "SASS/iceInputTextAvecIcone.scss";
+@import "SASS/iceSeparateurAvecFleche.scss";
+@import "SASS/iceIconeAvecAction.scss";
+@import "SASS/ice2Dialog.scss";
+@import "SASS/ice2MenuContextuel.scss";
+
+@import "SASS/zFontsImport.scss";
+@import "SASS/zAnimations.scss";
+@import "SASS/zBackgrounds.scss";
+@import "SASS/iceHref.scss";
+
+/**********************************/
+
+html {
+    --coul-t20-border: #DCDADA;
+    --coul-t20-fondgris: #EAEAEA;
+    --coul-t20-texte: #2F3336;
+    --coul-t20-textelight: #898989;
+    --coul-t20-bgtheme: white;
+
+    &.dm {
+        --coul-t20-border: #4D5060;
+        --coul-t20-fondgris: #292F48;
+        --coul-t20-texte: #FFFFFF;
+        --coul-t20-textelight: #898989;
+        --coul-t20-bgtheme: #1F2336;
+    }
+
+    background:$coul-t20-bgtheme;
+}
+
+.test{
+    background:#e4ee00;
+}
+select {
+    height: 20px;
+    padding:2px;
+    box-sizing: border-box;
+    border: 1px solid $ZeusBorder;
+    font-size: 11px;
+}
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+}
+.xdisabled {display: none !important;}
+.xInvisible {visibility: hidden !important;}
+
+.xInline{
+    display: inline-flex;
+}
+
+.confirmationPossible {
+    padding: 6px 10px;
+    background-color: #e4ee00;
+}
+.annulationPossible {
+    padding: 6px 10px;
+    background-color: #f23e3e;
+}

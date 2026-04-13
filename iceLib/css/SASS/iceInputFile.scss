@@ -1,0 +1,41 @@
+﻿/*************************************************/
+/******************* xInputFILE ******************/
+/*************************************************/
+
+@import "couleurs.scss";
+
+.iceInputFile {
+    display: inline-block;
+    border: 1px solid $ZeusBorder;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $ZeusFondGris;
+        box-shadow: 0 3px 5px $ZeusBorder;
+    }
+
+    &.dm {
+        background: $coul-t20-fondgris;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        box-sizing: border-box;
+        padding: 12px 10px;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        svg {
+            margin: 0 10px 0 0;
+        }
+    }
+}

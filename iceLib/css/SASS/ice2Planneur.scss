@@ -1,0 +1,64 @@
+﻿/*************************************/
+/***** ice2Planneur Zeus - SCSS *****/
+/*************************************/
+
+
+.ice2Planneur {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+
+    .ligne {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        height: 50px;
+    }
+
+    .block {
+        height: 50px;
+        border-top: 1px solid #aaa;
+        border-left: 1px solid #aaa;
+        flex: 1;
+    }
+
+    .col1 {
+        overflow:hidden;
+        padding:5px;
+        box-sizing:border-box;
+    }
+
+    .rdv {
+        position: absolute;
+        height: calc(100% - 16px);
+        top: 8px;
+        left: 213px;
+        width: 430px;
+        margin: 0 4px;
+        opacity: 0.8;
+        color: white;
+    }
+
+    .heure {
+        position: relative;
+        text-align: right;
+        right: 4px;
+    }
+
+    .line0 {
+        .block {
+            background-color: #fff;
+            flex-direction: column-reverse;
+            font-size: 11px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .LabelHeure {
+            position: absolute;
+            bottom: 4px;
+        }
+    }
+}

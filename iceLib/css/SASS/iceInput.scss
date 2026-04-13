@@ -1,0 +1,135 @@
+﻿/*********************************************/
+/******************* iceInput ******************/
+/*********************************************/
+
+@import "couleurs.scss";
+@import "fonts.scss";
+@import "medias.scss";
+
+input[type=text], input[type=password] {
+    height: 20px;
+    box-sizing: border-box;
+    font-size: 11px;
+    padding: 2px;
+    border: 1px solid $ZeusBorder;
+}
+
+/* ----- Champ Recherche ----- */
+input.RechercheLarge {
+    width: 100%;
+    height: 30px;
+    @include picto("action/rechercher.svg");
+    background-position: calc(100% - 5px) center;
+    padding: 2px 34px 2px 8px;
+    box-sizing:border-box;
+}
+
+/*--tleg--*/
+
+input[type=text].tleg,, input[type=password].tleg {
+    border-radius: 3px 3px 0 0;
+
+    &:hover, &:focus {
+        border-bottom-width: 2px;
+    }
+
+    &.xinp-champLarge {
+        width: 100%;
+        height: 30px;
+        padding: 4px;
+    }
+}
+textarea.tleg {
+    border-radius:3px;
+}
+
+/*--t20--*/
+input[type=text].t20, textarea.t20 {
+    transition: all $vitesseAnimationRapide $easingAnimationZinzin;
+    border-color: $coul-t20-textelight;
+    font-family: $FontT20;
+    font-size: 12px;
+    border-radius: 5px;
+    color: $coul-t20-texte;
+
+    &:active, &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        transition: all $vitesseAnimationRapide $easingAnimationZinzin;
+        border-color: $coul-t20-texte;
+    }
+
+    &.xinp-outline {
+        &:active, &:focus {
+            border-color: $coul-t20-user;
+            box-shadow: 0 0 0 1px $coul-t20-user inset;
+        }
+    }
+
+    &.xinp-filled {
+        border-width: 0 0 1px 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:hover {
+            border-color: $coul-t20-texte;
+        }
+
+        &:active, &:focus {
+            border-color: $coul-t20-user;
+            box-shadow: 0 -1px $coul-t20-user inset;
+        }
+    }
+
+    &.xinp-simple {
+        border: none;
+
+        &:hover {
+            box-shadow: 0 0 5px rgba(0,0,0,.15);
+        }
+
+        &:active, &:focus {
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+
+        &.xinp-grey:active, &.xinp-grey:focus {
+            box-shadow: 0 0 10px rgba(0,0,0,.35);
+        }
+    }
+
+    &.xinp-grey {
+        background: $coul-t20-fondgris;
+    }
+
+    &.xinp-bgtheme {
+        background: $coul-t20-bgtheme;
+    }
+
+    &.xinp-transparent {
+        background: transparent;
+    }
+
+    &.xinp-rounded {
+        border-radius: 100px;
+    }
+
+    &.xinp-champLarge {
+        width: 100%;
+        height: 30px;
+    }
+}
+
+input[type=text].t20 {
+    padding: 5px 10px;
+    height: auto;
+
+    &.xinp-rounded {
+        padding: 5px 15px;
+    }
+}
+
+textarea.t20 {
+    padding:10px;
+}

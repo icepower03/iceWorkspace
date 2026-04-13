@@ -1,13 +1,13 @@
 ﻿// @ts-nocheck
 class CelluleMoisJour implements iXElement
 {
-    private _div: xDiv;
+    private _div: iceDiv;
     private _dateJour: DateSerialisable;
-    private _stackRdvs: xxStackPanel;
+    private _stackRdvs: ice2StackPanel;
     private _rdvs: PlanningRdv[];
-    private _renderRdv: (rdv: PlanningRdv) => xxGrid | xxToolTip | xxLabel | xxWrapPanel | xxStackPanel |xDiv;
+    private _renderRdv: (rdv: PlanningRdv) => ice2Grid | ice2ToolTip | ice2Label | ice2WrapPanel | ice2StackPanel |iceDiv;
 
-    constructor(clickSurJour: (date: DateSerialisable) => void, dateCellule: DateSerialisable, RenderRdv: (rdv: PlanningRdv) => xxGrid | xxToolTip | xxLabel | xxWrapPanel | xxStackPanel|xDiv)
+    constructor(clickSurJour: (date: DateSerialisable) => void, dateCellule: DateSerialisable, RenderRdv: (rdv: PlanningRdv) => ice2Grid | ice2ToolTip | ice2Label | ice2WrapPanel | ice2StackPanel|iceDiv)
     {
         let myThis: CelluleMoisJour = this;
         myThis._dateJour = dateCellule;
@@ -16,17 +16,17 @@ class CelluleMoisJour implements iXElement
 
         if (clickSurJour != null)
         {
-            myThis._div = new xDiv({
+            myThis._div = new iceDiv({
                 id: "divToDay",
                 click: () => clickSurJour(myThis._dateJour)
             });
         }
         else
         {
-            myThis._div = new xDiv({ id: "NoClick" });
+            myThis._div = new iceDiv({ id: "NoClick" });
         }
 
-        myThis._stackRdvs = new xxStackPanel({ espaceMinimaliste: true });
+        myThis._stackRdvs = new ice2StackPanel({ espaceMinimaliste: true });
 
         let intituleJourMois: string;
         let premierDuMois: string = "";
@@ -38,7 +38,7 @@ class CelluleMoisJour implements iXElement
         intituleJourMois = DateSerialisable.getDate(myThis._dateJour).getDate().toString() + premierDuMois + " " + DateSerialisable.getDate(myThis._dateJour).getMonthName().toString();
         intituleJourMois = intituleJourMois.toLowerCase();
 
-        let labelContainerToDay = new xxLabelContainer({
+        let labelContainerToDay = new ice2LabelContainer({
             textVariable: intituleJourMois,
             initContent: myThis._stackRdvs,
             optionsAffichage: { positionDuContenu: enumPositionDuContenu.bas },
