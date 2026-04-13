@@ -60,7 +60,7 @@ export class xxListeDeroulanteSimpleNePlusUtiliser<T> extends xxListeDeroulante<
                       
                         p.append(new xxBouton({
                             textVariable: libelle,
-                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                             optionsAffichage: { tailleBouton: enumTailleBouton.XS, positionIconeBouton: enumPosition.Right },
                             click: function (cb) { cb(); openSelect(item); },
                             titleLocalise: 'Choisir un élément'

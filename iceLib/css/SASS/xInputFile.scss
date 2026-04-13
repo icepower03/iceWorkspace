@@ -6,14 +6,14 @@
 
 .xInputFile {
     display: inline-block;
-    border: 1px solid $EmedBorder;
+    border: 1px solid $ZeusBorder;
     background: white;
     border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-        background-color: $EmedFondGris;
-        box-shadow: 0 3px 5px $EmedBorder;
+        background-color: $ZeusFondGris;
+        box-shadow: 0 3px 5px $ZeusBorder;
     }
 
     &.dm {

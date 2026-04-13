@@ -3,8 +3,8 @@
     height: 70px;
     width: 200px;
     /*resize: both;*/
-    border: 1px solid $EmedBorder;
-    background: $EmedBleu;
+    border: 1px solid $ZeusBorder;
+    background: $ZeusBleu;
     box-sizing: border-box;
     /*z-index: 1;*/
     position: relative;
@@ -30,7 +30,7 @@
                 border-bottom: 1px solid #eee;
 
                 &:focus, &:hover {
-                    background-color: $EmedSelected;
+                    background-color: $ZeusSelected;
                     outline: none;
                 }
 
@@ -69,7 +69,7 @@
         flex:1 0 auto;
 
         &:focus {
-            outline-color: $EmedSelected;
+            outline-color: $ZeusSelected;
         }
     }
 }

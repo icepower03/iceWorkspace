@@ -1,5 +1,5 @@
 ﻿/*************************************/
-/***** xxPageWrapper Emed - SCSS *****/
+/***** xxPageWrapper Zeus - SCSS *****/
 /*************************************/
 
 @import "fonts.scss";
@@ -23,8 +23,8 @@
     width: 100%;
     min-height: 54px;
     align-items: center;
-    border-bottom: 1px solid $EmedBorder;
-    background-color: $EmedFondGris;
+    border-bottom: 1px solid $ZeusBorder;
+    background-color: $ZeusFondGris;
     z-index:2;
 
     .iconeSeuleP12.icone_L,
@@ -43,7 +43,7 @@
     padding: 0 10px;
     font-size: 18px;
     font-weight: bold;
-    color: $EmedTexteBleu;
+    color: $ZeusTexteBleu;
 
     &:empty{
         display:none;
@@ -147,8 +147,8 @@
     }
 
     &.xxpage_footer {
-        border-top: 1px solid $EmedBorder;
-        background-color: $EmedFondGris;
+        border-top: 1px solid $ZeusBorder;
+        background-color: $ZeusFondGris;
     }
 }
 

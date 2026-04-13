@@ -31,10 +31,8 @@ import { xxTreeTabControl } from './V2/xcontrols/xxTreeTabControl';
 import { xxZoneModulable } from './V2/xcontrols/xxZoneModulable';
 import { xxToolTip } from './V2/xcontrols/xxToolTip';
 import { xxArbre } from './V2/xcontrols/xxArbre';
-import { xxIMC } from './V2/xcontrols/xxIMC';
 import { xxInputIntellisense } from './V2/xcontrols/xxInputIntellisense';
 import { xxPageWrapper } from './V2/xcontrols/xxPageWrapper';
-import { xxRecorder } from './V2/xcontrols/xxRecorder';
 
 function _b(ctor, o, out) {
     const d = new ctor(o);
@@ -71,7 +69,5 @@ xElementHolder.prototype.xxTreeTabControl      = function(o, out) { return _b.ca
 xElementHolder.prototype.xxZoneModulable       = function(o, out) { return _b.call(this, xxZoneModulable, o, out); };
 xElementHolder.prototype.xxToolTip             = function(o)      { this.append(new xxToolTip(o)); return this; };
 xElementHolder.prototype.xxArbre               = function(o)      { this.append(new xxArbre(o)); return this; };
-xElementHolder.prototype.xxIMC                 = function(o)      { this.append(new xxIMC(o)); return this; };
 xElementHolder.prototype.xxInputIntellisense   = function(o, out) { return _b.call(this, xxInputIntellisense, o, out); };
 xElementHolder.prototype.xxPage                = function(o, out) { return _b.call(this, xxPageWrapper, o, out); };
-xElementHolder.prototype.xxRecorder            = function(o)      { this.append(new xxRecorder(o)); return this; };

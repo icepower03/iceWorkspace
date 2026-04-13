@@ -53,7 +53,7 @@ export class xHref extends xElement
 
         this.addClass("xHref");
 
-        let classCouleur: string = "couleuremed_bleu";
+        let classCouleur: string = "couleurzeus_bleu";
 
         if (options.optionsAffichage != undefined)
         {

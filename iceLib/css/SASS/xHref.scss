@@ -4,63 +4,63 @@
 
 .xHref {
 
-    &.couleuremed_noir {
+    &.couleurzeus_noir {
         color: $icone-noir;
     }
 
-    &.couleuremed_grisfonce {
+    &.couleurzeus_grisfonce {
         color: $icone-grisfonce;
     }
 
-    &.couleuremed_grisclair {
+    &.couleurzeus_grisclair {
         color: $icone-grisclair;
     }
 
-    &.couleuremed_blanc {
+    &.couleurzeus_blanc {
         color: $icone-blanc;
     }
 
-    &.couleuremed_marronfonce {
+    &.couleurzeus_marronfonce {
         color: $icone-marronfonce;
     }
 
-    &.couleuremed_marronclair {
+    &.couleurzeus_marronclair {
         color: $icone-marronclair;
     }
 
-    &.couleuremed_rougefonce {
+    &.couleurzeus_rougefonce {
         color: $icone-rougefonce;
     }
 
-    &.couleuremed_rouge {
+    &.couleurzeus_rouge {
         color: $icone-rouge;
     }
 
-    &.couleuremed_orange {
+    &.couleurzeus_orange {
         color: $icone-orange;
     }
 
-    &.couleuremed_jaune {
+    &.couleurzeus_jaune {
         color: $icone-jaune;
     }
 
-    &.couleuremed_vert {
+    &.couleurzeus_vert {
         color: $icone-vert;
     }
 
-    &.couleuremed_bleu {
+    &.couleurzeus_bleu {
         color: $icone-bleu;
     }
 
-    &.couleuremed_violet {
+    &.couleurzeus_violet {
         color: $icone-violet;
     }
 
-    &.couleuremed_peau {
+    &.couleurzeus_peau {
         color: $icone-peau;
     }
 
-    &.couleuremed_rose {
+    &.couleurzeus_rose {
         color: $icone-rose;
     }
 
@@ -68,11 +68,11 @@
         color: $icone-grisfonce;
     }
 
-    &.couleuremed_grisfonce:hover {
+    &.couleurzeus_grisfonce:hover {
         color: $icone-grisclair;
     }
 
-    &.couleuremed_blanc:hover {
+    &.couleurzeus_blanc:hover {
         color: #{$icone-blanc} + b3;
     }
 

@@ -39,19 +39,19 @@
     }
 
     .WPIContenuGauche {
-        border-right: 1px solid $EmedBorder;
+        border-right: 1px solid $ZeusBorder;
     }
 
     .WPIContenuGauche, .WPIContenuDroite {
         width: calc(50%);
 
         .HeaderListe {
-            background: $EmedFondGris;
+            background: $ZeusFondGris;
         }
 
         .SelectionListe {
-            background: $EmedFondGris;
-            border-bottom: 1px solid $EmedBorder;
+            background: $ZeusFondGris;
+            border-bottom: 1px solid $ZeusBorder;
             box-sizing: border-box;
             padding-left: 3px;
         }
@@ -64,7 +64,7 @@
 
         .ContenuLigne {
             &:hover {
-                background: $EmedSelected;
+                background: $ZeusSelected;
             }
 
             .WPContenuLigne {
@@ -106,8 +106,8 @@
 
     .WPIContenuCentre {
         width: 100px;
-        border-left: 1px solid $EmedBorder;
-        border-right: 1px solid $EmedBorder;
+        border-left: 1px solid $ZeusBorder;
+        border-right: 1px solid $ZeusBorder;
 
         .xxStackPanel {
             justify-content: center;

@@ -15,11 +15,11 @@ export interface iCacheGeneric<T> {
 export class xCache {
 
 
-    //moyen d'écrire et lire les données de cache avec une pérennité correspondant à une session d'emed
+    //moyen d'écrire et lire les données de cache avec une pérennité correspondant à une session d'zeus
     private static getVariable(item: string): any {
         try {
             var d: any = window.top;
-            return d['cache_emed_' + item];
+            return d['cache_zeus_' + item];
         }
         catch (r) {
             console.log("impossible de lire les variables du window.top");
@@ -33,7 +33,7 @@ export class xCache {
         try {
 
             var d: any = window.top;
-            d['cache_emed_' + item] = valeur;
+            d['cache_zeus_' + item] = valeur;
         }
         catch (r) {
             console.log("impossible d'écrires les variables du window.top");
@@ -45,7 +45,7 @@ export class xCache {
         try {
 
             var d: any = window.top;
-            delete  d['cache_emed_' + item] ;
+            delete  d['cache_zeus_' + item] ;
         }
         catch (r) {
             console.log("impossible d'écrires les variables du window.top");

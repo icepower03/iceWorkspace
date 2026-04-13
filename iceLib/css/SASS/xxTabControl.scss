@@ -1,5 +1,5 @@
 ﻿/*********************************/
-/***** xxTabControl Emed - SCSS *****/
+/***** xxTabControl Zeus - SCSS *****/
 /*********************************/
 
 .xxTabControlContainer {
@@ -44,7 +44,7 @@
     }
 
     .xxTabMenu .xxRadioButton .xxbouton {
-        background-color: $EmedFondGris;
+        background-color: $ZeusFondGris;
     }
 
     .xxTabMenu {
@@ -184,20 +184,20 @@
                     .xxRadioButtonItem {
                         border-radius: 5px 5px 0 0;
                         display: flex;
-                        border: 1px solid $EmedBorder;
+                        border: 1px solid $ZeusBorder;
                         border-bottom: none;
 
                         &:after {
                             content: "";
                             height: 14px;
                             width: 1px;
-                            background: $EmedBorder;
+                            background: $ZeusBorder;
                             align-self: center;
                         }
 
                         &:hover {
-                            background: $EmedSelected;
-                            border-bottom: 3px solid $EmedSelected;
+                            background: $ZeusSelected;
+                            border-bottom: 3px solid $ZeusSelected;
                         }
 
                         .xxBoutonContent {
@@ -208,7 +208,7 @@
 
 
                     .xxRadioButtonItemSelected {
-                        background: $EmedBorder;
+                        background: $ZeusBorder;
                         margin-left: -1px;
 
                         &:after {
@@ -253,9 +253,9 @@
             }
 
             .xxRadioButton .xxRadioButtonItem.xxRadioButtonItemSelected .xxbouton {
-                border-left: 1px solid $EmedBorder;
-                border-top: 1px solid $EmedBorder;
-                border-right: 1px solid $EmedBorder;
+                border-left: 1px solid $ZeusBorder;
+                border-top: 1px solid $ZeusBorder;
+                border-right: 1px solid $ZeusBorder;
                 border-bottom: none;
             }
 
@@ -311,7 +311,7 @@
 
     &.orientation_verticale {
         .xxTabControlMenu {
-            border-right: 1px solid $EmedBorder;
+            border-right: 1px solid $ZeusBorder;
             padding: 10px 0;
             width: 200px;
 
@@ -333,7 +333,7 @@
                             width: 100%;
                             justify-content: flex-start;
                             margin: 0;
-                            border: 1px solid $EmedBorder;
+                            border: 1px solid $ZeusBorder;
                         }
                     }
 
@@ -346,7 +346,7 @@
                                 width: 1px;
                                 height: calc(100% - 2px);
                                 display: block;
-                                background-color: $EmedSelected;
+                                background-color: $ZeusSelected;
                                 position: absolute;
                                 top: 1px;
                                 right: -1px;
@@ -370,7 +370,7 @@
     }
 
     .xxRadioButtonItem {
-        /*border-bottom: 3px solid $EmedFondGris;*/
+        /*border-bottom: 3px solid $ZeusFondGris;*/
     }
 
     .xxRadioButtonItem.xxTabControlOngletFermable {
@@ -391,7 +391,7 @@
         }
 
         &.xxRadioButtonItemSelected {
-            background: $EmedSelected;
+            background: $ZeusSelected;
         }
     }
 

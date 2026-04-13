@@ -1,5 +1,5 @@
 ﻿/****************************************/
-/***** xxListDeroulante Emed - SCSS *****/
+/***** xxListDeroulante Zeus - SCSS *****/
 /****************************************/
 
 @import "couleurs.scss";
@@ -7,12 +7,12 @@
 
 .xxListeDeroulanteZoneBoxer {
     &.xxpage_body {
-        background-color: $EmedFondGrisFonce;
+        background-color: $ZeusFondGrisFonce;
     }
 
     .xxListItem.selected {
         .xxbouton {
-            background-color: $EmedSelected;
+            background-color: $ZeusSelected;
         }
     }
 
@@ -34,10 +34,10 @@
     &.tleg {
         .xxListItem:hover {
             cursor: pointer;
-            background-color: $EmedFondGris;
+            background-color: $ZeusFondGris;
 
             .xxbouton {
-                background-color: $EmedFondGris;
+                background-color: $ZeusFondGris;
             }
         }
     }
@@ -47,7 +47,7 @@
         justify-content: center;
 
         &.tleg {
-            color: $EmedTexteBleu;
+            color: $ZeusTexteBleu;
             padding: 10px 0;
             align-items: center;
             font-size: 13px;
@@ -87,7 +87,7 @@
 
     .xxTooltip_Contenu .itemInListe.tleg {
         border-radius: 5px;
-        border: 1px solid $EmedBorder;
+        border: 1px solid $ZeusBorder;
     }
 
     &.xxTooltip_Box {
@@ -184,7 +184,7 @@
             }
 
             .xxListeDeroulanteEndList {
-                background: $EmedFondGris;
+                background: $ZeusFondGris;
 
                 &.t20 {
                     background: none;
@@ -211,7 +211,7 @@
 
                 .btnFinDeListe {
                     margin: 4px;
-                    border: 1px solid $EmedBorder;
+                    border: 1px solid $ZeusBorder;
                     box-sizing: border-box;
                     width: calc(100% - 8px);
                     display: flex;

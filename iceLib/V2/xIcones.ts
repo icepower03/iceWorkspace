@@ -818,8 +818,8 @@ export enum enumIconeSvg {
     logo_elive = 112
 };
 
-// ----- ENUM ICONES EMED (ENTRE 10001 et 19999) -----
-export enum enumIconeEmedSvg {
+// ----- ENUM ICONES ZEUS (ENTRE 10001 et 19999) -----
+export enum enumIconeZeusSvg {
     soins = 10001,
     perfusions = 10002,
     posologie = 10003,
@@ -830,26 +830,26 @@ export enum enumIconeEmedSvg {
 
 // ----- ENUM ICONES TUILES (ENTRE 20001 et 29999) -----
 export enum enumIconeTuile {
-    AdmiEmed = 20001,
-    AideEmed = 20002,
-    ClassementDocEmed = 20003,
-    DonSangEmed = 20004,
-    DossierConsultEmed = 20005,
-    GestionBlocEmed = 20006,
-    ParametreEmed = 20007,
-    InternetEmed = 20008,
+    AdmiZeus = 20001,
+    AideZeus = 20002,
+    ClassementDocZeus = 20003,
+    DonSangZeus = 20004,
+    DossierConsultZeus = 20005,
+    GestionBlocZeus = 20006,
+    ParametreZeus = 20007,
+    InternetZeus = 20008,
     ConsultationPatient = 20009,
     ConsultationDossier = 20010,
     TableauDeBord = 20011,
     RechercheRapide = 20012,
     Delegues = 20013,
     Dispensation = 20014,
-    SupportEmed = 20015,
+    SupportZeus = 20015,
     AppelContextuelPrescription = 20016,
     AppelContextuelPrescriptionLectureSeule = 20017,
     AppelContextuelAdmission = 20018,
     AppelContextuelAdmissionLectureSeule = 20019,
-    EmedPatientConnect = 20020,
+    ZeusPatientConnect = 20020,
     Recherche = 20021,
     RechercheMedicament = 20022,
     Statistiques = 20023,
@@ -860,7 +860,7 @@ export enum enumIconeTuile {
     ValidationPharma = 20028,
     GestionIncoherences = 20029,
     InstallElive = 20030,
-    adminEmed = 20031,
+    adminZeus = 20031,
 };
 
 
@@ -890,7 +890,7 @@ export interface OptionsIconeSVG extends OptionsIconeExterne
 
 export class IconeSvg extends Icone {
 
-    private inType!: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile;
+    private inType!: enumIconeSvg | enumIconeZeusSvg | enumIconeTuile;
     private couleurSvg!: enumCouleur;
 
     public addClass(s: string) {
@@ -906,8 +906,8 @@ export class IconeSvg extends Icone {
         });
     }
     public svg!: xSVG;
-    //constructor(inType: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile, taille?: enumSVGTaille, widthCust?: number, heightCust?: number) {
-    constructor(inType: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile, o?: OptionsIconeSVG) {
+    //constructor(inType: enumIconeSvg | enumIconeZeusSvg | enumIconeTuile, taille?: enumSVGTaille, widthCust?: number, heightCust?: number) {
+    constructor(inType: enumIconeSvg | enumIconeZeusSvg | enumIconeTuile, o?: OptionsIconeSVG) {
         super();
 
         if (o == null)
@@ -927,7 +927,7 @@ export class IconeSvg extends Icone {
      * @param type
      * @param o
      */
-    private getSVG(type: enumIconeSvg | enumIconeEmedSvg | enumIconeTuile, o?: OptionsIconeSVG): xSVG {
+    private getSVG(type: enumIconeSvg | enumIconeZeusSvg | enumIconeTuile, o?: OptionsIconeSVG): xSVG {
 
         let contenu: any = new ContenusSVG("", "");
 
@@ -986,8 +986,8 @@ export class IconeSvg extends Icone {
 
         if (type >= 1 && type <= 9999) // On est dans les icones SVG
             nomIcone = enumIconeSvg[type].toString();
-        else if (type >= 10001 && type <= 19999) // On est dans les icones Emed SVG
-            nomIcone = enumIconeEmedSvg[type].toString();
+        else if (type >= 10001 && type <= 19999) // On est dans les icones Zeus SVG
+            nomIcone = enumIconeZeusSvg[type].toString();
         else if (type >= 20001 && type <= 29999) // On est dans les icones Tuile
             nomIcone = enumIconeTuile[type].toString();
 
@@ -1304,47 +1304,47 @@ export class IconeSvg extends Icone {
                 break;
 
 
-            //----- Icones SVG Emed -----//
+            //----- Icones SVG Zeus -----//
 
-            case enumIconeEmedSvg.soins:
-                contenu = xListeIconeSVG.emed_soins();
+            case enumIconeZeusSvg.soins:
+                contenu = xListeIconeSVG.zeus_soins();
                 break;
-            case enumIconeEmedSvg.perfusions:
-                contenu = xListeIconeSVG.emed_perfusions();
+            case enumIconeZeusSvg.perfusions:
+                contenu = xListeIconeSVG.zeus_perfusions();
                 break;
-            case enumIconeEmedSvg.posologie:
-                contenu = xListeIconeSVG.emed_posologie();
+            case enumIconeZeusSvg.posologie:
+                contenu = xListeIconeSVG.zeus_posologie();
                 break;
-            case enumIconeEmedSvg.prolonger:
-                contenu = xListeIconeSVG.emed_prolonger();
+            case enumIconeZeusSvg.prolonger:
+                contenu = xListeIconeSVG.zeus_prolonger();
                 break;
-            case enumIconeEmedSvg.suspendre:
-                contenu = xListeIconeSVG.emed_suspendre();
+            case enumIconeZeusSvg.suspendre:
+                contenu = xListeIconeSVG.zeus_suspendre();
                 break;
 
             //----- Icones Tuiles -----//
-            case enumIconeTuile.AdmiEmed:
+            case enumIconeTuile.AdmiZeus:
                 contenu = xListeIconeSVG.admin();
                 break;
-            case enumIconeTuile.AideEmed:
+            case enumIconeTuile.AideZeus:
                 contenu = xListeIconeSVG.aide();
                 break;
-            case enumIconeTuile.ClassementDocEmed:
+            case enumIconeTuile.ClassementDocZeus:
                 contenu = xListeIconeSVG.classementDoc();
                 break;
-            case enumIconeTuile.DonSangEmed:
+            case enumIconeTuile.DonSangZeus:
                 contenu = xListeIconeSVG.donSang();
                 break;
-            case enumIconeTuile.DossierConsultEmed:
+            case enumIconeTuile.DossierConsultZeus:
                 contenu = xListeIconeSVG.dossierConsult();
                 break;
-            case enumIconeTuile.GestionBlocEmed:
+            case enumIconeTuile.GestionBlocZeus:
                 contenu = xListeIconeSVG.gestionBloc();
                 break;
-            case enumIconeTuile.ParametreEmed:
+            case enumIconeTuile.ParametreZeus:
                 contenu = xListeIconeSVG.parametres();
                 break;
-            case enumIconeTuile.InternetEmed:
+            case enumIconeTuile.InternetZeus:
                 contenu = xListeIconeSVG.internet();
                 break;
             case enumIconeTuile.ConsultationPatient:
@@ -1365,7 +1365,7 @@ export class IconeSvg extends Icone {
             case enumIconeTuile.Dispensation:
                 contenu = xListeIconeSVG.dispensation();
                 break;
-            case enumIconeTuile.SupportEmed:
+            case enumIconeTuile.SupportZeus:
                 contenu = xListeIconeSVG.support();
                 break;
             case enumIconeTuile.AppelContextuelPrescription:
@@ -1380,7 +1380,7 @@ export class IconeSvg extends Icone {
             case enumIconeTuile.AppelContextuelAdmissionLectureSeule:
                 contenu = xListeIconeSVG.appelContextuelAdmissionLectureSeule();
                 break;
-            case enumIconeTuile.EmedPatientConnect:
+            case enumIconeTuile.ZeusPatientConnect:
                 contenu = xListeIconeSVG.patientConnect();
                 break;
             case enumIconeTuile.Recherche:
@@ -1449,7 +1449,7 @@ export class IconeSvg extends Icone {
     }
    
 
-    public getValeurIcone(): enumIconeSvg | enumIconeEmedSvg | enumIconeTuile
+    public getValeurIcone(): enumIconeSvg | enumIconeZeusSvg | enumIconeTuile
     {
         let myThis: IconeSvg = this;
         return myThis.inType;
@@ -1461,7 +1461,7 @@ export class IconeSvg extends Icone {
         if (myThis.inType >= 20001 || myThis.inType <= 29999)
             return "iconeTuileSvg";
         else if (myThis.inType >= 10001 || myThis.inType <= 19999)
-            return "iconeEmedSvg";
+            return "iconeZeusSvg";
         else
             return "iconeSvg";
     }
@@ -1514,7 +1514,7 @@ export class IconeTuile extends Icone {
         let contenu: any = new ContenusSVG("", "");
 
         switch (type) {
-            case enumIconeTuile.adminEmed:
+            case enumIconeTuile.adminZeus:
                 contenu = xListeIconeSVG.admin();
                 break;
         }

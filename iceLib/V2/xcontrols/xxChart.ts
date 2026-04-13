@@ -220,3 +220,5 @@ module mChart
     }
 
 }
+
+export { mChart };

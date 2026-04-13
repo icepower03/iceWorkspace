@@ -87,7 +87,7 @@ $couleurSvg: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $ic
 
 @each $couleur, $codecouleur in $couleurSvg {
 
-    .xsvg-couleur_emed_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-couleur_emed_#{$couleur} {
+    .xsvg-couleur_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-couleur_zeus_#{$couleur} {
         .xsvg-elem_filled {
             fill: $codecouleur;
         }
@@ -97,7 +97,7 @@ $couleurSvg: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $ic
         }
     }
 
-    .xsvg-multicolore-couleurPrincipale_emed_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurPrincipale_emed_#{$couleur} {
+    .xsvg-multicolore-couleurPrincipale_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurPrincipale_zeus_#{$couleur} {
         .xsvg-elem_filled, .xsvg-elem_transparent {
             &.xsvg-elem_couleurPrincipale {
                 fill: $codecouleur;
@@ -109,7 +109,7 @@ $couleurSvg: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $ic
         }
     }
 
-    .xsvg-multicolore-couleurSecondaire_emed_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurSecondaire_emed_#{$couleur} {
+    .xsvg-multicolore-couleurSecondaire_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurSecondaire_zeus_#{$couleur} {
         .xsvg-elem_filled, .xsvg-elem_transparent {
             &.xsvg-elem_Secondaire {
                 fill: $codecouleur;
@@ -121,7 +121,7 @@ $couleurSvg: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $ic
         }
     }
 
-    .xsvg-multicolore-couleurTertiaire_emed_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurTertiaire_emed_#{$couleur} {
+    .xsvg-multicolore-couleurTertiaire_zeus_#{$couleur}, .t20.xbtn-sty_simple.xbtn-cou_utilisateur .xsvg-multicolore-couleurTertiaire_zeus_#{$couleur} {
         .xsvg-elem_filled, .xsvg-elem_transparent {
             &.xsvg-elem_couleurTertiaire {
                 fill: $codecouleur;
@@ -133,7 +133,7 @@ $couleurSvg: ( "noir" $icone-noir, "grisfonce" $icone-grisfonce, "grisclair" $ic
         }
     }
 
-    .xsvg-couleurFond_emed_#{$couleur} {
+    .xsvg-couleurFond_zeus_#{$couleur} {
         background-color: $codecouleur;
         padding: 3px;
         box-sizing: border-box;

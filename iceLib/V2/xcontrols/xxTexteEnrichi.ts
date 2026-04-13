@@ -5,7 +5,7 @@ import { xInputText } from './xInput';
 
 interface optionsTexteEnrichi extends OptionsInput
 {
-    /** dans emed utiliser la méthode générique: OutilsJSEmed.insertListeMotsInCkEditor; */
+    /** dans zeus utiliser la méthode générique: OutilsJSZeus.insertListeMotsInCkEditor; */
     insertListeMotsInCkEditor?: (htmlVal: string, listeMot: boolean) => void;
 }
 var gestion_editor: any;

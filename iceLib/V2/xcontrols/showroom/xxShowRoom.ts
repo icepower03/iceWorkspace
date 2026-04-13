@@ -807,7 +807,7 @@ export class xxShowRoom implements iXElement {
         /*     ajouter('logos', 'Image en base 64', function (ici: xElementHolder) {
                  let monLogo: string;
                  let a = new xDiv();
-                 CacheEmed.getdicoImages(pageShowRoom).then(function (dico: Dictionnaire<string>) {
+                 CacheZeus.getdicoImages(pageShowRoom).then(function (dico: Dictionnaire<string>) {
                      ici.append(a);
  
                      a.asHolder.append($("<img src='data:image/png;base64, " + dico["*"] + "'/>").toHolder());
@@ -1233,7 +1233,7 @@ export class xxShowRoom implements iXElement {
 
         ajouter('xxTreeTabControl', 'Gestion d\'un menu', function (ici: xElementHolder) {
             let treeTabControl: xxTreeTabControl = new xxTreeTabControl({
-                class: "MenuEmed",
+                class: "MenuZeus",
                 onglets:
                     [{
                         textVariable: 'Onglet 1',
@@ -1288,13 +1288,6 @@ export class xxShowRoom implements iXElement {
             });
 
             ici.append(new xxBouton({ textVariable: 'ouvrir', titleVariable: 'ouvrir', click: function (cb) { myBox.afficher(); cb(); } }));
-            ;
-        }, 2, xxBoxer);
-
-        ajouter('xxSpecificationCreneau', 'Affichage d\'un boxer de filtrage des créneaux à rechercher', function (ici: xElementHolder) {
-            let specCreneau: xxSpecificationCreneaux = new xxSpecificationCreneaux(function (o: OptionsInfosCreneaux) { });
-
-            ici.append(specCreneau);
             ;
         }, 2, xxBoxer);
 
@@ -1481,27 +1474,6 @@ export class xxShowRoom implements iXElement {
             }).append(i);
 
         }, 2, xxCheckBox);
-
-        ajouter('xxRecorder', 'xxRecorder', ici => {
-            ici.append(new xxRecorder({
-
-            }));
-
-        }, 2, xxRecorder)
-
-        ajouter('xxLecteurAudio', 'xxLecteurAudio', ici => {
-            ici.append(new xxLecteurAudio({
-                audio: "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
-            }));
-
-        }, 2, xxLecteurAudio)
-
-        ajouter('xxIMC', 'xxIMC', ici =>
-            ici.append(new xxIMC({
-                value: 28.5
-            })), 2, xxIMC)
-
-   
 
         ajouter('xxBouton', 'xxBouton', ici => {
             ici.append(new xxBouton({
@@ -1885,7 +1857,7 @@ export class xxShowRoom implements iXElement {
             oeufs: number;
         }
 
-        /* emed xxList */
+        /* zeus xxList */
 
         let mesDesserts: Dessert[] = [];
 
@@ -2035,7 +2007,7 @@ export class xxShowRoom implements iXElement {
                         },
                         titleVariable: 'changer de dessert',
                         textVariable: monDessert == null || monDessert == undefined ? 'aucun dessert' : 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                         optionsAffichage: {positionIconeBouton:enumPosition.Right}
                     }));
 
@@ -2099,7 +2071,7 @@ export class xxShowRoom implements iXElement {
                         },
                         titleVariable: 'changer de dessert',
                         textVariable: monDessert == null || monDessert == undefined ? 'aucun dessert' : 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                         optionsAffichage: { positionIconeBouton: enumPosition.Right }
                     }));
 
@@ -2140,7 +2112,7 @@ export class xxShowRoom implements iXElement {
                         },
                         titleVariable: 'changer de dessert',
                         textVariable: monDessert == null || monDessert == undefined ? 'aucun dessert' : 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                         optionsAffichage: { positionIconeBouton: enumPosition.Right },
                     }));
 
@@ -2189,7 +2161,7 @@ export class xxShowRoom implements iXElement {
                         },
                         titleVariable: 'changer de dessert',
                         textVariable: monDessert == null || monDessert == undefined ? 'aucun dessert' : 'cuisson:' + monDessert.modeCuisson + '/ farine:' + monDessert.typeFarine,
-                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                         optionsAffichage: { positionIconeBouton: enumPosition.Right },
                     }));
 
@@ -2374,7 +2346,7 @@ export class xxShowRoom implements iXElement {
                     PdfModePaysage: false,
                     //getCartouchePdf: () => {
                     //    try {
-                    //        return outilsJSEmed.getCartoucheEntete(162387, pageShowRoom); //cdpatient=567107|ancddossier=EM10002808|nom=TEST 08/12/2017|prenom=Prenom_Test                        
+                    //        return outilsJSZeus.getCartoucheEntete(162387, pageShowRoom); //cdpatient=567107|ancddossier=EM10002808|nom=TEST 08/12/2017|prenom=Prenom_Test                        
                     //    } catch (ex) {
                     //        console.log(ex);
                     //    }
@@ -3652,231 +3624,6 @@ lignes `
             //ici.append(new xxInputSpeech({}));
         }, 2, xxInputSpeech);
 
-        // ************ //
-        // xxIndicateur //
-        // ************ //
-        ajouter("xxIndicateur", "xxIndicateur Title simple", function (ici: xElementHolder) {
-            ici.append(new xxIndicateur({
-                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
-                titleVariable: "Prescription prolongées"
-            }));
-
-        }, 2, xxIndicateur);
-
-        ajouter("xxIndicateur", "xxIndicateur Title avec un ou plusieurs nombres en Notif(la notif peut-etre de differente couleur)", function (ici: xElementHolder) {
-            let divtest: xDiv = new xDiv({});
-
-            let notifbind: BindableObject<number> = new BindableObject<number>(8);
-            let indica: xxIndicateur = new xxIndicateur({
-                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
-                titleVariable: "Nombre de prescription prolongées",
-                Notif: [{
-                    nbNotifBindable: notifbind,
-                    NotifColor: EnumXxIndicateurNotifColor.Bleu
-                },
-                {
-                    nbNotif: 5,
-                    NotifColor: EnumXxIndicateurNotifColor.Orange
-                }]
-            });
-
-            ici.append(new xxListeDeroulante<EnumXxIndicateurNotifColor>({
-                defaultValue: EnumXxIndicateurNotifColor.Bleu,
-                donnees: [EnumXxIndicateurNotifColor.Bleu, EnumXxIndicateurNotifColor.Orange, EnumXxIndicateurNotifColor.Rouge],
-                renderSelected: (p, item, op) => {
-                    p.append(new xxBouton({
-                        textVariable: item.toString(),
-                        titleVariable: "sélection",
-                        click: (e) => {
-                            op(item);
-                            e();
-                        },
-                       
-                    }))
-                },
-                renderSelectItem: (p, item, sele) => {
-                    p.append(new xxBouton({
-                        textVariable: item.toString(),
-                        titleVariable: "sélection",
-                        click: (e) => {
-                            sele(item);
-                            e();
-                        },
-                       
-                    }));
-                },
-                selected: (enu) => {
-                    indica.removeNotif(0);
-                    indica.addNotif({
-                        nbNotifBindable: notifbind,
-                        NotifColor: enu,
-                        NotifTitleLocalise: "Nouvelle Notif"
-                    }, 0);
-                }
-            }));
-
-            ici.append(new xxBouton({
-                textVariable: "ajouter 1 au nombre de notif",
-                titleVariable: "click",
-                click: (e) => {
-                    notifbind.Value++;
-                    e();
-                }
-            }));
-
-            divtest.asHolder.empty().append(indica);
-
-            ici.append(divtest);
-
-        }, 2, xxIndicateur);
-
-        ajouter("xxIndicateur", "xxIndicateur Tooltip simple", function (ici: xElementHolder) {
-            ici.append(new xxIndicateur({
-                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
-                toolTipContent: new xxStackPanel({
-                    initContent: [
-                        new xxLabel({ textVariable: "------------------1------------------" }),
-                        new xxLabel({ textVariable: "------------------2------------------" }),
-                        new xxLabel({ textVariable: "------------------3------------------" }),
-                        new xxLabel({ textVariable: "------------------4------------------" })
-                    ]
-                }),
-                TooltipStopPropagation: true
-            }));
-
-        }, 2, xxIndicateur);
-
-        ajouter("xxIndicateur", "xxIndicateur Tooltip avec un ou plusieur nombre en Notif(la notif peut-etre de differente couleur)", function (ici: xElementHolder) {
-            let divtest: xDiv = new xDiv({});
-
-            let notifbind: BindableObject<number> = new BindableObject<number>(8);
-            let indica: xxIndicateur = new xxIndicateur({
-                indicateur: new IconeP12(enumIconeP12.action_envoi_message),
-                toolTipContent: new xxStackPanel({
-                    initContent: [
-                        new xxLabel({ textVariable: "------------------1------------------" }),
-                        new xxLabel({ textVariable: "------------------2------------------" }),
-                        new xxLabel({ textVariable: "------------------3------------------" }),
-                        new xxLabel({ textVariable: "------------------4------------------" })
-                    ]
-                }),
-                TooltipStopPropagation: true,
-                Notif: [{
-                    nbNotif: 8,
-                    NotifColor: EnumXxIndicateurNotifColor.Bleu
-                },
-                {
-                    nbNotif: 5,
-                    NotifColor: EnumXxIndicateurNotifColor.Orange
-                }]
-            });
-
-            ici.append(new xxListeDeroulante<EnumXxIndicateurNotifColor>({
-                defaultValue: EnumXxIndicateurNotifColor.Bleu,
-                donnees: [EnumXxIndicateurNotifColor.Bleu, EnumXxIndicateurNotifColor.Orange, EnumXxIndicateurNotifColor.Rouge],
-                renderSelected: (p, item, op) => {
-                    p.append(new xxBouton({
-                        textVariable: item.toString(),
-                        titleVariable: "sélection",
-                        click: (e) => {
-                            op(item);
-                            e();
-                        },
-                      
-                    }))
-                },
-                renderSelectItem: (p, item, sele) => {
-                    p.append(new xxBouton({
-                        textVariable: item.toString(),
-                        titleVariable: "sélection",
-                        click: (e) => {
-                            sele(item);
-                            e();
-                        },
-                      
-                    }));
-                },
-                selected: (enu) => {
-                    indica.removeNotif(0);
-                    indica.addNotif({
-                        nbNotifBindable: notifbind,
-                        NotifColor: enu,
-                        NotifTitleLocalise: "Nouvelle Notif"
-                    }, 0);
-                }
-            }));
-
-            ici.append(new xxBouton({
-                textVariable: "ajouter 1 au nombre de notif",
-                titleVariable: "click",
-                click: (e) => {
-                    notifbind.Value++;
-                    e();
-                }
-            }));
-
-            divtest.asHolder.empty().append(indica);
-
-            ici.append(divtest);
-
-        }, 2, xxIndicateur);
-
-        ajouter("xxIndicateur", "xxIndicateur avec les notifications toujours affichées ou qui gardent leurs places, mêmes cachées", function (ici: xElementHolder) {
-            let divtest: xDiv = new xDiv({});
-            let indica: xxIndicateur;
-
-            let functionGenerateIndica: (AlwaysNotif?: boolean, AlwaysTakePlace?: boolean) => void =
-                (AlwaysNotif?: boolean, AlwaysTakePlace?: boolean) => {
-                    indica = new xxIndicateur({
-                        NotifAlwaysShow: AlwaysNotif,
-                        NotifHideAlwaysTakePlace: AlwaysTakePlace,
-                        indicateur: new IconeP12(enumIconeP12.action_envoi_message),
-                        titleVariable: "Nombre de prescriptions prolongées",
-                        Notif: [{
-                            nbNotif: 0,
-                            NotifColor: EnumXxIndicateurNotifColor.Bleu
-                        },
-                        {
-                            nbNotif: 5,
-                            NotifColor: EnumXxIndicateurNotifColor.Orange
-                        }]
-                    });
-                    divtest.asHolder.empty().append(indica);
-                };
-
-            ici.append(new xxBouton({
-                textVariable: "notification cachée si égale a 0",
-                titleVariable: "click",
-                click: (e) => {
-                    functionGenerateIndica();
-                    e();
-                }
-            }));
-
-            ici.append(new xxBouton({
-                textVariable: "notification toujours affichée",
-                titleVariable: "click",
-                click: (e) => {
-                    functionGenerateIndica(true, false);
-                    e();
-                }
-            }));
-
-            ici.append(new xxBouton({
-                textVariable: "notification qui garde sa place, même cachée",
-                titleVariable: "click",
-                click: (e) => {
-                    functionGenerateIndica(false, true);
-                    e();
-                }
-            }));
-
-            functionGenerateIndica();
-
-            ici.append(divtest);
-
-        }, 2, xxIndicateur);
-
         ajouter("xxZoom", "enumAffichageZoom : modeSlider", ici => {
             ici.append(new xxZoom({
                 afterZoom: (zoom) => {
@@ -4048,13 +3795,7 @@ lignes `
             let listeIcones: string[] = xOutils.enumNamesToStringArray(enumIconeP12);
 
             listeIcones.forEach((val: string) => {
-
-                let iconeTemp = new IconeMiniP12(xOutils.stringToEnum<enumIconeP12>(val, enumIconeP12));
-                a.append(new xxIndicateur({
-                    indicateur: iconeTemp,
-                    toolTipContent: new xxLabel({ textVariable: val })
-                }));
-
+                a.append(new IconeMiniP12(xOutils.stringToEnum<enumIconeP12>(val, enumIconeP12)));
             });
         }, 5);
 
@@ -4068,13 +3809,7 @@ lignes `
             let listeIconesSvg: string[] = xOutils.enumNamesToStringArray(enumIconeSvg);
 
             listeIconesSvg.forEach((val: string) => {
-
-                let iconeTemp = new IconeSvg(xOutils.stringToEnum<enumIconeSvg>(val, enumIconeSvg));
-                a.append(new xxIndicateur({
-                    indicateur: iconeTemp,
-                    toolTipContent: new xxLabel({ textVariable: val })
-                }));
-
+                a.append(new IconeSvg(xOutils.stringToEnum<enumIconeSvg>(val, enumIconeSvg)));
             });
         }, 5);
 
@@ -4088,13 +3823,7 @@ lignes `
             let listeIconesTuile: string[] = xOutils.enumNamesToStringArray(enumIconeTuile);
 
             listeIconesTuile.forEach((val: string) => {
-
-                let iconeTemp = new IconeSvg(xOutils.stringToEnum<enumIconeTuile>(val, enumIconeTuile));
-                a.append(new xxIndicateur({
-                    indicateur: iconeTemp,
-                    toolTipContent: new xxLabel({ textVariable: val })
-                }));
-
+                a.append(new IconeSvg(xOutils.stringToEnum<enumIconeTuile>(val, enumIconeTuile)));
             });
         }, 5);
 
@@ -4471,7 +4200,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton:enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -4527,7 +4256,7 @@ lignes `
                     let dicoIcon: any = {
                         IconeP12: Object.keys(enumIconeP12).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                         IconeSvg: Object.keys(enumIconeSvg).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
-                        IconeEmedSvg: Object.keys(enumIconeEmedSvg).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
+                        IconeZeusSvg: Object.keys(enumIconeZeusSvg).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                         IconeTuileSvg: Object.keys(enumIconeTuile).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                         IconeTuile: Object.keys(enumIconeTuile).filter(key => !isNaN(parseInt(key))).map(key => parseInt(key)),
                     }
@@ -4554,11 +4283,11 @@ lignes `
                                     iconeString: "new IconeSvg(enumIconeSvg." + enumIconeSvg[numberEnum] + ")"
                                 };
                                 break;
-                            case "IconeEmedSvg":
+                            case "IconeZeusSvg":
                                 toSender = {
-                                    icone: new IconeSvg(<enumIconeEmedSvg>numberEnum),
-                                    iconeName: enumIconeEmedSvg[numberEnum],
-                                    iconeString: "new IconeSvg(enumIconeEmedSvg." + enumIconeEmedSvg[numberEnum] + ")"
+                                    icone: new IconeSvg(<enumIconeZeusSvg>numberEnum),
+                                    iconeName: enumIconeZeusSvg[numberEnum],
+                                    iconeString: "new IconeSvg(enumIconeZeusSvg." + enumIconeZeusSvg[numberEnum] + ")"
                                 };
                                 break;
                             case "IconeTuileSvg":
@@ -4594,7 +4323,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -4634,7 +4363,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     if (item == null) {
                                         ici.append(new xxBouton({
-                                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                             optionsAffichage: {
                                                 margin: { Tous: 0 },
                                                 positionIconeBouton: enumPosition.Right,
@@ -4756,7 +4485,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -4910,7 +4639,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -4961,7 +4690,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -5179,7 +4908,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -5231,7 +4960,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -5282,7 +5011,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -5333,7 +5062,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();
@@ -5386,7 +5115,7 @@ lignes `
                                 renderSelected: (ici, item, open) => {
                                     ici.append(new xxBouton({
                                         optionsAffichage: { tailleBouton: enumTailleBouton.Fit },
-                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                         click: (cb) => {
                                             open(item);
                                             cb();

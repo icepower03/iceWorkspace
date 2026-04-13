@@ -142,7 +142,7 @@ export class xxDialog implements iXElement {
         myThis.mainGrid = new xxGrid({ class: "xxDialog " + classType, gridGap: "5px 10px", colonnes: ["auto", "1fr", "auto"], fullWidth: false });
 
         myThis.iconGridItem = new xxGridItem({
-            content: new IconeSvg(iconeType, { taille: tailleIcone.L, couleurSvg: { couleurIconeComplete: enumCouleur.emed_blanc } }),
+            content: new IconeSvg(iconeType, { taille: tailleIcone.L, couleurSvg: { couleurIconeComplete: enumCouleur.zeus_blanc } }),
             colStart: 1,
             rowStart: 1,
             nbRows: 4,
@@ -170,7 +170,7 @@ export class xxDialog implements iXElement {
                         }
                         cb();
                     },
-                    icone: new IconeSvg(enumIconeSvg.croix, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_blanc } }),
+                    icone: new IconeSvg(enumIconeSvg.croix, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_blanc } }),
                     optionsAffichage: {
                         tailleBouton: enumTailleBouton.Fit,
                     }   

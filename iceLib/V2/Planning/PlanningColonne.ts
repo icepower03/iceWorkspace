@@ -12,7 +12,6 @@ import { xDiv } from '../xcontrols/xDiv';
 import { xxLabel, enumTypeLabel } from '../xcontrols/xxLabel';
 import { enumPositionDuContenu } from '../xcontrols/xxLabelContainer';
 
-import { xxIndicateur } from '../xcontrols/xxIndicateur';
 import { xxStackPanel } from '../xcontrols/xxStackPanel';
 import { xxWrapPanel, enumAlignementHorizontalWrapPanel, enumAlignementVerticalWrapPanel } from '../xcontrols/xxWrapPanel';
 import { xxBouton } from '../xcontrols/xxBouton';
@@ -600,7 +599,7 @@ export class PlanningColonne implements iXElement {
 
                 let dispoEnUneBarre = myThis.checkDispoBarre(item);
                 let gridItemClickablee: xxGridItem;
-                let indicateur: xxIndicateur;
+                let indicateur: xDiv;
                 if (dispoEnUneBarre.length > 1) {
                     let dateDebut: DateSerialisable = dispoEnUneBarre[0].DateDebut;
                     let dateFin: DateSerialisable = dispoEnUneBarre[0].DateFin;
@@ -648,7 +647,6 @@ export class PlanningColonne implements iXElement {
                                 titleLocalise: "",
                                 click: cb => {
                                     myThis.ClickSurDispoBarre(dispBarre);
-                                    indicateur.hideTooltip();
                                     cb();
                                 }
                             }))
@@ -661,10 +659,7 @@ export class PlanningColonne implements iXElement {
 
                     positionRow = myThis.calculerPosition(dateDebut, dateFin);
 
-                    indicateur = new xxIndicateur({
-                        indicateur: new xDiv({ class: "dispo" }),
-                        toolTipContent: stackpanelDispo
-                    });
+                    indicateur = new xDiv({ class: "dispo" });
 
                     gridItemClickablee = myThis.creerGridItem({
                         rowStart: positionRow[0],
@@ -676,27 +671,7 @@ export class PlanningColonne implements iXElement {
                     });
 
                 } else {
-                    let contenueDispoBarre: iXElement;
-
-                    if (myThis.ClickSurDispoBarre != undefined) {
-                        contenueDispoBarre = new xxBouton({
-                            textVariable: item.Libelle,
-                            titleLocalise: "",
-                            click: cb => {
-                                myThis.ClickSurDispoBarre(item);
-                                indicateur.hideTooltip();
-                                cb();
-                            }
-                        })
-                    }
-                    else {
-                        contenueDispoBarre = new xxLabel({ textVariable: item.Libelle });
-                    }
-
-                    indicateur = new xxIndicateur({
-                        indicateur: new xDiv({ class: "dispo" }),
-                        toolTipContent: contenueDispoBarre,
-                    });
+                    indicateur = new xDiv({ class: "dispo" });
 
                     gridItemClickablee = myThis.creerGridItem({
                         rowStart: positionRow[0],

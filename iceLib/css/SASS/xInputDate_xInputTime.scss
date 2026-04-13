@@ -1,5 +1,5 @@
 ﻿/*********************************************/
-/***** xInputDate xInputTime Emed - SCSS *****/
+/***** xInputDate xInputTime Zeus - SCSS *****/
 /*********************************************/
 
 @import "couleurs.scss";
@@ -23,14 +23,14 @@
         .xxLabelContainerTitre.xxLabel {
             height: 20px;
             width: 27px;
-            border: 1px solid $EmedBorder;
+            border: 1px solid $ZeusBorder;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0 5px;
             margin: 0 0 2px;
-            background: $EmedFondGris;
+            background: $ZeusFondGris;
             border-right: 0;
             border-radius: 3px 0 0 0;
 
@@ -70,7 +70,7 @@
 }
 .ui-widget-header{
     color:#fff !important;
-    background-color:$EmedBleu !important;
+    background-color:$ZeusBleu !important;
 }
 
 .ui-datepicker-prev {

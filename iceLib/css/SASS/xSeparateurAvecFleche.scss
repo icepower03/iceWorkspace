@@ -12,11 +12,11 @@
         }
 
         &.Droite {
-            border-left: 10px solid $EmedBorder;
+            border-left: 10px solid $ZeusBorder;
         }
 
         &.Gauche {
-            border-right: 10px solid $EmedBorder;
+            border-right: 10px solid $ZeusBorder;
         }
 
         &.Haut, &.Bas {
@@ -25,11 +25,11 @@
         }
 
         &.Haut {
-            border-bottom: 10px solid $EmedBorder;
+            border-bottom: 10px solid $ZeusBorder;
         }
 
         &.Bas {
-            border-top: 10px solid $EmedBorder;
+            border-top: 10px solid $ZeusBorder;
         }
     }
 }

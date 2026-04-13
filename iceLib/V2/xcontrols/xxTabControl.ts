@@ -51,15 +51,15 @@ interface OptionsOngletAjout {
 interface OptionsGestionGroupeTab {
     groupesKey: string;
     textAjoutGroupeLocalise: string;
-    /** dans emed utiliser la méthode générique: OutilsJSEmed.GetGroupesOnglets; */
+    /** dans zeus utiliser la méthode générique: OutilsJSZeus.GetGroupesOnglets; */
     getListeGroupe: (key: string) => Promise<CustomGroupeOnglets[]>;
-    /** dans emed utiliser la méthode générique: OutilsJSEmed.SaveGroupesOnglets; */
+    /** dans zeus utiliser la méthode générique: OutilsJSZeus.SaveGroupesOnglets; */
     saveGroupe: (key: string, custom: CustomGroupeOnglets) => Promise<CustomGroupeOnglets>;
-    /** dans emed utiliser la méthode générique: OutilsJSEmed.DeleteGroupesOngltc; */
+    /** dans zeus utiliser la méthode générique: OutilsJSZeus.DeleteGroupesOngltc; */
     deleteGroupe: (key: string, custom: CustomGroupeOnglets) => Promise<void>;
-    /** dans emed utiliser la méthode générique: OutilsJSEmed.getDernierGroupeOnglet; */
+    /** dans zeus utiliser la méthode générique: OutilsJSZeus.getDernierGroupeOnglet; */
     getDerniersOuverts: (key: string) => Promise<CustomGroupeOnglets>;
-    /** dans emed utiliser la méthode générique: OutilsJSEmed.saveDernierGroupeOnglet; */
+    /** dans zeus utiliser la méthode générique: OutilsJSZeus.saveDernierGroupeOnglet; */
     saveDerniersOuverts: (key: string, custom: CustomGroupeOnglets) => Promise<CustomGroupeOnglets>;
 
     derniersOuvertsKey: string;
@@ -666,7 +666,7 @@ export class xxTabControl implements iXElement {
                                 },
                                 textLocalise: a.valeur.TextFermerOngletLocalise ? a.valeur.TextFermerOngletLocalise : "",
                                 titleLocalise: a.valeur.TitleFermerOngletLocalise ? a.valeur.TitleFermerOngletLocalise : "Fermer l'onglet",
-                                icone: new IconeSvg(enumIconeSvg.croix, { taille: tailleIcone.XXS, couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                icone: new IconeSvg(enumIconeSvg.croix, { taille: tailleIcone.XXS, couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                 optionsAffichage: { tailleBouton: a.valeur.TextFermerOngletLocalise ? enumTailleBouton.XS : enumTailleBouton.Fit },
                                 
                             });

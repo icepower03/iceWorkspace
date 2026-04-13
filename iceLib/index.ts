@@ -40,10 +40,6 @@ export * from './V2/xcontrols/xxLabel';
 export * from './V2/xcontrols/xxBouton';
 export * from './V2/xcontrols/xxPageWrapper';
 
-// Showroom
-export * from './V2/xcontrols/showroom/xxShowRoomSample';
-export * from './V2/xcontrols/showroom/xxShowRoomImageTooltipPreview';
-export * from './V2/xcontrols/showroom/xxShowRoomOptionRecurrente';
-export * from './V2/xcontrols/showroom/xxShowRoomContainer';
-export * from './V2/xcontrols/showroom/xxShowRoomLoader';
-export { xxShowRoom as xxShowRoomDeprecated } from './V2/xcontrols/showroom/xxShowRoomDeprecated';
+export * from './V2/xcontrols/xxChart';
+export * from './V2/xcontrols/showroom/xxShowRoom';
+

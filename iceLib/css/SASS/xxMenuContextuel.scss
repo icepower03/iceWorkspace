@@ -11,20 +11,20 @@
     background-color: white;
     overflow: hidden;
     border-radius: 3px;
-    border: 1px solid $EmedBorder;
-    box-shadow: 0 3px 5px $EmedBorder;
+    border: 1px solid $ZeusBorder;
+    box-shadow: 0 3px 5px $ZeusBorder;
     
     .item_label_jour_heure {
         padding: 5px;
-        border-bottom: 1px solid $EmedBorder;
+        border-bottom: 1px solid $ZeusBorder;
     }
 
     .xxBoutonContainer {
-        border-bottom: 1px solid $EmedBorder;
+        border-bottom: 1px solid $ZeusBorder;
         width: 100%;
 
         &:hover {
-            background-color: $EmedFondGris;
+            background-color: $ZeusFondGris;
         }
 
         .xxBoutonContent {

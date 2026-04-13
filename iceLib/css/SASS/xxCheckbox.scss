@@ -1,5 +1,5 @@
 ﻿/*********************************************/
-/***** xxxCheckbox Emed - SCSS *****/
+/***** xxxCheckbox Zeus - SCSS *****/
 /*********************************************/
 
 @import 'couleurs.scss';
@@ -24,10 +24,10 @@ $buttonColorsList: ( "user" $coul-t20-user, "utilisateur" $coul-t20-user, "alter
         .xxCheckboxIcone {
             width: 20px;
             height: 20px;
-            border: 1px solid $EmedBorder;
+            border: 1px solid $ZeusBorder;
             border-radius: 2px;
             box-sizing: border-box;
-            background-color: $EmedFondGris;
+            background-color: $ZeusFondGris;
             position: relative;
 
             &:after {
@@ -139,7 +139,7 @@ $buttonColorsList: ( "user" $coul-t20-user, "utilisateur" $coul-t20-user, "alter
                 width: 20px;
                 height: 20px;
                 opacity: 1;
-                border: 1px solid $EmedBorder;
+                border: 1px solid $ZeusBorder;
                 border-radius: 100%;
                 box-sizing: border-box;
                 background-color: #fff;
@@ -286,8 +286,8 @@ $buttonColorsList: ( "user" $coul-t20-user, "utilisateur" $coul-t20-user, "alter
         &.xchb-texte_selected {
             .xxBoutonContent {
                 position: relative;
-                background-color: $EmedSelected;
-                border: 1px solid $EmedTexteBleu;
+                background-color: $ZeusSelected;
+                border: 1px solid $ZeusTexteBleu;
                 z-index: 100;
             }
         }
@@ -302,8 +302,8 @@ $buttonColorsList: ( "user" $coul-t20-user, "utilisateur" $coul-t20-user, "alter
 
             .tleg {
                 .xxBoutonContent {
-                    background-color: $EmedSelected;
-                    border: 1px solid $EmedTexteBleu;
+                    background-color: $ZeusSelected;
+                    border: 1px solid $ZeusTexteBleu;
                 }
             }
 

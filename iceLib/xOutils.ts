@@ -72,7 +72,7 @@ export enum ETypeFichier {
 export enum EnumLibrairieJs {
     pdfMake = "pdfmake.min.js vfs_fonts.js",
     pdfJs = "pdf.js pdf.worker.js",
-    d3js = "d3js.4.11.0.js d3pie.min.js"
+    d3js = "d3.js d3pie.min.js"
 }
 
 export interface iNotificationMessage<T> {
@@ -384,21 +384,21 @@ export class xOutils {
 
         divws.addClass("ws_launch");
 
-        let promesseEmed: Promise<T> = new Promise<T>((resolve, reject) => {
+        let promesseZeus: Promise<T> = new Promise<T>((resolve, reject) => {
 
-           let cryptageEtJeton: Promise<Response> = xOutils.JqueryAjaxCallPromise2(xOutils.convertDevUrlToRelativeUrl("~/xModules/ModuleEmed.aspx/Before_requestWebService_Echange"), parametreAppel, { async: true });
+           let cryptageEtJeton: Promise<Response> = xOutils.JqueryAjaxCallPromise2(xOutils.convertDevUrlToRelativeUrl("~/xModules/ModuleZeus.aspx/Before_requestWebService_Echange"), parametreAppel, { async: true });
 
-            //Cryptage de la requête à envoyer à l'emed destinataire : paramètres d'appel de la méthode
+            //Cryptage de la requête à envoyer à l'zeus destinataire : paramètres d'appel de la méthode
             cryptageEtJeton.then(async (retourBefore: Response)=>
             {
                 let retourBeforeObjet = (await retourBefore.json()).d;
                 //On va verifier le jeton de communication et recuperer la cle correspondante ainsi que la veritable requete a effectuer
-                let requestDistante: Promise<Response> = xOutils.JqueryAjaxCallPromise2(retourBeforeObjet.URL_Emed_Clinique + "/xModules/ModuleEmed.aspx/requestWebService_Echange", { data_echange: retourBeforeObjet }, { async: true });
+                let requestDistante: Promise<Response> = xOutils.JqueryAjaxCallPromise2(retourBeforeObjet.URL_Zeus_Clinique + "/xModules/ModuleZeus.aspx/requestWebService_Echange", { data_echange: retourBeforeObjet }, { async: true });
 
                 requestDistante.then(async (retourRequest: Response)=>
                 {
                     let retourAfterObjet = (await retourRequest.json()).d;
-                    let decryptWithKey: Promise<Response> = xOutils.JqueryAjaxCallPromise2(xOutils.convertDevUrlToRelativeUrl("~/xModules/ModuleEmed.aspx/After_requestWebService_Echange"), { data_echange: retourAfterObjet }, { async: true });
+                    let decryptWithKey: Promise<Response> = xOutils.JqueryAjaxCallPromise2(xOutils.convertDevUrlToRelativeUrl("~/xModules/ModuleZeus.aspx/After_requestWebService_Echange"), { data_echange: retourAfterObjet }, { async: true });
                 
 
                         decryptWithKey.then(async (retour: Response) =>
@@ -411,19 +411,19 @@ export class xOutils {
 
                    
                     decryptWithKey.catch(function (erreur: string) {
-                        console.error("Erreur lors du déchiffrement de la réponse d'un appel vers l'URL " + retourBeforeObjet.URL_Emed_Clinique + ": ", erreur);
+                        console.error("Erreur lors du déchiffrement de la réponse d'un appel vers l'URL " + retourBeforeObjet.URL_Zeus_Clinique + ": ", erreur);
                         xOutils.afficherMessageAlertify("Erreur lors du déchiffrement de la réponse d'un appel vers l'URL ", ETypeAlertify.error);
 
-                         reject("Erreur lors du déchiffrement de la réponse d'un appel vers l'URL " + retourBeforeObjet.URL_Emed_Clinique);
+                         reject("Erreur lors du déchiffrement de la réponse d'un appel vers l'URL " + retourBeforeObjet.URL_Zeus_Clinique);
 
                     });
 
                 });
                 requestDistante.catch(function (erreur: string) {
-                    console.error("Erreur lors d'un appel vers l'URL " + retourBeforeObjet.URL_Emed_Clinique + ": ", erreur);
-                    xOutils.afficherMessageAlertify("Erreur lors d'un appel vers l'URL " + retourBeforeObjet.URL_Emed_Clinique, ETypeAlertify.error);
+                    console.error("Erreur lors d'un appel vers l'URL " + retourBeforeObjet.URL_Zeus_Clinique + ": ", erreur);
+                    xOutils.afficherMessageAlertify("Erreur lors d'un appel vers l'URL " + retourBeforeObjet.URL_Zeus_Clinique, ETypeAlertify.error);
 
-                    reject("Erreur lors d'un appel vers l'URL " + retourBeforeObjet.URL_Emed_Clinique);
+                    reject("Erreur lors d'un appel vers l'URL " + retourBeforeObjet.URL_Zeus_Clinique);
                 });
             });
             cryptageEtJeton.catch(function (erreur: string) {
@@ -435,13 +435,13 @@ export class xOutils {
 
         });
 
-        promesseEmed.then(function () {
+        promesseZeus.then(function () {
             divws.removeClass("ws_launch");
             divws.addClass("ws_ok");
             setTimeout(function () { divws.y.remove(); }, 2000);
         });
 
-        promesseEmed.catch(
+        promesseZeus.catch(
             function (err: any) {
                 divws.removeClass("ws_launch");
                 divws.addClass("ws_error");
@@ -450,7 +450,7 @@ export class xOutils {
                 xOutils.afficherMessageAlertify(err.responseJSON != undefined ? err.responseJSON.Message : err, ETypeAlertify.error);
 
             });
-        return promesseEmed;
+        return promesseZeus;
     
     }
 
@@ -492,7 +492,7 @@ export class xOutils {
                 catch (erreur)
                 {
                     if (monretourstring?.d != null && monretourstring.d.startsWith("InvalidSession:-")) //si c'est une erreur de sesison on ne la remonte a l'utilisateur (pour ne pas avoir de msg rouge avant la deconnection)
-                        console.log("Session Emed invalide, " + monretourstring.d);
+                        console.log("Session Zeus invalide, " + monretourstring.d);
                     else
                         xOutils.AfficheErreurAjax("Erreur des données de retour de la méthode Ajax " + parametreAppel.methode, erreur, divws);
                 }
@@ -1055,7 +1055,7 @@ export class xOutils {
 
     public static afficherMessageErreurLicence(nom_licence: string = null): void {
 
-        let textAAfficher: string = new xLString("La licence {0} nécessaire à l'affichage de ce contenu n'est pas présente sur votre version d'Emed. Veuillez prendre contact avec votre référent.").format([nom_licence != null && nom_licence != "" ? "(" + nom_licence + ") " : ""]);
+        let textAAfficher: string = new xLString("La licence {0} nécessaire à l'affichage de ce contenu n'est pas présente sur votre version d'Zeus. Veuillez prendre contact avec votre référent.").format([nom_licence != null && nom_licence != "" ? "(" + nom_licence + ") " : ""]);
 
         new xxBloqueEcran({
             class: "ErreurLicence",
@@ -1155,7 +1155,7 @@ export class xOutils {
             };
         }
 
-        /*   window.addEventListener("EmedNotify", (e:CustomEvent<iNotificationMessage<T>>) => {
+        /*   window.addEventListener("ZeusNotify", (e:CustomEvent<iNotificationMessage<T>>) => {
                
                if (e.detail.evenement + '_' + e.detail.clefEvenement == evenement + '_' + clefEvenement) {
    
@@ -1196,7 +1196,7 @@ export class xOutils {
 
         }
 
-          //window.dispatchEvent(new CustomEvent <iNotificationMessage<T>>('EmedNotify', {detail:message}))
+          //window.dispatchEvent(new CustomEvent <iNotificationMessage<T>>('ZeusNotify', {detail:message}))
     }
 
     //public static attachTo(parent: JQuery, element: HTMLElement) {

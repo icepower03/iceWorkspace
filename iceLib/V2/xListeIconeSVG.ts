@@ -1588,7 +1588,7 @@ export class xListeIconeSVG {
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	};
 
-	public static emed_soins(): ContenusSVG {
+	public static zeus_soins(): ContenusSVG {
 		let viewBoxContains = `0 0 48 48`;
 		let contenu = ` 
 			<g>
@@ -1621,7 +1621,7 @@ export class xListeIconeSVG {
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	};
 
-	public static emed_perfusions(): ContenusSVG {
+	public static zeus_perfusions(): ContenusSVG {
 		let viewBoxContains = `0 0 27.64 48`;
 		let contenu = `
 			<g>
@@ -1633,7 +1633,7 @@ export class xListeIconeSVG {
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	};
 
-	public static emed_posologie(): ContenusSVG {
+	public static zeus_posologie(): ContenusSVG {
 		let viewBoxContains = `0 0 48 48`;
 		let contenu = `
 			<path class="xsvg-elem xsvg-elem_filled" d="M44,41.1H32.5l-5.7,5.7c0.5,0.3,1.1,0.6,1.7,0.6H44c1.7,0,3.1-1.4,3.1-3.1C47.2,42.5,45.8,41.1,44,41.1z"/>
@@ -1649,7 +1649,7 @@ export class xListeIconeSVG {
 		let epaisseur;
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	};
-	public static emed_suspendre(): ContenusSVG
+	public static zeus_suspendre(): ContenusSVG
 	{
 		let viewBoxContains = `0 0 48 48`;
 		let contenu = `
@@ -1663,7 +1663,7 @@ export class xListeIconeSVG {
 		let epaisseur;
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	};
-	public static emed_prolonger(): ContenusSVG {
+	public static zeus_prolonger(): ContenusSVG {
 		let viewBoxContains = `0 0 48 48`;
 		let contenu = `
 			<g>
@@ -1693,7 +1693,7 @@ export class xListeIconeSVG {
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	}
 
-	//---- Icones Emed ----//
+	//---- Icones Zeus ----//
 
 
 	public static age_patient_nouveau_ne(): ContenusSVG {
@@ -1748,7 +1748,7 @@ export class xListeIconeSVG {
 		let epaisseur;
 		return new ContenusSVG(contenu, viewBoxContains, epaisseur);
 	}
-	//---- FIN Icones Emed ----//
+	//---- FIN Icones Zeus ----//
 
 	//---- Icones Tuiles ----//
 

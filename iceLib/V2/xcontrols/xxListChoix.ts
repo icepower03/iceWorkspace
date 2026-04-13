@@ -77,7 +77,7 @@ export class xxListChoix implements iXElement {
                 class: classParDefaut,
                 titleLocalise: 'sélectionner un élément',
                 textLocalise: '',
-                icone: new IconeSvg(enumIconeSvg.chevron_bas, { taille: tailleIcone.XS, couleurSvg: { couleurIconeComplete:enumCouleur.emed_grisfonce } }),
+                icone: new IconeSvg(enumIconeSvg.chevron_bas, { taille: tailleIcone.XS, couleurSvg: { couleurIconeComplete:enumCouleur.zeus_grisfonce } }),
                 click: function (callback) {
                     callback();
 

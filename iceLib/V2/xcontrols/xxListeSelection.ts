@@ -311,7 +311,7 @@ export class xxListeSelection<T> implements iXElement {
                                         openIt(ordre);
                                         cb();
                                     },
-                                    icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                                    icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                                     optionsAffichage: { tailleBouton: enumTailleBouton.XS, positionIconeBouton: enumPosition.Right },
                                 }));
                             },

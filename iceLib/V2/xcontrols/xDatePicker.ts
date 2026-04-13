@@ -9,7 +9,6 @@ import { xxLabel, enumTypeLabel } from './xxLabel';
 import { xxBouton, enumTailleBouton } from './xxBouton';
 import { xxWrapPanel } from './xxWrapPanel';
 import { xxListeDeroulante } from './xxListeDeroulante';
-import { xxIndicateur } from './xxIndicateur';
 import { xSeparateur } from './xSeparateur';
 import { enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, tailleIcone, Icone } from '../xIcones';
 
@@ -175,7 +174,7 @@ export class xDatePicker implements iXElement {
                                 tailleBouton: enumTailleBouton.XS
                             },
                             titleLocalise: "Changer de mois",
-                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { taille: tailleIcone.XS, couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { taille: tailleIcone.XS, couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                             click: cb => {
                                 openSelect(item);
                                 cb();
@@ -212,7 +211,7 @@ export class xDatePicker implements iXElement {
                                 positionIconeBouton: enumPosition.Right,
                                 tailleBouton: enumTailleBouton.XS
                             },
-                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { taille: tailleIcone.XS, couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                            icone: new IconeSvg(enumIconeSvg.chevron_bas, { taille: tailleIcone.XS, couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                             click: cb => {
                                 openSelect(item);
                                 cb();
@@ -332,16 +331,12 @@ export class xDatePicker implements iXElement {
                     rowStart: rowStart,
                     nbCols: 1,
                     nbRows: 1,
-                    content: new xxIndicateur({
-                        indicateur: new xxLabel({
-                            textVariable: DateSerialisable.getWeek(dateJ).toString(),
-                            type: enumTypeLabel.description,
-                            optionsAffichage: {
-                                margin: { GaucheEtDroite: 2 },
-                            }
-                        }),
-                        titleVariable: new xLString("Semaine {0}").format([DateSerialisable.getWeek(dateJ).toString()]),
-
+                    content: new xxLabel({
+                        textVariable: DateSerialisable.getWeek(dateJ).toString(),
+                        type: enumTypeLabel.description,
+                        optionsAffichage: {
+                            margin: { GaucheEtDroite: 2 },
+                        }
                     })
                 })
 

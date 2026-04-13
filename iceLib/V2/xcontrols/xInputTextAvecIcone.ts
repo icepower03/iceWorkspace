@@ -31,7 +31,7 @@ export class xInputTextAvecIcone implements iXElement {
             options.positionIcone = "Fin";
 
         if (!options.couleurIcone)
-            myThis.couleurIcone = enumCouleur.emed_grisfonce;
+            myThis.couleurIcone = enumCouleur.zeus_grisfonce;
         else
             myThis.couleurIcone = options.couleurIcone;
 
@@ -91,7 +91,7 @@ export class xInputTextAvecIcone implements iXElement {
         myThis.input.setDisabled(disabled);
 
         if (disabled)
-            myThis.icone.setCouleur(enumCouleur.emed_grisclair);
+            myThis.icone.setCouleur(enumCouleur.zeus_grisclair);
         else
             myThis.icone.setCouleur(myThis.couleurIcone);
     }

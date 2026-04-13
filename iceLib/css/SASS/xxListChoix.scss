@@ -1,5 +1,5 @@
 ﻿/***********************************/
-/***** xxListChoix Emed - SCSS *****/
+/***** xxListChoix Zeus - SCSS *****/
 /***********************************/
 
 .xxListChoix {
@@ -15,7 +15,7 @@
         min-width: 100%;
         max-height: 300px;
         flex-direction: column;
-        border: 1px solid $EmedBorder;
+        border: 1px solid $ZeusBorder;
         margin: -1px 0 0 0;
         box-sizing: border-box;
         overflow: auto;
@@ -42,7 +42,7 @@
         }
 
         &.xxListChoix_selected .xxBoutonContent {
-            background-color: $EmedSelected;
+            background-color: $ZeusSelected;
         }
     }
 
@@ -60,7 +60,7 @@
         }
 
         &:hover .xxbouton {
-            background-color: $EmedSelected;
+            background-color: $ZeusSelected;
             animation-duration: 0.5s;
             animation-name: fadeIn;
         }

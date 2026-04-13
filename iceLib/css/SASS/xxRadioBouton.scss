@@ -1,5 +1,5 @@
 ﻿/*************************************/
-/***** xxRadioBouton Emed - SCSS *****/
+/***** xxRadioBouton Zeus - SCSS *****/
 /*************************************/
 
 .xxRadioButton {
@@ -72,12 +72,12 @@
                 position: relative;
                 font-weight: bold;
                 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-                background-color: $EmedSelected;
+                background-color: $ZeusSelected;
             }
 
             & > .xxBoutonContainer .xxBoutonContent {
                 position: relative;
-                background-color: $EmedSelected;
+                background-color: $ZeusSelected;
 
                 &.t20 {
                     border-color: rgb(0,0,0,0.2);
@@ -166,7 +166,7 @@
             padding-left: 32px;
 
             &:before {
-                border: 1px solid $EmedBorder;
+                border: 1px solid $ZeusBorder;
                 top: 4px;
                 left: 10px;
             }
@@ -197,7 +197,7 @@
     &.tleg {
 
         &:before {
-            border-color: $EmedBorder;
+            border-color: $ZeusBorder;
         }
 
         &:after {

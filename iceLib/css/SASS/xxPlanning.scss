@@ -1,5 +1,5 @@
 ﻿/*************************************/
-/***** xxPlanning Emed - SCSS *****/
+/***** xxPlanning Zeus - SCSS *****/
 /*************************************/
 
 @import "couleurs.scss";
@@ -107,7 +107,7 @@
     }
     /*Colonnes*/
     .PlanningColonne {
-        background: $EmedFondGris;
+        background: $ZeusFondGris;
         min-width: 170px;
     }
     /*Première colonne*/
@@ -121,7 +121,7 @@
             width: 100%;
             height: 100%;
             position: sticky;
-            border-bottom: 1px solid $EmedBorder;
+            border-bottom: 1px solid $ZeusBorder;
             top: 0;
             box-sizing: border-box;
 
@@ -167,7 +167,7 @@
     }
     /*-------------Elements---------------*/
     .TimeLineNow {
-        border-top: 2px dashed $EmedBleu;
+        border-top: 2px dashed $ZeusBleu;
     }
 
     .PlanningDispoPlage {
@@ -232,7 +232,7 @@
         z-index: 999;
 
         span.libelleRessourceBloc {
-            background: rgba(102,102,102,.66); // $EmedFondGris:€666666 mais en opacité .66 (\m/)
+            background: rgba(102,102,102,.66); // $ZeusFondGris:€666666 mais en opacité .66 (\m/)
             padding: 5px;
             color: white;
             text-align: center;
@@ -248,7 +248,7 @@
         opacity: 0.8;
         overflow: auto;
         border-radius: 2px;
-        border: 1px solid $EmedBorder;
+        border: 1px solid $ZeusBorder;
         box-sizing: border-box;
         position: relative;
         user-select: none;

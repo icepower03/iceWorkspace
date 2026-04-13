@@ -63,7 +63,7 @@ export class xxListeDeroulanteAutomatique implements iXElement {
                         },
                         titleLocalise: "Choisir un élément",
                         textVariable: ((valeur)) ?? new xLString("Choisir un élément").text,
-                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.emed_grisfonce } }),
+                        icone: new IconeSvg(enumIconeSvg.chevron_bas, { couleurSvg: { couleurIconeComplete: enumCouleur.zeus_grisfonce } }),
                         optionsAffichage: { tailleBouton: enumTailleBouton.XS, positionIconeBouton: enumPosition.Right },
                     }));
                 },

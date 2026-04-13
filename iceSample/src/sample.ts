@@ -7,9 +7,7 @@ import {
     xxLabel,
     xxBouton,
     enumTypeBouton,
-    xxShowRoomLoader,
-    xxShowRoomContainer,
-    xxShowRoomDeprecated
+    xxShowRoom
 } from 'icelib';
 
 xLib.init(
@@ -45,18 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
         typeBouton: enumTypeBouton.Standard,
         click: (cb?: () => void) => { cb?.(); },
     }));
-/*
-    // ── ShowRoom (API actuelle) ────────────────────────────────────────────
-    // 1. Enregistrer les composants dans le registre statique
-    xxShowRoomLoader.XElement_Load();       // éléments x* (xDiv, xInput, ...)
-    xxShowRoomLoader.XXElement_Load();      // composants xx* (xxLabel, xxBouton, ...)
-    xxShowRoomLoader.XElement_Icone_Load(); // icônes
 
-    // 2. Créer et ajouter le container showroom
-    xPage.append(new xxShowRoomContainer({}));
-*/
-
-new xxShowRoomDeprecated({ page: xPage });
+new xxShowRoom({ page: xPage });
     // ── Footer ────────────────────────────────────────────────────────────
     xPage.appendZoneFooter(new xxLabel({ textLocalise: 'Footer' }));
 

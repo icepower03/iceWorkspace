@@ -1,5 +1,5 @@
 ﻿/***********************************/
-/***** xxToolTip Emed - SCSS *****/
+/***** xxToolTip Zeus - SCSS *****/
 /***********************************/
 
 .xxTooltip {
@@ -35,7 +35,7 @@
     }
 
     .xxTooltip_Box_Header {
-        background-color: $EmedBleu;
+        background-color: $ZeusBleu;
         padding: 6px;
         border-radius: 5px 5px 0 0;
 
@@ -46,7 +46,7 @@
     }
 
     .xxTooltip_Box_Footer {
-        background-color: $EmedFondGris;
+        background-color: $ZeusFondGris;
         display: flex;
         justify-content: flex-end;
         padding: 5px;
@@ -55,7 +55,7 @@
     }
 
     .xxTooltip_Box_Header_Custom {
-        border: 1px solid $EmedBorder;
+        border: 1px solid $ZeusBorder;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
     }
@@ -86,7 +86,7 @@
         padding: 8px;
         background-color: #fff;
         position: sticky;
-        border: 1px solid $EmedBorder;
+        border: 1px solid $ZeusBorder;
         border-radius: 5px;
         @include scrollbarFine;
 

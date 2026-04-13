@@ -1,5 +1,5 @@
 ﻿/*********************************/
-/***** xxTableau Emed - SCSS *****/
+/***** xxTableau Zeus - SCSS *****/
 /*********************************/
 
 @import "couleurs.scss";
@@ -81,7 +81,7 @@
     color: #000;
     width: 100%;
     border-spacing: 0;
-    border-bottom: 1px solid $EmedBorder;
+    border-bottom: 1px solid $ZeusBorder;
 
     .xxTableauHeader {
         user-select: none;
@@ -110,7 +110,7 @@
 
         td, th {
             padding: 5px;
-            background-color: $EmedBleu;
+            background-color: $ZeusBleu;
             color: #fff;
         }
 
@@ -321,16 +321,16 @@
 
     .tleg & {
         .xxTableauItem:nth-child(even) {
-            background-color: $EmedFondGris;
+            background-color: $ZeusFondGris;
         }
 
         .xxTableauItem:hover {
-            background-color: $EmedSelected;
+            background-color: $ZeusSelected;
             transition: background-color 0s $easingAnimationZinzin;
         }
 
         .xxTableauItem.ligneSelectionnee, .xxTableauItem.ligneSelectionnee td {
-            background-color: $EmedSelected;
+            background-color: $ZeusSelected;
         }
 
         th,
@@ -342,7 +342,7 @@
 
     .tleg.xxTableau_avecLignesDepliables & {
         tr:nth-of-type(4n+2), tr:nth-of-type(4n+3) {
-            background-color: $EmedFondGris;
+            background-color: $ZeusFondGris;
         }
 
         tr:nth-of-type(4n+4), tr:nth-of-type(4n+5) {
@@ -373,7 +373,7 @@
         background-color: $coul-t20-bgtheme;
         /*&.selected {
             td {
-                background: $EmedSelected;
+                background: $ZeusSelected;
             }
         }*/
         &.cliquable:hover {
@@ -454,7 +454,7 @@
 
             .xxTableauItem:nth-child(even) {
                 td:first-child {
-                    background-color: $EmedFondGris;
+                    background-color: $ZeusFondGris;
                 }
             }            
         }
@@ -464,7 +464,7 @@
     .xxTableauTools {
         display: flex;
         height: auto;
-        background: $EmedFondGris;
+        background: $ZeusFondGris;
         flex-shrink: 0;
 
         &.t20 {
@@ -561,8 +561,8 @@
         justify-content: center;
         align-items: center;
         padding: 6px 0;
-        box-shadow: 0 1px $EmedBorder inset;
-        background: $EmedFondGris;
+        box-shadow: 0 1px $ZeusBorder inset;
+        background: $ZeusFondGris;
         border-radius: 0 0 5px 5px;
     }
 
@@ -611,8 +611,8 @@
             }
 
         .xxbouton.habillage_modeStd {
-            border: 3px solid $EmedBleu;
-            color: $EmedBleu;
+            border: 3px solid $ZeusBleu;
+            color: $ZeusBleu;
             border-radius: 5px;
             font-size: 17px;
             transition: all $vitesseAnimationRapide $easingAnimationZinzin;
@@ -623,7 +623,7 @@
                     transform: translate(5px,-5px);
 
                 span.iconeP12 {
-                    background-color: $EmedBleu !important;
+                    background-color: $ZeusBleu !important;
                     transition: all $vitesseAnimationRapide $easingAnimationZinzin;
                     color: white;
                 }

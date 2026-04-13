@@ -72,7 +72,7 @@
 
 /* Drag and Drop */
 .isCibleDrop {
-    background-color: rgba($EmedBleu,.2) !important;
+    background-color: rgba($ZeusBleu,.2) !important;
     color: #000 !important;
     position: relative;
 
@@ -82,7 +82,7 @@
         top: -7px;
         width: 5px;
         height: calc(100% + 14px);
-        border: 3px solid rgba($EmedBleu,.6);
+        border: 3px solid rgba($ZeusBleu,.6);
         box-sizing: border-box;
     }
 

@@ -1,5 +1,5 @@
 ﻿/***********************************/
-/***** xxLabelContainer Emed - SCSS *****/
+/***** xxLabelContainer Zeus - SCSS *****/
 /***********************************/
 
 @import "couleurs.scss";
@@ -149,13 +149,13 @@
     }
 
     &.habillageLabel_info {
-        background: $EmedFondGris;
+        background: $ZeusFondGris;
     }
 
     &.habillageLabel_infoImportante {
-        background: $EmedFondGris;
-        border: 1px solid $EmedBorder;
-        border-left: 3px solid $EmedBorder;
+        background: $ZeusFondGris;
+        border: 1px solid $ZeusBorder;
+        border-left: 3px solid $ZeusBorder;
         border-radius: 0 3px 3px 0;
     }
 
@@ -168,7 +168,7 @@
         &:before {
             content: "";
             border: 4px solid rgba(0, 0, 0, 0.1);
-            border-top: 4px solid $EmedBleu;
+            border-top: 4px solid $ZeusBleu;
             border-radius: 50%;
             width: 35px;
             height: 35px;
@@ -183,9 +183,9 @@
 
 
 
-    @each $couleur, $codecouleur in $couleurEmed {
+    @each $couleur, $codecouleur in $couleurZeus {
 
-        &.couleurTexte_emed_#{$couleur} .xxLabelContainerTitre {
+        &.couleurTexte_zeus_#{$couleur} .xxLabelContainerTitre {
             color: $codecouleur;
         }
     }

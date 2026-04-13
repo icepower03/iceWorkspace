@@ -9,8 +9,8 @@
     justify-content: center;
 
     .Glissiere {
-        background-color: $EmedFondGris;
-        border: 1px solid $EmedBorder;
+        background-color: $ZeusFondGris;
+        border: 1px solid $ZeusBorder;
         border-width: 1px 0px;
         height: 30px;
         box-sizing: border-box;
@@ -18,7 +18,7 @@
 
         .boutonGlissiere {
             background-color: #ffffff;
-            border: 1px solid $EmedBorder;
+            border: 1px solid $ZeusBorder;
             border-width: 0px 1px;
             position: relative;
             padding: 0px;
@@ -37,7 +37,7 @@
 
             &.xxLabel {
                 margin: 0px;
-                color: $EmedBleu;
+                color: $ZeusBleu;
                 display: flex;
                 justify-content: center;
                 padding-top: 3px;
@@ -55,7 +55,7 @@
                 }
             }*/
             &:hover {
-                background-color: $EmedSelected;
+                background-color: $ZeusSelected;
                 cursor: grab;
             }
         }
