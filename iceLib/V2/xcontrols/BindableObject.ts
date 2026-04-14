@@ -1,4 +1,4 @@
-﻿
+
 export class BindableObject<T>
 {
     private _value: T;

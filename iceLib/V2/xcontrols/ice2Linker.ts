@@ -1,10 +1,10 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Label } from './ice2Label';
 import { ice2ContainerEvent } from './ice2ContainerEvent';
 import { ice2RouteContainer } from './ice2RouteContainer';
 import { IconeP12, enumIconeP12, Icone } from '../iceIcones';
+import { iceOutils } from '../../iceOutils';
 
      interface Optionsice2Linker {
         renderLienTheorique: () => Promise<{ lien: string, params: string[] }>;

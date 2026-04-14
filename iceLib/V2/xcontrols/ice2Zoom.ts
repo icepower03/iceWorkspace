@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, iTestable, enumPosition } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { ice2WrapPanel } from './ice2WrapPanel';

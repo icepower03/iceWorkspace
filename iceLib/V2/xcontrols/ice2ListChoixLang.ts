@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, enumPosition } from '../iceBase';
 import { ice2ListeDeroulante } from './ice2ListeDeroulante';
 import { ice2LabelContainer, enumPositionDuContenu } from './ice2LabelContainer';

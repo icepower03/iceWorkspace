@@ -1,7 +1,6 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, Container, enumPosition } from '../iceBase';
 import { BindableObject } from './BindableObject';
-import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+import { affichericeElements, cachericeElements, videriceElements } from '../../iceStaticFunctions';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';
 import { ice2Bouton, optionsAffichageBouton, enumTailleBouton, enumTypeBouton } from './ice2Bouton';
@@ -10,7 +9,8 @@ import { iceIconeAvecAction } from './iceIconeAvecAction';
 import { Icone, IconeExterne } from '../iceIcones';
 import { iceInputCheckBox } from './iceInputCheckBox';
 import { ice2ContainerEvent } from './ice2ContainerEvent';
-﻿export enum enumTypeCheckbox {
+import { iceLString } from '../iceLString';
+export enum enumTypeCheckbox {
     standard,
     slide,
     texte,

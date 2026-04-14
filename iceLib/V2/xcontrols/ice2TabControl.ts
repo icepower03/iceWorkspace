@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, enumTypeOrientation, enumCouleur, enumPosition } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceOutils } from '../../iceOutils';
@@ -10,7 +9,7 @@ import { ice2StackPanel } from './ice2StackPanel';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Grid, ice2GridItem, enumAlignementContenu } from './ice2Grid';
 import { ice2Dialog, enumTypeAlerte } from './ice2Dialog';
-import { ice2RadioButton, ETypeBouton } from './ice2RadioButton';
+import { ice2RadioButton, ETypeBouton, itemRadioButton } from './ice2RadioButton';
 import { ice2InputNumerique } from './ice2InputNumerique';
 import { Icone, enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, tailleIcone } from '../iceIcones';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
@@ -20,6 +19,9 @@ import { ice2PageWrapper } from './ice2PageWrapper';
 import { ice2LabelModifiable } from './ice2LabelModifiable';
 import { ice2ListeSelection } from './ice2ListeSelection';
 import { ice2Boxer, enumBoxerTaille } from './ice2Boxer';
+import { xElementHolder } from '../../iceElement';
+import { cachericeElements, affichericeElements, videriceElements } from '../../iceStaticFunctions';
+import { iceLString } from '../iceLString';
 
 interface OptionsTabControl {
     id?: string;
@@ -66,7 +68,7 @@ interface OptionsGestionGroupeTab {
 
 }
 
-interface OptionsTabItem {
+export interface OptionsTabItem {
     icone?: Icone;
     id?: string;
     class?: string;

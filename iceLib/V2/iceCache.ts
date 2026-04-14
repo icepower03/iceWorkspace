@@ -1,4 +1,4 @@
-﻿
+
 import { xClass, Dictionnaire } from './iceBase';
 import { iceOutils } from '../iceOutils';
 declare function xRequire(url: string): any;

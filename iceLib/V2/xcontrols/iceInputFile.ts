@@ -1,7 +1,8 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
+import { cachericeElements } from '../../iceStaticFunctions';
+import { iceLString } from '../iceLString';
 import { iceElement } from '../../iceElement';
-import { iceDiv } from './iceDiv';
+import { iceDiv, OptionsDiv } from './iceDiv';
 import { iceSpan } from './iceSpan';
 import { ice2Bouton } from './ice2Bouton';
 import { Icone, IconeP12, enumIconeP12, enumIconeSvg, IconeSvg } from '../iceIcones';

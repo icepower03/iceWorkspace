@@ -1,9 +1,8 @@
-// @ts-nocheck
-import { ice2ListeDeroulante } from './ice2ListeDeroulante';
+import { ice2ListeDeroulante, OptionsListeDeroulante } from './ice2ListeDeroulante';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
-import { enumCouleur, enumPosition } from '../iceBase';
+import { enumCouleur, enumPosition, iXElementHolder } from '../iceBase';
 import { enumIconeSvg, IconeSvg, Icone } from '../iceIcones';
-﻿interface OptionsListeDeroulanteSimpleNePlusUtiliser<T> {
+interface OptionsListeDeroulanteSimpleNePlusUtiliser<T> {
     defaultKeyValue: string;
     //liste des données à afficher
     donnees: T[];

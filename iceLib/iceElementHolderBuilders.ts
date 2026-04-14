@@ -71,3 +71,46 @@ xElementHolder.prototype.ice2ToolTip             = function(o)      { this.appen
 xElementHolder.prototype.ice2Arbre               = function(o)      { this.append(new ice2Arbre(o)); return this; };
 xElementHolder.prototype.ice2InputIntellisense   = function(o, out) { return _b.call(this, ice2InputIntellisense, o, out); };
 xElementHolder.prototype.ice2Page                = function(o, out) { return _b.call(this, ice2PageWrapper, o, out); };
+
+// Module augmentation: déclare les méthodes builder sur xElementHolder pour le type-checking
+declare module './iceElement' {
+    interface xElementHolder {
+        xdiv(o?: any, out?: any): xElementHolder;
+        xspan(o?: any, out?: any): xElementHolder;
+        xul(o?: any, out?: any): xElementHolder;
+        xinputText(o?: any, out?: any): xElementHolder;
+        xinputCheckBox(o?: any, out?: any): xElementHolder;
+        xinputDate(o?: any): xElementHolder;
+        xinputDateAndTime(o?: any): xElementHolder;
+        ice2Label(o?: any, out?: any): xElementHolder;
+        ice2Bouton(o?: any, out?: any): xElementHolder;
+        ice2LabelModifiable(o?: any): xElementHolder;
+        ice2LabelTimeModifiable(o?: any): xElementHolder;
+        ice2LabelContainer(o?: any, out?: any): xElementHolder;
+        ice2CheckBox(o?: any, out?: any): xElementHolder;
+        ice2RadioButton(o?: any, out?: any): xElementHolder;
+        ice2AutoComplete(o?: any): xElementHolder;
+        ice2Menu(o?: any): xElementHolder;
+        ice2ListChoix(o?: any): xElementHolder;
+        ice2List(o?: any, out?: any): xElementHolder;
+        ice2ListeChoixLang(o?: any, out?: any): xElementHolder;
+        ice2Tableau(o?: any, out?: any): xElementHolder;
+        ice2StackPanel(o?: any, out?: any): xElementHolder;
+        ice2DockPanelDeprecated(o?: any, out?: any): xElementHolder;
+        ice2WrapPanel(o?: any, out?: any): xElementHolder;
+        ice2TabControl(o?: any): xElementHolder;
+        ice2TreeTabControl(o?: any, out?: any): xElementHolder;
+        ice2ZoneModulable(o?: any, out?: any): xElementHolder;
+        ice2ToolTip(o?: any): xElementHolder;
+        ice2Arbre(o?: any): xElementHolder;
+        ice2InputIntellisense(o?: any, out?: any): xElementHolder;
+        ice2Page(o?: any, out?: any): xElementHolder;
+    }
+}
+
+declare module './V2/iceBase' {
+    interface iXElementHolder {
+        ice2LabelContainer(o?: any, out?: any): iXElementHolder;
+        ice2ToolTip(o?: any): iXElementHolder;
+    }
+}

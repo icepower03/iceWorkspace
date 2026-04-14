@@ -1,9 +1,8 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, iXElementHolderEnable, optionsAffichage, iTestable, Container } from '../iceBase';
 import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';
-﻿interface OptionsStackPanel extends iTestable {
+interface OptionsStackPanel extends iTestable {
     id?: string;
     class?: string;
     initContent?: iXElement[];

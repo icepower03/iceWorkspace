@@ -1,4 +1,4 @@
-﻿import { iXElement, iXElementHolder, optionsAffichage } from '../iceBase';
+import { iXElement, iXElementHolder, optionsAffichage } from '../iceBase';
 import { iceLString } from '../iceLString';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';

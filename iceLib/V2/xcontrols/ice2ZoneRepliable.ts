@@ -1,10 +1,10 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { ice2StackPanel } from './ice2StackPanel';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { Icone, enumIconeP12, IconeP12 } from '../iceIcones';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
 
 export enum enumXxZoneRepliablePosition { droite, gauche }
 export enum enumXxZoneRepliableCouleurFleche {Bleu,Blanc,Noir,Perso}

@@ -1,18 +1,32 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder } from '../iceBase';
+import { CelluleMoisJour } from './CelluleMoisJour';
+import { iXElement, iXElementHolder, enumPosition } from '../iceBase';
 import { iceOutils } from '../../iceOutils';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { iceDiv } from '../xcontrols/iceDiv';
-import { ice2Grid, ice2GridItem } from '../xcontrols/ice2Grid';
-import { ice2Label } from '../xcontrols/ice2Label';
+import { ice2Grid, ice2GridItem, enumAlignementContenu } from '../xcontrols/ice2Grid';
+import { ice2Label, enumTypeLabel } from '../xcontrols/ice2Label';
 import { ice2Bouton, enumTailleBouton } from '../xcontrols/ice2Bouton';
 import { ice2WrapPanel } from '../xcontrols/ice2WrapPanel';
 import { ice2StackPanel } from '../xcontrols/ice2StackPanel';
 import { ice2ToolTip } from '../xcontrols/ice2ToolTip';
-import { ice2Zoom } from '../xcontrols/ice2Zoom';
+import { ice2Zoom, enumAffichageZoom } from '../xcontrols/ice2Zoom';
 import { ice2ContainerEvent } from '../xcontrols/ice2ContainerEvent';
 import { PlanningColonne } from './PlanningColonne';
 import { PlanningRdv, PlanningDisponibilite } from './PlanningElements';
+import { PlanningRessource, PlanningParamUser } from './PlanningElements';
+import { ice2MenuContextuel } from '../xcontrols/ice2MenuContextuel';
+import { BindableObject } from '../xcontrols/BindableObject';
+import { ice2PageWrapper } from '../xcontrols/ice2PageWrapper';
+import { ice2Boxer, enumBoxerTaille } from '../xcontrols/ice2Boxer';
+import { ice2LabelContainer, enumPositionDuContenu } from '../xcontrols/ice2LabelContainer';
+import { IconeP12, enumIconeP12, tailleIcone } from '../iceIcones';
+import { ice2ListeDeroulante } from '../xcontrols/ice2ListeDeroulante';
+import { ice2CheckBox } from '../xcontrols/ice2CheckBox';
+import { ice2InputNumerique } from '../xcontrols/ice2InputNumerique';
+import { iceTime } from '../iceTime';
+import { iceSpan } from '../xcontrols/iceSpan';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { iceLString } from '../iceLString';
 
 interface optionPlanningBase {
     Rdv?: PlanningRdv[];

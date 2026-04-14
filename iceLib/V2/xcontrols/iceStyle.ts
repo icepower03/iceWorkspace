@@ -1,4 +1,4 @@
-﻿import { iceElement } from '../../iceElement';
+import { iceElement } from '../../iceElement';
 import { iceOutils } from '../../iceOutils';
 import { iXElement, Dictionnaire, OptionsCotesCSS, enumCote, enumCurseur, enumStyleBorderCSS, optionsAffichage, enumCouleurHexa } from '../iceBase';
 import * as iceDomUtils from '../iceDomUtils';

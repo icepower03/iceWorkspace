@@ -1,9 +1,7 @@
-// @ts-nocheck
+import { OptionsHtml } from '../iceBase';
 import { iceElement } from '../../iceElement';
-﻿
 
-interface OptionsIFrame extends OptionsHtml  {
-  
+interface OptionsIFrame extends OptionsHtml {
     src?: string;
 }
 
@@ -20,8 +18,8 @@ export class iceIFrame extends iceElement {
     public setSrc(url: string) {
         let myThis: iceIFrame = this;
         (<HTMLIFrameElement>myThis.y).src = url;
-
     }
+
     public remove() {
         let myThis: iceIFrame = this;
         (<HTMLIFrameElement>myThis.y).remove();

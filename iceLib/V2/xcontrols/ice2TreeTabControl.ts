@@ -1,6 +1,6 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, enumTypeOrientation } from '../iceBase';
-import { ice2TabControl, ice2TabItem } from './ice2TabControl';
+import { ice2TabControl, ice2TabItem, OptionsTabItem } from './ice2TabControl';
+import { xElementHolder } from '../../iceElement';
 
 interface OptionsTreeTabControl {
     id?: string;

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, optionsAffichage, enumPosition } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceTime } from '../iceTime';
@@ -16,7 +15,11 @@ import { ice2StackPanel } from './ice2StackPanel';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Label, enumTypeLabel } from './ice2Label';
-﻿
+import { iceMaths } from '../iceMaths';
+import { iceOutils } from '../../iceOutils';
+import { iceLString } from '../iceLString';
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+
 
 export enum enumTypeAffichePicker { InLine, AvecPicker, SansPicker }
 

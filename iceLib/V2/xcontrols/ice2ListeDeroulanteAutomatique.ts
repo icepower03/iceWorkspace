@@ -1,11 +1,11 @@
-// @ts-nocheck
 import { iXElement, enumCouleur, enumPosition } from '../iceBase';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2ListeDeroulante } from './ice2ListeDeroulante';
-import { ice2RadioButton } from './ice2RadioButton';
+import { ice2RadioButton, ETypeBouton, itemRadioButton } from './ice2RadioButton';
 import { ice2Bouton, enumTailleBouton, enumStyleBouton, enumCouleurBouton } from './ice2Bouton';
 import { ice2Label } from './ice2Label';
 import { enumIconeSvg, IconeSvg, Icone } from '../iceIcones';
+import { iceLString } from '../iceLString';
 
 interface OptionListeDeroulanteAutomatique {
     data: string[],

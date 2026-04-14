@@ -1,4 +1,4 @@
-﻿import { iceElement } from '../../iceElement';
+import { iceElement } from '../../iceElement';
 import { OptionsHtml, optionsAffichage, enumCouleur } from '../iceBase';
 import { iceLString } from '../iceLString';
 import { iceStyle } from './iceStyle';

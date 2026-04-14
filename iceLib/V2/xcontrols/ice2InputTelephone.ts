@@ -1,4 +1,8 @@
-﻿// @ts-nocheck
+import { iXElement } from '../iceBase';
+import { iceDiv } from './iceDiv';
+import { ice2LabelModifiable } from './ice2LabelModifiable';
+import { iceOutils } from '../../iceOutils';
+import { ice2Label } from './ice2Label';
 interface OptionsInputTelephone
 {
     valeur?: string;

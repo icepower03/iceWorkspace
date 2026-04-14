@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, enumVisibility, Container } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { BindableObject } from './BindableObject';
@@ -9,7 +8,9 @@ import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2StackPanel } from './ice2StackPanel';
 import { ice2Grid, ice2GridItem } from './ice2Grid';
 import { ice2Label, enumTypeLabel } from './ice2Label';
-﻿
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { xElementHolder } from '../../iceElement';
+
 
 export enum enumTypeTri { asc, desc, aucun }
 

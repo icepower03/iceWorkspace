@@ -1,10 +1,10 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { ice2Grid, ice2GridItem, enumAlignementContenu } from './ice2Grid';
 import { ice2Bouton, enumTailleBouton, enumTypeBouton } from './ice2Bouton';
 import { ice2ImageTabByte, enumTypeImage } from './ice2ImageTabByte';
 import { ice2Label } from './ice2Label';
 import { enumIconeSvg, IconeSvg, tailleIcone, Icone } from '../iceIcones';
+import { iceLString } from '../iceLString';
 
 interface OptionCarrousel {
     photos64: string[],

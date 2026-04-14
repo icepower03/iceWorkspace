@@ -1,4 +1,4 @@
-﻿
+
 import { iceElement, xElementHolder } from '../../iceElement';
 import { OptionsHtml, iXElementHolderEnable } from '../iceBase';
 import { iceLString } from '../iceLString';

@@ -1,8 +1,8 @@
-// @ts-nocheck
-﻿
+
 import { iXElement, optionsAffichage, Container } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
 
 export enum enumAlignementVerticalWrapPanel { haut, centre, bas }
 export enum enumAlignementHorizontalWrapPanel { Gauche, Centre, Droite }

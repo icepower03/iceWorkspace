@@ -1,9 +1,10 @@
-// @ts-nocheck
-import { iXElement, OptionsHtml, enumCouleur } from '../iceBase';
+import { OptionsSelect } from './ice2ListeDeroulante';
+import { iXElement, OptionsHtml, enumCouleur, Container, CleValeur } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { ice2Bouton } from './ice2Bouton';
 import { iceIconeAvecAction } from './iceIconeAvecAction';
 import { Icone, enumIconeP12, enumIconeSvg, IconeP12, IconeSvg, tailleIcone } from '../iceIcones';
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
 
 export class ice2ListChoix implements iXElement {
     private element: iceDiv;

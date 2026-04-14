@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, optionsAffichage, enumCurseur } from '../iceBase';
 import { iceLString } from '../iceLString';
 import { iceTime } from '../iceTime';
@@ -7,6 +6,8 @@ import { ice2LabelContainer } from './ice2LabelContainer';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { xInputTime } from './iceInputDate';
 import { IconeSvg, enumIconeSvg, tailleIcone, Icone } from '../iceIcones';
+import { affichericeElements } from '../../iceStaticFunctions';
+import { iceStyle } from './iceStyle';
 
 interface OptionsLabelTimeModifiable {
     id?: string;

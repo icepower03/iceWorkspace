@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { iceTime } from '../iceTime';
 import { ice2Grid, ice2GridItem } from './ice2Grid';

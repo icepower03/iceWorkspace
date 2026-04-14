@@ -1,16 +1,15 @@
-// @ts-nocheck
-import { iceElement } from '../../iceElement';
-﻿
+import { OptionsHtml, iXElementHolder, iXElementHolderEnable } from '../iceBase';
+import { iceElement, xElementHolder } from '../../iceElement';
 
-export class iceUl extends iceElement implements iXElementHolderEnable{
-
+export class iceUl extends iceElement implements iXElementHolderEnable {
     private xh: xElementHolder;
+
     get asHolder(): iXElementHolder {
         return this.xh;
     }
 
-    constructor(options?: OptionsHtml)
-    {
+    constructor(options?: OptionsHtml) {
         super("ul", options);
-        this.xh = new xElementHolder(this);}
+        this.xh = new xElementHolder(this);
+    }
 }

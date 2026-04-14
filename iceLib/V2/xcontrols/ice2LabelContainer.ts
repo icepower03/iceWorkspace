@@ -1,11 +1,12 @@
-// @ts-nocheck
+import { OptionsHref } from './iceHref';
+import { OptionsLabel } from './ice2Label';
 import { iXElement, iXElementHolder, iXElementHolderEnable, optionsAffichage, enumVisibility, Container, enumPosition } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';
 import { ice2Label, enumTypeLabel, enumHabillageLabel, optionsAffichageLabel } from './ice2Label';
-﻿export enum enumPositionDuContenu { haut, bas, gauche, droite }
+export enum enumPositionDuContenu { haut, bas, gauche, droite }
 export enum enumJustificationDuContenu { debut, centre, fin }
 
 interface optionsAffichageLabelContainer extends optionsAffichageLabel

@@ -1,4 +1,4 @@
-﻿
+
 import { iceCache } from './iceCache';
 
 /**

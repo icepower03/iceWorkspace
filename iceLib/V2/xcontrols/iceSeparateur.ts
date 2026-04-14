@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { iXElement, enumTypeOrientation } from '../iceBase';
+import { iXElement, enumTypeOrientation, OptionsCotesCSS } from '../iceBase';
 import { iceDiv } from './iceDiv';
 
 export enum enumEpaisseurSeparation{
@@ -7,7 +6,7 @@ export enum enumEpaisseurSeparation{
     large = "xsep-epais_l"
 }
 
-interface optionXSeparateur
+export interface optionXSeparateur
 {
     class?: string;
     orientation: enumTypeOrientation;

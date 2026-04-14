@@ -1,4 +1,4 @@
-﻿import { iXElement, enumVisibility, optionsAffichage, enumPosition, OptionsHtml } from '../iceBase';
+import { iXElement, enumVisibility, optionsAffichage, enumPosition, OptionsHtml } from '../iceBase';
 import { iceLString } from '../iceLString';
 import { iceDiv } from './iceDiv';
 import { iceSpan } from './iceSpan';

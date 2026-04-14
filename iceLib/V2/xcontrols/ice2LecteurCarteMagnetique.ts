@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, enumPosition } from '../iceBase';
 import { xInputText } from './iceInput';
 import { ice2Bouton } from './ice2Bouton';
@@ -8,6 +7,7 @@ import { ice2Label, enumTypeLabel } from './ice2Label';
 import { IconeP12, enumIconeP12, Icone } from '../iceIcones';
 import { ice2Grid, ice2GridItem, enumAlignementContenu } from './ice2Grid';
 import { ice2ImageTabByte, enumTypeImage } from './ice2ImageTabByte';
+import { iceOutils, ETypeAlertify } from '../../iceOutils';
 
 interface OptionsLecteurCarteMagnetique
 {

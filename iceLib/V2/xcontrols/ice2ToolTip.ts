@@ -1,13 +1,13 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder, optionsAffichage, iTestable, enumPosition, enumCouleur } from '../iceBase';
+import { iXElement, iXElementHolder, optionsAffichage, iTestable, enumPosition, enumCouleur, enumCouleurHexa } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';
 import { ice2ContainerEvent } from './ice2ContainerEvent';
 import { ice2Label } from './ice2Label';
-import { ice2Bouton, enumTailleBouton, optionsAffichageBouton } from './ice2Bouton';
+import { ice2Bouton, enumTailleBouton, optionsAffichageBouton, enumComportementBouton, optionButton } from './ice2Bouton';
 import { Icone } from '../iceIcones';
 import { ice2StackPanel } from './ice2StackPanel';
-﻿interface OptionsToolTip
+import { iceLString } from '../iceLString';
+interface OptionsToolTip
 {
     id?: string;
     class?: string;

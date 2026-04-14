@@ -1,4 +1,4 @@
-﻿import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
 import { iXElementHolder, iXElement } from '../iceBase';
 import { iceDiv } from './iceDiv';
 

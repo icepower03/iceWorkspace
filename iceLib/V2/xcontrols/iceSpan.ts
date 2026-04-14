@@ -1,4 +1,4 @@
-﻿import { iceElement } from '../../iceElement';
+import { iceElement } from '../../iceElement';
 import { OptionsHtml } from '../iceBase';
 import { iceLString } from '../iceLString';
 

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { ice2Boxer, enumBoxerTaille } from './ice2Boxer';
 import { ice2StackPanel } from './ice2StackPanel';

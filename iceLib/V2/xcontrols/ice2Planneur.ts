@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder } from '../iceBase';
+import { iXElement, iXElementHolder, iXElementHolderEnable, Dictionnaire } from '../iceBase';
 import { iceElement } from '../../iceElement';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { iceDiv } from './iceDiv';
@@ -8,6 +7,8 @@ import { ice2Label } from './ice2Label';
 import { ice2Bouton } from './ice2Bouton';
 import { ice2StackPanel } from './ice2StackPanel';
 import { ice2WrapPanel } from './ice2WrapPanel';
+import { iceSpan } from './iceSpan';
+import { iceLString } from '../iceLString';
 
 interface OptionsPlanneur {
     listeRessources: PlanneurRessource[];

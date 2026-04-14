@@ -1,4 +1,5 @@
-// @ts-nocheck
+import { iXElement, optionsAffichage } from '../iceBase';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
 import { ObservableCollection } from './ObservableCollection';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';

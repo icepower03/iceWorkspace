@@ -1,4 +1,4 @@
-﻿// Pierre CHEVALIER                        - ISIMA
+// Pierre CHEVALIER                        - ISIMA
 // Fichier etendant les methodes de l'objet date :
 // Methode statique :
 //  diffEntreDeuxDates()

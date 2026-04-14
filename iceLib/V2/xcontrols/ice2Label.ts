@@ -1,4 +1,4 @@
-﻿
+
 import { iXElement, enumVisibility, optionsAffichage, enumCouleur, OptionsHtml } from '../iceBase';
 import { iceLString } from '../iceLString';
 import { iceElement } from '../../iceElement';

@@ -1,4 +1,4 @@
-﻿import { cachericeElements, affichericeElements, assignerObjet } from '../../iceStaticFunctions';
+import { cachericeElements, affichericeElements, assignerObjet } from '../../iceStaticFunctions';
 import { iceOutils } from '../iceOutils';
 import { ice2LabelContainer } from '../xcontrols/ice2LabelContainer';
 import { PlanningRdv, PlanningDisponibilite } from './PlanningElements';

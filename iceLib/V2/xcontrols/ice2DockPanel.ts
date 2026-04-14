@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { iceDiv } from './iceDiv';
 

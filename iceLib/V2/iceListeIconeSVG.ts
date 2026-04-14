@@ -1,4 +1,3 @@
-﻿// @ts-nocheck
 export class ContenusSVG {
 	public contenu: string;
 	public viewBoxContains: string;

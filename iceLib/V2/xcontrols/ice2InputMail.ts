@@ -1,4 +1,12 @@
-﻿// @ts-nocheck
+import { iceHref, enumTypeOuvertureHref } from './iceHref';
+import { iXElement } from '../iceBase';
+import { ice2WrapPanel } from './ice2WrapPanel';
+import { iceOutils } from '../../iceOutils';
+import { ice2LabelModifiable } from './ice2LabelModifiable';
+import { iceLString } from '../iceLString';
+import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
+import { IconeSvg, enumIconeSvg, tailleIcone } from '../iceIcones';
+import { xInputText } from './iceInput';
 interface OptionsInputMail
 {
     valeur?: string;

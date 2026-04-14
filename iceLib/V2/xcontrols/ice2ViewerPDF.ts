@@ -1,14 +1,16 @@
-// @ts-nocheck
-﻿import { iceDiv } from './iceDiv';
+import { iceDiv } from './iceDiv';
 import { ice2StackPanel } from './ice2StackPanel';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { iceOutils } from '../../iceOutils';
-import { xClass } from '../iceBase';
+import { xClass, iXElement } from '../iceBase';
 import { ice2Bouton, enumTailleBouton, enumTypeBouton, enumStyleBouton } from './ice2Bouton';
 import { IconeP12, enumIconeP12, enumIconeSvg, IconeSvg, Icone } from '../iceIcones';
 import { ice2PageWrapper } from './ice2PageWrapper';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
 import { ice2Boxer, enumBoxerMode } from './ice2Boxer';
+import { BindableObject } from './BindableObject';
+import { iceIFrame } from './iceIFrame';
+import { iceCanvas } from './iceCanvas';
 
 interface OptionViewerPDF
 {
@@ -143,7 +145,7 @@ export class ice2ViewerPDF implements iXElement
         if (iceOutils.isMobile()) {
             //// Opening PDF by passing its binary data as a string. It is still preferable
             //// to use Uint8Array, but string or array-like structure will work too.
-            loadingTask.promise.then(async function (pdf: pdfjsLib.PDFDocumentProxy) {
+            loadingTask.promise.then(async function (pdf: any /* pdfjsLib.PDFDocumentProxy */) {
                 if (pdf.numPages > 3) {
                     myThis._bindingTitre.Value = nompdf + " (3/" + pdf.numPages + ")";
 
@@ -212,10 +214,10 @@ export class ice2ViewerPDF implements iXElement
      * @param numpage
      * @param pdf
      */
-    private async afficherPage(numpage: number, pdf: pdfjsLib.PDFDocumentProxy)
+    private async afficherPage(numpage: number, pdf: any /* pdfjsLib.PDFDocumentProxy */)
     {
         let myThis: ice2ViewerPDF = this;
-        let page: pdfjsLib.PDFPageProxy = await pdf.getPage(numpage);
+        let page: any /* pdfjsLib.PDFPageProxy */ = await pdf.getPage(numpage);
 
         let canvas: iceCanvas = new iceCanvas({});
         let monCanvas: HTMLCanvasElement = canvas.y as HTMLCanvasElement;

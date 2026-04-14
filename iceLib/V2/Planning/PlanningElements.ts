@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { iceDiv } from '../xcontrols/iceDiv';
@@ -144,7 +143,7 @@ export class PlanningDisponibilite {
     }
 }
 
-class PlanningParamUser {
+export class PlanningParamUser {
     public KeyPlanning: string;
     public Zoom?: number;
     public Arrondissement?: number;

@@ -1,14 +1,15 @@
-// @ts-nocheck
-import { iXElement, Dictionnaire } from '../iceBase';
+import { iXElement, Dictionnaire, DictionnaireUtils } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { ice2StackPanel } from './ice2StackPanel';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { ice2Bouton, enumTypeBouton, enumStyleBouton } from './ice2Bouton';
-import { ice2RadioButton } from './ice2RadioButton';
+import { ice2RadioButton, ETypeBouton, itemRadioButton } from './ice2RadioButton';
 import { ice2PageWrapper } from './ice2PageWrapper';
 import { xInputText } from './iceInput';
 import { enumIconeSvg, IconeSvg, Icone } from '../iceIcones';
+import { iceOutils } from '../../iceOutils';
+import { BindableObject } from './BindableObject';
 
 interface OptionsAssistantUser {
     page: ice2PageWrapper;

@@ -1,10 +1,11 @@
-// @ts-nocheck
-﻿import { enumTypeOrientation, iXElement, iXElementHolder } from '../iceBase';
+import { enumTypeOrientation, iXElement, iXElementHolder } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
 import { ice2Bouton, enumTailleBouton, enumStyleBouton } from './ice2Bouton';
 import { enumIconeP12, IconeP12, Icone } from '../iceIcones';
+import { iceOutils } from '../../iceOutils';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
 
 interface OptionZoneModulable {
     id?: string,
@@ -259,7 +260,7 @@ export class ice2ZoneModulable implements iXElement {
                 icone: new IconeP12(enumIconeP12.action_rotation),
                 textLocalise: "changer l'orientation",
                 titleLocalise: "changer l'orientation",
-                click: function (cb) {
+                click: function(cb: any) {
                     cb();
                     mythis.flipOrientation();
                     cachericeElements(mythis.cache, true);
@@ -299,7 +300,7 @@ export class ice2ZoneModulable implements iXElement {
         });
 
         mythis.divClick.asHolder.xdiv({
-            click: function (e) {
+            click: function(e: any) {
 
                 mythis.replierZone(mythis.premiereZoneDiv);
                 mythis.etat = EEtatZoneModulable.repliePremiereZone;
@@ -319,7 +320,7 @@ export class ice2ZoneModulable implements iXElement {
             textLocalise: "Touchez à l'endroit où vous souhaitez déplacer la barre de séparation",
         }))
             .xdiv({
-                click: function (e) {
+                click: function(e: any) {
                     mythis.replierZone(mythis.secondeZondeDiv);
                     mythis.etat = EEtatZoneModulable.replieDeuxiemeZone;
 

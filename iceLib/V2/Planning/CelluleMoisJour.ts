@@ -1,5 +1,14 @@
-﻿// @ts-nocheck
-class CelluleMoisJour implements iXElement
+import { iXElement } from '../iceBase';
+import { iceDiv } from '../xcontrols/iceDiv';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { ice2StackPanel } from '../xcontrols/ice2StackPanel';
+import { PlanningRdv } from './PlanningElements';
+import { ice2Grid } from '../xcontrols/ice2Grid';
+import { ice2ToolTip } from '../xcontrols/ice2ToolTip';
+import { ice2Label } from '../xcontrols/ice2Label';
+import { ice2WrapPanel } from '../xcontrols/ice2WrapPanel';
+import { ice2LabelContainer, enumPositionDuContenu } from '../xcontrols/ice2LabelContainer';
+export class CelluleMoisJour implements iXElement
 {
     private _div: iceDiv;
     private _dateJour: DateSerialisable;

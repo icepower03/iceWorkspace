@@ -1,4 +1,4 @@
-﻿
+
 export class iceTime {
     constructor(hr: number, min: number) {
         this.Minutes = min%60;

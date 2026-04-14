@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, optionsAffichage, enumVisibility, enumCurseur } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceLString } from '../iceLString';
@@ -8,7 +7,9 @@ import { xInputText } from './iceInput';
 import { ice2LabelContainer } from './ice2LabelContainer';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { enumIconeSvg, IconeSvg, tailleIcone, Icone } from '../iceIcones';
-﻿interface OptionsLabelModifiable {
+import { iceOutils } from '../../iceOutils';
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+interface OptionsLabelModifiable {
     id?: string;
     class?: string;
     textVariable?: string;

@@ -1,6 +1,6 @@
-// @ts-nocheck
 import { iceInputFile } from './iceInputFile';
-﻿
+import { OptionsHtml } from '../iceBase';
+
 
 interface OptionsUploadImage extends OptionsHtml {
     //accept?: string;

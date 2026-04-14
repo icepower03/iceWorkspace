@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, enumCouleur } from '../iceBase';
+import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, enumCouleur, optionsAffichage, CleValeur } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { iceDiv } from './iceDiv';
@@ -10,6 +9,8 @@ import { ice2ListeDeroulante } from './ice2ListeDeroulante';
 import { ice2ToolTip } from './ice2ToolTip';
 import { ice2Label } from './ice2Label';
 import { enumIconeSvg, IconeSvg, Icone } from '../iceIcones';
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+import { iceStyle } from './iceStyle';
 
 interface OptionsAutoCompleteValueCode<T> extends OptionsHtml
 {
@@ -122,7 +123,7 @@ export class ice2AutoComplete<T> implements iXElement
     private asyncResearch: (search: string) => Promise<T[]> = null;
     private goasyncResearch?: (search: string) => boolean = null;
 
-    private idTimeOut: number;
+    private idTimeOut: ReturnType<typeof setTimeout>;
     private TIME_FOR_TIMEOUT: number = 350;
 
     private isListVisible: boolean = false;

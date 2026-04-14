@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, enumCouleur, enumPosition } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { ice2Grid, ice2GridItem, enumAlignementContenu } from './ice2Grid';
@@ -8,7 +7,10 @@ import { ice2Bouton, enumTailleBouton, enumStyleBouton, enumCouleurBouton } from
 import { IconeSvg, enumIconeSvg, tailleIcone, Icone } from '../iceIcones';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2ProgressBar } from './ice2ProgressBar';
-﻿enum enumPositionAlerte {
+import { iceStyle } from './iceStyle';
+import { iceOutils, ETypeAlertify, etype_messagebox } from '../../iceOutils';
+import { iceLString } from '../iceLString';
+export enum enumPositionAlerte {
     bas,
     bas_droite,
     centre,

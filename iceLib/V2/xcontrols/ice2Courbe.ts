@@ -1,4 +1,9 @@
-﻿// @ts-nocheck
+import { iXElementHolder, iXElement, Dictionnaire } from '../iceBase';
+import { ObservableCollection } from './ObservableCollection';
+import { DateSerialisable } from '../utils/DateSerialisableExtend';
+import { iceSVG } from './iceSVG';
+import { tailleIcone } from '../iceIcones';
+import { iceLString } from '../iceLString';
 module mChart
 {
     //Options de courbes classiques
@@ -156,21 +161,21 @@ module mChart
                         : orient.left;
         }
 
-        private getVoronoiSerie(width: number, height: number, svg: d3.Selection<d3.BaseType, unknown, HTMLElement, any>, colorscale: string[])
+        private getVoronoiSerie(width: number, height: number, svg: any /* d3.Selection<d3.BaseType, unknown, HTMLElement, any> */, colorscale: string[])
         {
             let myThis: ice2Courbe<T> = this;
 
             //Fonction de voronoi pour repérer les polygons
             let voronoi = d3.voronoi()
-                .x(function (d) { return d[0]; })
-                .y(function (d) { return d[1]; })
+                .x(function(d: any) { return d[0]; })
+                .y(function(d: any) { return d[1]; })
                 .extent([[0, 0], [width, height]]);
             let voronoiSerie = voronoi(myThis.pointsVoronoi.map(e => e.point));
             let polygons = voronoiSerie.polygons();
             let cells = voronoiSerie.cells;
 
             
-            polygons.forEach((polygon, index) =>
+            polygons.forEach((polygon: any, index: any) =>
             {
                 let area = d3.polygonArea(polygon);
                 if (area > myThis.serieVoronoi[myThis.pointsVoronoi[index].key].area)
@@ -187,7 +192,7 @@ module mChart
             if (myThis.withLegendeInChart)
             {
                 //Construction de la légende
-                myThis.series.forEach((s, i) =>
+                myThis.series.forEach((s: any, i: any) =>
                 {
                     let orientLegend = myThis.getEmplacementLegend(myThis.serieVoronoi[s.name]);
                     console.log(s.name, orientLegend)
@@ -246,11 +251,11 @@ module mChart
             //Transformations des données en série
 
             //Pour chaque série
-            options.data.forEach((l,i) =>
+            options.data.forEach((l: any, i: any) =>
             {
                 let valuesSerie: number[] = [];
                 //Pour chaque élément d'une série
-                l.forEach((e) =>
+                l.forEach((e: any) =>
                 {
                    
 
@@ -326,7 +331,7 @@ module mChart
                 .range([margin.left, options.width - margin.right])              
                 ;
 
-            let yMaxValue: number = d3.max(myThis.datas.series, d => d3.max(d.values)) + 3;
+            let yMaxValue: number = d3.max(myThis.datas.series, (d: any) => d3.max(d.values)) + 3;
             if (options.yMaxMinValueDefaut == undefined) {
                 options.yMaxMinValueDefaut = 10;
             }
@@ -338,7 +343,7 @@ module mChart
 
             //Echelle de l'axe des ordonnées
             let yScale = d3.scaleLinear()
-                .domain([yMaxValue, 0])//d3.min(myThis.datas.series, d => d3.min(d.values))
+                .domain([yMaxValue, 0])//d3.min(myThis.datas.series, (d: any) => d3.min(d.values))
                 .range([margin.top, options.height - margin.bottom - margin.top]);
 
 
@@ -356,7 +361,7 @@ module mChart
             let yAxis = g.append("g")
                 .attr("transform", `translate(${margin.left},0)`)
                 .call(d3.axisLeft(yScale))
-                .call(g => g.select(".domain").remove())
+                .call((g: any) => g.select(".domain").remove())
                 //.call(g => g.select(".tick:first-of-type text")
                 //    .attr("x", 3)
                 //    .attr("text-anchor", "start")
@@ -380,25 +385,25 @@ module mChart
             //Création de la fonction de dessin d'une ligne
             let line = d3
                 .line()
-                .x(d => d[0])
-                .y(d => d[1])
+                .x((d: any) => d[0])
+                .y((d: any) => d[1])
                 .curve(d3.curveLinear);
 
             let area = d3.area()
                 .curve(d3.curveLinear)
-                .x(d => d[0])
+                .x((d: any) => d[0])
                 .y0(yScale(0))
-                .y1(d => d[1]);
+                .y1((d: any) => d[1]);
 
             var colorscale = d3.schemeCategory10;
             if (options.seriesCouleur.length > 0)
                 colorscale = options.seriesCouleur;
 
             //Calcul des cordonnées des points de toutes les séries
-            options.data.forEach((l,i) =>
+            options.data.forEach((l: any, i: any) =>
             {
                 var pointsSerie: [number, number][] = [];
-                l.forEach((e) =>
+                l.forEach((e: any) =>
                 {
                     let date = DateSerialisable.getDate(options.dataX(e));
                     let value = options.dataY(e);
@@ -415,7 +420,7 @@ module mChart
             });
             
             let pointsSeriecumul: [number, number][] = [];
-            cumulDatas.forEach((e) =>
+            cumulDatas.forEach((e: any) =>
             {
                 let date = DateSerialisable.getDate(options.dataX(e));
                 let value = options.dataY(e);
@@ -432,11 +437,11 @@ module mChart
 
             //Créaton des points
 
-            myThis.pointsAllSeries.forEach((points, i) =>
+            myThis.pointsAllSeries.forEach((points: any, i: any) =>
             {              
              
                 //Création des points
-                points.forEach((pt, index) =>
+                points.forEach((pt: any, index: any) =>
                 {
                       
                     let circle = g.append("circle")
@@ -459,10 +464,10 @@ module mChart
                         {
                             g.append("line")
                                 .style("stroke", colorscale[i])
-                                .attr("x1", (d) => { return points[index - 1][0] })
-                                .attr("y1", (d) => { return points[index - 1][1] })
-                                .attr("x2", (d) => { return pt[0] })
-                                .attr("y2", (d) => { return pt[1] })
+                                .attr("x1", (d: any) => { return points[index - 1][0] })
+                                .attr("y1", (d: any) => { return points[index - 1][1] })
+                                .attr("x2", (d: any) => { return pt[0] })
+                                .attr("y2", (d: any) => { return pt[1] })
                         }
                     }
                 }
@@ -510,13 +515,13 @@ module mChart
 
             if (options.ligneSupplementaire != undefined)
             {
-                options.ligneSupplementaire.forEach((val) => { 
+                options.ligneSupplementaire.forEach((val: any) => { 
                     g.append("line")
                         .style("stroke", "black")
-                        .attr("x1", (d) => { return xScale(xScale.domain()[0]) })
-                        .attr("y1", (d) => { return yScale(val) })
-                        .attr("x2", (d) => { return xScale(xScale.domain()[1]) })
-                        .attr("y2", (d) => { return yScale(val) })
+                        .attr("x1", (d: any) => { return xScale(xScale.domain()[0]) })
+                        .attr("y1", (d: any) => { return yScale(val) })
+                        .attr("x2", (d: any) => { return xScale(xScale.domain()[1]) })
+                        .attr("y2", (d: any) => { return yScale(val) })
                 })
             }
 

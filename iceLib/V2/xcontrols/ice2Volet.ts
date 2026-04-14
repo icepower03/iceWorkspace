@@ -1,10 +1,11 @@
-// @ts-nocheck
-﻿import { iXElement } from '../iceBase';
+import { iXElement } from '../iceBase';
 import { IconeP12, IconeMiniP12, enumIconeP12, Icone } from '../iceIcones';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { ice2ToolTipBouton } from './ice2ToolTip';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { enumPosition } from '../iceBase';
+import { iceDiv } from './iceDiv';
+import { iceOutils, EKeys } from '../../iceOutils';
 
 export enum enumPositionVolet {
     haut,

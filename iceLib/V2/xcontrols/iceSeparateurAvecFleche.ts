@@ -1,4 +1,7 @@
-﻿// @ts-nocheck
+import { enumPosition, iXElement } from '../iceBase';
+import { ice2Grid, ice2GridItem } from './ice2Grid';
+import { iceSeparateur, optionXSeparateur } from './iceSeparateur';
+import { iceDiv } from './iceDiv';
 interface optionsXSeparateurAvecFleche
 {
     class?: string;

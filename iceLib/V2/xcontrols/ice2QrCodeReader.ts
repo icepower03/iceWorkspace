@@ -1,7 +1,8 @@
-// @ts-nocheck
 import { iXElement, enumVisibility } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceCanvas } from './iceCanvas';
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+import { iceOutils } from '../../iceOutils';
 
 interface optionsQrCodeBasics {
     autosize?: boolean;

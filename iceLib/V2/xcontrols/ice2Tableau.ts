@@ -1,14 +1,14 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder, enumCouleur, enumPosition } from '../iceBase';
+import { iceElementsFramework } from '../iceElementsFramework';
+import { iXElement, iXElementHolder, enumCouleur, enumPosition, Container, Dictionnaire } from '../iceBase';
 import { BindableObject } from './BindableObject';
-import { iceOutils } from '../../iceOutils';
+import { iceOutils, EnumLibrairieJs } from '../../iceOutils';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { ObservableCollection } from './ObservableCollection';
 import { iceDiv } from './iceDiv';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Label, enumTypeLabel, enumHabillageLabel } from './ice2Label';
-import { ice2Bouton, enumTailleBouton, enumCouleurBouton } from './ice2Bouton';
-import { ice2ToolTip, enumXxToolTipPositionHeight } from './ice2ToolTip';
+import { ice2Bouton, enumTailleBouton, enumCouleurBouton, optionButton } from './ice2Bouton';
+import { ice2ToolTip, enumXxToolTipPositionHeight, ice2ToolTipBouton } from './ice2ToolTip';
 import { ice2ListWrapper, enumTypeTri } from './ice2ListWrapper';
 import { ice2Grid, ice2GridItem } from './ice2Grid';
 import { ice2Dialog, enumTypeAlerte } from './ice2Dialog';
@@ -18,6 +18,10 @@ import { Icone, enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, ta
 import { ice2LabelContainer, enumPositionDuContenu } from './ice2LabelContainer';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
 import { iceInputTextAvecIcone } from './iceInputTextAvecIcone';
+import { iceLString } from '../iceLString';
+import { HelperGeneric } from '../utils/HelperGeneric';
+import { assignerObjet, cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { xElementHolder } from '../../iceElement';
 
 interface OptionsColonnes<T> {
 
@@ -42,7 +46,7 @@ interface OptionsColonnes<T> {
     verrouTriPrincipal?: boolean; //si true le trie ne se perd pas si on clic sur une autre colonne et se trie reste le trie principal
 }
 
-interface dicoImagesXElement {
+export interface dicoImagesXElement {
     '*'?: string,
     page_de_garde_paysage?: string,
     page_de_garde_portrait?: string,

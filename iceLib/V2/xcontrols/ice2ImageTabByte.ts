@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { iceDiv } from './iceDiv';
 import { iceImg } from './iceImg';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
-﻿export enum enumTypeImage
+export enum enumTypeImage
 {
     backgroundImage,
     domImage

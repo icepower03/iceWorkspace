@@ -1,11 +1,11 @@
-// @ts-nocheck
 import { iXElement, enumVisibility } from '../iceBase';
 import { BindableObject } from './BindableObject';
-import { xInputText, enumStyleInput, enumBackgroundInput } from './iceInput';
+import { xInputText, enumStyleInput, enumBackgroundInput, OptionsInputNumericGenerique } from './iceInput';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2StackPanel } from './ice2StackPanel';
 import { ice2Bouton, optionBouton, enumTailleBouton, enumTypeBouton } from './ice2Bouton';
 import { enumIconeP12, IconeP12, IconeMiniP12, Icone } from '../iceIcones';
+import { iceMaths } from '../iceMaths';
 
 interface OptionsInputNumerir extends OptionsInputNumericGenerique {
     class?: string;

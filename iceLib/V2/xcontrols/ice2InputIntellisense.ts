@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { iceLString } from '../iceLString';
 import { iceDiv } from './iceDiv';
@@ -6,6 +5,8 @@ import { ice2ToolTip } from './ice2ToolTip';
 import { ice2ListWrapper } from './ice2ListWrapper';
 import { ice2ContainerEvent } from './ice2ContainerEvent';
 import { ice2Label } from './ice2Label';
+import { OptionsInput } from './iceInput';
+import { iceOutils } from '../../iceOutils';
 
 interface OptionsInputIntellisense extends OptionsInput {
     listeAutoComplete: string[];

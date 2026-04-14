@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder } from '../iceBase';
 import { ObservableCollection } from './ObservableCollection';
 import { iceDiv } from './iceDiv';

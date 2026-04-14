@@ -1,7 +1,6 @@
-// @ts-nocheck
 import { iXElement, enumTypeOrientation, enumCouleur, enumPosition } from '../iceBase';
 import { iceOutils } from '../../iceOutils';
-import { iceMaths } from '../../iceMaths';
+import { iceMaths } from '../iceMaths';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { iceDiv } from './iceDiv';
 import { ice2Grid, ice2GridItem } from './ice2Grid';
@@ -11,6 +10,7 @@ import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2ListeDeroulante } from './ice2ListeDeroulante';
 import { iceSeparateur } from './iceSeparateur';
 import { enumIconeP12, enumIconeSvg, IconeP12, IconeMiniP12, IconeSvg, tailleIcone, Icone } from '../iceIcones';
+import { iceLString } from '../iceLString';
 
 interface OptionDatePicker {
     value?: DateSerialisable;

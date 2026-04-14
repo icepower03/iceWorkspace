@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, enumTypeOrientation } from '../iceBase';
 import { ice2RadioButton } from './ice2RadioButton';
 

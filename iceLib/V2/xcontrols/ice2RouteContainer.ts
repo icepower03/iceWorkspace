@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder, Dictionnaire } from '../iceBase';
+import { iXElement, iXElementHolder, Dictionnaire, Arbre } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceDiv } from './iceDiv';
 import { ice2WrapPanel, enumAlignementVerticalWrapPanel, enumAlignementHorizontalWrapPanel } from './ice2WrapPanel';
@@ -18,6 +17,9 @@ import { ice2CheckBox, enumTypeCheckbox } from './ice2CheckBox';
 import { ice2Dialog, enumTypeAlerte, enumDialogTypeBouton } from './ice2Dialog';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
 import { ice2ListWrapper } from './ice2ListWrapper';
+import { iceOutils } from '../../iceOutils';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { iceLString } from '../iceLString';
 
 interface optionsice2RouteContainer {
     

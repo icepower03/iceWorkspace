@@ -1,4 +1,4 @@
-﻿import './DateExtend';
+import './DateExtend';
 import { iceLString } from '../iceLString';
 import { iceTime } from '../iceTime';
 class __DateSerialisable {

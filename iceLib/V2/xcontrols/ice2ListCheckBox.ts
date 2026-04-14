@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, enumTypeOrientation } from '../iceBase';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2DockPanelDeprecated, DockPosition } from './ice2DockPanel';
@@ -6,6 +5,8 @@ import { ice2ListWrapper } from './ice2ListWrapper';
 import { ice2CheckBox } from './ice2CheckBox';
 import { ice2Grid, ice2GridItem } from './ice2Grid';
 import { ice2Label } from './ice2Label';
+import { iceDiv } from './iceDiv';
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
 
 interface OptionsListCheckBox<T> {
     data: T[];

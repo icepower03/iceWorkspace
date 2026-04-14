@@ -1,9 +1,10 @@
-// @ts-nocheck
 import { iXElement, enumVisibility } from '../iceBase';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { iceStyle } from './iceStyle';
 import { BindableObject } from './BindableObject';
 import { iceDiv } from './iceDiv';
 import { ice2ContainerEvent } from './ice2ContainerEvent';
-﻿
+
 
 interface OptionsCouleur 
 {

@@ -1,7 +1,7 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { iceDiv } from './iceDiv';
-import { xInputText } from './iceInput';
+import { xInputText, OptionsInput } from './iceInput';
+import { iceLString } from '../iceLString';
 
 interface optionsTexteEnrichi extends OptionsInput
 {

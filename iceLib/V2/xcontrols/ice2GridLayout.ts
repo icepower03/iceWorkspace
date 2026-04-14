@@ -1,4 +1,6 @@
-﻿// @ts-nocheck
+import { iXElement } from '../iceBase';
+import { ice2Grid, ice2GridItem } from './ice2Grid';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
 interface OptionsGridLayout {
     id?: string;
     class?: string;

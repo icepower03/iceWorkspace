@@ -1,4 +1,9 @@
-﻿// @ts-nocheck
+import { iXElementHolder, iXElement } from '../iceBase';
+import { iceOutils, EnumLibrairieJs } from '../../iceOutils';
+import { iceSVG } from './iceSVG';
+import { tailleIcone } from '../iceIcones';
+import { xElementHolder } from '../../iceElement';
+import { iceLString } from '../iceLString';
 module mChart
 {
     export interface OptionsChartBar {
@@ -161,8 +166,8 @@ module mChart
             let g = svg.append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            x.domain(options.data.map(function (d) { return d.label; }));
-            y.domain([0, d3.max(options.data, function (d) { return d.value; })]);
+            x.domain(options.data.map(function(d: any) { return d.label; }));
+            y.domain([0, d3.max(options.data, function(d: any) { return d.value; })]);
 
             g.append("g")
                 .attr("class", "axis axis--x")
@@ -184,36 +189,36 @@ module mChart
                 .enter().append("rect");
 
             test.attr("class", "bar")
-                .attr("x", function (d) { return x(d.label); })
-                .attr("y", function (d) { return y(d.value); })
+                .attr("x", function(d: any) { return x(d.label); })
+                .attr("y", function(d: any) { return y(d.value); })
                 .attr("width", x.bandwidth())
-                .attr("height", function (d)
+                .attr("height", function(d: any)
                 {
                     return height - y(d.value);
                 })
-                .attr("class", function (d, i) { return "bar" + d.color })
-                .style("fill", function (d, i)
+                .attr("class", function(d: any, i: any) { return "bar" + d.color })
+                .style("fill", function(d: any, i: any)
                 {
                     return d.color
                 })
                 //.attr("height", function (d: any) { return y(d.y0) - y(d.y0 + d.y); })
-                .append("title").text(function (d) { return d.title != null ? d.title : d.value.toString() });
+                .append("title").text(function(d: any) { return d.title != null ? d.title : d.value.toString() });
 
             if (options.withAffichageNbDansLesBar)
             {
                 g.selectAll(".bar")
                     .data(options.data)
                     .enter().append("text")
-                    .attr("x", function (d) { return x(d.label) + (x.bandwidth() / 2); })
-                    .attr("y", function (d) { return y(d.value) + 10; })
+                    .attr("x", function(d: any) { return x(d.label) + (x.bandwidth() / 2); })
+                    .attr("y", function(d: any) { return y(d.value) + 10; })
                     .attr("dy", ".35em")
-                    .text(function (d) { return d.title != null ? d.title : d.value.toString(); });
+                    .text(function(d: any) { return d.title != null ? d.title : d.value.toString(); });
             }
 
             if (options.click != null)
             {
                 test.attr("cursor", "pointer");
-                test.on("click", function (e) { options.click(e.id); });
+                test.on("click", function(e: any) { options.click(e.id); });
             }
 
         }

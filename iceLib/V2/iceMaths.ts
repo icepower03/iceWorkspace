@@ -1,4 +1,4 @@
-﻿export class iceMaths {
+export class iceMaths {
 
     /**
      * Permet de calculer le plus petit multiple commun de deux nombres

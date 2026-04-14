@@ -14,7 +14,17 @@
 
   "include": [
     "../iceLib/d.ts/jquery.d.ts",
+    "../iceLib/d.ts/jquery.ui.base.d.ts",
+    "../iceLib/d.ts/ckeditor.d.ts",
+    "../iceLib/d.ts/FileSaver.d.ts",
+    "../iceLib/d.ts/beautify.d.ts",
+    "../iceLib/reexport/pdfMake.ts",
     "../iceLib/private_d.ts/alertify.d.ts",
+    "../iceLib/private_d.ts/xlsx.d.ts",
+    "../iceLib/private_d.ts/d3-global.d.ts",
+    "../iceLib/private_d.ts/jspdf/*.d.ts",
+    "../iceLib/private_d.ts/jspdf/display/*.d.ts",
+    "../iceLib/private_d.ts/jspdf/shared/*.d.ts",
     "src/**/*.ts"
   ]
 }

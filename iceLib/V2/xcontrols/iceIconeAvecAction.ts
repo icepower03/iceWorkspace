@@ -1,4 +1,4 @@
-﻿import { iXElement, optionsAffichage } from '../iceBase';
+import { iXElement, optionsAffichage } from '../iceBase';
 import { enumIconeP12, enumIconeAction, Icone, IconeV2, IconeSvg, IconeP12, tailleIcone } from '../iceIcones';
 import { ice2Grid, ice2GridItem } from './ice2Grid';
 

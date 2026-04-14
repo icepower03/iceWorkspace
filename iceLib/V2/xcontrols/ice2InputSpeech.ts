@@ -1,10 +1,9 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { iceDiv } from './iceDiv';
-import { xInputText } from './iceInput';
+import { xInputText, OptionsInput } from './iceInput';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { ice2Label } from './ice2Label';
-﻿
+
 
 interface SpeechRecognition extends EventTarget {
 //    grammars: SpeechGrammarList;

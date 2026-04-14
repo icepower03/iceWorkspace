@@ -1,4 +1,4 @@
-﻿// @ts-nocheck
+import { Dictionnaire } from '../iceBase';
 /**
  * @author Dimitry Kudrayvtsev
  * @version 2.0
@@ -95,11 +95,11 @@ module mGantt {
     //T pour tache, J pour jalon
     export class ice2Gantt<T, J> {
 
-        private svg: d3.Selection<d3.BaseType, {}, HTMLElement, any>;
-        private x: d3.ScaleTime<number, number>;//(e:any)=>number;
-        private y: d3.ScaleBand<string>;
-        private xAxis: d3.Axis<{}>;
-        private yAxis: d3.Axis<{}>;
+        private svg: any; // d3.Selection<d3.BaseType, {}, HTMLElement, any>
+        private x: any; // d3.ScaleTime<number, number>
+        private y: any; // d3.ScaleBand<string>
+        private xAxis: any; // d3.Axis<{}>
+        private yAxis: any; // d3.Axis<{}>
         private heightPlanifiable: number;
         private heightCellule: number;
         private dictionnaireElements: Dictionnaire<SVGElement> = {};
@@ -291,7 +291,7 @@ module mGantt {
 
                     }
                 })
-                .on('mouseover', function (d) {
+                .on('mouseover', function(d: any) {
                     if (myThis.myOpt.taskMap.hover != undefined) {
                         myThis.myOpt.taskMap.hover(d)(<SVGElement>this);
                     }
@@ -371,7 +371,7 @@ module mGantt {
             let xDateSouhaitee: number = myThis.x(dtSouhaitee);
 
             if (dtSouhaitee >= myThis.myOpt.timeDomain[0] && dtSouhaitee <= myThis.myOpt.timeDomain[1]) {
-                let g: d3.Selection<d3.BaseType, {}, HTMLElement, any> = myThis.svg.append("g");
+                let g: any = myThis.svg.append("g");
 
                g.each(function () {
                     myThis.myOpt.jalonMap.render(j, new svgJalonWrapper(<SVGElement>this));
@@ -403,7 +403,7 @@ module mGantt {
                     .attr("x", xDateSouhaitee)
                     .attr("y", 0)
                     .text(myThis.myOpt.jalonMap.textVariable(j))
-                    .attr("transform", function (d) { return "rotate(90 " + xDateSouhaitee.toString() + " 0) "; });
+                    .attr("transform", function(d: any) { return "rotate(90 " + xDateSouhaitee.toString() + " 0) "; });
 
             }
             return myThis;

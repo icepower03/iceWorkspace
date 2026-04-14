@@ -1,7 +1,11 @@
-// @ts-nocheck
 import { iceElement } from '../../iceElement';
-import { enumVisibility } from '../iceBase';
-﻿
+import { optionsAffichage, OptionsHtml, enumVisibility } from '../iceBase';
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { iceOutils, ETypeAlertify } from '../../iceOutils';
+import { iceLString } from '../iceLString';
+import { iceStyle } from './iceStyle';
+import { BindableObject } from './BindableObject';
+
 export enum enumStyleInput {
     Filled,
     Outlined,
@@ -14,12 +18,11 @@ export enum enumBackgroundInput {
     BgTheme
 }
 
-interface optionsAffichageInput extends optionsAffichage
-{
+interface optionsAffichageInput extends optionsAffichage {
     rechercheLarge?: boolean;
 }
 
-interface OptionsInput /*extends OptionsHtml*/ {
+export interface OptionsInput extends OptionsHtml {
     value?: string | number;
     longueurMaxi?: number;
     longueurDuChamp?: number;
@@ -55,7 +58,7 @@ interface OptionsInput /*extends OptionsHtml*/ {
 
 }
 
-interface OptionsInputNumericGenerique {
+export interface OptionsInputNumericGenerique {
     plus?: boolean; // Ajoute un plus si nb positif
     minus?: boolean; // Ajoute un moins si nb négatif
     decimalSeparator?: boolean; // Ajoute un séparteur pour les deciamal ex : 31.141

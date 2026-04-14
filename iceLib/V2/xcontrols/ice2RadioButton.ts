@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, optionsAffichage, enumVisibility, iTestable, enumTypeOrientation, enumCouleur, enumCote } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
@@ -9,7 +8,8 @@ import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Label } from './ice2Label';
 import { Icone } from '../iceIcones';
 import { ice2ListWrapper } from './ice2ListWrapper';
-﻿export enum ETypeBouton
+import { iceStyle } from './iceStyle';
+export enum ETypeBouton
 {
     boutonClassique, //Bouton avec rond à cocher
     boutonWrapper2 //Utilisation du ice2Bouton

@@ -1,13 +1,13 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder, optionsAffichage, iTestable, enumPosition } from '../iceBase';
+import { iXElement, iXElementHolder, optionsAffichage, iTestable, enumPosition, Container } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { iceStyle } from './iceStyle';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { ice2Label } from './ice2Label';
 import { Icone, enumIconeP12, IconeP12, IconeMiniP12 } from '../iceIcones';
 import { ice2WrapPanel } from './ice2WrapPanel';
-import { ice2PageWrapper } from './ice2PageWrapper';
-import { DockPosition } from './ice2DockPanel';
+import { ice2PageWrapper, OptionsPage } from './ice2PageWrapper';
+import { DockPosition, ice2DockPanelDeprecated } from './ice2DockPanel';
+import { iceOutils } from '../../iceOutils';
 
 export enum enumBoxerMode { standard = 1, maximize = 2, pleinePage = 3 }
 

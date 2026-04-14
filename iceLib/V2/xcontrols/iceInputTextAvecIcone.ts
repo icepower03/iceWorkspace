@@ -1,7 +1,6 @@
-// @ts-nocheck
 import { iXElement, enumCouleur, enumCurseur } from '../iceBase';
 import { ice2Grid, ice2GridItem, enumAlignementContenu } from './ice2Grid';
-import { xInputText } from './iceInput';
+import { xInputText, OptionsInput } from './iceInput';
 import { IconeSvg, tailleIcone, enumIconeSvg, Icone } from '../iceIcones';
 import { ice2ContainerEvent } from './ice2ContainerEvent';
 

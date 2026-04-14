@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, Container } from '../iceBase';
 import { iceDiv } from './iceDiv';
 import { xInputText } from './iceInput';
@@ -6,7 +5,8 @@ import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { ice2Label } from './ice2Label';
 import { ice2StackPanel } from './ice2StackPanel';
 import { IconeP12, enumIconeP12, Icone } from '../iceIcones';
-﻿
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+
 
 
 

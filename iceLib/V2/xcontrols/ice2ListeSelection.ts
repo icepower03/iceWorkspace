@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, iXElementHolder, enumCouleur, enumPosition } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { ObservableCollection } from './ObservableCollection';
@@ -11,6 +10,7 @@ import { ice2StackPanel } from './ice2StackPanel';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { ice2ListeDeroulante } from './ice2ListeDeroulante';
 import { enumIconeP12, enumIconeSvg, IconeP12, IconeSvg, tailleIcone, Icone } from '../iceIcones';
+import { iceLString } from '../iceLString';
 
 interface OptionListeSelectionStandardSync<T> {
     ValueChange: (specialite: T[]) => void;

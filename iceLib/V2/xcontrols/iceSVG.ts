@@ -1,4 +1,4 @@
-﻿import { tailleIcone } from '../iceIcones';
+import { tailleIcone } from '../iceIcones';
 
 export enum enumSVGTaille
 {

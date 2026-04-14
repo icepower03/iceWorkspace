@@ -1,9 +1,9 @@
-// @ts-nocheck
 import { iXElement, enumVisibility } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { ice2ListeDeroulante } from './ice2ListeDeroulante';
 import { iceCouleur } from './iceCouleur';
-﻿enum enumNuancierCouleursDefaut
+import { affichericeElements, cachericeElements } from '../../iceStaticFunctions';
+enum enumNuancierCouleursDefaut
 {
     RougeFonce = "990000",
     Rouge = "ff3333",

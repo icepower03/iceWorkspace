@@ -1,11 +1,10 @@
-// @ts-nocheck
 import { iXElement } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceDiv } from './iceDiv';
 import { ice2WrapPanel } from './ice2WrapPanel';
 import { ice2Label } from './ice2Label';
 import { ice2PageWrapper } from './ice2PageWrapper';
-﻿interface OptionsProgressBar
+interface OptionsProgressBar
 {
     class?: string;
     page?: ice2PageWrapper;

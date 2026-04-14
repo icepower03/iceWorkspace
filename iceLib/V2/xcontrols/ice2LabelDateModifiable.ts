@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iXElement, optionsAffichage, enumVisibility, enumCurseur } from '../iceBase';
 import { BindableObject } from './BindableObject';
 import { iceLString } from '../iceLString';
@@ -9,7 +8,9 @@ import { ice2LabelContainer } from './ice2LabelContainer';
 import { ice2Label, enumTypeLabel } from './ice2Label';
 import { iceInputDate } from './iceInputDate';
 import { enumIconeSvg, IconeSvg, tailleIcone, Icone } from '../iceIcones';
-﻿interface OptionsLabelDateModifiable {
+import { cachericeElements, affichericeElements } from '../../iceStaticFunctions';
+import { iceOutils } from '../../iceOutils';
+interface OptionsLabelDateModifiable {
     id?: string;
     class?: string;
     Value?: DateSerialisable;

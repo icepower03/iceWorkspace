@@ -1,7 +1,6 @@
-// @ts-nocheck
-import { iXElement, iXElementHolder, OptionsHtml, enumVisibility } from '../iceBase';
+import { iXElement, iXElementHolder, OptionsHtml, enumVisibility, CleValeur } from '../iceBase';
 import { BindableObject } from './BindableObject';
-import { iceElement } from '../../iceElement';
+import { iceElement, xElementHolder } from '../../iceElement';
 import { DateSerialisable } from '../utils/DateSerialisableExtend';
 import { ObservableCollection } from './ObservableCollection';
 import { iceDiv } from './iceDiv';
@@ -10,13 +9,15 @@ import { ice2ListWrapper } from './ice2ListWrapper';
 import { Icone, enumIconeSvg, IconeSvg, tailleIcone } from '../iceIcones';
 import { ice2Bouton, enumTailleBouton } from './ice2Bouton';
 import { ice2LabelContainer } from './ice2LabelContainer';
-﻿interface OptionsOption {
+import { affichericeElements, cachericeElements, videriceElements } from '../../iceStaticFunctions';
+import { iceOutils } from '../../iceOutils';
+interface OptionsOption {
     value?: string;
     selected?: any; // permet de definir si l'option est selectionnées  ( il suffit de lui affecter une valeur, '' par exemple )
     text?: string;
 }
 
-interface OptionsSelect extends OptionsHtml {
+export interface OptionsSelect extends OptionsHtml {
     multiple?: any; // permet de definir la selection multiple ( il suffit de lui affecter une valeur, '' par exemple)
     listeValeurs?: CleValeur<string, string>[];
     valueDefault?: string;
@@ -32,7 +33,7 @@ enum enumConteneurListeDeroulante {
 
 }
 
-interface OptionsListeDeroulante<T> {
+export interface OptionsListeDeroulante<T> {
     defaultValue?: T;
     lectureSeule?: boolean;
     //liste des données à afficher

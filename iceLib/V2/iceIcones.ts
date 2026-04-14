@@ -1,4 +1,4 @@
-﻿
+
 
 import { iXElement, enumCouleur } from './iceBase';
 import { iceDiv } from './xcontrols/iceDiv';

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { iceLString } from '../iceLString';
 import { iXElement, iXElementHolder, enumVisibility, enumPosition, enumCote } from '../iceBase';
 import { assignerObjet, affichericeElements, cachericeElements } from '../../iceStaticFunctions';
@@ -12,7 +11,7 @@ import { ice2Grid, ice2GridItem, enumAlignementContenu } from './ice2Grid';
 import { ice2CheckBox, enumTypeCheckbox } from './ice2CheckBox';
 import { Icone, enumIconeSvg, IconeSvg, tailleIcone } from '../iceIcones';
 import { enumTailleBouton } from './ice2Bouton';
-﻿interface Optionsice2NavOngletControl
+interface Optionsice2NavOngletControl
 {
     id?: string;
     class?: string;
